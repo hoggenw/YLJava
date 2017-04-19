@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.sql.Struct;
 import java.util.*;
 
@@ -6,9 +7,39 @@ import java.util.*;
  */
 public class FirstJavaProject {
 
-    public static void main(String []args) {
+    public static void main(String []a1rgs) throws IOException {
 
-        methodRankPointts(255.7);
+          WorkManSalary s =  new WorkManSalary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);
+          WorkMan m = new WorkManSalary("John Adams", "Boston, MA", 2, 2400.00);
+        System.out.println("Call mailCheck using Salary reference --");
+        s.mailCheck();
+        System.out.println("\n Call mailCheck using Employee reference--");
+        m.mailCheck();
+//        int a = 20,b = 10;
+//        sonCalculation demo = new sonCalculation();
+//        demo.addition(a,b);
+//        demo.subtraction(a,b);
+//        demo.multiplication(a,b);
+//       //跟oc一样只看实际对象，无关声明对象
+//        Calculation cal = new sonCalculation();
+//        cal.addition(a, b);
+//        cal.subtraction(a, b);
+
+ //       InnerClass inner = new InnerClass();
+//        InnerClass.InnerDemo outer = inner.new InnerDemo();
+//        outer.print();
+//
+//        inner.displayMessage(new Message(){
+//            @Override
+//            public String greet() {
+//                return "Hello";
+//            }
+//        });
+
+//
+//        methodRankPointts(255.7);
+//        FileCopy file = new FileCopy();
+//        file.filedeal();
 //        Employee employee = new Employee("James Smith");
 //        employee.empAge(26);
 //        employee.empDesignation("Senior Software Engineer");
