@@ -10,6 +10,23 @@ interface  Message {
 public class InnerClass implements Message{
     int num = 56;
 
+    public  <T extends  Comparable<T>> T maximum(T x,T y,T z) {
+        T max = x;
+        if (y.compareTo(max) > 0 ) {
+            max = y;
+        }
+        if (z.compareTo(max) > 0) {
+            max = z;
+        }
+        return  max;
+    }
+
+    public   <E> void printArray( E[] inputArray) {
+        for ( E element: inputArray) {
+            System.out.printf("%s", element);
+        }
+        System.out.println("out finish");
+    }
     @Override
     public String greet() {
         return "baby";

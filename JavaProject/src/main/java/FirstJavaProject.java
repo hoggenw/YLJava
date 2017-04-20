@@ -9,12 +9,42 @@ public class FirstJavaProject {
 
     public static void main(String []a1rgs) throws IOException {
 
-          WorkManSalary s =  new WorkManSalary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);
-          WorkMan m = new WorkManSalary("John Adams", "Boston, MA", 2, 2400.00);
-        System.out.println("Call mailCheck using Salary reference --");
-        s.mailCheck();
-        System.out.println("\n Call mailCheck using Employee reference--");
-        m.mailCheck();
+
+        //多线程
+        RunnableDemo r1 = new RunnableDemo("Thread-1");
+        r1.start();
+        RunnableDemo R2 = new RunnableDemo("Thread-2");
+        R2.start();
+           //泛型
+//        Box<Integer> integerBox = new Box<Integer>();
+//        Box<String> stringBox = new Box<String>();
+//        integerBox.setT(10);
+//        stringBox.setT("hello world i'm hoggen");
+//        System.out.printf("Integer Value :%d\n\n", integerBox.getT());
+//        System.out.printf("String Value :%s\n", stringBox.getT());
+
+        //WorkManSalary m = new WorkManSalary("John Adams", "Boston, MA", 2, 2400.00);
+        //序列化与反序列化
+        //m.serialize(m);
+       // m.deSerialize();
+        //协议代理
+//        System.out.println("Call mailCheck using Salary reference --");
+//        System.out.println("\n Call mailCheck using Employee reference--");
+//        m.setSalary(3000000);
+//        m.delegate = new Animal() {
+//            @Override
+//            public  void  eat() {
+//                System.out.println(" work man must eat many thing");
+//            }
+//            @Override
+//            public  void  travel() {
+//                System.out.println("worker can not travel far away");
+//            }
+//
+//        };
+//        m.mailCheck();
+//        m.computePay();
+
 //        int a = 20,b = 10;
 //        sonCalculation demo = new sonCalculation();
 //        demo.addition(a,b);
@@ -25,7 +55,27 @@ public class FirstJavaProject {
 //        cal.addition(a, b);
 //        cal.subtraction(a, b);
 
- //       InnerClass inner = new InnerClass();
+//        InnerClass inner = new InnerClass();
+//        System.out.printf("Max of %d, %d and %d is %d\n\n",
+//                3, 4, 5, inner.maximum( 3, 4, 5 ));
+//
+//        System.out.printf("Max of %.1f,%.1f and %.1f is %.1f\n\n",
+//                6.6, 8.8, 7.7, inner.maximum( 6.6, 8.8, 7.7 ));
+//
+//        System.out.printf("Max of %s, %s and %s is %s\n","pear",
+//                "apple", "orange",inner. maximum("pear", "apple", "orange"));
+
+//        Integer[] intArray = {1,2,3,4,5};
+//        Double[] doubleArray = {1.1,2.2,3.3,4.4,5.5};
+//        Character[] stringArray = {'a','s','c','d','f'};
+//        System.out.println("Array integerArray contains:");
+//        inner.printArray(intArray);
+//
+//        System.out.println("\nArray doubleArray contains:");
+//        inner.printArray(doubleArray);
+//
+//        System.out.println("\nArray characterArray contains:");
+//        inner.printArray(stringArray);
 //        InnerClass.InnerDemo outer = inner.new InnerDemo();
 //        outer.print();
 //
