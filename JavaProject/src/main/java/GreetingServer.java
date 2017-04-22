@@ -40,7 +40,7 @@ public class GreetingServer extends Thread {
     }
 
     public static void main(String [] args) {
-        int port = Integer.parseInt(args[0]);
+        int port = 6606;
         try {
             Thread t = new GreetingServer(port);
             t.start();

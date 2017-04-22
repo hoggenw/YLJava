@@ -8,13 +8,46 @@ import java.util.*;
 public class FirstJavaProject {
 
     public static void main(String []a1rgs) throws IOException {
+        //时间测试
+        DateTest dateTest = new DateTest();
+        dateTest.DateFormat();
+//        //数组测试R
+//        ArrayTest arrayTest = new ArrayTest();
+//        //arrayTest.sortArray();
+//        arrayTest.reverseArray();
+//        //arrayTest.fillArray();
+
+//        //字符串测试
+//        StringTest string = new StringTest();
+//       // string.compareString();
+//       // string.searchLastString();
+//        //string.removeCharAt(16);
+//       // string.repalceTest();
+//       // string.reverse();
+//       // string.splitString();
+//       // string.region();
+//        //string.stringPerformance();
+//        //string.stringFormat();
+//       // string.stringConcatenate();
+
+//        //多线程
+//        RunnableDemo r1 = new RunnableDemo("hello!");
+//        Thread t1 = new Thread(r1);
+//        t1.setDaemon(true);
+//        t1.setName("hoggen");
+//        System.out.println("Starting hello thread...");
+//        t1.start();
+//
+//        RunnableDemo bye = new RunnableDemo("Goodbye!");
+//        Thread t2 = new Thread(bye);
+//        t2.setPriority(Thread.MIN_PRIORITY);
+//        t2.setDaemon(true);
+//        System.out.println("Starting goodbye thread...");
+//        t2.start();
 
 
-        //多线程
-        RunnableDemo r1 = new RunnableDemo("Thread-1");
-        r1.start();
-        RunnableDemo R2 = new RunnableDemo("Thread-2");
-        R2.start();
+//        RunnableDemo R2 = new RunnableDemo("Thread-2");
+//        R2.start();
            //泛型
 //        Box<Integer> integerBox = new Box<Integer>();
 //        Box<String> stringBox = new Box<String>();
