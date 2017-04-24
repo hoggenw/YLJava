@@ -8,9 +8,16 @@ import java.util.*;
 public class FirstJavaProject {
 
     public static void main(String []a1rgs) throws IOException {
-        //时间测试
-        DateTest dateTest = new DateTest();
-        dateTest.DateFormat();
+
+        //数组与集合
+        ArrayToCollection array = new ArrayToCollection();
+        //array.hashSet();
+        //array.shuffleList();
+        //array.setAndList();
+        array.deleteSet();
+//        //时间测试
+//        DateTest dateTest = new DateTest();
+//        dateTest.DateFormat();
 //        //数组测试R
 //        ArrayTest arrayTest = new ArrayTest();
 //        //arrayTest.sortArray();
