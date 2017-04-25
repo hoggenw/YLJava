@@ -9,12 +9,22 @@ public class FirstJavaProject {
 
     public static void main(String []a1rgs) throws IOException {
 
-        //数组与集合
-        ArrayToCollection array = new ArrayToCollection();
-        //array.hashSet();
-        //array.shuffleList();
-        //array.setAndList();
-        array.deleteSet();
+        //网络
+        NetWorking netWorking = new NetWorking();
+        //netWorking.getID();
+        //netWorking.checkHost(a1rgs);
+        //netWorking.getSelfId();
+        netWorking.getSize();
+
+//        //数组与集合
+//        ArrayToCollection array = new ArrayToCollection();
+//        //array.hashSet();
+//        //array.shuffleList();
+//        //array.setAndList();
+//       // array.deleteSet();
+//        //Rarray.mapValueAndKey();
+//       // array.rotateList();
+//        //array.hashTable();
 //        //时间测试
 //        DateTest dateTest = new DateTest();
 //        dateTest.DateFormat();

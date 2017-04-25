@@ -8,8 +8,57 @@ import java.util.TreeSet;
  */
 import  java.util.*;
 import  java.io.*;
+
+import apple.laf.JRSUIUtils;
+
 public class ArrayToCollection {
 
+    public  void  hashTable() {
+        Hashtable hashtable = new Hashtable();
+        hashtable.put("1", "One");
+        hashtable.put("2", "Two");
+        hashtable.put("3", "Three");
+        //Enumeration e = hashtable.keys();
+        Enumeration e = hashtable.elements();
+        while (e.hasMoreElements()) {
+            System.out.println(e.nextElement());
+        }
+
+    }
+
+    public  void  rotateList() {
+        List list = Arrays.asList("one two three four five six ".split(" "));
+        System.out.println("List :" + list);
+        Collections.rotate(list,3);
+        System.out.println("最大值: " + Collections.max(list));
+        System.out.println("最小值: " + Collections.min(list));
+        System.out.println("rotate: " + list);
+        Collections.replaceAll(list,"one","hundrea");
+        System.out.println("relaceAll: " + list);
+    }
+
+    public  void  mapValueAndKey() {
+        System.out.println("TreeMap example!");
+        TreeMap tMap = new TreeMap();
+        tMap.put(1, "Sunday");
+        tMap.put(2, "Monday");
+        tMap.put(3, "Tuesday");
+        tMap.put(4, "Wednesday");
+        tMap.put(5, "Thursday");
+        tMap.put(6, "Friday");
+        tMap.put(7, "Saturday");
+        System.out.println("TreeMap key values: " + tMap.keySet());
+        System.out.println("TreeMap values:  " + tMap.values());
+        System.out.println("where key is equal to 5,the value is : " + tMap.get(5));
+        System.out.println("first key is:" + tMap.firstKey() + "value is:" + tMap.get(tMap.firstKey()));
+        System.out.println("last key is:" + tMap.lastKey() + "value is:" + tMap.get(tMap.lastKey()));
+        System.out.println("移除第一个数据: " + tMap.remove(tMap.firstKey()));
+        System.out.println("now TreeMap key values: " + tMap.keySet());
+        System.out.println("now TreeMap values:  " + tMap.values());
+        System.out.println("移除最后一个数据: " + tMap.remove(tMap.lastKey()));
+        System.out.println("now TreeMap values:  " + tMap.values());
+
+    }
     public void setAndList() {
         setTest();
         listTest();
