@@ -6,7 +6,52 @@ import java.net.UnknownHostException;
 import java.io.*;
 import java.net.InetAddress;
 
-public class NetWorking {
+public class NetWorking implements Runnable{
+
+    Socket csocket;
+//    NetWorking(Socket csocket) {
+//        this.csocket = csocket;
+//    }
+
+    public void connetSocket() throws MalformedURLException {
+        try {
+            InetAddress address;
+            Socket socket = new Socket("www.runoob.com", 80);
+            address = socket.getInetAddress();
+            System.out.println("连接到 " + address);
+            socket.close();
+
+        }catch (java.io.IOException e){
+            System.out.println("无法连接 " );
+            System.out.println(e);
+        }
+
+        URL url = new URL("http://www.runoob.com/html/html-tutorial.html");
+        System.out.println("URL 是 " + url.toString());
+        System.out.println("协议是 " + url.getProtocol());
+        System.out.println("文件名是 " + url.getFile());
+        System.out.println("主机是 " + url.getHost());
+        System.out.println("路径是 " + url.getPath());
+        System.out.println("端口号是 " + url.getPort());
+        System.out.println("默认端口号是 "
+                + url.getDefaultPort());
+    }
+
+    public void  run(){
+        try {
+            PrintStream printStream = new PrintStream(csocket.getOutputStream());
+            for (int i = 100; i >= 0; i--) {
+                printStream.println(i +
+                        " bottles of beer on the wall");
+            }
+            printStream.close();
+            csocket.close();
+        } catch (IOException e){
+            System.out.println(e);
+        }
+
+    }
+
 
     public void getSize() throws IOException {
         int size;

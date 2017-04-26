@@ -1,20 +1,120 @@
 import java.io.IOException;
+import java.net.Socket;
 import java.sql.Struct;
 import java.util.*;
+import javax.xml.ws.Service;
+import java.net.ServerSocket;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import sun.applet.Main;
 
 /**
  * Created by wangliugen on 2017/4/17.
  */
 public class FirstJavaProject {
 
-    public static void main(String []a1rgs) throws IOException {
 
-        //网络
-        NetWorking netWorking = new NetWorking();
-        //netWorking.getID();
-        //netWorking.checkHost(a1rgs);
-        //netWorking.getSelfId();
-        netWorking.getSize();
+
+//    private  static  void netTest() throws IOException {
+//        ServerSocket ssock = new ServerSocket(1234);
+//        System.out.println("Listening");
+//        while (true) {
+//            Socket sock = ssock.accept();
+//            System.out.println("Connected");
+//            new Thread(new NetWorking(sock)).start();
+//        }
+//
+//
+//    }
+
+    private static  void  client() {
+
+        try {
+            Socket socket = new Socket("127.0.0.1",8888);
+            //构建IO
+            InputStream inputStream = socket.getInputStream();
+            OutputStream outputStream = socket.getOutputStream();
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
+            bufferedWriter.write("this message is for server");
+            bufferedWriter.flush();
+            //读取服务器返回的信息
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String message = bufferedReader.readLine();
+            System.out.println("server reback message: " + message);
+        }catch (UnknownHostException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+    static void showThreadStatus(Thread thrd) {
+        System.out.println(thrd.getName() + "Alive:=" + thrd.isAlive() + " State:=" + thrd.getState());
+    }
+    public static void main(String []a1rgs) throws IOException, InterruptedException {
+
+
+//        NewJavaThread newJavaThread = new NewJavaThread();
+//        newJavaThread.start();
+//        System.out.println("在50秒之内按任意键中断线程!");
+//        System.in.read();
+//        newJavaThread.interrupt();;
+//        newJavaThread.join();
+//        System.out.println("线程已经退出!");
+
+
+//        for(int i = 0; i < 5; i++)
+//            new NewJavaThread().join();
+//        System.out.println("thread is 挂起");
+
+//
+//        //线程
+//        new JavaThread(Thread.MAX_PRIORITY);
+//        for (int i = 0; i < 5; i++)
+//            new JavaThread(Thread.MIN_PRIORITY);
+
+//        tt.setName("MyThread #1");
+//        showThreadStatus(tt);
+//        tt.start();
+//        Thread.sleep(50);
+//        showThreadStatus(tt);
+//        tt.waiting = false;
+//        Thread.sleep(50);
+//        showThreadStatus(tt);
+//        tt.notice();;
+//        Thread.sleep(50);
+//        showThreadStatus(tt);
+//        while(tt.isAlive())
+//            System.out.println("alive");
+//        showThreadStatus(tt);
+
+        //tt.setName("Thread");
+//        System.out.println("before start(), tt.isAlive = " + tt.isAlive());
+//        tt.start();
+//        System.out.println("just after start(), tt.isAlive = " + tt.isAlive());
+//        for (int i=0; i < 10; i++) {
+//            tt.printMessage();
+//        }
+//        System.out.println("The end of main(), tt.isAlive = " + tt.isAlive());
+
+//        client();
+//        //网络
+//       // netTest();
+////        NetWorking netWorking = new NetWorking();
+////        netWorking.connetSocket();
+//        //netWorking.getID();
+//        //netWorking.checkHost(a1rgs);
+//        //netWorking.getSelfId();
+//       // netWorking.getSize();
+
 
 //        //数组与集合
 //        ArrayToCollection array = new ArrayToCollection();
