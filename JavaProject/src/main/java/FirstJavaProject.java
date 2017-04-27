@@ -13,6 +13,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import sun.applet.Main;
 
@@ -20,7 +22,8 @@ import sun.applet.Main;
  * Created by wangliugen on 2017/4/17.
  */
 public class FirstJavaProject {
-
+    static long standardNumber = -1 ;
+    static int countNumber = 0;
 
 
 //    private  static  void netTest() throws IOException {
@@ -34,38 +37,117 @@ public class FirstJavaProject {
 //
 //
 //    }
+//
+//    private static  void  client() {
+//
+//        try {
+//            Socket socket = new Socket("127.0.0.1",8888);
+//            //构建IO
+//            InputStream inputStream = socket.getInputStream();
+//            OutputStream outputStream = socket.getOutputStream();
+//            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
+//            bufferedWriter.write("this message is for server");
+//            bufferedWriter.flush();
+//            //读取服务器返回的信息
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+//            String message = bufferedReader.readLine();
+//            System.out.println("server reback message: " + message);
+//        }catch (UnknownHostException e){
+//            e.printStackTrace();
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+//
+//    }
+//    static void showThreadStatus(Thread thrd) {
+//        System.out.println(thrd.getName() + "Alive:=" + thrd.isAlive() + " State:=" + thrd.getState());
+//    }
 
-    private static  void  client() {
+    static  String  pickNumberFromString(String input) {
+        String regEX = "[^0-9]";
+        Pattern p = Pattern.compile(regEX);
+        Matcher matcher = p.matcher(input);
+        return  matcher.replaceAll("").trim();
 
-        try {
-            Socket socket = new Socket("127.0.0.1",8888);
-            //构建IO
-            InputStream inputStream = socket.getInputStream();
-            OutputStream outputStream = socket.getOutputStream();
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
-            bufferedWriter.write("this message is for server");
-            bufferedWriter.flush();
-            //读取服务器返回的信息
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String message = bufferedReader.readLine();
-            System.out.println("server reback message: " + message);
-        }catch (UnknownHostException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
+    }
+
+    static String aescendingString(String input) {
+       // System.out.println("lentgh = " + input.length());
+        int[]  array =  changedStringToArray(input);
+         Arrays.sort(array);
+        String sortString = changedArrayToStrng(array);
+        System.out.println(" sort string = " + sortString );
+//        for (int number: array) {
+//            System.out.println(" nubmber = " + number );
+//        }
+//        System.out.println("array lentgh = " + array.length );
+        return  sortString;
+    }
+
+    static  int[] changedStringToArray(String input){
+        int[] array = new int[input.length()];
+        for (int i = 0; i < input.length(); i++){
+            array[i] = Integer.parseInt(String.valueOf(input.charAt(i)));
         }
+        return  array;
+    }
 
+    static String changedArrayToStrng(int[] array){
+        StringBuilder returnString = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            returnString.append(array[i]);
+        }
+        return String.valueOf(returnString);
     }
-    static void showThreadStatus(Thread thrd) {
-        System.out.println(thrd.getName() + "Alive:=" + thrd.isAlive() + " State:=" + thrd.getState());
+
+    static long mainLogic(String numberString ){
+        String aescendingString = aescendingString(numberString);
+        String descendingString = new StringBuffer(aescendingString).reverse().toString();
+        long descendingNumber = Long.parseLong(descendingString);
+        long aescendingNumber = Long.parseLong(aescendingString);
+        System.out.println(descendingNumber + " - " + aescendingNumber + " = " + (descendingNumber - aescendingNumber));
+        return  descendingNumber - aescendingNumber;
     }
+
+
+    public  static  void  recursion(String numberString ) {
+
+        if (standardNumber == -1){
+            countNumber += 1;
+            standardNumber = mainLogic(numberString);
+            System.out.println("first countnumber = ：" + countNumber + "standardNumber = " + standardNumber);
+            recursion(String.valueOf(standardNumber));
+        }else {
+            countNumber += 1;
+            if (standardNumber == mainLogic(String.valueOf(standardNumber)) ){
+                System.out.println("countnumber = ：" + countNumber + " standardNumber = " + standardNumber);
+                System.out.println("总共用了：" + countNumber);
+            }else {
+                standardNumber = mainLogic(String.valueOf(standardNumber));
+                System.out.println("countnumber = ：" + countNumber + "standardNumber = " + standardNumber);
+                recursion(String.valueOf(standardNumber));
+            }
+        }
+    }
+
     public static void main(String []a1rgs) throws IOException, InterruptedException {
+
+
+        System.out.println("请输入您的数字!");
+
+        Scanner scanner = new Scanner(System.in);
+        String numberString =  pickNumberFromString(scanner.next());
+        recursion(numberString);
+        //long value = Long.parseLong(numberString);
+
+        //System.out.println("value = " + value);
 
 
 //        NewJavaThread newJavaThread = new NewJavaThread();
 //        newJavaThread.start();
 //        System.out.println("在50秒之内按任意键中断线程!");
-//        System.in.read();
+//        int value =  System.in.read();
+//        System.out.println("value = " + value);
 //        newJavaThread.interrupt();;
 //        newJavaThread.join();
 //        System.out.println("线程已经退出!");
