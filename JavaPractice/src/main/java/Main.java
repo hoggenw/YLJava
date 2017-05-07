@@ -7,12 +7,10 @@ public class Main {
 
 //        Doors100 temp = new Doors100();
 //        temp.showTheRusult();
-        FizzBuzz temp = new FizzBuzz();
-        temp.fizzBuzzTest();
+//        FizzBuzz temp = new FizzBuzz();
+//        temp.fizzBuzzTest();
+        NumberName temp = new NumberName();
+        temp.numberNameTest();
     }
-
-
-
-
 
 }
