@@ -9,8 +9,10 @@ public class Main {
 //        temp.showTheRusult();
 //        FizzBuzz temp = new FizzBuzz();
 //        temp.fizzBuzzTest();
-        NumberName temp = new NumberName();
-        temp.numberNameTest();
+//        NumberName temp = new NumberName();
+//        temp.numberNameTest();
+        CountCoins countCoins = new CountCoins();
+        countCoins.testCountCoins();
     }
 
 }
