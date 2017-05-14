@@ -1,8 +1,11 @@
+import static java.util.Arrays.asList;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -12,6 +15,7 @@ public class ArrayTest {
 
     public  void  fillArray() {
         int array[] = new int[6];
+
         Arrays.fill(array,100);
         printArray("填充",array);
         Arrays.fill(array,3,6,50);
@@ -27,6 +31,7 @@ public class ArrayTest {
 
     public  void  reverseArray() {
         ArrayList<String> arrayList = new ArrayList();
+        List<String> strings = ;
         arrayList.add("a");
         arrayList.add("b");
         arrayList.add("c");
@@ -52,6 +57,7 @@ public class ArrayTest {
         + array.containsAll(arrayList));
         String[] arra1 = {"sd","d","f"};
         String[] arra2 = {"a","s"};
+        List<String> strings = asList("AD", "FDS");
         String[] result =  uion(arra1,arra2);
         System.out.println("Array 并集 ：");
 
@@ -93,8 +99,8 @@ public class ArrayTest {
         System.out.println("元素 2  在第 " + index + " 个位置");
 
         Integer[] numbers = { 5,2, -2, 6, -3, 8, 0, -7, -9, 4,-10 };
-        int min = (int) Collections.min(Arrays.asList(numbers));
-        int max = (int) Collections.max(Arrays.asList(numbers));
+        int min = (int) Collections.min(asList(numbers));
+        int max = (int) Collections.max(asList(numbers));
         System.out.println("最小值: " + min);
         System.out.println("最大值: " + max);
 

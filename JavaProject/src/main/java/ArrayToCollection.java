@@ -40,6 +40,7 @@ public class ArrayToCollection {
     public  void  mapValueAndKey() {
         System.out.println("TreeMap example!");
         TreeMap tMap = new TreeMap();
+
         tMap.put(1, "Sunday");
         tMap.put(2, "Monday");
         tMap.put(3, "Tuesday");
@@ -98,11 +99,13 @@ public class ArrayToCollection {
     }
     private  void  listTest() {
         List<String> list = new ArrayList<String>();
+
         list.add("你");
         list.add("的");
         list.add("什么");
         list.add("是");
         list.add("what");
+        Lin
         // 使用iterator遍历
         System.out.println("使用iterator遍历:");
         Iterator<String> it = list.iterator();

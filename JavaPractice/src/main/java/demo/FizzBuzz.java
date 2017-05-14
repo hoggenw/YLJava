@@ -1,24 +1,25 @@
+package demo;
+
 /**
  * Created by wangliugen on 2017/5/3.
  */
 public class FizzBuzz {
 
-    public  void fizzBuzzTest(){
-        for ( int i = 1; i <= 100; i++){
+    public void fizzBuzzTest() {
+        for (int i = 1; i <= 100; i++) {
             numberForPrint(i);
         }
     }
 
 
-
-    private void numberForPrint(int number){
+    private void numberForPrint(int number) {
         String numberString = String.valueOf(number);
-        if (numberString.contains("3")){
+        if (numberString.contains("3")) {
             System.out.println("Fizz");
             return;
         }
 
-        if (numberString.contains("5")){
+        if (numberString.contains("5")) {
             System.out.println("Buzz");
             return;
         }
@@ -26,11 +27,11 @@ public class FizzBuzz {
 //            System.out.println("FizzBuzz");
 //            return;
 //        }
-        if (number % 3 == 0){
+        if (number % 3 == 0) {
             System.out.println("Fizz");
             return;
         }
-        if (number % 5 == 0){
+        if (number % 5 == 0) {
             System.out.println("Buzz");
             return;
         }
