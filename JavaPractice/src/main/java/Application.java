@@ -19,7 +19,6 @@ public class Application {
 //        System.out.println();
 //
 //        countCoins.testCountCoins(5);
-
         SpringApplication.run(Application.class, args);
     }
 

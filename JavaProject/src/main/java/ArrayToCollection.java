@@ -105,7 +105,6 @@ public class ArrayToCollection {
         list.add("什么");
         list.add("是");
         list.add("what");
-        Lin
         // 使用iterator遍历
         System.out.println("使用iterator遍历:");
         Iterator<String> it = list.iterator();

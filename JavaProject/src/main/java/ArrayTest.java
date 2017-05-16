@@ -31,7 +31,6 @@ public class ArrayTest {
 
     public  void  reverseArray() {
         ArrayList<String> arrayList = new ArrayList();
-        List<String> strings = ;
         arrayList.add("a");
         arrayList.add("b");
         arrayList.add("c");
