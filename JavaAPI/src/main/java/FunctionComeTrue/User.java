@@ -11,6 +11,6 @@ public class User {
         key = inputKey;
         name = inputName;
         nestingMessage = new UserNesting();
-        nestingMessage.message = "this is " + name + " and thr key is " + key;
+        nestingMessage.message = "this is " + name + " and the key is " + key;
     }
 }

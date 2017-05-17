@@ -42,13 +42,17 @@ public class APIController {
     }
     @RequestMapping(value="/trequest", method = POST)
     @ResponseBody
-    Object trequest(@RequestParam(value = "key", defaultValue= "6") int key, @RequestParam(value="name", defaultValue= "world") String name){
+    Object trequest(@RequestBody User user){
 
         Hashtable hashtable = new Hashtable();
         hashtable.put("1", "One");
         hashtable.put("2", "Two");
         hashtable.put("3", "Three");
-        return new User(key, name);
+        hashtable.put("key", user.key);
+        hashtable.put("name",user.name);
+
+        //new User(key, name);
+        return hashtable;
     }
 
 }
