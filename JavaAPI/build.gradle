@@ -18,6 +18,7 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 
     api 'org.apache.commons:commons-math3:3.6.1'
 

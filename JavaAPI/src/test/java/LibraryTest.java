@@ -3,9 +3,11 @@
  */
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.springframework.test.web.servlet.MockMvc;
 
 public class LibraryTest {
+
+    private MockMvc mvc;
     @Test
     public void tesrHolle() throws Exception {
     }
@@ -13,10 +15,10 @@ public class LibraryTest {
     @Before
     public void setUp() throws Exception {
 
+
     }
 
     @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+
     }
 }

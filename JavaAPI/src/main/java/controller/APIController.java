@@ -4,9 +4,15 @@ import static java.lang.String.format;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,14 +22,34 @@ import org.springframework.web.bind.annotation.RestController;
 
 import FunctionComeTrue.DealParameter;
 import FunctionComeTrue.KeyName;
+import FunctionComeTrue.People;
 import FunctionComeTrue.User;
 
 /**
  * Created by wangliugen on 2017/5/15.
  */
-@RestController
+//@RestController
+@Controller
 @EnableAutoConfiguration
 public class APIController {
+
+   @RequestMapping(value = "/",method = GET)
+   public String index(ModelMap map){
+       map.put("people",new People());
+       // return模板文件的名称，对应src/main/resources/templates/Hello.html
+       return "Hello";
+   }
+    @RequestMapping(value = "/add",method = POST)
+    public String add(HttpServletRequest req, ModelMap map) {
+        List<People> peoples = new ArrayList<>();
+        People people = new People();
+        people.setAge(Integer.parseInt(req.getParameter("age")));
+        people.setName(req.getParameter("name"));
+        peoples.add(people);
+        map.put("peoples",peoples);
+       return  "result";
+    }
+
     @RequestMapping("/hi")
     String home() {
         return "Hello World!";
