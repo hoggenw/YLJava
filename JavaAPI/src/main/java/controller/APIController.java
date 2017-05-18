@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import FunctionComeTrue.DealParameter;
+import FunctionComeTrue.KeyName;
 import FunctionComeTrue.User;
 
 /**
@@ -42,14 +43,29 @@ public class APIController {
     }
     @RequestMapping(value="/trequest", method = POST)
     @ResponseBody
-    Object trequest(@RequestBody User user){
+    Object trequest(@RequestBody Hashtable user){
+
 
         Hashtable hashtable = new Hashtable();
+        int key = (int) user.get("key");
+        if (key > 60) {
+            hashtable.put("stage","oldMan");
+        }else if (key > 30) {
+            hashtable.put("stage","midlife");
+        }else if (key > 15){
+            hashtable.put("stage","youngMan");
+        }else if (key > 0) {
+            hashtable.put("stage","children");
+        }else {
+            hashtable.put("error","无效参数");
+            return  hashtable;
+        }
+
         hashtable.put("1", "One");
         hashtable.put("2", "Two");
         hashtable.put("3", "Three");
-        hashtable.put("key", user.key);
-        hashtable.put("name",user.name);
+        hashtable.put("key", user.get("key"));
+        hashtable.put("name",user.get("name"));
 
         //new User(key, name);
         return hashtable;
