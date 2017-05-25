@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by wangliugen on 2017/5/24.
+ * Created by wangliugen on 2017/5/24.test if git can be used
  */
 @Service
 public class UserServiceImpl implements UserService {
