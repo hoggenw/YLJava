@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-05-26T03:32:38" hostname="ios-mac.local" time="0.002">
+<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-05-27T02:46:50" hostname="hoggendeMacBook-Pro.local" time="0.0">
   <properties/>
-  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.002"/>
+  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

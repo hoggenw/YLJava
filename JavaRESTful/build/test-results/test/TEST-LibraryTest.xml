@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LibraryTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2017-05-27T02:33:07" hostname="hoggendeMacBook-Pro.local" time="0.001">
+<testsuite name="LibraryTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2017-05-27T02:41:03" hostname="hoggendeMacBook-Pro.local" time="0.002">
   <properties/>
-  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.001">
+  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.002">
     <failure message="java.lang.NoClassDefFoundError: Library" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Library
 	at LibraryTest.testSomeLibraryMethod(LibraryTest.java:9)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

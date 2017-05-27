@@ -57,7 +57,7 @@
       <module filepath="$PROJECT_DIR$/JavaTest1.iml" fileurl="file://$PROJECT_DIR$/JavaTest1.iml"/>
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" assert-keyword="true" assert-jdk-15="true">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" assert-keyword="true" assert-jdk-15="true">
     <output url="file://$PROJECT_DIR$/out"/>
   </component>
   <component name="SvnBranchConfigurationManager">

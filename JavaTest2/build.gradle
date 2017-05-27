@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+//添加J插件
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+//jar {
+//    baseName = 'gs-rest-service'
+//    version =  '0.1.0'
+//}
+
+//添加资源库
+repositories {
+    //mavenLocal()//添加Maven本地资源库
+    mavenCentral()//添加Maven中央资源库
+
+}
+//分别指定开发环境和编译使用的JDK版本。
+// 根据Maven项目经验，在不同IDE间导入Maven项目时，经常会出错，
+// 通过指定JDK可以有效解决此问题，故保险起见，这里也加上。
+//编码环境
+sourceCompatibility = 1.8
+//编译环境
+targetCompatibility = 1.8
+
+//添加依赖库
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+}
+
