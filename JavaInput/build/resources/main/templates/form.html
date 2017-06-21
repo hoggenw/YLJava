@@ -1,4 +1,12 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="myScript.js"></script>
+   <!--<script >-->
+        <!--function myFunction() {-->
+            <!--document.getElementById("demo").innerHTML = "this is my first function";-->
+        <!--}-->
+    <!--</script>-->
+</head>
     <body>
         <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
             <table>
@@ -17,5 +25,21 @@
                 </tr>
             </table>
         </form>
+        <p>
+            通常的做法是把函数放入head部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容;JavaScript 能够直接写入 HTML 输出流中：
+        </p>
+        <p id = "demo">
+            this is start
+        </p>
+        <button type="button" onclick="myFunction()">just test begin</button>
+        <script>
+            document.write("<h1>这是一个标题</h1>");
+            document.write("<p>这是一个段落。</p>");
+        </script>
+        <script src="myScript.js"></script>
+        <p>
+            您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+            如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+        </p>
     </body>
 </html>

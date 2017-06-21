@@ -20,6 +20,11 @@ public class WebController extends WebMvcConfigurerAdapter {
         return "form";
     }
 
+    @GetMapping("/JsStudy")
+    public String showJsStudy() {
+        return "JsStudyOne";
+    }
+
     @PostMapping("/")
     public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
