@@ -1,43 +1,24 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="myScript.js"></script>
 
 </head>
 <body>
 <h1 id = "test">this is a joke</h1>
 
+<h2 id = "h2">I am a Iron Man</h2>
+<p>
+    <br> 看书：<input type="checkbox" name="checkbox" value= 1 /></br>
+    <br> 写字：<input type="checkbox" name="checkbox" value=2 /></br>
+    <br> 打飞机：<input type="checkbox" name="checkbox" value=3 /></br>
+    <br> 玩游戏：<input type="checkbox" name="checkbox" value=4 /></br>
+    <button onclick="checkboxed('checkbox')">全选</button>
+    <button onclick="uncheckboxed('checkbox')">取消全选</button>
+</p>
+
 <p id = "demo">say it's test</p>
-<button onclick="myFunction()">click me</button>
-<script>
-    //JS的注释和iOS基本相同
-    //window.alert(5 + 6);
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "this part \ must be changed!";
-        var length = 16;                                  // Number 通过数字字面量赋值
-        var x = 10;
-        var points = x * 10;                              // Number 通过表达式字面量赋值
-        var lastName = "Johnson";                         // String 通过字符串字面量赋值
-        var cars = ["Saab", "Volvo", "BMW"];              // Array  通过数组字面量赋值
-        var person = {firstName:"John", lastName:"Doe"};  // Object 通过对象字面量赋值
-
-        document.getElementById("test").innerHTML = self.mutilNumber(2,3) + "-"+ length + points + lastName + cars[0] + person.lastName;
-
-        //请使用 document.write() 仅仅向文档输出写内容。
-        //如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖
-       // 写到控制台(调试模式)
-        //document.write(Date());
-    }
-    //如需从 JavaScript 访问某个 HTML 元素，您可以使用 document.getElementById(id) 方法。
-    //请使用 "id" 属性来标识 HTML 元素，并 innerHTML 来获取或插入元素内容：
-
-    function mutilNumber(a,b) {
-        return a * b;
-    }
-    
-    a = 5;
-    b = 6;
-    c = a + b;
-    console.log(c);
-</script>
+<button onclick="myFunction(6,7)">click me</button>
+<p id = "part2">you will be success </p>
 
 </body>
 </html>
