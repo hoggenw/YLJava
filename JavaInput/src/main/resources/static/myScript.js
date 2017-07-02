@@ -29,12 +29,20 @@ function myFunction(a,b) {
 //如需从 JavaScript 访问某个 HTML 元素，您可以使用 document.getElementById(id) 方法。
 //请使用 "id" 属性来标识 HTML 元素，并 innerHTML 来获取或插入元素内容：
 
+
+//全局变量是 window 对象: 所有数据变量都属于 window 对象。
+window.manName;
+
 function mutilNumber(a,b) {
     return a * b;
 }
 
 function objectTest() {
 
+    //全局变量
+    manName = "hoggen";
+    //局部变量
+    var sss = "sss";
 
 }
 
