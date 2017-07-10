@@ -25,6 +25,11 @@ public class WebController extends WebMvcConfigurerAdapter {
         return "JsStudyOne";
     }
 
+    @GetMapping("/Js2")
+    public String showJs2( ) {
+        return  "jsStudy2";
+    }
+
     @PostMapping("/")
     public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
