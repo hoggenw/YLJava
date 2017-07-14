@@ -30,6 +30,11 @@ public class WebController extends WebMvcConfigurerAdapter {
         return  "jsStudy2";
     }
 
+    @GetMapping("/cookie")
+    public String showCookie( ) {
+        return  "CookieTest";
+    }
+
     @PostMapping("/")
     public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
