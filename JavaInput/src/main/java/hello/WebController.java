@@ -24,6 +24,11 @@ public class WebController extends WebMvcConfigurerAdapter {
     public String showJsStudy() {
         return "JsStudyOne";
     }
+    @GetMapping("/protocal")
+    public String getProtocal()
+    {
+        return "protocal";
+    }
 
     @GetMapping("/Js2")
     public String showJs2( ) {
