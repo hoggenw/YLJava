@@ -5,8 +5,8 @@ interface CarInterface {
 }
 
 public class Car implements CarInterface {
-	private Integer price;
-	private String color;
+	public Integer price;
+	public String color;
 	static {
 		System.out.println("这是静态代码块");
 	}
@@ -24,8 +24,10 @@ public class Car implements CarInterface {
 		this.color = color;
 	}
 
-	public void description() {
-		System.out.print("price is: " + price + " color is :" + color);
+	public String description() {
+		String returnString = "price is: " + price + " color is :" + color;
+		System.out.println(returnString);
+		return returnString;
 	}
 
 	private void saySomething(String something) {
