@@ -43,3 +43,7 @@ class MyComparator implements Comparator {
 	}
 
 }
+
+enum SayStatus {
+	One, Two, Three
+}

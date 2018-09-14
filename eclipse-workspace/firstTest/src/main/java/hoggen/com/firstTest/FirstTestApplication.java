@@ -1,5 +1,7 @@
 package hoggen.com.firstTest;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +20,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FirstTestApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
 		// System.out.println("hello java");
 		// System.out.println(10);
 		// System.out.println(010);
@@ -131,12 +133,34 @@ public class FirstTestApplication {
 
 		// randomCode();
 		// collectionTest();
-		linkedList();
+		// linkedList();
 		// setTest();
 		// treeSetTest();
 		// hashMaptest();
+		// enumTest();
+		// resTest();
+		flieClass file = new flieClass();
+		file.writeFileTest();
+		file.readFileTest();
 
 		SpringApplication.run(FirstTestApplication.class, args);
+	}
+
+	public static void resTest() {
+		// 只能输入数字
+		String str = "12435423a2";
+		boolean flag = str.matches("[0-9]+");
+		System.out.println(flag ? "输入正确" : "只能输入数字");
+
+		String str2 = "124354232";
+		boolean flag2 = str2.matches("[0-9]+");
+		System.out.println(flag2 ? "输入正确" : "只能输入数字");
+
+	}
+
+	public static void enumTest() {
+		System.out.println(SayStatus.One);
+		System.out.println(SayStatus.Two);
 	}
 
 	public static void hashMaptest() {
