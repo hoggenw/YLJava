@@ -1,8 +1,14 @@
 package hoggen.com.firstTest;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class sonCar extends Car {
+public class sonCar extends Car implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	String sonNew;
 
 	public sonCar(Integer price, String color, String sonNew) {

@@ -2,6 +2,8 @@ package hoggen.com.firstTest;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +22,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FirstTestApplication {
 
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args)
+			throws FileNotFoundException, IOException, InterruptedException, UnknownHostException {
 		// System.out.println("hello java");
 		// System.out.println(10);
 		// System.out.println(010);
@@ -139,11 +142,49 @@ public class FirstTestApplication {
 		// hashMaptest();
 		// enumTest();
 		// resTest();
-		flieClass file = new flieClass();
-		file.writeFileTest();
-		file.readFileTest();
+		// flieClass file = new flieClass();
+		// file.writeFileTest();
+		// file.readFileTest();
+
+		myThread();
+		//
+		// listanerTest();
+
+		// ipTest();
 
 		SpringApplication.run(FirstTestApplication.class, args);
+	}
+
+	public static void ipTest() throws UnknownHostException {
+		InetAddress address = InetAddress.getLocalHost();
+		System.out.println("IP: " + address.getHostAddress());
+		System.out.println("Name: " + address.getHostName());
+		InetAddress[] addresses = InetAddress.getAllByName("www.baidu.com");
+		System.out.println(addresses);
+	}
+
+	public static void myThread() {
+
+		MyThread thread1 = new MyThread("hoggen");
+		MyThread thread2 = new MyThread("是的");
+		MyThread thread3 = new MyThread("聂女");
+		MyThread thread4 = new MyThread("野兽");
+		// thread2.setPriority(6);
+		thread3.start();
+		thread1.start();
+		thread2.start();
+		thread4.setDaemon(true);
+		thread4.start();
+		System.out.println(thread4.isDaemon());
+	}
+
+	public static void listanerTest() {
+		WeatherStation station = new WeatherStation();
+		station.startWork();
+
+		Person p1 = new Person("小名");
+		station.addListaner(p1);
+
 	}
 
 	public static void resTest() {
