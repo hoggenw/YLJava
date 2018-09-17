@@ -3,6 +3,8 @@ package hoggen.com.firstTest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -146,13 +148,29 @@ public class FirstTestApplication {
 		// file.writeFileTest();
 		// file.readFileTest();
 
-		myThread();
+		// myThread();
 		//
 		// listanerTest();
 
-		// ipTest();
+		ipTest();
+
+		// socketTest();
 
 		SpringApplication.run(FirstTestApplication.class, args);
+	}
+
+	public static void socketTest() {
+		try {
+			// 建立tcp服务端
+			ServerSocket serverSocket = new ServerSocket(9090);
+			while (true) {
+				Socket socket = serverSocket.accept(); // 不断接收用户请求
+				new ImageServer(socket).start(); // 如产生socket，则有连接，在开启线程，服务
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public static void ipTest() throws UnknownHostException {
