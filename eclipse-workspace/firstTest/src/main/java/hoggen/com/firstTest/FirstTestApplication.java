@@ -1,7 +1,9 @@
 package hoggen.com.firstTest;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,6 +20,9 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.TreeSet;
 
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -152,11 +157,115 @@ public class FirstTestApplication {
 		//
 		// listanerTest();
 
-		ipTest();
+		// ipTest();
 
 		// socketTest();
-
+		// XMlTest();
+		XpathTest();
 		SpringApplication.run(FirstTestApplication.class, args);
+	}
+
+	public static void XpathTest() {
+		SAXReader reader = new SAXReader();
+		org.dom4j.Document doc = null;
+		// 新地址则相当于拷贝
+		try {
+			doc = reader.read("./src/main/java/hoggen/com/firstTest/NewFile.xml");
+			// 穿件输出流
+			OutputStream outputStream = new FileOutputStream("./src/main/java/hoggen/com/firstTest/NewFile.xml");
+			// Element rootE = doc.getRootElement();
+			// java.util.List<Element> contactE = rootE.elements("contact");
+			// System.out.println(contactE);
+			// Iterator<Element> iterator = contactE.iterator();
+			// while (iterator.hasNext()) {
+			// Element conElem = iterator.next();
+			// conElem.element("adress").setText("北京上海广州");
+			// }
+			// 查询到id属性值为
+			// Element conE = (Element) doc.selectSingleNode("//contact[@id='002']");
+			Element conE = (Element) doc.selectSingleNode("//contact[2]");
+			conE.element("adress").setText("new-新的地址测试");
+			XMLWriter writer = new XMLWriter(outputStream);
+			writer.write(doc);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("错误2");
+		}
+	}
+
+	public static void XMlTest() {
+		/**
+		 * 节点信息： nodeIterator()： 获取当前标签下的子节点
+		 * 
+		 * 标签信息： getName(): 得到标签名称 element(name); 获取当前标签下的指定名称的第一个子标签
+		 * elementIterator(name); 获取当前标签下的指定名称的所有子标签 elements(); 获取当前标签下的所有子标签
+		 * 
+		 * 属性信息： attributeValue(name): 获取指定属性名的属性值 attribute(name); 获取指定属性名的属性对象
+		 * attributes(): 获取所有属性对象。返回List集合 attributeIterator(): 获取所有属性对象。返回Iterator
+		 * getName():获取属性名称 getValue(): 获取属性值
+		 * 
+		 * 文本信息： getText(): 获取标签的文本内容
+		 */
+		ArrayList<Person> list = new ArrayList<Person>();
+		org.dom4j.Document doc = null;
+		try {
+			SAXReader reader = new SAXReader();
+			doc = reader.read("./src/main/java/hoggen/com/firstTest/NewFile.xml");
+			// System.out.println(doc);
+			Element rootE = doc.getRootElement();
+			java.util.List<Element> contactE = rootE.elements("contact");
+			System.out.println(contactE);
+			Iterator<Element> iterator = contactE.iterator();
+			while (iterator.hasNext()) {
+				Element conElem = iterator.next();
+				System.out.println(conElem);
+				Person person = new Person(conElem.element("name").getText());
+				person.setId(conElem.element("id").getText());
+				person.setPhone(conElem.element("phone").getText());
+				person.setAdress(conElem.element("adress").getText());
+				list.add(person);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println("错误");
+			// TODO: handle exception
+		}
+
+		for (Person person : list) {
+			System.out.println(person);
+		}
+
+		// 新地址则相当于拷贝
+		try {
+			/**
+			 * XMLWriter类： writer（）： 写出一个document对象到xml文件 添加：
+			 * DocumentHelper.createDocument(); 添加文档对象 addElement(name) 添加标签对象
+			 * addAttribute(name,value) 添加属性对象
+			 * 
+			 * 修改 ： Attribute.setValue(value) 修改属性值 Element.addAttribute("name","value");
+			 * 修改属性值,通过添加同名属性 Element.setText(value) 修改文本内容
+			 * 
+			 * 删除： Element.getParent().remove(elment) 删除标签 Element.detach() 删除标签
+			 * 
+			 * Attribute.getParent().remove(attri) 删除属性 Attribute.detach() 删除属性
+			 */
+			// 穿件输出流
+			OutputStream outputStream = new FileOutputStream("./src/main/java/hoggen/com/firstTest/NewFile.xml");
+			Element rootE = doc.getRootElement();
+			java.util.List<Element> contactE = rootE.elements("contact");
+			System.out.println(contactE);
+			Iterator<Element> iterator = contactE.iterator();
+			while (iterator.hasNext()) {
+				Element conElem = iterator.next();
+				conElem.element("adress").setText("北京上海广州");
+			}
+			XMLWriter writer = new XMLWriter(outputStream);
+			writer.write(doc);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("错误2");
+		}
+
 	}
 
 	public static void socketTest() {

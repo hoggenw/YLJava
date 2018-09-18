@@ -2,11 +2,31 @@ package hoggen.com.firstTest;
 
 public class Person implements BookWeather {
 	String name;
+	String id;
+	String phone;
+	String adress;
 
 	public Person(String name) {
 		this.name = name;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return ("id: " + this.id + " name: " + this.name + " phone: " + this.phone + " adress: " + this.adress);
+	}
 	// private WeatherStation station;
 
 	// public Person(String name) {
