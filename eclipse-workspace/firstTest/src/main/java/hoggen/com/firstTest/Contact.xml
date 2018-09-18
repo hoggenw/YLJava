@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--可以添加相关样式  --><!--<?xml-stylesheet type = "text/css" href=""?>  --><!--学生 --><!--<student id="0001">hoggen2</student>  --><!-- <![CDATA[<teacher>hoggen</teacher>]]> --><!--通信录  --><!-- <contact
+ id = "001" 
+ name= "张三" 
+ phone = "13343" 
+ adress="阿斯顿撒多">
+</contact> --><contact-list>
+<contact>
+ <id>001</id> 
+ <name>张三</name> 
+ <phone>13343</phone> 
+ <adress>阿斯顿撒飒飒多</adress>
+</contact>
+<contact>
+ <id>002</id> 
+ <name>张4</name> 
+ <phone>1334233</phone> 
+ <adress>阿斯顿撒多是的撒</adress>
+</contact>
+<contact>
+ <id>003</id> 
+ <name>张5</name> 
+ <phone>1334123</phone> 
+ <adress>阿斯顿撒多撒</adress>
+</contact>
+</contact-list>
