@@ -1,0 +1,50 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent; /*清除点击默认的高亮的效果*/
+    -webkit-box-sizing: border-box;
+    /*以border开始计算宽度*/
+
+}
+
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;/*µÚ¶þ¸öÊÇÊÖ»úµÄÒ»¸öÄ¬ÈÏµÄ×ÖÌå*/
+    color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ul{
+    list-style: none;
+}
+
+input,textarea {
+    border: none;
+    resize: none;
+    outline: none;  /*清除选择效果*/
+    -webkit-appearance: none; /*清除浏览器默认的样式*/
+
+}
+
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+[class^="icon_"]{
+    background: url("../img/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
+
