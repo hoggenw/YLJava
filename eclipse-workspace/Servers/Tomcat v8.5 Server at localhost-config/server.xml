@@ -154,7 +154,7 @@
           <!--配置一个虚拟的网站  docBase:绝对路劲 path不写及为默认网站 -->
           <!--<Context docBase="/Users/wangliugen/Desktop/SelfProject/YLJava/eclipse-workspace/firstTest/src/main/java/hoggen/com/firstTest/myTestHtml" path="/hoggen"/>-->
 
-      <Context docBase="ServetTest" path="/ServetTest" reloadable="true" source="org.eclipse.jst.jee.server:ServetTest"/></Host>
+      <Context docBase="ServetTest" path="/ServetTest" reloadable="true" source="org.eclipse.jst.jee.server:ServetTest"/><Context docBase="CookieAndSession" path="/CookieAndSession" reloadable="true" source="org.eclipse.jst.jee.server:CookieAndSession"/></Host>
         <!--添加站点-->
         <Host appBase="/Users/wangliugen/Desktop/SelfProject/YLJava/eclipse-workspace/firstTest/src/main/java/hoggen/com/firstTest/webApp" autoDeploy="true" name="www.hoggenwang.com" unpackWARs="true">
             <!--配置一个虚拟的网站  docBase:绝对路劲 path不写及为默认网站 -->

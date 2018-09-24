@@ -1,9 +1,6 @@
 package hoggen.wang;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,15 +33,15 @@ public class RequstDemo extends HttpServlet {
 		 * 读取Properties文件
 		 */
 		// 当前目录的位置
-		File file = new File(".");
-		System.out.println(file.getAbsolutePath());
-
-		FileInputStream inStream = new FileInputStream(
-				"/Users/wangliugen/Desktop/SelfProject/YLJava/eclipse-workspace/ServetTest/WebContent/news.properties");
-		Properties properties = new Properties();
-		properties.load(inStream);
-		System.out.println(properties.getProperty("name"));
-		System.out.println(properties.getProperty("password"));
+		// File file = new File(".");
+		// System.out.println(file.getAbsolutePath());
+		//
+		// FileInputStream inStream = new FileInputStream(
+		// "/Users/wangliugen/Desktop/SelfProject/YLJava/eclipse-workspace/ServetTest/WebContent/news.properties");
+		// Properties properties = new Properties();
+		// properties.load(inStream);
+		// System.out.println(properties.getProperty("name"));
+		// System.out.println(properties.getProperty("password"));
 
 		/**
 		 * 转发
@@ -90,6 +87,17 @@ public class RequstDemo extends HttpServlet {
 		// // 下载资源文件
 		// response.getWriter().append("下载 Served at:
 		// ").append(request.getContextPath());
+
+		javax.servlet.http.Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (javax.servlet.http.Cookie cookie2 : cookies) {
+				String name = cookie2.getName();
+				String value = cookie2.getValue();
+				System.out.println(name + " : " + value);
+			}
+		} else {
+			System.out.println("没有cookie 信息");
+		}
 	}
 
 	/**
