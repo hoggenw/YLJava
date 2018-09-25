@@ -34,6 +34,7 @@ public class Cookie extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html;charset=utf-8");
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		/**
@@ -84,9 +85,14 @@ public class Cookie extends HttpServlet {
 				String name = cookie2.getName();
 				String value = cookie2.getValue();
 				System.out.println(name + " : " + value);
+				if (name.equals("customdDate")) {
+					response.getWriter().write("欢迎访问本网站，上次访问时间为：" + value + "  目前时间为： " + dateString);
+				}
+
 			}
 		} else {
 			System.out.println("没有cookie 信息");
+			response.getWriter().write("欢迎首次访问本网站，当前时间为：" + dateString);
 		}
 
 	}
