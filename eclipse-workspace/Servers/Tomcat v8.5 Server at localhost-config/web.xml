@@ -16,6 +16,11 @@
   limitations under the License.
 --><web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
+						<!-- 在web.xml文件中，设置 -->
+					<!-- 配置session的有效时长：以分为单位 -->
+					<session-config>
+						<session-timeout>1</session-timeout>
+					</session-config>
 <!-- 配置web应用全局的参数 -->
 	<context-param>
 		<param-name>AAA</param-name>
