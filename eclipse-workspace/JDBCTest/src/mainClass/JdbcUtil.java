@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.commons.dbcp2.BasicDataSource;
+
 public class JdbcUtil {
 
 	private static String url = "jdbc:mysql://localhost:3306/hoggen";
@@ -13,6 +15,7 @@ public class JdbcUtil {
 	private static String user = "root";
 	private static String password = "12345678";
 	private static String driverClass = "com.mysql.cj.jdbc.Driver";
+	private static BasicDataSource bDataSource = null;
 
 	public JdbcUtil() {
 		// TODO Auto-generated constructor stub
@@ -31,9 +34,9 @@ public class JdbcUtil {
 			// Class clazz = JdbcUtil.class;
 			// // 2)
 			// /**
-			// *
+			// * 这个斜杠代表类路径的根目录
 			// */
-			// InputStream in = clazz.getResourceAsStream("/jdbc.properties");
+			// InputStream in = clazz.getResourceAsStream("/db.properties");
 			// // 2)¼ÓÔØÎÄ¼þ
 			// prop.load(in);
 			// // 3)¶ÁÈ¡ÎÄ¼þÄÚÈÝ
@@ -51,6 +54,22 @@ public class JdbcUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static BasicDataSource getDataSource() {
+		if (bDataSource == null) {
+			bDataSource = new BasicDataSource();
+			bDataSource.setUrl(url);
+			bDataSource.setUsername(user);
+			bDataSource.setPassword(password);
+			bDataSource.setDriverClassName(driverClass);
+			// 设置链接参数
+			bDataSource.setInitialSize(5);// 初始链接数
+			bDataSource.setMaxTotal(8);// 最大连接数
+			bDataSource.setMaxWaitMillis(3000);// 超过最大连接数时，最大等待时间
+			bDataSource.setMaxIdle(3000);// 最大空闲时间
+		}
+		return bDataSource;
 	}
 
 	public static Connection getConnection() {

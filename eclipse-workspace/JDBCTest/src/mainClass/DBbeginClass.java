@@ -50,17 +50,79 @@ public class DBbeginClass {
 		// readData(sql);
 
 		/**
-		 * 使用PreparedStatement，预编译接口
+		 * 使用PreparedStatement，预编译接口，防止参数注入
 		 */
 		// 插入
 		// String sql = "insert into student(id,name,adress) values(?,?,?)";// 参数占位
-
+		//
 		// prepareDB(sql);
 		// 修改
 		// String sql = "update student set name =?,adress=? where id = ?";// 参数占位
 		// prepareUpdateDB(sql);
 		// 删除
-		String sql = "delete from student where id=?";
+		// String sql = "delete from student where id=?";
+		// prepareDelete(sql);
+		// 查询
+		// String sql = "select * from student where id=?";
+		// prepareSelect(sql);
+
+		/**
+		 * 使用CallableStatement，存储过程
+		 */
+		// String sql = "select * from student where id=?";
+		// Connection connection = null;
+		// CallableStatement statement = null;
+		// ResultSet resultSet = null;
+		// try {
+		// connection = JdbcUtil.getConnection();
+		// statement = connection.prepareCall(sql);// 语法和权限的检查
+		//
+		// statement.setInt(1, 1);
+		// // 发送参数到数据库，执行sql
+		// resultSet = statement.executeQuery();
+		// while (resultSet.next()) {
+		// int id = resultSet.getInt("id");
+		// String name = resultSet.getString("name");
+		// String adress = resultSet.getString("adress");
+		// System.out.println(id + "\t" + name + "\t" + adress);
+		// }
+		//
+		// } catch (Exception e) {
+		// // TODO: handle exception
+		// e.printStackTrace();
+		// } finally {
+		// JdbcUtil.close(statement, connection);
+		// }
+
+	}
+
+	private static void prepareSelect(String sql) {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = JdbcUtil.getConnection();
+			statement = connection.prepareStatement(sql);// 语法和权限的检查
+
+			statement.setInt(1, 1);
+			// 发送参数到数据库，执行sql
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				String name = resultSet.getString("name");
+				String adress = resultSet.getString("adress");
+				System.out.println(id + "\t" + name + "\t" + adress);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(statement, connection);
+		}
+	}
+
+	private static void prepareDelete(String sql) {
 		Connection connection = null;
 		PreparedStatement statement = null;
 		try {
@@ -108,9 +170,9 @@ public class DBbeginClass {
 		try {
 			connection = JdbcUtil.getConnection();
 			statement = connection.prepareStatement(sql);// 语法和权限的检查
-			statement.setInt(1, 4);// 参数从1开始
-			statement.setString(2, "迪丽热巴");
-			statement.setString(3, "新疆");
+			statement.setInt(1, 1);// 参数从1开始
+			statement.setString(2, "美女");
+			statement.setString(3, "四川成都新津");
 			// 发送参数到数据库，执行sql
 			int count = statement.executeUpdate();
 			System.out.println("影响了" + count + "行");
