@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding = "utf-8"?>
+<product-list>
+   <product id="1">
+       <name>电视剧等哈</name>
+       <type>LN001</type>
+       <price>5000</price>
+   </product>
+   <product id="2">
+       <name>打瞌睡较好的</name>
+       <type>LN00s1</type>
+       <price>4000</price>
+   </product>
+   <product id="3">
+       <name>bultiful</name>
+       <type>LN001sss</type>
+       <price>43000</price>
+   </product>
+   <product id="4">
+       <name>大客户端</name>
+       <type>LN0sssad01</type>
+       <price>3000</price>
+   </product>
+   <product id="5">
+       <name>dashdh 大家伙的</name>
+       <type>LN00sad撒大声地1</type>
+       <price>2000</price>
+   </product>
+</product-list>
