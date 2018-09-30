@@ -45,7 +45,7 @@ public class FirstFilter implements Filter {
 			throws IOException, ServletException {
 
 		/**
-		 * 关于权限
+		 * 关于权限 ，主要是登录后存入session，判断是否登录，区分权限
 		 * 
 		 */
 
