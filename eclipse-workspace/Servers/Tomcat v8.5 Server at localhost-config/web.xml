@@ -18,11 +18,11 @@
 
 						<!-- 在web.xml文件中，设置 -->
 					<!-- 配置session的有效时长：以分为单位 -->
-					<session-config>
+<!-- 					<session-config>
 						<session-timeout>1</session-timeout>
-					</session-config>
+					</session-config> -->
 <!-- 配置web应用全局的参数 -->
-	<context-param>
+<!-- 	<context-param>
 		<param-name>AAA</param-name>
 		<param-value>AAA's value</param-value>
 	</context-param>
@@ -33,17 +33,17 @@
 	<context-param>
 		<param-name>CCC</param-name>
 		<param-value>CCC's value</param-value>
-	</context-param>
+	</context-param> -->
 	
 	
 	<!-- 过滤器配置 -->
-	<filter>
+<!-- 	<filter> -->
 		<!-- 内部名称 -->
-		<filter-name>FirstFilter</filter-name>
+<!-- 		<filter-name>FirstFilter</filter-name> -->
 		<!-- 类全名：包+简单类名 -->
-		<filter-class>hoggenwang.FirstFilter</filter-class>
+<!-- 		<filter-class>hoggenwang.FirstFilter</filter-class> -->
 		<!-- 初始化参数  -->
-		<init-param>
+<!-- 		<init-param>
 			<param-name>AAA</param-name>
 			<param-value>AAA'value</param-value>
 		</init-param>
@@ -52,15 +52,15 @@
 			<param-value>BBB'value</param-value>
 		</init-param>
 		
-	</filter>
+	</filter> -->
 	<!-- 过滤器映射配置 -->
-	<filter-mapping>
+<!-- 	<filter-mapping> -->
 		<!-- 内部名称，和上面的名称保持一致！ -->
-		<filter-name>FirstFilter</filter-name>
+<!-- 		<filter-name>FirstFilter</filter-name> -->
 		<!-- 需要拦截的路径 -->
-		<url-pattern>/TargetServlet</url-pattern>
+<!-- 		<url-pattern>/TargetServlet</url-pattern>
 		<url-pattern>/index.html</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 
   <!-- ======================== Introduction ============================== -->
   <!-- This document defines default values for *all* web applications      -->
@@ -633,9 +633,9 @@
   <!-- You can set the default session timeout (in minutes) for all newly   -->
   <!-- created sessions by modifying the value below.                       -->
 
-    <session-config>
+ <session-config>
         <session-timeout>30</session-timeout>
-    </session-config>
+    </session-config> 
 
 
   <!-- ===================== Default MIME Type Mappings =================== -->
