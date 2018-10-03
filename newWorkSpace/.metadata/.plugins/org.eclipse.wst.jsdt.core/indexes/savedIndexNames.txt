@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/Users/wangliugen/Desktop/SelfProject/YLJava/newWorkSpace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3337987466.index
-100014055.index
-3261843310.index
-1030791858.index
-287691788.index
-1842101500.index

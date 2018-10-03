@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract method &apos;private void fileUploadWithFileUpload(HttpServletRequest request)&apos; from &apos;hoggenwang.newHello.doPost()&apos; to &apos;hoggenwang.newHello&apos;&#x0A;- Original project: &apos;FileTest&apos;&#x0A;- Method name: &apos;fileUploadWithFileUpload&apos;&#x0A;- Destination type: &apos;hoggenwang.newHello&apos;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;fileUploadWithFileUpload&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;hoggenwang{newHello.java" name="fileUploadWithFileUpload" replace="false" selection="1481 1473" stamp="1538531314635" version="1.0" visibility="2"/>
-</session>

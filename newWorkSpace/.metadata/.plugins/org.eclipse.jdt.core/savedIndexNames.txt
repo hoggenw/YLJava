@@ -1,1 +1,0 @@
-INDEX VERSION 1.130+/Users/wangliugen/Desktop/SelfProject/YLJava/newWorkSpace/.metadata/.plugins/org.eclipse.jdt.core
