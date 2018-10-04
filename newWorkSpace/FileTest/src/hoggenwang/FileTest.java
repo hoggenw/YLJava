@@ -2,7 +2,9 @@ package hoggenwang;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
@@ -29,6 +31,7 @@ public class FileTest extends HttpServlet {
 	 */
 	public FileTest() {
 		super();
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -59,6 +62,7 @@ public class FileTest extends HttpServlet {
 			upload.setFileSizeMax(3 * 1024 * 1024);
 			upload.setSizeMax(3 * 3 * 1024 * 1024);
 			upload.setProgressListener(new MyProgressListener());
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
 			ArrayList<FileItem> list = (ArrayList<FileItem>) upload.parseRequest(request);
 
@@ -76,11 +80,34 @@ public class FileTest extends HttpServlet {
 						String uuid = UUID.randomUUID().toString();
 						String fileName = item.getName();
 						// 后缀名
-						;
 						String newFileName = uuid + fileName.substring(fileName.lastIndexOf("."));
 
 						String baseFile = "/Users/wangliugen/Desktop/";
 						String finalPath = baseFile + newFileName;
+
+						long size = item.getSize();
+						FileModel model = new FileModel();
+						String sizeStr = "";
+						if (size >= 1024 && size < 1024 * 1024) {
+							sizeStr = (int) (size / 1024.0) + "KB";
+						} else if (size > 1024 * 1024 && size <= 1024 * 1024 * 1024) {
+							sizeStr = (int) (size / (1024 * 1024.0)) + "MB";
+						} else if (size >= 1024 * 1024 * 1024) {
+							sizeStr = (int) (size / (1024 * 1024.0 * 1024)) + "GB";
+						} else {
+							sizeStr = size + "B";
+						}
+						System.out.println("sizeStr: " + sizeStr);
+
+						model.setName(newFileName);
+						model.setSize(sizeStr);
+						model.setType(contentType);
+						model.setAddTime(sdf.format(new Date()));
+						model.setFile_path(finalPath);
+						System.out.println("finalPath: " + finalPath);
+
+						DataBaseManager manager = new DataBaseManager();
+						manager.saveFile(model);
 
 						File file = new File(finalPath);
 						if (!file.exists()) {
