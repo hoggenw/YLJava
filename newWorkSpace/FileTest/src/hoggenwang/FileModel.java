@@ -1,6 +1,6 @@
 package hoggenwang;
 
-public class FileModel {
+public class FileModel implements foo {
 	private int id;
 	private String name;
 	private String size;
@@ -8,6 +8,19 @@ public class FileModel {
 	private String addTime;
 	private String file_path;
 	private String info;
+
+	public FileModel(int id, String name) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	public FileModel() {
+		// TODO Auto-generated constructor stub
+		super();
+
+	}
 
 	public int getId() {
 		return id;
