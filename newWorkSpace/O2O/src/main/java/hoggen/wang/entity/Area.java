@@ -21,6 +21,7 @@ public class Area {
 	}
 
 	public void setAreaId(Long areaId) {
+		System.out.println("areaId: " + areaId);
 		this.areaId = areaId;
 	}
 
