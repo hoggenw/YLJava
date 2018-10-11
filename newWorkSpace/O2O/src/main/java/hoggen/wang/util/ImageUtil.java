@@ -65,14 +65,16 @@ public class ImageUtil {
 
 	public static void main(String[] args) {
 
-		try {
-			Thumbnails.of(new File("/Users/wangliugen/Desktop/image/美女.jpg")).size(400, 300)
-					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/好评-2.png")), 0.25f)
-					.outputQuality(0.8f).toFile("/Users/wangliugen/Desktop/image/美女6.jpg");
-		} catch (Exception e) {
-			e.printStackTrace();
-			// TODO: handle exception
-		}
+		// try {
+		// Thumbnails.of(new File("/Users/wangliugen/Desktop/image/美女.jpg")).size(400,
+		// 300)
+		// .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath +
+		// "/好评-2.png")), 0.25f)
+		// .outputQuality(0.8f).toFile("/Users/wangliugen/Desktop/image/美女6.jpg");
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// // TODO: handle exception
+		// }
 
 	}
 

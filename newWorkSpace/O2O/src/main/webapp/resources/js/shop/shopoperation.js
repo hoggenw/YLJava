@@ -44,6 +44,12 @@ $(function () {
             var formData = new FormData();
             formData.append("shopImg",shopImg);
             formData.append("shopStr", Json.stringify(shop));
+            var  verifyCodeActual = $("#j_captha").val();
+            if (!verifyCodeActual){
+                $.toast("输入验证码");
+                return
+            }
+            formData.append("verifyCodeActual",verifyCodeActual);
             $.ajax({
                 url:registerShopUrl,
                 type:'POST',

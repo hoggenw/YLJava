@@ -108,9 +108,7 @@ public class ShopManagementController {
 		}
 
 		// 3.返回结构
-
 		return modelMap;
-
 	}
 
 }
