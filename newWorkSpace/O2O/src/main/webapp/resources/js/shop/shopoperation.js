@@ -3,8 +3,8 @@
  */
 
 $(function () {
-    var initUrl = '/o2o/shopadmin/shopoperation';
-    var registerShopUrl = '/o2o/shopadmin/registershop';
+    var initUrl = '/O2O/shopadmin/getshopinitinfo';
+    var registerShopUrl = '/O2O/shopadmin/registershop';
     console.log(initUrl);
     getShopInitInfo();
     function getShopInitInfo() {
@@ -17,7 +17,7 @@ $(function () {
                });
                data.areaList.map(function (item,index) {
                    tempAreaHtml+= '<option data_id="' + item.areaId + '">' +item.areaName+ '</option>';
-               })
+               });
                $("#shop_category").html(tempHtml);
                $("#area").html(tempAreaHtml);
 

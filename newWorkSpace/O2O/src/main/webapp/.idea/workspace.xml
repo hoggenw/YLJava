@@ -18,8 +18,8 @@
       <file leaf-file-name="shopoperation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/shop/shopoperation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="150">
+              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -58,7 +58,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="230" />
+    <option name="x" value="16" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="838" />
@@ -174,15 +174,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539177451471</updated>
-      <workItem from="1539177453657" duration="3433000" />
+      <workItem from="1539177453657" duration="5248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3433000" />
+    <option name="totallyTimeSpent" value="5248000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="230" y="23" width="1440" height="838" extended-state="1" />
+    <frame x="16" y="23" width="1440" height="838" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -232,8 +232,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/shop/shopoperation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="150">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
           <folding />
         </state>
       </provider>
