@@ -26,6 +26,7 @@ import hoggen.wang.enums.ShopStateEnum;
 import hoggen.wang.service.AreaService;
 import hoggen.wang.service.ShopCategoryService;
 import hoggen.wang.service.ShopService;
+import hoggen.wang.util.CodeUtil;
 import hoggen.wang.util.HttpServletRequestUtil;
 
 @Controller
@@ -55,7 +56,7 @@ public class ShopManagementController {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			modelMap.put("sucess", false);
+			modelMap.put("success", false);
 			modelMap.put("errMsg", e.toString());
 		}
 		return modelMap;
@@ -66,18 +67,30 @@ public class ShopManagementController {
 	@ResponseBody
 	private Map<String, Object> registerShop(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
+		if (!CodeUtil.checkVerifyCode(request)) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "验证码错误");
+			return modelMap;
+		}
 		// 1.接收并转化相应的参数
 		String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
+		if (shopStr == null || shopStr == "") {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "请输入店铺信息");
+			return modelMap;
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		Shop shop = null;
 		try {
 			shop = mapper.readValue(shopStr, Shop.class);
 		} catch (Exception e) {
-			modelMap.put("sucess", false);
+			e.printStackTrace();
+			modelMap.put("success", false);
 			modelMap.put("errMsg", e.getMessage());
 			return modelMap;
 			// TODO: handle exception
 		}
+
 		CommonsMultipartFile shopImg = null;
 		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(
 				request.getSession().getServletContext());
@@ -85,7 +98,7 @@ public class ShopManagementController {
 			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
 			shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
 		} else {
-			modelMap.put("sucess", false);
+			modelMap.put("success", false);
 			modelMap.put("errMsg", "上传图片不能为空");
 			return modelMap;
 		}
@@ -95,14 +108,14 @@ public class ShopManagementController {
 			shop.setOwnerId(1l);
 			ShopExecution sExecution = shopService.addShop(shop, shopImg);
 			if (sExecution.getState() == ShopStateEnum.CHECK.getState()) {
-				modelMap.put("sucess", true);
+				modelMap.put("success", true);
 			} else {
-				modelMap.put("sucess", false);
+				modelMap.put("success", false);
 				modelMap.put("errMsg", sExecution.getStateInfo());
 			}
 
 		} else {
-			modelMap.put("sucess", false);
+			modelMap.put("success", false);
 			modelMap.put("errMsg", "没有店铺信息");
 			return modelMap;
 		}

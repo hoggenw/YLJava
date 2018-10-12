@@ -13,10 +13,10 @@ $(function () {
                var tempHtml="";
                var tempAreaHtml = '';
                data.shopCategoryList.map(function (item,index) {
-                   tempHtml+='<option data_id="' + item.shopCategoryId + '">' +item.shopCategoryName+ '</option>';
+                   tempHtml+='<option data-id="' + item.shopCategoryId + '">' +item.shopCategoryName+ '</option>';
                });
                data.areaList.map(function (item,index) {
-                   tempAreaHtml+= '<option data_id="' + item.areaId + '">' +item.areaName+ '</option>';
+                   tempAreaHtml+= '<option data-id="' + item.areaId + '">' +item.areaName+ '</option>';
                });
                $("#shop_category").html(tempHtml);
                $("#area").html(tempAreaHtml);
@@ -26,29 +26,32 @@ $(function () {
 
         $("#submit").click(function () {
            var shop = {};
-           shop.shopName = $("#shop_name").value();
-            shop.shopAddr = $("#shop_addr").value();
-            shop.shopPhone = $("#shop_phone").value();
-            shop.shopDesc = $("#shop_desc").value();
+           shop.shopName = $("#shop_name").val();
+            shop.shopAddr = $("#shop_addr").val();
+            shop.phone = $("#shop_phone").val();
+            shop.shopDesc = $("#shop_desc").val();
+
+            var shopCategoryId = $('#shop_category option').not(function(){ return !this.selected }).attr('data-id');
+           // var shopCategoryId = $('#shop_category').selectedOptions[0].getAttribute("data-id");
+
             shop.shopCategory = {
-                shopCategoryId:$("#shop_category").find("option").not(function () {
-                    return !this.selected;
-                }).data("id")
+                shopCategoryId:shopCategoryId
             };
+            var areaId = $('#area option').not(function(){ return !this.selected }).attr('data-id');
+            //var areaId = $('#area').selectedOptions[0].getAttribute("data-id");
             shop.area = {
-                areaId:$("#area").find("option").not(function () {
-                    return !this.selected;
-                }).data("id")
+                areaId:areaId
             };
             var shopImg = $("#shop_img")[0].files[0];
             var formData = new FormData();
             formData.append("shopImg",shopImg);
-            formData.append("shopStr", Json.stringify(shop));
+            formData.append("shopStr", JSON.stringify(shop));
             var  verifyCodeActual = $("#j_captha").val();
             if (!verifyCodeActual){
                 $.toast("输入验证码");
                 return
             }
+           
             formData.append("verifyCodeActual",verifyCodeActual);
             $.ajax({
                 url:registerShopUrl,
@@ -63,6 +66,9 @@ $(function () {
                     }else {
                         $.toast("提交失败" + data.errMsg);
                     }
+                    var img =  $("#captha_img");
+                    var src = "../Kaptcha?" + Math.floor(Math.random()*100);
+                    img.attr('src',src);
                 }
             });
         });
