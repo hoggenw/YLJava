@@ -1,8 +1,7 @@
 package hoggen.wang.dao.split;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import ch.qos.logback.classic.Logger;
 
 public class DynamicDataSourceHolder {
 	private static Logger logger = (Logger) LoggerFactory.getLogger(DynamicDadaSource.class);

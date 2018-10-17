@@ -11,19 +11,24 @@ import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Plugin;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 public class DynamicDataSourceInterceptor implements Interceptor {
+	private static final String REGEX = ".*insert\\u0020.*|.*delete\\u0020.*|.*update\\u0020.*";
+	private static Logger logger = (Logger) LoggerFactory.getLogger(DynamicDataSourceInterceptor.class);
 
 	@Override
 	public Object intercept(Invocation invocation) throws Throwable {
 		// TODO Auto-generated method stub
 		// 判断当前是否是事物
 		boolean synchronizationActive = TransactionSynchronizationManager.isActualTransactionActive();
+		Object[] objects = invocation.getArgs();
+		MappedStatement mStatement = (MappedStatement) objects[0];
+		String lookupKey = DynamicDataSourceHolder.DB_MASTER;
 		if (synchronizationActive != true) {
-			Object[] objects = invocation.getArgs();
-			MappedStatement mStatement = (MappedStatement) objects[0];
-			String lookupKey;
+
 			// 度方法
 			if (mStatement.getSqlCommandType().equals(SqlCommandType.SELECT)) {
 				// selectkey 为自增id查询主键（SELECT LAST_INSEERT_ID()）方法，使用主库
@@ -32,13 +37,20 @@ public class DynamicDataSourceInterceptor implements Interceptor {
 				} else {
 					BoundSql boundSql = mStatement.getSqlSource().getBoundSql(objects[1]);
 					String sql = boundSql.getSql().toLowerCase(Locale.CHINA).replaceAll("[\\t\\n\\r]", " ");
+					if (sql.matches(REGEX)) {
+						lookupKey = DynamicDataSourceHolder.DB_MASTER;
+					} else {
+						lookupKey = DynamicDataSourceHolder.DB_SLAVE;
+					}
 				}
 			}
 		} else {
-
+			lookupKey = DynamicDataSourceHolder.DB_MASTER;
 		}
-
-		return null;
+		logger.debug("设置方法[{}] use[{}] strategy, SqlCommonType[{}]..", mStatement.getId(), lookupKey,
+				mStatement.getSqlCommandType().name());
+		DynamicDataSourceHolder.setDbType(lookupKey);
+		return invocation.proceed();
 	}
 
 	/**

@@ -16,4 +16,9 @@
 		<!-- 打印查询语句 -->
 		<setting name="logImpl" value="STDOUT_LOGGING" />
 	</settings>
+	<!-- 主从库配置 -->
+	<!--  -->
+<!-- 	<plugins>
+		<plugin interceptor="hoggen.wang.dao.split.DynamicDataSourceInterceptor"></plugin>
+	</plugins> -->
 </configuration>
