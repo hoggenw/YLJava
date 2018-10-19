@@ -35,6 +35,23 @@ public class ImageUtil {
 	}
 
 	/**
+	 * @注释 storePath是文件的路径还是目录的路劲 如果是文件；路径，删除该文件 如果是目录路径这删除该目录下所有文件
+	 */
+	public static void deleteFileOrPath(String storePath) {
+		File fileOrPath = new File(storePath);
+		if (fileOrPath.exists()) {
+			if (fileOrPath.isDirectory()) {
+				File files[] = fileOrPath.listFiles();
+				for (File file : files) {
+					file.delete();
+				}
+			}
+			fileOrPath.delete();
+		}
+
+	}
+
+	/**
 	 * @注释 创建目标路径上所涉及到目录
 	 */
 	private static void makeDirPath(String targetAddr) {

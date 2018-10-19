@@ -3,7 +3,9 @@ package hoggen.wang.o2o.dao;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +20,36 @@ public class ShopDaoTest extends baseTest {
 	private ShopDao shopDao;
 
 	@Test
-	// @Ignore
+	public void testQueryShoplist() {
+		Shop shopCondition = new Shop();
+		shopCondition.setOwnerId(1l);
+		List<Shop> shopList = shopDao.queryShopList(shopCondition, 0, 5);
+		assertEquals(5, shopList.size());
+		int count = shopDao.queryShopCount(shopCondition);
+		assertEquals(8, count);
+		ShopCategory shopCategory = new ShopCategory();
+		shopCategory.setShopCategoryId(33l);
+		shopCondition.setShopCategory(shopCategory);
+		List<Shop> shopCategoryIdList = shopDao.queryShopList(shopCondition, 0, 5);
+		assertEquals(4, shopCategoryIdList.size());
+
+	}
+
+	@Test
+	@Ignore
+	public void testQueryByShopId() {
+		// TODO Auto-generated method stub
+		long shopId = 46;
+		Shop shop = shopDao.queryByShopId(shopId);
+		long areaID = shop.getArea().getAreaId();
+		System.out.println("areaID: " + areaID);
+		System.out.println("areaName: " + shop.getArea().getAreaName());
+
+		assertEquals(1, areaID);
+	}
+
+	@Test
+	@Ignore
 	public void testInsertShop() {
 		Shop shop = new Shop();
 		shop.setOwnerId(1L);
@@ -44,6 +75,7 @@ public class ShopDaoTest extends baseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testUpdateShop() {
 		Shop shop = new Shop();
 		shop.setShopId(30l);
@@ -54,6 +86,7 @@ public class ShopDaoTest extends baseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testEDeleteShopByName() throws Exception {
 		String shopName = "mytest1";
 		int effectedNum = shopDao.deleteShopByName(shopName);

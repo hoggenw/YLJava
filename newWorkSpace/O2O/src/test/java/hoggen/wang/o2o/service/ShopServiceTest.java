@@ -1,11 +1,13 @@
 package hoggen.wang.o2o.service;
 
+import java.io.FileNotFoundException;
 import java.util.Date;
 
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import hoggen.wang.dto.ShopExecution;
 import hoggen.wang.entity.Area;
 import hoggen.wang.entity.Shop;
 import hoggen.wang.entity.ShopCategory;
@@ -14,6 +16,27 @@ import hoggen.wang.service.ShopService;
 public class ShopServiceTest {
 	@Autowired
 	private ShopService shopService;
+
+	@Test
+	@Ignore
+	public void testShopList() {
+		Shop shopCondition = new Shop();
+		shopCondition.setOwnerId(1l);
+		ShopExecution sExecution = shopService.getShopList(shopCondition, 0, 5);
+		System.out.println("ssd： " + sExecution.getShopList().size());
+		System.out.println("总数： " + sExecution.getCount());
+		// assertEquals(5, sExecution.getShopList().size());
+		// int count = sExecution.getCount();
+		// assertEquals(8, count);
+	}
+
+	@Test
+	@Ignore
+	public void testModifyShop() throws RuntimeException, FileNotFoundException {
+
+		Shop shop = new Shop();// shopService.getByShopId(30l);
+
+	}
 
 	@Test
 	@Ignore

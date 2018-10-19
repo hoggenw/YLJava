@@ -1,6 +1,7 @@
 package hoggen.wang.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import hoggen.wang.entity.Shop;
 import hoggen.wang.enums.ShopStateEnum;
 import hoggen.wang.service.ShopService;
 import hoggen.wang.util.ImageUtil;
+import hoggen.wang.util.PageCalculatorUtil;
 import hoggen.wang.util.PathUtil;
 
 @Service
@@ -77,6 +79,69 @@ public class ShopServiceImpl implements ShopService {
 		String shopImgAddr = ImageUtil.generateThumbnail(shopImg, deString);
 		shop.setShopImg(shopImgAddr);
 
+	}
+
+	@Override
+	public Shop getByShopId(long shopId) {
+		// TODO Auto-generated method stub
+		return shopDao.queryByShopId(shopId);
+	}
+
+	@Override
+	public ShopExecution modifyShop(Shop shop, CommonsMultipartFile shopImg) throws RuntimeException {
+
+		if (shop == null || shop.getShopId() == null) {
+			return new ShopExecution(ShopStateEnum.NULL_SHOP);
+		} else {
+			try {
+				// 判断是否需要处理图片
+				if (shopImg != null) {
+					Shop tempShop = shopDao.queryByShopId(shop.getShopId());
+					if (tempShop.getShopImg() != null) {
+						ImageUtil.deleteFileOrPath(tempShop.getShopImg());
+					}
+					// 存储图片,java是值传递
+					try {
+						addShopImg(shop, shopImg);
+						// shop.getShopImg();
+					} catch (Exception e) {
+						// TODO: handle exception
+						throw new RuntimeException("addShopImg error:" + e.getMessage());
+					}
+
+				}
+				// 更新店铺信息
+				shop.setLastEditTime(new Date());
+				int effectedNum = shopDao.updateShop(shop);
+				if (effectedNum <= 0) {
+					return new ShopExecution(ShopStateEnum.INNER_ERROR);
+				} else {
+					shop = shopDao.queryByShopId(shop.getShopId());
+					return new ShopExecution(ShopStateEnum.SUCESS, shop);
+				}
+			} catch (Exception e) {
+				throw new RuntimeException();
+			}
+
+		}
+
+	}
+
+	@Override
+	public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		int rowIndex = PageCalculatorUtil.calculatorRowIndex(pageIndex, pageSize);
+		List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
+		int count = shopDao.queryShopCount(shopCondition);
+		ShopExecution sExecution = new ShopExecution();
+		if (shopList != null) {
+			sExecution.setShopList(shopList);
+			sExecution.setCount(count);
+		} else {
+			sExecution.setState(ShopStateEnum.INNER_ERROR.getState());
+		}
+
+		return sExecution;
 	}
 
 }

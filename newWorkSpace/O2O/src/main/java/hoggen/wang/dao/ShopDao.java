@@ -12,7 +12,9 @@ public interface ShopDao {
 	 * 
 	 * @param shopCondition
 	 * @param rowIndex
+	 *            从第几行开始取
 	 * @param pageSize
+	 *            返回的条数是多少
 	 * @return
 	 */
 	List<Shop> queryShopList(@Param("shopCondition") Shop shopCondition, @Param("rowIndex") int rowIndex,

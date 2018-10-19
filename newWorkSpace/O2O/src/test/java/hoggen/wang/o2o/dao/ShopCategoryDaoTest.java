@@ -23,10 +23,10 @@ public class ShopCategoryDaoTest extends baseTest {
 		assertEquals(3, shopCategoryList.size());
 		sc.setParentId(1L);
 		shopCategoryList = shopCategoryDao.queryShopCategory(sc);
-		assertEquals(1, shopCategoryList.size());
+		assertEquals(2, shopCategoryList.size());
 		sc.setShopCategoryDesc("描述");
 		shopCategoryList = shopCategoryDao.queryShopCategory(sc);
-		assertEquals(1, shopCategoryList.size());
+		assertEquals(2, shopCategoryList.size());
 	}
 
 }
