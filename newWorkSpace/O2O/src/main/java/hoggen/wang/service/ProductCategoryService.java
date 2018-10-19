@@ -2,6 +2,7 @@ package hoggen.wang.service;
 
 import java.util.List;
 
+import hoggen.wang.dto.ProductCategoryExecution;
 import hoggen.wang.entity.ProductCategory;
 
 public interface ProductCategoryService {
@@ -21,8 +22,7 @@ public interface ProductCategoryService {
 	 * @return
 	 * @throws RuntimeException
 	 */
-	// ProductCategoryExecution batchAddProductCategory(List<ProductCategory>
-	// productCategoryList) throws RuntimeException;
+	ProductCategoryExecution batchAddProductCategory(List<ProductCategory> productCategoryList) throws RuntimeException;
 
 	/**
 	 * 
@@ -31,7 +31,6 @@ public interface ProductCategoryService {
 	 * @return
 	 * @throws RuntimeException
 	 */
-	// ProductCategoryExecution deleteProductCategory(long productCategoryId, long
-	// shopId) throws RuntimeException;
+	ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws RuntimeException;
 
 }
