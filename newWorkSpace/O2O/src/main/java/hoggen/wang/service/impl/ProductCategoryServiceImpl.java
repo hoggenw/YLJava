@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import hoggen.wang.dao.ProductCategoryDao;
+import hoggen.wang.dao.ProductDao;
 import hoggen.wang.dto.ProductCategoryExecution;
 import hoggen.wang.entity.ProductCategory;
 import hoggen.wang.enums.ProductCategoryStateEnum;
@@ -17,8 +18,8 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
 	@Autowired
 	private ProductCategoryDao productCategoryDao;
-	// @Autowired
-	// private ProductDao productDao;
+	@Autowired
+	private ProductDao productDao;
 
 	@Override
 	public List<ProductCategory> getByShopId(long shopId) {
@@ -49,6 +50,18 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 	@Override
 	@Transactional
 	public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws RuntimeException {
+
+		try {
+			int effectedNum = productDao.updateProductCategoryToNull(productCategoryId);
+			if (effectedNum <= 0) {
+				throw new RuntimeException("商品类别删除失败");
+			}
+
+		} catch (Exception e) {
+
+			throw new RuntimeException(e.getMessage());
+			// TODO: handle exception
+		}
 
 		try {
 			int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
