@@ -37,6 +37,11 @@ public class ShopAdminController {
 		return "frontend/productdetail";
 	}
 
+	@RequestMapping(value = "/index")
+	public String index() {
+		return "frontend/index";
+	}
+
 	@RequestMapping(value = "/productedit")
 	public String productEdit() {
 		return "shop/productedit";

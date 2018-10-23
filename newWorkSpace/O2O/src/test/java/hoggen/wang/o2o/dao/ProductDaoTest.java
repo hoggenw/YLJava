@@ -79,6 +79,7 @@ public class ProductDaoTest extends baseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testBQueryProductList() throws Exception {
 		Product product = new Product();
 		List<Product> productList = productDao.queryProductList(product, 0, 3);

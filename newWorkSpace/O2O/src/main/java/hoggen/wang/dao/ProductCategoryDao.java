@@ -33,4 +33,5 @@ public interface ProductCategoryDao {
 	 * @return effectedNum
 	 */
 	int deleteProductCategory(@Param("productCategoryId") long productCategoryId, @Param("shopId") long shopId);
+
 }

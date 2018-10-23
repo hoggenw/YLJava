@@ -89,7 +89,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				and enable_status = #{productCondition.enableStatus}
 			</if>
 		</where>
-		ORDER BY
+		ORDER BYf
 		priority DESC
 		LIMIT #{rowIndex},#{pageSize};
 	</select>
