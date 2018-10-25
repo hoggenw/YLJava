@@ -40,7 +40,7 @@ $(function() {
 
     $('.row').on('click', '.shop-classify', function (e) {
         var shopCategoryId = e.currentTarget.dataset.category;
-        var newUrl = '/O2O/shopadmin/getshoplist?ownerId=' + 1;
+        var newUrl = '/O2O/shopadmin/shoplist?parentId=' + shopCategoryId;
         window.location.href = newUrl;
     });
 

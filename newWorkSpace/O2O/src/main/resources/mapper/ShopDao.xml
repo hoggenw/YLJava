@@ -82,6 +82,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				and s.shop_category_id =
 				#{shopCondition.shopCategory.shopCategoryId}
 			</if>
+			
+			<if
+				test="shopCondition.shopCategory!=null
+				 and shopCondition.shopCategory.parentId!=null">
+				and s.shop_category_id in (select shop_category_id tb_shop_category where parent_id = #{shopCondition.shopCategory.parentId})
+			</if>
 			<if
 				test="shopCondition.parentCategory!=null
 				 and shopCondition.parentCategory.shopCategoryId!=null">

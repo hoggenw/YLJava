@@ -2,7 +2,7 @@ $(function() {
 	var loading = false;
 	var maxItems = 999;
 	var pageSize = 10;
-	var listUrl = '/myo2o/frontend/listshops';
+	var listUrl = '/O2O/shopadmin/getshoplist?ownerId=1';
 	var searchDivUrl = '/myo2o/frontend/listshopspageinfo';
 	var pageNum = 1;
 	var parentId = getQueryString('parentId');
