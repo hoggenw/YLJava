@@ -1,0 +1,30 @@
+2018-10-31 11:44:55.870[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 25360 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 11:44:55.879[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
+2018-10-31 11:44:58.687[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 3.072 seconds (JVM running for 4.366)
+2018-10-31 11:48:29.335[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Starting AreaServiceTest on wangliugendeMacBook-Pro.local with PID 25390 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 11:48:29.338[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - No active profile set, falling back to default profiles: default
+2018-10-31 11:48:31.443[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Started AreaServiceTest in 2.477 seconds (JVM running for 3.369)
+2018-10-31 11:51:27.630[main] INFO  hoggen.wang.O2O.dao.AreaDaoTest - Starting AreaDaoTest on wangliugendeMacBook-Pro.local with PID 25395 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 11:51:27.634[main] INFO  hoggen.wang.O2O.dao.AreaDaoTest - No active profile set, falling back to default profiles: default
+2018-10-31 11:51:29.815[main] INFO  hoggen.wang.O2O.dao.AreaDaoTest - Started AreaDaoTest in 2.631 seconds (JVM running for 3.545)
+2018-10-31 11:55:40.737[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Starting AreaServiceTest on wangliugendeMacBook-Pro.local with PID 25401 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 11:55:40.740[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - No active profile set, falling back to default profiles: default
+2018-10-31 11:55:42.946[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Started AreaServiceTest in 2.668 seconds (JVM running for 3.58)
+2018-10-31 11:58:14.243[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Starting AreaServiceTest on wangliugendeMacBook-Pro.local with PID 25409 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 11:58:14.246[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - No active profile set, falling back to default profiles: default
+2018-10-31 11:58:16.370[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Started AreaServiceTest in 2.528 seconds (JVM running for 3.394)
+2018-10-31 11:58:52.102[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Starting AreaServiceTest on wangliugendeMacBook-Pro.local with PID 25410 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 11:58:52.107[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - No active profile set, falling back to default profiles: default
+2018-10-31 11:58:54.307[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Started AreaServiceTest in 2.379 seconds (JVM running for 3.243)
+2018-10-31 12:02:19.464[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Starting AreaServiceTest on wangliugendeMacBook-Pro.local with PID 25413 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 12:02:19.468[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - No active profile set, falling back to default profiles: default
+2018-10-31 12:02:21.729[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Started AreaServiceTest in 2.642 seconds (JVM running for 3.541)
+2018-10-31 14:08:31.020[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 25530 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 14:08:31.024[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
+2018-10-31 14:08:33.351[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 2.769 seconds (JVM running for 3.696)
+2018-10-31 14:12:50.080[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Starting AreaServiceTest on wangliugendeMacBook-Pro.local with PID 25534 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 14:12:50.083[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - No active profile set, falling back to default profiles: default
+2018-10-31 14:12:52.296[main] INFO  hoggen.wang.O2O.service.AreaServiceTest - Started AreaServiceTest in 2.559 seconds (JVM running for 3.454)
+2018-10-31 14:13:58.708[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 25536 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-10-31 14:13:58.711[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
+2018-10-31 14:14:01.054[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 2.536 seconds (JVM running for 3.473)

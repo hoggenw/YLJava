@@ -1,0 +1,10 @@
+2018-10-31 11:44:55.873[main] DEBUG hoggen.wang.O2O.O2OApplicationTests - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 11:48:29.336[main] DEBUG hoggen.wang.O2O.service.AreaServiceTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 11:51:27.631[main] DEBUG hoggen.wang.O2O.dao.AreaDaoTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 11:55:40.738[main] DEBUG hoggen.wang.O2O.service.AreaServiceTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 11:58:14.244[main] DEBUG hoggen.wang.O2O.service.AreaServiceTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 11:58:52.105[main] DEBUG hoggen.wang.O2O.service.AreaServiceTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 12:02:19.465[main] DEBUG hoggen.wang.O2O.service.AreaServiceTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 14:08:31.021[main] DEBUG hoggen.wang.O2O.O2OApplicationTests - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 14:12:50.081[main] DEBUG hoggen.wang.O2O.service.AreaServiceTest - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+2018-10-31 14:13:58.710[main] DEBUG hoggen.wang.O2O.O2OApplicationTests - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
