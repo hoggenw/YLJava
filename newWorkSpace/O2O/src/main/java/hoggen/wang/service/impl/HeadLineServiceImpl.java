@@ -28,8 +28,6 @@ public class HeadLineServiceImpl implements HeadLineService {
 	@Autowired
 	private JedisUtil.Strings jedisStrings;
 
-	private static String HEADERLINELIST = "headerlineList";
-
 	@Override
 	@Transactional
 	public List<HeadLine> getHeadLineList(HeadLine headLineCondition) throws IOException {

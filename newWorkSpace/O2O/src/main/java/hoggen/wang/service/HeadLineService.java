@@ -9,6 +9,9 @@ import hoggen.wang.dto.HeadLineExecution;
 import hoggen.wang.entity.HeadLine;
 
 public interface HeadLineService {
+
+	public final static String HEADERLINELIST = "headerlineList";
+
 	/**
 	 * 
 	 * @param headLineCondition
