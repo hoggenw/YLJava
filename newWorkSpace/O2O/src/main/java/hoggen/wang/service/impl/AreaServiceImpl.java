@@ -18,6 +18,7 @@ public class AreaServiceImpl implements AreaService {
 	public List<Area> getAreaList() {
 		// TODO Auto-generated method stub
 		return rAreaDao.queryArea();
+
 	}
 
 }
