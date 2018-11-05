@@ -1,6 +1,6 @@
-2018-11-01 10:51:06.686[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 29965 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
-2018-11-01 10:51:06.693[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
-2018-11-01 10:51:09.110[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 2.634 seconds (JVM running for 3.74)
-2018-11-01 15:15:31.516[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 30370 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
-2018-11-01 15:15:31.519[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
-2018-11-01 15:15:33.694[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 2.589 seconds (JVM running for 3.491)
+2018-11-04 13:28:27.848[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 15448 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-11-04 13:28:27.854[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
+2018-11-04 13:28:30.267[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 2.999 seconds (JVM running for 4.329)
+2018-11-04 13:29:17.102[main] INFO  hoggen.wang.O2OApplication - Starting O2OApplication on wangliugendeMacBook-Pro.local with PID 15457 (/Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O/target/classes started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-11-04 13:29:17.107[main] INFO  hoggen.wang.O2OApplication - No active profile set, falling back to default profiles: default
+2018-11-04 13:29:20.090[main] INFO  hoggen.wang.O2OApplication - Started O2OApplication in 3.283 seconds (JVM running for 3.775)

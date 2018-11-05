@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class AreaServiceTest {
 	private CacheService cacheService;
 
 	@Test
+	@Ignore
 	public void testGetAraeList() {
 		List<Area> areas = areaService.getAreaList();
 		assertEquals("西安", areas.get(0).getAreaName());
