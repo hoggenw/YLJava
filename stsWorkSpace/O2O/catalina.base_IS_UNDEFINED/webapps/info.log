@@ -1,6 +1,3 @@
-2018-11-04 13:28:27.848[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Starting O2OApplicationTests on wangliugendeMacBook-Pro.local with PID 15448 (started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
-2018-11-04 13:28:27.854[main] INFO  hoggen.wang.O2O.O2OApplicationTests - No active profile set, falling back to default profiles: default
-2018-11-04 13:28:30.267[main] INFO  hoggen.wang.O2O.O2OApplicationTests - Started O2OApplicationTests in 2.999 seconds (JVM running for 4.329)
-2018-11-04 13:29:17.102[main] INFO  hoggen.wang.O2OApplication - Starting O2OApplication on wangliugendeMacBook-Pro.local with PID 15457 (/Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O/target/classes started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
-2018-11-04 13:29:17.107[main] INFO  hoggen.wang.O2OApplication - No active profile set, falling back to default profiles: default
-2018-11-04 13:29:20.090[main] INFO  hoggen.wang.O2OApplication - Started O2OApplication in 3.283 seconds (JVM running for 3.775)
+2018-11-27 14:52:32.568[main] INFO  hoggen.wang.O2OApplication - Starting O2OApplication on wangliugendeMacBook-Pro.local with PID 28018 (/Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O/target/classes started by wangliugen in /Users/wangliugen/Desktop/SelfProject/YLJava/stsWorkSpace/O2O)
+2018-11-27 14:52:32.576[main] INFO  hoggen.wang.O2OApplication - No active profile set, falling back to default profiles: default
+2018-11-27 14:52:35.615[main] INFO  hoggen.wang.O2OApplication - Started O2OApplication in 3.39 seconds (JVM running for 4.269)

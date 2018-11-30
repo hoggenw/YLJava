@@ -50,4 +50,9 @@ public class AreaConttoller {
 		Logger.info("=====end=====");
 		return modelMap;
 	}
+
+	@RequestMapping(value = "/index")
+	public String shopOperation() {
+		return "index";
+	}
 }
