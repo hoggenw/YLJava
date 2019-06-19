@@ -26,7 +26,7 @@ public class FrontController {
     @RequestMapping(value = "/model",method = RequestMethod.GET)
     public TestModel infoModel() {
         TestModel model = new TestModel();
-        model.setName("hoggen");
+        model.setName("hoggen668");
         model.setFoo(true);
         model.setUserId(1002);
         return model;
