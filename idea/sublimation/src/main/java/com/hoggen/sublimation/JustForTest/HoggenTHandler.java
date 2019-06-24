@@ -1,6 +1,7 @@
-package com.hoggen.sublimation.Controller;
+package com.hoggen.sublimation.JustForTest;
 
 import org.jboss.netty.buffer.ChannelBuffer;
+import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
 
 public class HoggenTHandler extends SimpleChannelHandler {
@@ -37,6 +38,10 @@ public class HoggenTHandler extends SimpleChannelHandler {
         String messge = (String) e.getMessage();
         System.out.println(messge);
        // System.out.println(e.getMessage());
+
+//        ChannelBuffer copiedBuffer = ChannelBuffers.copiedBuffer(("host: " + messge).getBytes());
+
+        ctx.getChannel().write("host:  " + messge);
 
         super.messageReceived(ctx, e);
     }
