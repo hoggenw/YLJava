@@ -46,12 +46,13 @@
 		</dependency>
 
 		<!-- netty 框架-->
-		<!-- https://mvnrepository.com/artifact/io.netty/netty -->
+		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
 		<dependency>
 			<groupId>io.netty</groupId>
-			<artifactId>netty</artifactId>
-			<version>3.10.5.Final</version>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.36.Final</version>
 		</dependency>
+
 
 
 		<!---->
