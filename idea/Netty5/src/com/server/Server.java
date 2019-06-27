@@ -38,8 +38,8 @@ public class Server {
 
 				@Override
 				protected void initChannel(Channel ch) throws Exception {
-					ch.pipeline().addLast(new StringDecoder());
-					ch.pipeline().addLast(new StringEncoder());
+//					ch.pipeline().addLast(new StringDecoder());
+//					ch.pipeline().addLast(new StringEncoder());
 					ch.pipeline().addLast(new ServerHandler());
 				}
 			});

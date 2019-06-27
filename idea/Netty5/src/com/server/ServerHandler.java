@@ -1,5 +1,6 @@
 package com.server;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 /**
@@ -7,16 +8,17 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @author -琴兽-
  *
  */
-public class ServerHandler extends SimpleChannelInboundHandler<String> {
+public class ServerHandler extends SimpleChannelInboundHandler<Object> {
 
-	@Override
-	protected void messageReceived(ChannelHandlerContext ctx, String msg) throws Exception {
-
-		System.out.println(msg);
-		
-		ctx.channel().writeAndFlush("hi");
-		ctx.writeAndFlush("hi");
-	}
+//	@Override
+//	protected void messageReceived(ChannelHandlerContext ctx, String msg) throws Exception {
+//
+//
+//
+//
+//		ctx.channel().writeAndFlush("hi");
+//		ctx.writeAndFlush("hi");
+//	}
 
 	/**
 	 * 新客户端接入
@@ -24,6 +26,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		System.out.println("channelActive");
+		ctx.writeAndFlush("pong");
 	}
 
 	/**
@@ -41,6 +44,18 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
 		cause.printStackTrace();
 	}
-	
-	
+
+
+	@Override
+	protected void messageReceived(ChannelHandlerContext ctx, Object msg) throws Exception {
+		System.out.println(1);
+//		ByteBuf buf = (ByteBuf)msg;
+//		byte[] req = new byte[buf.readableBytes()];
+//		buf.readBytes(req);
+//		String body = new String(req,"UTF-8");
+//		System.out.println("receive response:" + body);
+//		System.out.println(msg);
+
+		ctx.channel().writeAndFlush(msg);
+	}
 }

@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0848ea7-a631-4328-9407-04c8148bdd53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/util/GlobalUserUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/util/MyChannelHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/server/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/server/ServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring_boot-master/spring_boot_netty/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_boot-master/spring_boot_netty/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sublimation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sublimation/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sublimation/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../sublimation/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/JustForTest/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/JustForTest/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/config/nettyConfig/NettyServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/config/nettyConfig/NettyServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/util/MyChannelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sublimation/src/main/java/com/hoggen/sublimation/util/MyChannelHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/server/ServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="577">
+              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Netty5.iml">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -36,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+            <state relative-caret-position="146">
+              <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="41" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -51,6 +55,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/com/server/ServerHandler.java" />
       </list>
     </option>
   </component>
@@ -150,17 +155,17 @@
       <updated>1561518071482</updated>
       <workItem from="1561518078778" duration="150000" />
       <workItem from="1561533963544" duration="647000" />
+      <workItem from="1561540221811" duration="1678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="797000" />
+    <option name="totallyTimeSpent" value="2475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -171,7 +176,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293011" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39919356" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -199,25 +204,25 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Netty5.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+        <state relative-caret-position="146">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="41" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/server/ServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        <state relative-caret-position="577">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Netty5.iml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

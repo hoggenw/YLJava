@@ -133,101 +133,101 @@ public class MyChannelHandler extends SimpleChannelInboundHandler<String>  {
             }
         }
 
-        /**
-         * 收发消息处理
-         * @param ctx
-         * @param msg
-         * @throws Exception
-         */
-        protected void messageReceived(ChannelHandlerContext ctx, Object msg) throws Exception {
-            if(msg instanceof HttpRequest){
-                doHandlerHttpRequest(ctx,(HttpRequest) msg);
-            }else if(msg instanceof WebSocketFrame){
-                doHandlerWebSocketFrame(ctx,(WebSocketFrame) msg);
-            }
-
-            ctx.channel().write(msg);
-        }
-
-        /**
-         * websocket消息处理
-         * @param ctx
-         * @param msg
-         */
-        private void doHandlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame msg) {
-            //判断msg 是哪一种类型  分别做出不同的反应
-            if(msg instanceof CloseWebSocketFrame){
-                logger.info("【关闭】");
-                handshaker.close(ctx.channel(), (CloseWebSocketFrame) msg);
-                return ;
-            }
-            if(msg instanceof PingWebSocketFrame){
-                logger.info("【ping】");
-                PongWebSocketFrame pong = new PongWebSocketFrame(msg.content().retain());
-                ctx.channel().writeAndFlush(pong);
-                return ;
-            }
-            if(msg instanceof PongWebSocketFrame){
-                logger.info("【pong】");
-                PingWebSocketFrame ping = new PingWebSocketFrame(msg.content().retain());
-                ctx.channel().writeAndFlush(ping);
-                return ;
-            }
-            if(!(msg instanceof TextWebSocketFrame)){
-                logger.info("【不支持二进制】");
-                throw new UnsupportedOperationException("不支持二进制");
-            }
-            //可以对消息进行处理
-            //群发
-            for (Channel channel : GlobalUserUtil.channels) {
-                channel.writeAndFlush(new TextWebSocketFrame(((TextWebSocketFrame) msg).text()));
-            }
-
-        }
-
-
-        /**
-         * wetsocket第一次连接握手
-         * @param ctx
-         * @param msg
-         */
-        private void doHandlerHttpRequest(ChannelHandlerContext ctx, HttpRequest msg) {
-            // http 解码失败
-            if(!msg.getDecoderResult().isSuccess() || (!"websocket".equals(msg.headers().get("Upgrade")))){
-                sendHttpResponse(ctx, (FullHttpRequest) msg,new DefaultFullHttpResponse(HttpVersion.HTTP_1_1,HttpResponseStatus.BAD_REQUEST));
-            }
-            //可以获取msg的uri来判断
-            String uri = msg.getUri();
-            if(!uri.substring(1).equals(URI)){
-                ctx.close();
-            }
-            ctx.attr(AttributeKey.valueOf("type")).set(uri);
-            //可以通过url获取其他参数
-            WebSocketServerHandshakerFactory factory = new WebSocketServerHandshakerFactory(
-                    "ws://"+msg.headers().get("Host")+"/"+URI+"",null,false
-            );
-            handshaker = factory.newHandshaker(msg);
-            if(handshaker == null){
-                WebSocketServerHandshakerFactory.sendUnsupportedWebSocketVersionResponse(ctx.channel());
-            }
-            //进行连接
-            handshaker.handshake(ctx.channel(), (FullHttpRequest) msg);
-            //可以做其他处理
-        }
-
-        private static void sendHttpResponse(ChannelHandlerContext ctx, FullHttpRequest req, DefaultFullHttpResponse res) {
-            // 返回应答给客户端
-            if (res.getStatus().code() != 200) {
-                ByteBuf buf = Unpooled.copiedBuffer(res.getStatus().toString(), CharsetUtil.UTF_8);
-                res.content().writeBytes(buf);
-                buf.release();
-            }
-            // 如果是非Keep-Alive，关闭连接
-            ChannelFuture f = ctx.channel().writeAndFlush(res);
-            if (!HttpHeaders.isKeepAlive(req) || res.getStatus().code() != 200) {
-                f.addListener(ChannelFutureListener.CLOSE);
-            }
-        }
+//        /**
+//         * 收发消息处理
+//         * @param ctx
+//         * @param msg
+//         * @throws Exception
+//         */
+//        protected void messageReceived(ChannelHandlerContext ctx, Object msg) throws Exception {
+//            if(msg instanceof HttpRequest){
+//                doHandlerHttpRequest(ctx,(HttpRequest) msg);
+//            }else if(msg instanceof WebSocketFrame){
+//                doHandlerWebSocketFrame(ctx,(WebSocketFrame) msg);
+//            }
+//
+//            ctx.channel().write(msg);
+//        }
+//
+//        /**
+//         * websocket消息处理
+//         * @param ctx
+//         * @param msg
+//         */
+//        private void doHandlerWebSocketFrame(ChannelHandlerContext ctx, WebSocketFrame msg) {
+//            //判断msg 是哪一种类型  分别做出不同的反应
+//            if(msg instanceof CloseWebSocketFrame){
+//                logger.info("【关闭】");
+//                handshaker.close(ctx.channel(), (CloseWebSocketFrame) msg);
+//                return ;
+//            }
+//            if(msg instanceof PingWebSocketFrame){
+//                logger.info("【ping】");
+//                PongWebSocketFrame pong = new PongWebSocketFrame(msg.content().retain());
+//                ctx.channel().writeAndFlush(pong);
+//                return ;
+//            }
+//            if(msg instanceof PongWebSocketFrame){
+//                logger.info("【pong】");
+//                PingWebSocketFrame ping = new PingWebSocketFrame(msg.content().retain());
+//                ctx.channel().writeAndFlush(ping);
+//                return ;
+//            }
+//            if(!(msg instanceof TextWebSocketFrame)){
+//                logger.info("【不支持二进制】");
+//                throw new UnsupportedOperationException("不支持二进制");
+//            }
+//            //可以对消息进行处理
+//            //群发
+//            for (Channel channel : GlobalUserUtil.channels) {
+//                channel.writeAndFlush(new TextWebSocketFrame(((TextWebSocketFrame) msg).text()));
+//            }
+//
+//        }
+//
+//
+//        /**
+//         * wetsocket第一次连接握手
+//         * @param ctx
+//         * @param msg
+//         */
+//        private void doHandlerHttpRequest(ChannelHandlerContext ctx, HttpRequest msg) {
+//            // http 解码失败
+//            if(!msg.getDecoderResult().isSuccess() || (!"websocket".equals(msg.headers().get("Upgrade")))){
+//                sendHttpResponse(ctx, (FullHttpRequest) msg,new DefaultFullHttpResponse(HttpVersion.HTTP_1_1,HttpResponseStatus.BAD_REQUEST));
+//            }
+//            //可以获取msg的uri来判断
+//            String uri = msg.getUri();
+//            if(!uri.substring(1).equals(URI)){
+//                ctx.close();
+//            }
+//            ctx.attr(AttributeKey.valueOf("type")).set(uri);
+//            //可以通过url获取其他参数
+//            WebSocketServerHandshakerFactory factory = new WebSocketServerHandshakerFactory(
+//                    "ws://"+msg.headers().get("Host")+"/"+URI+"",null,false
+//            );
+//            handshaker = factory.newHandshaker(msg);
+//            if(handshaker == null){
+//                WebSocketServerHandshakerFactory.sendUnsupportedWebSocketVersionResponse(ctx.channel());
+//            }
+//            //进行连接
+//            handshaker.handshake(ctx.channel(), (FullHttpRequest) msg);
+//            //可以做其他处理
+//        }
+//
+//        private static void sendHttpResponse(ChannelHandlerContext ctx, FullHttpRequest req, DefaultFullHttpResponse res) {
+//            // 返回应答给客户端
+//            if (res.getStatus().code() != 200) {
+//                ByteBuf buf = Unpooled.copiedBuffer(res.getStatus().toString(), CharsetUtil.UTF_8);
+//                res.content().writeBytes(buf);
+//                buf.release();
+//            }
+//            // 如果是非Keep-Alive，关闭连接
+//            ChannelFuture f = ctx.channel().writeAndFlush(res);
+//            if (!HttpHeaders.isKeepAlive(req) || res.getStatus().code() != 200) {
+//                f.addListener(ChannelFutureListener.CLOSE);
+//            }
+//        }
 
 //    @Override
 //    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object o) throws Exception {
@@ -256,11 +256,15 @@ public class MyChannelHandler extends SimpleChannelInboundHandler<String>  {
         System.out.println(channelHandlerContext.channel().remoteAddress()+"   ----channelRead0");
         //收到消息直接打印
         System.out.println(channelHandlerContext.channel().remoteAddress()+"   MSG:  "+ s);
-        //回复消息
-        Scanner scanner = new Scanner(System.in);
-        String msgString = scanner.nextLine()+"\n";
-        System.out.println(channelHandlerContext.channel().remoteAddress()+"  msgString:  "+ msgString);
+//        //回复消息
+//        Scanner scanner = new Scanner(System.in);
+//        String msgString = scanner.nextLine()+"\n";
+//        System.out.println(channelHandlerContext.channel().remoteAddress()+"  msgString:  "+ msgString);
 
         channelHandlerContext.channel().writeAndFlush(s);
+
+
+
+
     }
 }

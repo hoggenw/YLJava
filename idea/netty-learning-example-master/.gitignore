@@ -1,0 +1,36 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+.mvn
+mvnw
+mvnw.cmd
+*.iml
+out
+gen
+/let_netty_easy.iml
+/netty-helloworld/mvnw.cmd
+/netty-helloworld/mvnw
+/netty-helloworld/.mvn/
+/netty-helloworld/target/
+/netty-http/.mvn/
+/netty-http/mvnw.cmd
+/netty-http/mvnw
+/netty-http/target/
+/netty-springboot-protostuff/.mvn/
+/netty-springboot-protostuff/mvnw
+/netty-springboot-protostuff/mvnw.cmd
+/netty-mqtt-coap/mqtt/.mvn/
+/netty-mqtt-coap/mqtt/mvnw.cmd
+/netty-mqtt-coap/mqtt/mvnw
+
+/netty-mqtt-coap/coap/.mvn/
+/netty-mqtt-coap/coap/mvnw
+/netty-mqtt-coap/coap/mvnw.cmd
+/netty-kafka/mvnw
+/netty-kafka/mvnw.cmd
+/netty-kafka/.mvn/
+
+

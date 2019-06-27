@@ -43,7 +43,7 @@
 //        });
 //
 //
-//        bootstrap.bind(new InetSocketAddress(8099));
+//        bootstrap.bind(new InetSocketAddress(6969));
 //
 //        System.out.println("start");
 //

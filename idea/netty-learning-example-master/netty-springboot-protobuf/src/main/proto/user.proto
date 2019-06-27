@@ -1,0 +1,11 @@
+syntax = "proto3";
+   option java_package = "com.sanshengshui.netty.protobuf";
+   option java_outer_classname = "UserMsg";
+
+ message YLmessageModel {
+   string textString = 5;
+    string name=1;
+    int32 messageType=3;
+    uint32 voiceLength = 2;
+    bytes   voiceData = 4;
+  }
