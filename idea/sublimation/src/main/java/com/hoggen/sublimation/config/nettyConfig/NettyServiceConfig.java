@@ -1,22 +1,17 @@
 package com.hoggen.sublimation.config.nettyConfig;
 
 
-import com.hoggen.sublimation.util.CustomTextFrameHandler;
-import com.hoggen.sublimation.util.MyChannelHandler;
-import com.hoggen.sublimation.util.ServerHandler;
+import com.hoggen.sublimation.util.NettyHandler.CustomTextFrameHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.ServerSocketChannel;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
-import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 import org.slf4j.Logger;
@@ -26,7 +21,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -61,39 +55,23 @@ public class NettyServiceConfig {
             bootstrap.group(boss, work);
             //设置socket工厂、
             bootstrap.channel(NioServerSocketChannel.class);
+            bootstrap.handler(new LoggingHandler(LogLevel.INFO));
 
             bootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected  void initChannel(SocketChannel socketChannel)throws Exception {
 //                    //Http编解码器
-//                    socketChannel.pipeline().addLast(new HttpServerCodec());
-//                    //对写大数据流的支持
-//                    socketChannel.pipeline().addLast(new ChunkedWriteHandler());
-//                    //Http对象聚合器，，参数：消息的最大长度
-//                    //几乎在Netty中的编程都会使用到这个handler
-//                    socketChannel.pipeline().addLast(new HttpObjectAggregator(1024 * 64));
-//
-//                    ////////////////http协议的支持 END///////////////
-//                    socketChannel.pipeline().addLast(new WebSocketServerProtocolHandler("/ws"));
-//
-//                    socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
-//                    socketChannel.pipeline().addLast(new StringDecoder());
-//                    socketChannel.pipeline().addLast(new StringEncoder());
-
-                    //HttpServerCodec：用于解析Http请求，主要在握手阶段进行处理；
-
-                    socketChannel.pipeline().addLast("codec-http", new HttpServerCodec());
-                    //HttpObjectAggregator：用于合并Http请求头和请求体，主要在握手阶段进行处理
-                    socketChannel.pipeline().addLast("aggregator", new HttpObjectAggregator(65536));
-
-
-                   // socketChannel.pipeline().addLast("custome-handler", customTextFrameHandler);
-
+                    socketChannel.pipeline().addLast(new HttpServerCodec());
+                    //对写大数据流的支持
+                    socketChannel.pipeline().addLast(new ChunkedWriteHandler());
+                    //Http对象聚合器，，参数：消息的最大长度
+                    //几乎在Netty中的编程都会使用到这个handler
+                    socketChannel.pipeline().addLast(new HttpObjectAggregator(1024 * 64));
                     // 进行设置心跳检测
 //                    1）readerIdleTime：为读超时时间（即多长时间没有接受到客户端发送数据）
 //                    2）writerIdleTime：为写超时时间（即多长时间没有向客户端发送数据）
 //                    3）allIdleTime：所有类型的超时时间
-                    socketChannel.pipeline().addLast(new IdleStateHandler(60,30,60*30, TimeUnit.SECONDS));
+                    socketChannel.pipeline().addLast(new IdleStateHandler(60,30,60*2, TimeUnit.SECONDS));
                     // 配置通道处理  来进行业务处理
                     socketChannel.pipeline().addLast(new CustomTextFrameHandler());
                 }
@@ -126,70 +104,12 @@ public class NettyServiceConfig {
     @PostConstruct()
     public void init() {
         //需要开启一个新的线程来执行netty server 服务器
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                startServer();
-//            }
-//        }).start();
-
-        Thread thread = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
-                //服务端要建立两个group，一个负责接收客户端的连接，一个负责处理数据传输
-                //连接处理group
-                EventLoopGroup boss = new NioEventLoopGroup();
-                //事件处理group
-                EventLoopGroup worker = new NioEventLoopGroup();
-                ServerBootstrap bootstrap = new ServerBootstrap();
-                // 绑定处理group
-                bootstrap.group(boss, worker).channel(NioServerSocketChannel.class)
-                        //保持连接数
-                        .option(ChannelOption.SO_BACKLOG, 128)
-                        //有数据立即发送
-                        .option(ChannelOption.TCP_NODELAY, true)
-                        //保持连接
-                        .childOption(ChannelOption.SO_KEEPALIVE, true)
-                        //处理新连接
-                        .childHandler(new ChannelInitializer<SocketChannel>() {
-                            @Override
-                            protected void initChannel(SocketChannel sc) throws Exception {
-                                // 增加任务处理
-                                ChannelPipeline p = sc.pipeline();
-                                p.addLast(
-//										//使用了netty自带的编码器和解码器
-										new StringDecoder(Charset.forName("utf-8")),
-										new StringEncoder(Charset.forName("utf-8")),
-
-                                        //自定义的处理器
-                                        new ServerHandler());
-                            }
-                        });
-
-                //绑定端口，同步等待成功
-                ChannelFuture future;
-                try {
-                    future = bootstrap.bind(port).sync();
-                    if (future.isSuccess()) {
-                        serverSocketChannel = (ServerSocketChannel) future.channel();
-                        System.out.println("服务端开启成功");
-                    } else {
-                        System.out.println("服务端开启失败");
-                    }
-
-                    //等待服务监听端口关闭,就是由于这里会将线程阻塞，导致无法发送信息，所以我这里开了线程
-                    future.channel().closeFuture().sync();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                finally {
-                    //优雅地退出，释放线程池资源
-                    boss.shutdownGracefully();
-                    worker.shutdownGracefully();
-                }
+                startServer();
             }
-        });
-        thread.start();
+        }).start();
 
     }
 
