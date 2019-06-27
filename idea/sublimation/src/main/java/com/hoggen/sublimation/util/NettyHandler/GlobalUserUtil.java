@@ -1,4 +1,4 @@
-package com.hoggen.sublimation.util;
+package com.hoggen.sublimation.util.NettyHandler;
 
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
