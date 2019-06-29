@@ -1,0 +1,75 @@
+[v-cloak] {
+	display: none !important
+}
+
+/*
+ 头部
+*/
+.gm-topbar-nav li {
+	float: left;
+	display: block;
+	line-height: 50px;
+	list-style: none;
+	padding: 0 10px;
+}
+
+.gm-topbar-nav li:last-child:hover {
+	background-color: #EAEEF1;
+}
+
+/**
+ * 上传文件容器
+ */
+.upload-box {
+	border: 1px solid #ccc;
+	background: #eee;
+}
+
+
+
+.index-border{
+	border:1px solid #999;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #C7C7C7;
+	height:40px;
+}
+
+.w3 {
+	letter-spacing: 1em;
+}
+
+.w4 {
+	letter-spacing: 0.5em;
+}
+
+.w5 {
+	letter-spacing: 0.2em;
+}
+
+
+.select-1{
+	width:50%;
+}
+
+.am-form-group{
+	height:40px;
+	line-height: 40px;
+}
+
+
+.fixedtop{
+	padding-top:20px;
+	height:120px;
+	background: #FFFFFF;
+	z-index:1;
+}
+
+
+.record-list{
+	font-size: 12px;
+	border-bottom:1px solid #ccc;
+	height:40px;
+	line-height:40px;
+}

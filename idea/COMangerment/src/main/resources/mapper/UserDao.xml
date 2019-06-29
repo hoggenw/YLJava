@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.hoggen.COMangerment.dao.UserDao">
+
+	<!--<resultMap id="userMap" type="com.hoggen.COMangerment.entity.ListUserModel">-->
+		<!--<id column="user_id" property="userId" />-->
+		<!--<result column="userName" property="userName" />-->
+		<!--<result column="status" property="status" />-->
+		<!--<result column="create_time" property="createTime" />-->
+		<!--<result column="last_login_time" property="lastLoginTime" />-->
+	<!--</resultMap>-->
+
+
+    <!--<select id="queryByUserName" resultType="com.hoggen.COMangerment.entity.User" parameterType="String">-->
+        <!--SELECT-->
+        <!--user_id,-->
+        <!--user_name,-->
+        <!--password,-->
+        <!--email,-->
+        <!--real_name,-->
+        <!--random_string,-->
+        <!--status,-->
+        <!--create_time,-->
+        <!--last_login_time-->
+        <!--FROM-->
+        <!--tb_user-->
+        <!--WHERE-->
+		<!--user_name = #{name}-->
+    <!--</select>-->
+    <!---->
+    <!---->
+    <!--<select id="queryByUserId" resultType="com.hoggen.COMangerment.entity.User" parameterType="Long">-->
+        <!--SELECT-->
+        <!--user_id,-->
+        <!--user_name,-->
+        <!--password,-->
+        <!--email,-->
+        <!--real_name,-->
+        <!--random_string,-->
+        <!--status,-->
+        <!--create_time,-->
+        <!--last_login_time-->
+        <!--FROM-->
+        <!--tb_user-->
+        <!--WHERE-->
+		<!--user_id = #{userId}-->
+    <!--</select>-->
+    <!---->
+    <!---->
+    <!--<insert id="insertUser" parameterType="com.hoggen.COMangerment.entity.User"-->
+		<!--useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">-->
+		<!--INSERT INTO-->
+		<!--tb_user(user_name,password,email,-->
+		<!--real_name,random_string,status,-->
+		<!--create_time,last_login_time)-->
+		<!--VALUES-->
+		<!--(#{userName},#{password},#{email},-->
+		<!--#{realName},#{randomString},#{status},#{createTime},-->
+		<!--#{lastLoginTime})-->
+	<!--</insert>-->
+	<!---->
+	<!---->
+	<!--<update id="updateUser" parameterType="com.hoggen.COMangerment.entity.User"-->
+		<!--keyProperty="userId" keyColumn="user_id" useGeneratedKeys="true">-->
+		<!--UPDATE tb_user-->
+		<!--<set>-->
+			<!--<if test="userName != null">user_name=#{userName},</if>-->
+			<!--<if test="password != null">password=#{password},</if>-->
+			<!--<if test="email != null">email=#{email},</if>-->
+			<!--<if test="randomString != null">random_string=#{randomString},</if>-->
+			<!--<if test="realName != null">real_name=#{realName},</if>-->
+			<!--<if test="status != null">status=#{status},</if>-->
+			<!--<if test="lastLoginTime != null">last_login_time=#{lastLoginTime},</if>-->
+		<!--</set>-->
+		<!--WHERE user_id = #{userId}-->
+	<!--</update>-->
+    <!---->
+    <!--<delete id="deleteUserId">-->
+		<!--DELETE FROM-->
+		<!--tb_user-->
+		<!--WHERE-->
+		<!--user_id =-->
+		<!--#{userId}-->
+	<!--</delete>-->
+	<!---->
+	<!---->
+	<!--<select id="queryUserList" resultMap="userMap">-->
+		<!--SELECT-->
+		<!--user_id,-->
+		<!--user_name,-->
+		<!--status,-->
+		<!--create_time,-->
+		<!--last_login_time-->
+		<!--FROM-->
+		<!--tb_user-->
+		<!--<where>-->
+			<!--<if-->
+				<!--test="userCondition!=null-->
+				 <!--and userCondition.userName!=null">-->
+				<!--and user_name like '%${userCondition.userName}%'-->
+			<!--</if>-->
+			<!--<if-->
+				<!--test="userCondition!=null-->
+				 <!--and userCondition.status!=null">-->
+				<!--and status =-->
+				<!--#{userCondition.status}-->
+			<!--</if>-->
+		<!--</where>-->
+		<!--LIMIT #{rowIndex},#{pageSize};-->
+	<!--</select>-->
+	<!---->
+	<!---->
+	<!--<select id="queryUserCount" resultType="int">-->
+		<!--SELECT count(1)-->
+		<!--FROM-->
+		<!--tb_user-->
+		<!--<where>-->
+			<!--<if-->
+				<!--test="userCondition!=null-->
+				 <!--and userCondition.userName!=null">-->
+				<!--and user_name like '%${userCondition.userName}%'-->
+			<!--</if>-->
+			<!--<if-->
+				<!--test="userCondition!=null-->
+				 <!--and userCondition.status!=null">-->
+				<!--and status =-->
+				<!--#{userCondition.status}-->
+			<!--</if>-->
+		<!--</where>-->
+	<!--</select>-->
+    
+</mapper>
