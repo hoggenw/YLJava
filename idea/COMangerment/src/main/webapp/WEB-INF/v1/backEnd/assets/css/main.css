@@ -1,28 +1,8 @@
 [v-cloak] {
 	display: none !important
 }
-.back-blue{
-	background:#0e90d2 !important;
-}
-.back-green{
-	background:#00cc66 !important;
-	color:#FFFFFF;
-}
 
-.back-red{
-	background:#FF0000 !important;
-	color:#FFFFFF;
-}
 
-.back-yellow{
-	background:#FF9900 !important;
-	color:#FFFFFF;
-}
-
-.not-data{
-	font-size: 36px;
-	color:#CCCCCC
-}
 /**
 * 配置数值页面
 */
@@ -136,12 +116,8 @@ ul {
 }
 
 .admin-sidebar-list li a {
-  color: #FFFFFF;
+  color: #5c5c5c;
   padding-left: 24px;
-}
-
-.admin-sidebar-list li{
-	margin-bottom:10px;
 }
 
 .admin-sidebar-list li:first-child {

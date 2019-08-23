@@ -12,7 +12,7 @@ define(function(require, exports, module) {
 		methods: {
 			loginClick: function() {
 				let _self = this;
-				let user = _self.user.trim();
+				let user = _self.user;
 				let	pwd = _self.pwd;
 
 				if (!user) {
@@ -29,7 +29,7 @@ define(function(require, exports, module) {
 					type: 'post',
 					url: app_config.API_URL + 'login/admin',
 					data: {
-						user_name:user,
+						user_name: user,
 						password: pwd
 					},
 				}, function(data) {

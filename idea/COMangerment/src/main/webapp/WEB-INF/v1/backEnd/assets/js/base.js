@@ -80,7 +80,7 @@ define(function(require, exports, module) {
 					},
 					success: function(data) {
 						if (data) {
-							if (data.ErrorCode == '1002') {
+							if (data.ErrorCode == '1001') {
 								layer.msg('登录已过期!!!', {
 									icon: 2
 								});

@@ -18,10 +18,20 @@
 		<div class="admin-content-body am-u-lg-12">
 			
 			<div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">账号管理</strong></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">操作日志</strong></div>
       </div>
 			
 			<div class="am-g am-form">
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+					<div class="am-form-group">
+						<input type="text" id="startTime" class="am-input-sm" placeholder="请选择开始时间">
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+					<div class="am-form-group">
+						<input type="text" id="endTime" class="am-input-sm" placeholder="请选择结束时间">
+					</div>
+				</div>
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
 					<div class="am-form-group">
 						<input type="text" v-model="account" class="am-input-sm" placeholder="账号">
@@ -37,7 +47,8 @@
 					</div>
 				</div>
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
-					<button class="am-btn am-btn-primary am-btn-sm am-fr" @click="addAcount()" type="button">新增账号</button>
+					<!-- <button class="am-btn am-btn-primary am-btn-sm am-fr" @click="batchDownload()" type="button">批量下载</button> -->
+					<a href="javascript:void(0)" class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="exportLog()">导出日志</a>
 					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
 				</div>
 			</div>
@@ -47,20 +58,27 @@
 						<table class="am-table am-table-striped am-text-nowrap am-table-hover">
 							<thead>
 								<tr>
-									<th width="30%">账号</th>
-									<th width="30%">状态</th>
-									<th width="40%">操作</th>
+									<th>操作时间</th>
+									<th>账号</th>
+									<th>操作</th>
+									<th width="20%">结果</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr v-for="item in gridData">
+									<td>{{item.operatingTime | timeForMart}}</td>
 									<td>{{item.userName}}</td>
-									<td>{{item.status | capitalize}}</td>
-									<td class="am-cf">
-										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="editorPwd(item)">修改密码</button>
-										<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>
-										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>
-										<button class="am-btn am-btn-danger am-btn-xs am-fl" @click="removeAccount(item.userId)">删除账号</button>
+									<td>{{item.type | capitalize}}</td>
+									<td>
+										<span v-if="item.type==1">{{item.showText}}</span>
+										<span v-if="item.type != 1 && item.success == false">{{item.showText}}</span>
+										<div class="am-cf" v-if="item.imageName">
+											<label :title="item.imageName" style="max-width:15rem;" class="am-fl am-text-truncate">
+												<!-- <input @click="checkFunction($event)" type="checkbox" :data-name="item.imageName"> -->
+												{{item.imageName}} 
+											</label>
+											<!-- <a class="am-fr" href="javascript:void(0)"><i style="display:block" @click="checkAlone($event)" :data-name="item.imageName" class="am-icon-download"></i></a> -->
+										</div>
 									</td>
 								</tr>
 							</tbody>
@@ -83,7 +101,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/index']);
+	seajs.use(['/backEnd/assets/js/log']);
 </script>
 
 <!-- footer start -->

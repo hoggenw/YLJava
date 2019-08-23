@@ -10,9 +10,6 @@
 		<br>
 		<br>
 		<br>
-			<div class="am-g am-text-center">
-				<h1>本命年客户运营管理系统后台登录</h1>
-			</div>
 			<div class="am-form">
 				<label for="account">用户名:</label>
 			<input type="text" placeholder="请输入用户名/手机号码" id="account" v-model="user" value="">

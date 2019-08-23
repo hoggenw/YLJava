@@ -5,8 +5,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>油水分离器后台</title>
-		<meta name="description" content="油水分离器后台">
+		<title>产前超声辅助诊断系统后台</title>
+		<meta name="description" content="产前超声辅助诊断系统后台">
 		<meta name="keywords" content="index">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /><!-- Viewport可以加速页面的渲染 -->
 		<meta name="renderer" content="webkit">
@@ -26,8 +26,8 @@
 		<script type="text/javascript" src="/backEnd/assets/js/file.js"></script>
 		
 		<script type="text/javascript" src="/backEnd/assets/js/colpick.js"></script>
-		
-		<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=67jMQ5DmYTe1TLMBKFUTcZAR"></script>
+
+
 	</head>
 	<body>
 		<!--[if lte IE 9]>
