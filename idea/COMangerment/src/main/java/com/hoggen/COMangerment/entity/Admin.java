@@ -25,6 +25,17 @@ public class Admin {
     // 更新时间S
     private Date lastLoginTime;
 
+    // token
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public Long getUserId() {
         return userId;
     }

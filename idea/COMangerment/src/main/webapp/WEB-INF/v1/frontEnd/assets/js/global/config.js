@@ -1,6 +1,6 @@
 const app_config = {
 	STATIC_V: '20201129', 		//版本号
-	API_URL:'https://oil.hantimetech.com/',					//api请求地址
+	API_URL:'http://192.168.20.9:8888/',					//api请求地址
 	STATIC_URL: function(url) { //静态文件地址
 		return
 	}

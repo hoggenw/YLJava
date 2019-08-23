@@ -2,9 +2,11 @@ package com.hoggen.COMangerment.config.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fulang.ultrasoundService.dao.UserDao;
-import com.fulang.ultrasoundService.entity.User;
-import com.fulang.ultrasoundService.util.JwtUtil;
+
+import com.hoggen.COMangerment.dao.AdminDao;
+import com.hoggen.COMangerment.dao.UserDao;
+import com.hoggen.COMangerment.entity.Admin;
+import com.hoggen.COMangerment.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -19,7 +21,7 @@ import java.util.Map;
 public class TokenInterceptor implements HandlerInterceptor {
 
     @Autowired
-    UserDao rUserDao;
+    AdminDao rUserDao;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -42,8 +44,8 @@ public class TokenInterceptor implements HandlerInterceptor {
             response.flushBuffer();
             return false;
         }
-        Long userid = Long.valueOf(JwtUtil.getLoginUserID(token));
-        User loginUser = rUserDao.queryTokenUserId(userid);
+        Long userid = Long.valueOf(JwtUtil.getLoginUserId(token));
+        Admin loginUser = rUserDao.queryByUserId(userid);
         if (loginUser == null || !token.equals(loginUser.getToken())) {
             modelMap.put("errno", "-10001");
             modelMap.put("errmsg", "illegal user");

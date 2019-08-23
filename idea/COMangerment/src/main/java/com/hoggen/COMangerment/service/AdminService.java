@@ -25,5 +25,5 @@ public interface AdminService {
     /**
      * 修改用户信息 type 1 password 2.冻结 解冻
      */
-    AdminExecution modifyAdmin(Admin user, int type);
+    int modifyAdmin(Admin user);
 }

@@ -8,7 +8,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp"/>
-		<title>油水分离器录入系统</title>
+		<title>客户管理系统</title>
 		
 		<link rel="icon" href="/frontEnd/assets/images/favicon.png" type="image/png">
 		<link rel="stylesheet" href="/frontEnd/assets/css/amazeui.min.css?v=20181129">

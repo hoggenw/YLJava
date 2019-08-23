@@ -54,7 +54,7 @@
 							</thead>
 							<tbody>
 								<tr v-for="item in gridData">
-									<td>{{item.userName}}</td>
+									<td>{{item.realName}}</td>
 									<td>{{item.status | capitalize}}</td>
 									<td class="am-cf">
 										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="editorPwd(item)">修改密码</button>

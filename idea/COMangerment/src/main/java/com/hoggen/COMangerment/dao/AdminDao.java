@@ -6,7 +6,7 @@ public interface AdminDao {
     /**
      * 通过用户名称 查询用户
      *
-     * @param String name
+     * @param
      * @return User
      */
     Admin queryByUserName(String name);
@@ -14,7 +14,7 @@ public interface AdminDao {
     /**
      * 通过用户id 查询用户
      *
-     * @param String name
+     * @param
      * @return User
      */
     Admin queryByUserId(Long userId);

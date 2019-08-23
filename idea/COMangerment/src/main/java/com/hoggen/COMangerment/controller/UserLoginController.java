@@ -29,12 +29,20 @@ public class UserLoginController {
 //	}
 
 
-	@RequestMapping(value = "/login/admin", method = RequestMethod.POST)
+	@RequestMapping(value = "/api/login/admin", method = RequestMethod.POST)
 	@ResponseBody
 	private Map<String, Object> adminLogin(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		modelMap = identifyService.adminLoginJudge(request);
 
+		return modelMap;
+	}
+
+	@RequestMapping(value = "/api/quit/admin", method = RequestMethod.POST)
+	@ResponseBody
+	private Map<String, Object> quit(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		modelMap = identifyService.adminQuit(request);
 		return modelMap;
 	}
 

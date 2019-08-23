@@ -50,7 +50,7 @@ define(function(require, exports, module) {
 		 */
 		userInfo: function() {
 			var Info;
-			if (!localStorage.getItem('backEndInfo')) {
+			if (!localStorage.getItem('userInfo')) {
 				layer.msg('登录已过期!!!', {
 					icon: 2
 				});
@@ -59,7 +59,7 @@ define(function(require, exports, module) {
 					return false;
 				}, 1000);
 			} else {
-				Info = JSON.parse(localStorage.getItem('backEndInfo'));
+				Info = JSON.parse(localStorage.getItem('userInfo'));
 				$('#showUserName').text(Info.name);
 			}
 			return Info;
@@ -104,10 +104,10 @@ define(function(require, exports, module) {
 						}
 					}
 				}
-
-				if (!onSite) { //站内
-					ajaxParameter.headers.token = base.userInfo().token;
-				}
+                //
+				// if (!onSite) { //站内
+				// 	ajaxParameter.headers.token = base.userInfo().token;
+				// }
 
 				$.ajax(ajaxParameter);
 			} else {

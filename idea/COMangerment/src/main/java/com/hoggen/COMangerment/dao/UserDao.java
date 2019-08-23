@@ -7,18 +7,20 @@ import org.apache.ibatis.annotations.Param;
 import com.hoggen.COMangerment.entity.User;
 
 public interface UserDao {
-//
-//	/**
-//	 * 查询用户列表并分页，可输入的条件有：
-//	 *
-//	 * @param userCondition
-//	 * @param beginIndex
-//	 * @param pageSize
-//	 * @return
-//	 */
-//	List<ListUserModel> queryUserList(@Param("userCondition") User userCondition, @Param("rowIndex") int rowIndex,
-//									  @Param("pageSize") int pageSize);
-//
+
+	/**
+	 * 查询用户列表并分页，可输入的条件有：
+	 *
+	 * @param userCondition
+	 * @param
+	 * @param pageSize
+	 * @return
+	 */
+	List<User> queryUserList(@Param("userCondition") User userCondition, @Param("rowIndex") int rowIndex,
+									  @Param("pageSize") int pageSize);
+
+
+
 	/**
 	 * 查询对应的用户总数
 	 *
@@ -33,7 +35,7 @@ public interface UserDao {
 	 * @param String name
 	 * @return User
 	 */
-	User queryByUserName(String name);
+	User queryByUserMobile(String mobile);
 
 	/**
 	 * 通过用户id 查询用户

@@ -13,7 +13,8 @@
         status,
         authority,
         create_time,
-        last_login_time
+        last_login_time,
+        token
         FROM
         tb_admin
         WHERE
@@ -32,7 +33,8 @@
         status,
         authority,
         create_time,
-        last_login_time
+        last_login_time,
+        token
         FROM
         tb_admin
         WHERE
@@ -53,6 +55,7 @@
             <if test="status != null">status=#{status},</if>
             <if test="authority != null">authority=#{authority},</if>
             <if test="lastLoginTime != null">last_login_time=#{lastLoginTime},</if>
+            <if test="token != null">token=#{token},</if>
         </set>
         WHERE user_id = #{userId}
     </update>

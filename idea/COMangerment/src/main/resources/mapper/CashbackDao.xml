@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="">
+<mapper namespace="com.hoggen.COMangerment.dao.CashbackDao">
+
+
+    <insert id="insertCashback" parameterType="com.hoggen.COMangerment.entity.Cashback"
+            useGeneratedKeys="true" keyProperty="backId" keyColumn="back_id">
+		INSERT INTO
+		tb_cashback(type,user_id,p_id,
+		create_time,remark,bill_id)
+		VALUES
+		(#{type},#{userId},#{pId},
+		#{createTime},#{remark},#{billId})
+	</insert>
+
 </mapper>

@@ -1,7 +1,19 @@
 seajs.use(['base', 'page'], function(base) {
 
 	base.headMobile(); //解决手机端input获取焦点时候 头部固定偏移问题
-
+	var clientEndInfo = JSON.parse( localStorage.getItem('userInfo') )
+	var _config = {
+		baseURL: app_config.API_URL ,
+		timeout: 1000,
+		headers: {'token':clientEndInfo.token },
+		transformRequest: [function (data) {
+			let ret = ''
+			for (let it in data) {
+				ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+			}
+			return ret
+		}]
+	}
 	var app = new Vue({
 		el: "#app",
 		data: {
@@ -21,12 +33,20 @@ seajs.use(['base', 'page'], function(base) {
 			],
 			account: '',
 			gridData: [], //返回的数据
-
+			phone:'',
 			curPage: 0, //当前页
 			showPages: 0, //显示多少页
 			totalPages: 0, //总页数
 			isPage: true, //是否显示分页
-			pageSize: 15, //每页显示多少条		
+			pageSize: 15, //每页显示多少条
+			search_info:{
+				realName:'',
+				status:'',
+				phone:'',
+				page_size:20,
+				page_index:1
+			}
+
 		},
 		created: function() {
 			var _self = this;
@@ -47,32 +67,61 @@ seajs.use(['base', 'page'], function(base) {
 		methods: {
 			getList: function(p) {
 				var _self = this;
-				base.Ajax({
-					url: app_config.API_URL + 'admin/user/listUsers',
-					type: 'POST',
-					data: {
-						account_name: _self.account, //搜索账号名称
-						account_status: _self.status, //账号状态
-						pageIndex: p,
-						page_size: _self.pageSize
-					}
-				}, function(data) {
-					if (data.ErrorCode == '0') {
-						_self.gridData = data.Data.accounts;
-						let d = data.Data;
+				_self.search_info.page_index = p;
+				axios.post('api/user/listUsers', _self.search_info,_config)
+					.then(res =>{
+						if(res.data.errno==0){
+							_self.gridData = res.data.accounts;
+							let d = res.data;
 
-						let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
+							let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
 
-						_self.curPage = p; //当前页
-						_self.totalPages = lastPage; //总页数
-						_self.showPages = d.count == 0 ? 0 : lastPage < 5 ? lastPage : 5; //可以点击的页数
+							_self.curPage = p; //当前页
+							_self.totalPages = lastPage; //总页数
+							_self.showPages = d.count == 0 ? 0 : lastPage < 5 ? lastPage : 5; //可以点击的页数
 
-						if (d.count == 0) {
-							_self.isPage = false;
+							if (d.count == 0) {
+								_self.isPage = false;
+							}
 						}
+						else if(res.data.errno=='-10001'){
+							window.location.href = "/login"
+						}
+						else{
+							layer.msg(res.data.errmsg)
+						}
+					})
 
-					}
-				})
+				// base.Ajax({
+				// 	onSite: 1, //标识站内还是站外 1：站外
+				// 	type: 'post',
+				// 	url: app_config.API_URL + 'api/user/listUsers',
+				// 	headers: {'token':clientEndInfo.token },
+				// 	data: {
+				// 		realName: _self.account, //搜索账号名称
+				// 		status: _self.status, //账号状态
+				// 		page_index: p,
+				// 		page_size: _self.pageSize
+				// 	},
+				// }, function(data) {
+				// 	if (data.errno == 0) {
+				// 		_self.gridData = data.data.accounts;
+				// 		let d = data.data;
+				//
+				// 		let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
+				//
+				// 		_self.curPage = p; //当前页
+				// 		_self.totalPages = lastPage; //总页数
+				// 		_self.showPages = d.count == 0 ? 0 : lastPage < 5 ? lastPage : 5; //可以点击的页数
+				//
+				// 		if (d.count == 0) {
+				// 			_self.isPage = false;
+				// 		}
+				// 	} else {
+				// 		layer.msg(data.errmsg);
+				// 	}
+				// })
+
 			},
 			addAcount: function() { //新增账号
 				this.layerOpen(1);

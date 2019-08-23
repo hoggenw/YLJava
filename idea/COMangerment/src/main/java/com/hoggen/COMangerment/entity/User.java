@@ -5,22 +5,54 @@ import java.util.Date;
 public class User {
 	// ID
 	private Long userId;
-	// 名称
-	private String userName;
-	// 密码
-	private String password;
-	// email
-	private String email;
+	//推荐人id
+	private Long pId;
+
+	// 用户电话
+	private String mobile;
+
 	// 真实姓名
 	private String realName;
-	//
-	private String randomString;
+
 	// 用户状态(0正常，1冻结)
 	private Integer status;
+
+	// 用户状态(0女性，1男性)
+	private Integer sex;
+
+	//积分
+	private Integer  integral;
 	// 创建时间
 	private Date createTime;
-	// 更新时间S
-	private Date lastLoginTime;
+	//备注
+	private String remark;
+	//地址
+	private String address;
+	//生日
+	private String birthday;
+	//被谁创建
+	private Long createBy;
+//	// 修改时间
+//	private Date updateTime;
+//	//被谁修改
+//	private Long updateBy;
+	//会员号
+//	private String code;
+	// 名称
+//	private String userName;
+//	// 密码
+//	private String password;
+//	//
+//	private String randomString;
+
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
 	public Long getUserId() {
 		return userId;
@@ -30,40 +62,16 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public Long getpId() {
+		return pId;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setpId(Long pId) {
+		this.pId = pId;
 	}
 
 	public String getRealName() {
 		return realName;
-	}
-
-	public String getRandomString() {
-		return randomString;
-	}
-
-	public void setRandomString(String randomString) {
-		this.randomString = randomString;
 	}
 
 	public void setRealName(String realName) {
@@ -78,6 +86,22 @@ public class User {
 		this.status = status;
 	}
 
+	public Integer getSex() {
+		return sex;
+	}
+
+	public void setSex(Integer sex) {
+		this.sex = sex;
+	}
+
+	public Integer getIntegral() {
+		return integral;
+	}
+
+	public void setIntegral(Integer integral) {
+		this.integral = integral;
+	}
+
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -86,12 +110,91 @@ public class User {
 		this.createTime = createTime;
 	}
 
-	public Date getLastLoginTime() {
-		return lastLoginTime;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setLastLoginTime(Date lastLoginTime) {
-		this.lastLoginTime = lastLoginTime;
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public Long getCreateBy() {
+		return createBy;
+	}
+
+	public void setCreateBy(Long createBy) {
+		this.createBy = createBy;
+	}
+
+//	public Date getUpdateTime() {
+//		return updateTime;
+//	}
+//
+//	public void setUpdateTime(Date updateTime) {
+//		this.updateTime = updateTime;
+//	}
+//
+//	public Long getUpdateBy() {
+//		return updateBy;
+//	}
+//
+//	public void setUpdateBy(Long updateBy) {
+//		this.updateBy = updateBy;
+//	}
+//
+//	public String getCode() {
+//		return code;
+//	}
+//
+//	public void setCode(String code) {
+//		this.code = code;
+//	}
+
+//	public String getUserName() {
+//		return userName;
+//	}
+//
+//	public void setUserName(String userName) {
+//		this.userName = userName;
+//	}
+//
+//	public String getPassword() {
+//		return password;
+//	}
+//
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
+//
+//	public String getRandomString() {
+//		return randomString;
+//	}
+//
+//	public void setRandomString(String randomString) {
+//		this.randomString = randomString;
+//	}
+
+
+
+
+
+
+
 
 }

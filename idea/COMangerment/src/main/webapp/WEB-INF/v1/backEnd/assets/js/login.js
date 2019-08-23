@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
 	var base = require('base');
+
+
 	var app = new Vue({
 		el: '#login_box',
 		data: {
@@ -7,13 +9,14 @@ define(function(require, exports, module) {
 			pwd: '',
 		},
 		created: function() {
-			localStorage.setItem('backEndInfo', '');
+			localStorage.setItem('userInfo', '');
 		},
+
 		methods: {
 			loginClick: function() {
 				let _self = this;
 				let user = _self.user;
-				let	pwd = _self.pwd;
+				let pwd = _self.pwd;
 
 				if (!user) {
 					layer.msg('请输入用户名');
@@ -23,32 +26,33 @@ define(function(require, exports, module) {
 					layer.msg('请输入登录密码');
 					return false;
 				}
-				
+
 				base.Ajax({
 					onSite: 1, //标识站内还是站外 1：站外
 					type: 'post',
-					url: app_config.API_URL + 'login/admin',
+					url: app_config.API_URL + 'api/login/admin',
 					data: {
-						user_name: user,
+						user_name: user.trim(),
 						password: pwd
 					},
 				}, function(data) {
-					if (data.ErrorCode == 0) {
+					if (data.errno == 0) {
 						layer.msg('登录成功', {
 							icon: 1,
 							time: 800
 						});
-						
+
 						let callbackData = {
-							token:data.Data.token,
-							name:user
+							token: data.data.token,
+							name: data.data.name,
+							user_id: data.data.userId
 						};
-						localStorage.setItem('backEndInfo', JSON.stringify(callbackData));
+						localStorage.setItem('userInfo', JSON.stringify(callbackData));
 						setTimeout(function() {
-							window.location.href = "/manager";
+							window.location.href = "/";
 						}, 800);
 					} else {
-						layer.msg(data.Message);
+						layer.msg(data.errmsg);
 					}
 				})
 

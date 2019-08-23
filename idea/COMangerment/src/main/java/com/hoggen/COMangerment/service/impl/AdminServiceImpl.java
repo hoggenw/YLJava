@@ -45,9 +45,12 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     @Transactional
-    public AdminExecution modifyAdmin(Admin user, int type) {
+    public int modifyAdmin(Admin user) {
+        int effect = 0;
+        effect = rAdminDao.updateAdmin(user);
 
-        return null;
+
+        return effect;
     }
 
 }

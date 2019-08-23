@@ -2,8 +2,10 @@ package com.hoggen.COMangerment.service;
 
 import com.hoggen.COMangerment.dto.UserExecution;
 import com.hoggen.COMangerment.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface UserService {
 
@@ -15,35 +17,45 @@ public interface UserService {
 	UserExecution getUserList(User userCondition, int pageIndex, int pageSize);
 
 	/**
-	 * 通过用户名称 查询用户
+	 * 查询对应的用户总数
 	 *
-	 * @param String name
+	 * @param
+	 * @return
+	 */
+	int queryUserCount(@Param("userCondition") User userCondition);
+
+	/**
+	 * 通过用户电话 查询用户
+	 *
+	 * @param
 	 * @return User
 	 */
-	User queryUserByName(String name);
+	User queryByUserMobile(String mobile);
 
 	/**
 	 * 通过用户id 查询用户
 	 *
-	 * @param String name
+	 * @param
 	 * @return User
 	 */
-	User queryUserById(Long userId);
+	User queryByUserId(Long userId);
 
 	/**
-	 * 添加用户
+	 * 插入用户
 	 *
 	 */
-	UserExecution addUser(User user);
+	int insertUser(User user);
 
 	/**
-	 * 修改用户信息 type 1 password 2.冻结 解冻
+	 * 更新用户
+	 *
 	 */
-	UserExecution modifyUser(User user, int type);
+	int updateUser(User user);
 
 	/**
-	 * 删除用户
+	 * 更新用户
+	 *
 	 */
-	UserExecution deleteUser(Long userId);
+	int deleteUserId(Long userId);
 
 }

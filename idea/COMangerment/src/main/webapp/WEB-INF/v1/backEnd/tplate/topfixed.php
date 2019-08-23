@@ -20,11 +20,11 @@
 			title: '退出提示',
 			icon: 3,
 		}, function(index) {
-			localStorage.setItem('backEndInfo', '');
+			localStorage.setItem('userInfo', '');
 
 			layer.close(index);
 			setTimeout(function() {
-				window.location.href = '/manager/login';
+				window.location.href = '/login';
 			}, 800)
 		})
 	})

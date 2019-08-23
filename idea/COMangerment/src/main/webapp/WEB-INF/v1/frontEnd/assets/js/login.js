@@ -25,22 +25,22 @@ var app = new Vue({
 			base.Ajax({
 				onSite: 1, //标识站内还是站外 1：站外
 				type: 'post',
-				url: app_config.API_URL + 'login/user',
+				url: app_config.API_URL + 'api/login/admin',
 				data: {
-					phone: user.trim(),
+					user_name: user.trim(),
 					password: pwd
 				},
 			}, function(data) {
-				if (data.ErrorCode == 0) {
+				if (data.errno == 0) {
 					layer.msg('登录成功', {
 						icon: 1,
 						time: 800
 					});
 
 					let callbackData = {
-						token: data.Data.token,
-						name: user,
-						user_id: data.Data.IsValid
+						token: data.data.token,
+						name: data.data.name,
+						user_id: data.data.userId
 					};
 					localStorage.setItem('userInfo', JSON.stringify(callbackData));
 					setTimeout(function() {

@@ -21,6 +21,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigurer {
 	private ApplicationContext applicationContext;
 
+	@Autowired
+	private TokenInterceptor tokenInterceptor;
 
 //	@Autowired
 //	private DownLoadInterceptor downLoadInterceptor;
@@ -65,19 +67,11 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
 		// TODO Auto-generated method stub
 		// addPathPatterns 用于添加拦截规则
 		// excludePathPatterns 用户排除拦截
-		//
-		// registry.addInterceptor(tokenInterceptor).addPathPatterns("/**").excludePathPatterns("/login/**",
-		// "/index");
-
-//		registry.addInterceptor(downLoadInterceptor).addPathPatterns("/admin/download/files", "/admin/getExcel");
-//		registry.addInterceptor(pageInterceptor).addPathPatterns("/");
-//		registry.addInterceptor(adminPageInterceptor).addPathPatterns("manager", "manager/chart", "manager/config",
-//				"manager/log");
+		registry.addInterceptor(tokenInterceptor).addPathPatterns("/api/**").excludePathPatterns("/api/login/**");
 		WebMvcConfigurer.super.addInterceptors(registry);
 	}
 
 	/**
-	 * @注释 定义视图解析器
 	 */
 
 	@Bean(name = "viewResolver")
