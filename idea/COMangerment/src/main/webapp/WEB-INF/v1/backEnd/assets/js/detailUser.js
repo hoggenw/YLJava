@@ -1,6 +1,7 @@
 seajs.use(['base', 'page'], function(base) {
 
 	base.headMobile(); //解决手机端input获取焦点时候 头部固定偏移问题
+	var itemUser = JSON.parse( localStorage.getItem('userItem') )
 	var clientEndInfo = JSON.parse( localStorage.getItem('userInfo') )
 	var _config = {
 		baseURL: app_config.API_URL ,
@@ -29,17 +30,30 @@ seajs.use(['base', 'page'], function(base) {
 					value: 1
 				},
 			],
+			timeOptions: [
+				{
+					name: '国历',
+					value: 1
+				},
+				{
+					name: '农历',
+					value: 2
+				},
+			],
 
 			search_info:{
-				realName: '',
+				realName: itemUser.realName,
 				pMobile:'',
-				mobile:'',
-				birthday:'',
-				address:'',
-				integral:'',
-				remark:'',
-				sex: 0 //默认选中第一项
-			}
+				mobile:itemUser.mobile,
+				birthday:itemUser.birthday,
+				address:itemUser.address,
+				integral:itemUser.integral,
+				remark:itemUser.remark,
+				sex: itemUser.sex ,//默认选中第一项
+				salesperson:itemUser.salesperson,
+				birthdayType: itemUser.birthdayType,
+			},
+
 
 
 
@@ -51,7 +65,7 @@ seajs.use(['base', 'page'], function(base) {
 			//判断用户是否登录
 			base.userInfo();
 
-			_self.getList(1);
+			_self.submitClick(itemUser.pId);
 		},
 		components: {
 			// 引用组件
@@ -67,18 +81,18 @@ seajs.use(['base', 'page'], function(base) {
 			}
 		},
 		methods: {
-			submitClick: function() {
+			submitClick: function(pId) {
+				if (pId <= 0){
+					return;
+				}
+
 				var _self = this;
-				axios.post('/api/user/add', _self.search_info,_config)
+				axios.post('/api/user/get',{
+					userId: pId
+				},_config)
 					.then(res =>{
 						if(res.data.errno==0){
-							layer.msg('添加成功', {
-								icon: 1,
-								time: 800
-							});
-							setTimeout(function() {
-								window.location.href = "/adduser";
-							}, 800);
+							_self.search_info.pMobile = res.data.data.user.mobile;
 
 						}
 						else if(res.data.errno=='-10001'){

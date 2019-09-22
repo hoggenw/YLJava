@@ -1,5 +1,6 @@
 package com.hoggen.COMangerment.dto;
 
+import com.hoggen.COMangerment.entity.Bill;
 import com.hoggen.COMangerment.entity.User;
 import com.hoggen.COMangerment.enums.UserStateEnum;
 
@@ -30,21 +31,6 @@ public class BillExecution {
 		this.count = count;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public List<User> getUserList() {
-		return UserList;
-	}
-
-	public void setUserList(List<User> userList) {
-		UserList = userList;
-	}
 
 	// 结果状态
 	private int state;
@@ -56,10 +42,26 @@ public class BillExecution {
 	private int count;
 
 	// 操作的User
-	private User user;
+	private Bill bill;
+
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
+	}
+
+	public List<Bill> getBillList() {
+		return billList;
+	}
+
+	public void setBillList(List<Bill> billList) {
+		this.billList = billList;
+	}
 
 	// 获取的User列表
-	private List<User> UserList;
+	private List<Bill> billList;
 
 	public BillExecution() {
 	}
@@ -71,16 +73,16 @@ public class BillExecution {
 	}
 
 	// 成功的构造器
-	public BillExecution(UserStateEnum stateEnum, User user) {
+	public BillExecution(UserStateEnum stateEnum, Bill user) {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
-		this.user = user;
+		this.bill = user;
 	}
 
 	// 成功的构造器
-	public BillExecution(UserStateEnum stateEnum, List<User> UserList) {
+	public BillExecution(UserStateEnum stateEnum, List<Bill> UserList) {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
-		this.UserList = UserList;
+		this.billList = UserList;
 	}
 }

@@ -30,6 +30,16 @@ seajs.use(['base', 'page'], function(base) {
 					value: 1
 				},
 			],
+			timeOptions: [
+				{
+					name: '国历',
+					value: 1
+				},
+				{
+					name: '农历',
+					value: 2
+				},
+			],
 
 			search_info:{
 				realName: itemUser.realName,
@@ -39,7 +49,21 @@ seajs.use(['base', 'page'], function(base) {
 				address:itemUser.address,
 				integral:itemUser.integral,
 				remark:itemUser.remark,
-				sex: itemUser.sex //默认选中第一项
+				sex: itemUser.sex ,//默认选中第一项
+				salesperson:itemUser.salesperson,
+				birthdayType: itemUser.birthdayType
+			},
+
+
+			update_info:{
+				realName: '',
+				mobile:'',
+				birthday:'',
+				address:'',
+				remark:'',
+				sex: '' ,//默认选中第一项
+				userId:'',
+				birthdayType:''
 			},
 
 
@@ -75,12 +99,25 @@ seajs.use(['base', 'page'], function(base) {
 				}
 
 				var _self = this;
-				axios.post('/api/user/get',{
-					userId: pId
-				},_config)
+				_self.update_info.realName = _self.search_info.realName;
+				_self.update_info.mobile = _self.search_info.mobile;
+				_self.update_info.birthday = _self.search_info.birthday;
+				_self.update_info.address = _self.search_info.address;
+				_self.update_info.remark = _self.search_info.remark;
+				_self.update_info.sex = _self.search_info.sex;
+				_self.update_info.birthdayType = _self.search_info.birthdayType;
+				_self.update_info.userId = itemUser.userId;
+				axios.post('/api/user/update',_self.update_info,_config)
 					.then(res =>{
 						if(res.data.errno==0){
-							_self.search_info.pMobile = res.data.data.user.mobile;
+							layer.msg('修改成功', {
+								icon: 1,
+								time: 800
+							});
+
+							setTimeout(function() {
+								window.location.href = "/";
+							}, 800);
 
 						}
 						else if(res.data.errno=='-10001'){

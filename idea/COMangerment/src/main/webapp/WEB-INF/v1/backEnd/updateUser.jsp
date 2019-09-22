@@ -27,7 +27,7 @@
 		<div class="admin-content-body am-u-lg-12">
 			
 			<div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">用户详情</strong></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">用户信息修改</strong></div>
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
 					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm"  @click="back" value="">返回</button>
 				</div>
@@ -38,7 +38,7 @@
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 					<label for="realName">姓名:</label>
-					<input type="text" placeholder="请输入客户姓名" id="realName" v-model="search_info.realName" value="" disabled='disabled'>
+					<input type="text" placeholder="请输入客户姓名" id="realName" v-model="search_info.realName" value="" >
 				</div>
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
@@ -49,12 +49,12 @@
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 					<label for="mobile">客户联系方式:</label>
-					<input type="text" placeholder="请输入客户手机号码" id="mobile" v-model="search_info.mobile" value="" disabled='disabled'>
+					<input type="text" placeholder="请输入客户手机号码" id="mobile" v-model="search_info.mobile" value="" >
 				</div>
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 					<label for="sex">性别:</label>
-					<select  v-model="search_info.sex" id="sex" disabled='disabled'>
+					<select  v-model="search_info.sex" id="sex" >
 						<option v-for="item in options" :value="item.value">
 							{{item.name}}
 						</option>
@@ -63,12 +63,21 @@
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 					<label for="birthday">客户生日:</label>
-					<input type="text" placeholder="请输入客户生日" id="birthday" v-model="search_info.birthday" value="" disabled='disabled'>
+					<input type="text" placeholder="请输入客户生日" id="birthday" v-model="search_info.birthday" value="" >
+				</div>
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="birthdayType">选择生日类别:</label>
+					<select  v-model="search_info.birthdayType" id="birthdayType" >
+						<option v-for="item in timeOptions" :value="item.value">
+							{{item.name}}
+						</option>
+					</select>
 				</div>
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 					<label for="address">客户地址:</label>
-					<input type="text" placeholder="请输入客户地址" id="address" v-model="search_info.address" value="" disabled='disabled'>
+					<input type="text" placeholder="请输入客户地址" id="address" v-model="search_info.address" value="" >
 				</div>
 
 
@@ -77,17 +86,23 @@
 					<input type="text" placeholder="请输入初始积分" id="integral" v-model="search_info.integral" value="" disabled='disabled'>
 				</div>
 
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="salesperson">登记人:</label>
+					<input type="text" placeholder="登记人" id="salesperson" v-model="search_info.salesperson" value="" disabled='disabled'>
+				</div>
+
+
 
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
 					<label for="remark">备注:</label>
-					<input type="text" placeholder="备注" id="remark" v-model="search_info.remark" value="" disabled='disabled'>
+					<input type="text" placeholder="备注" id="remark" v-model="search_info.remark" value="" >
 				</div>
 
 				<br>
 
-				<%--<div class="am-cf am-u-sm-12 am-u-md-12 am-u-lg-12 " style="margin-top: 50px;margin-left: auto;margin-right: auto ">--%>
-					<%--<input type="submit" name="" @click="submitClick" value="提交" class="am-btn am-btn-secondary am-btn-block ">--%>
-				<%--</div>--%>
+				<div class="am-cf am-u-sm-12 am-u-md-12 am-u-lg-12 " style="margin-top: 50px;margin-left: auto;margin-right: auto ">
+					<input type="submit" name="" @click="submitClick" value="确认修改" class="am-btn am-btn-secondary am-btn-block ">
+				</div>
 
 			</div>
 
@@ -102,7 +117,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/detailUser']);
+	seajs.use(['/backEnd/assets/js/updateUser']);
 </script>
 
 <!-- footer start -->

@@ -9,16 +9,6 @@
 
 <div class="am-cf admin-main">
 	<!-- sidebar start -->
-	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
-		<div class="am-offcanvas-bar admin-offcanvas-bar">
-			<ul class="am-list admin-sidebar-list">
-				<li class="" ><a href="/">用户管理</a></li>
-				<li class=""><a href="/manager/chart">订单管理</a></li>
-				<li class="" style="background-color: #f3f3f3"><a href="/recommend">推荐管理</a></li>
-				<li class=""><a href="/manager/log">积分管理</a></li>
-			</ul>
-		</div>
-	</div>
 	<!-- sidebar end -->
 
 
@@ -27,8 +17,9 @@
 		<div class="admin-content-body am-u-lg-12">
 			
 			<div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">推荐人管理</strong></div>
-      </div>
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">推荐人: {{account}}</strong>  </div>
+				<div class="am-fl am-cf am-fr"><strong class="am-text-primary am-text-lg "> 推荐人电话: {{phone}}</strong> </div>
+			</div>
 			
 			<div class="am-g am-form">
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
@@ -41,17 +32,19 @@
 						<input type="text" v-model="search_info.phone" class="am-input-sm" placeholder="电话号码查询">
 					</div>
 				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<select class="am-input-sm" v-model="search_info.status">
-							<option v-for="item in options" :value="item.value">
-									{{item.name}}
-							</option>
-						</select>
-					</div>
-				</div>
+				<%--<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">--%>
+					<%--<div class="am-form-group">--%>
+						<%--<select class="am-input-sm" v-model="search_info.status">--%>
+							<%--<option v-for="item in options" :value="item.value">--%>
+									<%--{{item.name}}--%>
+							<%--</option>--%>
+						<%--</select>--%>
+					<%--</div>--%>
+				<%--</div>--%>
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
+					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm"  @click="back" value="">返回</button>
 					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
+
 				</div>
 			</div>
 			<div class="am-g">
@@ -60,7 +53,7 @@
 						<table class="am-table am-table-striped am-text-nowrap am-table-hover">
 							<thead>
 								<tr>
-									<th width="20%">姓名</th>
+									<th width="20%">被推荐人姓名</th>
 									<th width="15%">状态</th>
 									<th width="15%">性别</th>
 									<th width="20%">电话</th>
@@ -74,8 +67,7 @@
 									<td>{{item.sex | sexFilter}}</td>
 									<td>{{item.mobile}}</td>
 									<td class="am-cf">
-										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看所属推荐人</button>
-										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="update(item)">查看所属推荐产生订单</button>
+										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看消费记录</button>
 										<%--<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>--%>
 										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>--%>
 									</td>
@@ -100,7 +92,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/recommend']);
+	seajs.use(['/backEnd/assets/js/recommend_sUser']);
 </script>
 
 <!-- footer start -->

@@ -14,4 +14,60 @@
 		#{createTime},#{remark},#{billId})
 	</insert>
 
+	<select id="queryByCashbackId" resultType="com.hoggen.COMangerment.entity.Cashback" parameterType="Long">
+        SELECT
+        back_id,
+        success
+        FROM
+        tb_cashback
+        WHERE
+		back_id = #{backId}
+    </select>
+
+	<update id="updateCashback" parameterType="com.hoggen.COMangerment.entity.Cashback"
+			keyProperty="backId" keyColumn="back_id" useGeneratedKeys="true">
+		UPDATE tb_cashback
+		<set>
+			<if test="success != null">success=#{success},</if>
+		</set>
+		WHERE back_id = #{backId}
+	</update>
+
+	<select id="queryBackList" resultType="HashMap">
+		SELECT
+		a.`back_id`,a.`success`,a.`create_time`,b.`real_name`
+		,b.`mobile`,b.`integral`,b.`type`
+		FROM
+		`tb_cashback` as a
+		left join `tb_bills` as b on a.`bill_id` = b.`bills_id`
+
+		<where>
+			<if
+					test="backCondition!=null
+				 and backCondition.pId!=null">
+				and   a.`p_id` =
+				#{backCondition.pId}
+			</if>
+		</where>
+		LIMIT #{rowIndex},#{pageSize};
+	</select>
+
+
+
+
+	<select id="queryBackCount" resultType="int">
+		SELECT count(1)
+		FROM
+		tb_cashback
+		<where>
+			<if
+					test="backCondition!=null
+				 and backCondition.pId!=null">
+				and   p_id =
+				#{backCondition.pId}
+			</if>
+		</where>
+
+	</select>
+
 </mapper>

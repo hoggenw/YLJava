@@ -22,6 +22,18 @@ public class Cashback {
     // ID
     private Long billId;
 
+
+    public int getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(int success) {
+        this.success = success;
+    }
+
+    private int success;
+
+
     public Long getBillId() {
         return billId;
     }

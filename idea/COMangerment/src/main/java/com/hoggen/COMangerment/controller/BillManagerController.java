@@ -1,6 +1,8 @@
 package com.hoggen.COMangerment.controller;
 
 
+import com.hoggen.COMangerment.dto.BillExecution;
+import com.hoggen.COMangerment.dto.UserExecution;
 import com.hoggen.COMangerment.entity.Bill;
 import com.hoggen.COMangerment.entity.Cashback;
 import com.hoggen.COMangerment.entity.User;
@@ -64,8 +66,8 @@ public class BillManagerController {
         }
 
         bill.setUserId(userId);
-
-
+        bill.setMobile(tempUser.getMobile());
+        bill.setRealName(tempUser.getRealName());
 
         if (tempUser.getpId() > 0) {
             bill.setpId(tempUser.getpId());
@@ -93,9 +95,59 @@ public class BillManagerController {
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMapData);
         }
 
-
-
         return RetrunDataStructModelUtil.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMapData);
 
+    }
+
+
+
+
+    @RequestMapping(value = "/api/user/listBills", method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String, Object> listBills(HttpServletRequest request) {
+
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        Map<String, Object> modelMapData = new HashMap<String, Object>();
+
+
+        int pageIndex = HttpServletRequestUtil.getInt(request, "page_index");
+        int pageSize = HttpServletRequestUtil.getInt(request, "page_size");
+        if ((pageIndex > -1)) {
+
+            Long userId = HttpServletRequestUtil.getLong(request, "userId");
+
+            String phone = HttpServletRequestUtil.getString(request, "phone");
+            String realName = HttpServletRequestUtil.getString(request, "realName");
+            String pId = HttpServletRequestUtil.getString(request, "pId");
+
+
+
+            Bill billCondition = new Bill();
+            if (userId > 0) {
+                billCondition.setUserId(userId);
+            }
+            if (realName != null) {
+                billCondition.setRealName(realName);
+            }
+            if (phone != null) {
+                billCondition.setMobile(phone);
+            }
+            if (pId != null && Long.valueOf(pId) > 0){
+                billCondition.setpId(Long.valueOf(pId));
+            }
+
+            BillExecution pe = billService.queryBillList(billCondition, pageIndex, pageSize);
+
+            modelMap.put("errno", pe.getState());
+            modelMap.put("errmsg", pe.getStateInfo());
+            modelMapData.put("count", pe.getCount());
+            modelMapData.put("bills", pe.getBillList());
+            modelMap.put("data", modelMapData);
+        } else {
+            modelMap.put("errno", UserStateEnum.INFOILLEGAl.getState());
+            modelMap.put("errmsg", UserStateEnum.INFOILLEGAl.getStateInfo());
+            modelMap.put("data", modelMapData);
+        }
+        return modelMap;
     }
 }

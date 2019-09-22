@@ -3,6 +3,18 @@
 
 <mapper namespace="com.hoggen.COMangerment.dao.BillDao">
 
+	<resultMap id="billMap" type="com.hoggen.COMangerment.entity.Bill">
+		<id column="bills_id" property="billsId" />
+		<result column="user_id" property="userId" />
+		<result column="type" property="type" />
+		<result column="real_name" property="realName" />
+		<result column="p_id" property="pId" />
+		<result column="integral" property="integral" />
+		<result column="mobile" property="mobile" />
+		<result column="create_time" property="createTime" />
+		<result column="remark" property="remark" />
+	</resultMap>
+
     <insert id="insertBill" parameterType="com.hoggen.COMangerment.entity.Bill"
             useGeneratedKeys="true" keyProperty="billsId" keyColumn="bills_id">
 		<selectKey keyProperty="billsId" order="AFTER" resultType="java.lang.Long">
@@ -12,10 +24,88 @@
 		INSERT INTO
 		tb_bills(type,user_id,p_id,
 		integral,
-		create_time,remark)
+		create_time,remark,mobile,real_name)
 		VALUES
 		(#{type},#{userId},#{pId},
-		#{integral},#{createTime},#{remark})
+		#{integral},#{createTime},#{remark},#{mobile},#{realName})
 	</insert>
+
+
+
+	<select id="queryBillList" resultMap="billMap">
+		SELECT
+		bills_id,
+		user_id,
+		type,
+		real_name,
+		p_id,
+		integral,
+		mobile,
+		create_time,
+		remark
+		FROM
+		tb_bills
+		<where>
+			<if
+					test="billCondition!=null
+				 and billCondition.realName!=null">
+				and real_name like '%${billCondition.realName}%'
+			</if>
+			<if
+					test="billCondition!=null
+				 and billCondition.userId!=null">
+				and user_id =
+				#{billCondition.userId}
+			</if>
+
+			<if
+					test="billCondition!=null
+				 and billCondition.mobile!=null">
+				and mobile like '%${billCondition.mobile}%'
+			</if>
+			<if
+					test="billCondition!=null
+				 and billCondition.pId!=null">
+				and   p_id =
+				#{billCondition.pId}
+			</if>
+		</where>
+		LIMIT #{rowIndex},#{pageSize};
+	</select>
+
+
+
+
+	<select id="queryBillCount" resultType="int">
+		SELECT count(1)
+		FROM
+		tb_bills
+		<where>
+			<if
+					test="billCondition!=null
+				 and billCondition.realName!=null">
+				and real_name like '%${billCondition.realName}%'
+			</if>
+			<if
+					test="billCondition!=null
+				 and billCondition.userId!=null">
+				and user_id =
+				#{billCondition.userId}
+			</if>
+
+			<if
+					test="billCondition!=null
+				 and billCondition.mobile!=null">
+				and mobile like '%${billCondition.mobile}%'
+			</if>
+			<if
+					test="billCondition!=null
+				 and billCondition.pId!=null">
+				and   p_id =
+				#{billCondition.pId}
+			</if>
+		</where>
+
+	</select>
 
 </mapper>

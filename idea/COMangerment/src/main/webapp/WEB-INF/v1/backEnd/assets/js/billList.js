@@ -2,6 +2,7 @@ seajs.use(['base', 'page'], function(base) {
 
 	base.headMobile(); //解决手机端input获取焦点时候 头部固定偏移问题
 	var clientEndInfo = JSON.parse( localStorage.getItem('userInfo') )
+	var recommendUserItem = JSON.parse( localStorage.getItem('recommendUserItem') )
 	var _config = {
 		baseURL: app_config.API_URL ,
 		timeout: 1000,
@@ -31,9 +32,9 @@ seajs.use(['base', 'page'], function(base) {
 					value: 1
 				},
 			],
-			account: '',
+			account: recommendUserItem.realName,
 			gridData: [], //返回的数据
-			phone:'',
+			phone:recommendUserItem.mobile,
 			curPage: 0, //当前页
 			showPages: 0, //显示多少页
 			totalPages: 0, //总页数
@@ -41,7 +42,7 @@ seajs.use(['base', 'page'], function(base) {
 			pageSize: 15, //每页显示多少条
 			search_info:{
 				realName:'',
-				status:'',
+				pId:recommendUserItem.userId,
 				phone:'',
 				page_size:20,
 				page_index:1
@@ -68,16 +69,26 @@ seajs.use(['base', 'page'], function(base) {
 
 			sexFilter: function(value) {
 				return value == '0' ? '女士' : '男士';
+			},
+			timeForMart: function(v) {
+				let date = new Date(v);
+				let Y = date.getFullYear() + '-';
+				let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				let D = date.getDate() + '  ';
+				let h = date.getHours() < 10?'0' + date.getHours() + ':': date.getHours() + ':';
+				let m = date.getMinutes() < 10?'0' + date.getMinutes() + ':': date.getMinutes() + ':';
+				let s = date.getSeconds() < 10?'0' + date.getSeconds(): date.getSeconds();
+				return Y + M + D + h + m + s;
 			}
 		},
 		methods: {
 			getList: function(p) {
 				var _self = this;
 				_self.search_info.page_index = p;
-				axios.post('api/user/listUsers', _self.search_info,_config)
+				axios.post('api/user/listBills', _self.search_info,_config)
 					.then(res =>{
 						if(res.data.errno==0){
-							_self.gridData = res.data.data.accounts;
+							_self.gridData = res.data.data.bills;
 							let d = res.data.data;
 
 							let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）

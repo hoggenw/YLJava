@@ -16,6 +16,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="create_time" property="createTime" />
         <result column="remark" property="remark" />
         <result column="birthday" property="birthday" />
+        <result column="birthday_type" property="birthdayType" />
+        <result column="salesperson" property="salesperson" />
 	</resultMap>
 
 
@@ -32,6 +34,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         remark,
         address,
         birthday,
+        birthday_type,
+        salesperson,
         create_by
         FROM
         tb_user
@@ -53,6 +57,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         remark,
         address,
         birthday,
+        birthday_type,
+        salesperson,
         create_by
         FROM
         tb_user
@@ -66,11 +72,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO
 		tb_user(p_id,mobile,real_name,
 		sex,integral,status,
-		create_time,remark,address,birthday,create_by)
+		create_time,remark,address,birthday,create_by,salesperson,birthday_type)
 		VALUES
 		(#{pId},#{mobile},#{realName},
 		#{sex},#{integral},#{status},#{createTime},
-		#{remark},#{address},#{birthday},#{createBy})
+		#{remark},#{address},#{birthday},#{createBy},#{salesperson},#{birthdayType})
 	</insert>
 
 
@@ -87,6 +93,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="remark != null">remark=#{remark},</if>
             <if test="address != null">address=#{address},</if>
             <if test="birthday != null">birthday=#{birthday},</if>
+            <if test="recommend != null">recommend=#{recommend},</if>
+            <if test="birthdayType != null">birthday_type=#{birthdayType},</if>
 		</set>
 		WHERE user_id = #{userId}
 	</update>
@@ -112,7 +120,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         create_time,
         remark,
         address,
-        birthday
+        salesperson,
+        birthday,
+        birthday_type
 		FROM
 		tb_user
 		<where>
@@ -133,10 +143,96 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				 and userCondition.mobile!=null">
                 and mobile like '%${userCondition.mobile}%'
             </if>
+            <if
+                    test="userCondition!=null
+				 and userCondition.pId!=null">
+                and   p_id =
+                #{userCondition.pId}
+            </if>
 
 		</where>
 		LIMIT #{rowIndex},#{pageSize};
 	</select>
+
+
+    <select id="queryRecommendUserList" resultMap="userMap">
+        SELECT
+        user_id,
+        p_id,
+        mobile,
+        real_name,
+        status,
+        sex,
+        integral,
+        create_time,
+        remark,
+        address,
+        salesperson,
+        birthday,
+        birthday_type
+        FROM
+        tb_user
+        where `recommend` != 0
+        <if
+                test="userCondition!=null
+				 and userCondition.realName!=null">
+            and real_name like '%${userCondition.realName}%'
+        </if>
+        <if
+                test="userCondition!=null
+				 and userCondition.status!=null">
+            and status =
+            #{userCondition.status}
+        </if>
+
+        <if
+                test="userCondition!=null
+				 and userCondition.mobile!=null">
+            and mobile like '%${userCondition.mobile}%'
+        </if>
+
+
+        <if
+                test="userCondition!=null
+				 and userCondition.pId!=null">
+            and   p_id =
+            #{userCondition.pId}
+        </if>
+        LIMIT #{rowIndex},#{pageSize};
+    </select>
+
+
+    <select id="queryRecommendUserCount" resultType="int">
+        SELECT count(1)
+        FROM
+        tb_user
+        where `recommend` != 0
+        <if
+                test="userCondition!=null
+				 and userCondition.realName!=null">
+            and real_name like '%${userCondition.realName}%'
+        </if>
+        <if
+                test="userCondition!=null
+				 and userCondition.status!=null">
+            and status =
+            #{userCondition.status}
+        </if>
+
+        <if
+                test="userCondition!=null
+				 and userCondition.mobile!=null">
+            and mobile like '%${userCondition.mobile}%'
+        </if>
+
+        <if
+                test="userCondition!=null
+				 and userCondition.pId!=null">
+            and  p_id =
+            #{userCondition.pId}
+        </if>
+
+    </select>
 
 
 	<select id="queryUserCount" resultType="int">
@@ -160,6 +256,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                     test="userCondition!=null
 				 and userCondition.mobile!=null">
                 and mobile like '%${userCondition.mobile}%'
+            </if>
+            <if
+                    test="userCondition!=null
+				 and userCondition.pId!=null">
+                and  p_id =
+                #{userCondition.pId}
             </if>
 		</where>
 

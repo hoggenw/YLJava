@@ -22,28 +22,9 @@
 			</div>
 			
 			<div class="am-g am-form">
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<input type="text" v-model="search_info.realName" class="am-input-sm" placeholder="姓名查询">
-					</div>
-				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<input type="text" v-model="search_info.phone" class="am-input-sm" placeholder="电话号码查询">
-					</div>
-				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<select class="am-input-sm" v-model="search_info.status">
-							<option v-for="item in options" :value="item.value">
-									{{item.name}}
-							</option>
-						</select>
-					</div>
-				</div>
+
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
 					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm"  @click="back" value="">返回</button>
-					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
 
 				</div>
 			</div>
@@ -54,22 +35,24 @@
 							<thead>
 								<tr>
 									<th width="20%">被推荐人姓名</th>
-									<th width="15%">状态</th>
-									<th width="15%">性别</th>
 									<th width="20%">电话</th>
+									<th width="20%">是否返现</th>
+									<th width="20%">消费金额</th>
+									<th width="20%">时间</th>
 									<th width="30%">操作</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr v-for="item in gridData">
-									<td>{{item.realName}}</td>
-									<td>{{item.status | capitalize}}</td>
-									<td>{{item.sex | sexFilter}}</td>
+									<td>{{item.real_name}}</td>
 									<td>{{item.mobile}}</td>
+									<td>{{item.success | capitalize}}</td>
+									<td>{{item.integral}}</td>
+									<td>{{item.create_time | timeForMart}}</td>
 									<td class="am-cf">
-										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看消费记录</button>
-										<%--<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>--%>
-										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>--%>
+										<%--<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看消费记录</button>--%>
+										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.success==0" @click="statusAccount(item.back_id,1)">完成返现</button>
+										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.success==1" @click="statusAccount(item.userId,0)">解冻账号</button>--%>
 									</td>
 								</tr>
 							</tbody>
@@ -92,7 +75,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/recommend_sUser']);
+	seajs.use(['/backEnd/assets/js/backCashList']);
 </script>
 
 <!-- footer start -->

@@ -17,25 +17,10 @@
 		<div class="admin-content-body am-u-lg-12">
 
 			<div class="am-cf am-padding">
-				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">推荐人: {{account}}</strong>  </div>
-				<div class="am-fl am-cf am-fr"><strong class="am-text-primary am-text-lg "> 推荐人电话: {{phone}}</strong> </div>
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">姓名: {{account}}</strong>  </div>
+				<div class="am-fl am-cf am-fr"><strong class="am-text-primary am-text-lg "> 电话: {{phone}}</strong> </div>
 			</div>
-			
-			<div class="am-g am-form">
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<input type="text" v-model="search_info.realName" class="am-input-sm" placeholder="姓名查询">
-					</div>
-				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<input type="text" v-model="search_info.phone" class="am-input-sm" placeholder="电话号码查询">
-					</div>
-				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
-					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
-				</div>
-			</div>
+
 			<div class="am-g">
 				<div class="am-u-sm-12">
 					<div class="am-scrollable-horizontal">
@@ -83,7 +68,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/billList']);
+	seajs.use(['/backEnd/assets/js/tradeList']);
 </script>
 
 <!-- footer start -->

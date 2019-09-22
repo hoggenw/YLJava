@@ -22,13 +22,75 @@ public class FrontController {
 		return "backEnd/login";
 	}
 
-
 	// login
-	@RequestMapping(value = "record", method = RequestMethod.GET)
-	public String record() {
+	@RequestMapping(value = "adduser", method = RequestMethod.GET)
+	public String adduser() {
 
-		return "frontEnd/record";
+		return "backEnd/addUser";
 	}
+
+	@RequestMapping(value = "detailUser", method = RequestMethod.GET)
+	public String detailUser() {
+
+		return "backEnd/detailUser";
+	}
+
+
+	@RequestMapping(value = "updateUser", method = RequestMethod.GET)
+	public String updateUser() {
+
+		return "backEnd/updateUser";
+	}
+
+
+
+	@RequestMapping(value = "recommend", method = RequestMethod.GET)
+	public String recommend() {
+
+		return "backEnd/recommend";
+	}
+
+
+	@RequestMapping(value = "recommend_sUser", method = RequestMethod.GET)
+	public String recommend_sUser() {
+
+		return "backEnd/recommend_sUser";
+	}
+
+	@RequestMapping(value = "bill", method = RequestMethod.GET)
+	public String bill() {
+
+		return "backEnd/bill";
+	}
+
+	@RequestMapping(value = "billList", method = RequestMethod.GET)
+	public String billList() {
+
+		return "backEnd/billList";
+	}
+
+	@RequestMapping(value = "backCash", method = RequestMethod.GET)
+	public String backCash() {
+
+		return "backEnd/backCash";
+	}
+	@RequestMapping(value = "backCashList", method = RequestMethod.GET)
+	public String backCashList() {
+
+		return "backEnd/backCashList";
+	}
+
+	@RequestMapping(value = "tradeList", method = RequestMethod.GET)
+	public String tradeList() {
+
+		return "backEnd/tradeList";
+	}
+
+
+
+
+
+
 
 
 

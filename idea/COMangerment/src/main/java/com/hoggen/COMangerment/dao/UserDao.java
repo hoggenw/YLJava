@@ -29,6 +29,29 @@ public interface UserDao {
 	 */
 	int queryUserCount(@Param("userCondition") User userCondition);
 
+
+
+
+	/**
+	 * 查询用户列表并分页，可输入的条件有：
+	 *
+	 * @param userCondition
+	 * @param
+	 * @param pageSize
+	 * @return
+	 */
+	List<User> queryRecommendUserList(@Param("userCondition") User userCondition, @Param("rowIndex") int rowIndex,
+							 @Param("pageSize") int pageSize);
+
+
+	/**
+	 * 查询对应的用户总数
+	 *
+	 * @param
+	 * @return
+	 */
+	int queryRecommendUserCount(@Param("userCondition") User userCondition);
+
 	/**
 	 * 通过用户名称 查询用户
 	 *

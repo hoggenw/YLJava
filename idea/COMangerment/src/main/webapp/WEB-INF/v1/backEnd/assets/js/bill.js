@@ -99,16 +99,97 @@ seajs.use(['base', 'page'], function(base) {
 					})
 
 			},
-			showDetail: function(item) { //查看详情
-				localStorage.setItem('userItem', JSON.stringify(item));
-				window.location.href = "/detailUser";
+			addBill: function(item) { //查看详情
+				let _self = this;
+				let title = '';
+				let url = '';
+				let data = {};
+
+				let html = '<div class="am-form am-margin-top-sm">' +
+					'<div class="am-form-group am-cf am-u-sm-12 am-u-lg-12">' +
+					'<span class="am-u-sm-4 am-text-right am-text-middle">姓名</span>' +
+					'<div class="am-u-sm-8">' +
+					'<input type="text" id="user_name" class="am-input-sm" placeholder="" value="item.realName">' +
+					'</div>' +
+					'</div>' +
+					'<div class="am-form-group am-cf am-margin-top-sm">' +
+					'<span class="am-u-sm-4 am-text-right">交易金额</span>' +
+					'<div class="am-u-sm-8">' +
+					'<input type="text" id="password" class="am-input-sm" placeholder="交易金额">' +
+					'</div>' +
+					'</div>' +
+					'<div class="am-form-group am-cf am-margin-top-sm">' +
+					'<span class="am-u-sm-4 am-text-right">备注</span>' +
+					'<div class="am-u-sm-8">' +
+					'<input type="text" id="agenpwd" class="am-input-sm" placeholder="备注">' +
+					'</div>' +
+					'</div>' +
+					'</div>';
+				title = '添加交易信息';
+				url = app_config.API_URL + 'api/bill/add';
+				var index = layer.open({
+					title: title,
+					content: html,
+					type: 1,
+					btn: ['保存', '取消'],
+					btnAlign: 'c',
+					area: ['350px', '255px'],
+					success: function() {
+						$('#user_name').val(item.realName).attr('readonly', 'readonly');
+					},
+					yes: function() {
+						let pwd = $.trim($('#password').val());
+						let agenpwd = $.trim($('#agenpwd').val());
+
+						data = {
+							"userId": item.userId,
+							"integral": pwd,
+							"remark": agenpwd
+						}
+						/**
+						 * 最短6位，最长16位 {6,16}
+						 *	可以包含小写大母 [a-z] 和大写字母 [A-Z]
+						 *	可以包含数字 [0-9]
+						 *	可以包含下划线 [ _ ] 和减号 [ - ]
+						 */
+						var pattern = /^[\w_-]{6,16}$/; //密码
+
+						// var usern = /^([\u4e00-\u9fa5]{0,} + [a-zA-Z0-9]{4,20})$/; //用户名
+
+						if (!pwd) {
+							layer.msg('请输入交易金额');
+							return false;
+						}
+
+						axios.post('api/bill/add', {
+							"userId": item.userId,
+							"integral": pwd,
+							"remark": agenpwd
+						},_config)
+							.then(res =>{
+								if(res.data.errno==0){
+									layer.close(index);
+									layer.msg('新增交易成功', {
+										icon: 1
+									});
+									_self.getList(_self.curPage);
+								}
+								else if(res.data.errno=='-10001'){
+									window.location.href = "/login"
+								}
+								else{
+									layer.msg(res.data.errmsg)
+								}
+							})
+					}
+				})
 
 			},
 
 
-			update:function(item) { //查看详情
-				localStorage.setItem('userItem', JSON.stringify(item));
-				window.location.href = "/updateUser";
+			tradeBill:function(item) { //查看详情
+				localStorage.setItem('recommendUserItem', JSON.stringify(item));
+				window.location.href = "/tradeList";
 
 			},
 

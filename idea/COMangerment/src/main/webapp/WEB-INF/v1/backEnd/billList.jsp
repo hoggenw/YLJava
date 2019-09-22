@@ -9,26 +9,17 @@
 
 <div class="am-cf admin-main">
 	<!-- sidebar start -->
-	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
-		<div class="am-offcanvas-bar admin-offcanvas-bar">
-			<ul class="am-list admin-sidebar-list">
-				<li class=""><a href="/">用户管理</a></li>
-				<li class=""  style="background-color: #f3f3f3"><a href="/bill">订单管理</a></li>
-				<li class=""><a href="/recommend">推荐管理</a></li>
-				<li class=""><a href="/manager/log">积分管理</a></li>
-			</ul>
-		</div>
-	</div>
 	<!-- sidebar end -->
 
 
 	<!-- content start -->
 	<div class="admin-content" id="app" v-cloak>
 		<div class="admin-content-body am-u-lg-12">
-			
+
 			<div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">订单管理</strong></div>
-      </div>
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">推荐人: {{account}}</strong>  </div>
+				<div class="am-fl am-cf am-fr"><strong class="am-text-primary am-text-lg "> 推荐人电话: {{phone}}</strong> </div>
+			</div>
 			
 			<div class="am-g am-form">
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
@@ -52,24 +43,25 @@
 							<thead>
 								<tr>
 									<th width="20%">姓名</th>
-									<th width="15%">状态</th>
-									<th width="15%">性别</th>
-									<th width="20%">电话</th>
-									<th width="30%">操作</th>
+									<th width="15%">电话</th>
+									<th width="15%">消费金额</th>
+									<th width="15%">消费时间</th>
+									<%--<th width="20%"></th>--%>
+									<%--<th width="30%">操作</th>--%>
 								</tr>
 							</thead>
 							<tbody>
 								<tr v-for="item in gridData">
 									<td>{{item.realName}}</td>
-									<td>{{item.status | capitalize}}</td>
-									<td>{{item.sex | sexFilter}}</td>
 									<td>{{item.mobile}}</td>
-									<td class="am-cf">
-										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="addBill(item)">添加交易信息</button>
-										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="addBill(item)">查看交易记录</button>
-										<%--<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>--%>
-										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>--%>
-									</td>
+									<td>{{item.integral}}</td>
+									<td>{{item.createTime | timeForMart}}</td>
+									<%--<td class="am-cf">--%>
+										<%--<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="addBill(item)">添加交易信息</button>--%>
+										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="addBill(item)">查看交易记录</button>--%>
+										<%--&lt;%&ndash;<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>&ndash;%&gt;--%>
+										<%--&lt;%&ndash;<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>&ndash;%&gt;--%>
+									<%--</td>--%>
 								</tr>
 							</tbody>
 						</table>
@@ -91,7 +83,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/bill']);
+	seajs.use(['/backEnd/assets/js/billList']);
 </script>
 
 <!-- footer start -->

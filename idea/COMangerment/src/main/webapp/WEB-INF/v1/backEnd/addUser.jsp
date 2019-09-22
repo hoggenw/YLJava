@@ -9,16 +9,16 @@
 
 <div class="am-cf admin-main">
 	<!-- sidebar start -->
-	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
-		<div class="am-offcanvas-bar admin-offcanvas-bar">
-			<ul class="am-list admin-sidebar-list">
-				<li class="" style="background-color: #f3f3f3"><a href="/">用户管理</a></li>
-				<li class=""><a href="/manager/chart">订单管理</a></li>
-				<li class=""><a href="/manager/config">推荐管理</a></li>
-				<li class=""><a href="/manager/log">积分管理</a></li>
-			</ul>
-		</div>
-	</div>
+	<%--<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">--%>
+		<%--<div class="am-offcanvas-bar admin-offcanvas-bar">--%>
+			<%--<ul class="am-list admin-sidebar-list">--%>
+				<%--<li class="" style="background-color: #f3f3f3"><a href="/">用户管理</a></li>--%>
+				<%--<li class=""><a href="/manager/chart">订单管理</a></li>--%>
+				<%--<li class=""><a href="/manager/config">推荐管理</a></li>--%>
+				<%--<li class=""><a href="/manager/log">积分管理</a></li>--%>
+			<%--</ul>--%>
+		<%--</div>--%>
+	<%--</div>--%>
 	<!-- sidebar end -->
 
 
@@ -27,69 +27,86 @@
 		<div class="admin-content-body am-u-lg-12">
 			
 			<div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">账号管理</strong></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">添加用户</strong></div>
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
+					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm"  @click="back" value="">返回</button>
+				</div>
+
       </div>
 			
 			<div class="am-g am-form">
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<input type="text" v-model="search_info.realName" class="am-input-sm" placeholder="姓名查询">
-					</div>
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="realName">姓名(必填):</label>
+					<input type="text" placeholder="请输入客户姓名" id="realName" v-model="search_info.realName" value="" >
 				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<input type="text" v-model="search_info.phone" class="am-input-sm" placeholder="电话号码查询">
-					</div>
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="pMobile">推荐人联系方式:</label>
+					<input type="text" placeholder="请输入推荐人手机号码" id="pMobile" v-model="search_info.pMobile" value="">
 				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<select class="am-input-sm" v-model="search_info.status">
-							<option v-for="item in options" :value="item.value">
-									{{item.name}}
-							</option>
-						</select>
-					</div>
+
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="mobile">客户联系方式(必填):</label>
+					<input type="text" placeholder="请输入客户手机号码" id="mobile" v-model="search_info.mobile" value="">
 				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
-					<button class="am-btn am-btn-primary am-btn-sm am-fr" @click="addAcount()" type="button">新增账号</button>
-					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="sex">选择性别(必填):</label>
+					<select  v-model="search_info.sex" id="sex" >
+						<option v-for="item in options" :value="item.value">
+							{{item.name}}
+						</option>
+					</select>
 				</div>
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="birthday">客户生日:</label>
+					<input type="text" placeholder="请输入客户生日" id="birthday" v-model="search_info.birthday" value="">
+				</div>
+
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="birthdayType">选择生日类别:</label>
+					<select  v-model="search_info.birthdayType" id="birthdayType" >
+						<option v-for="item in timeOptions" :value="item.value">
+							{{item.name}}
+						</option>
+					</select>
+				</div>
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="address">客户地址:</label>
+					<input type="text" placeholder="请输入客户地址" id="address" v-model="search_info.address" value="">
+				</div>
+
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="integral">初始积分:</label>
+					<input type="text" placeholder="请输入初始积分" id="integral" v-model="search_info.integral" value="">
+				</div>
+
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="salesperson">登记人:</label>
+					<input type="text" placeholder="登记人" id="salesperson" v-model="search_info.salesperson" value="">
+				</div>
+
+
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+					<label for="remark">备注:</label>
+					<input type="text" placeholder="备注" id="remark" v-model="search_info.remark" value="">
+				</div>
+
+				<br>
+
+				<div class="am-cf am-u-sm-12 am-u-md-12 am-u-lg-12 " style="margin-top: 50px;margin-left: auto;margin-right: auto ">
+					<input type="submit" name="" @click="submitClick" value="提交" class="am-btn am-btn-secondary am-btn-block ">
+				</div>
+
 			</div>
-			<div class="am-g">
-				<div class="am-u-sm-12">
-					<div class="am-scrollable-horizontal">
-						<table class="am-table am-table-striped am-text-nowrap am-table-hover">
-							<thead>
-								<tr>
-									<th width="20%">姓名</th>
-									<th width="15%">状态</th>
-									<th width="15%">性别</th>
-									<th width="20%">电话</th>
-									<th width="30%">操作</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr v-for="item in gridData">
-									<td>{{item.realName}}</td>
-									<td>{{item.status | capitalize}}</td>
-									<td>{{item.sex | sexFilter}}</td>
-									<td>{{item.mobile}}</td>
-									<td class="am-cf">
-										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="editorPwd(item)">查看详情</button>
-										<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>
-										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>
-										<button class="am-btn am-btn-danger am-btn-xs am-fl" @click="removeAccount(item.userId)">删除账号</button>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="am-cf"> 
-						<pagination @getlist="getList" :is-page="isPage" :cur-page="curPage" :show-pages="showPages" :total-pages="totalPages" ref="pagination"></pagination>
-					</div>
-				</div>
-			</div>
-			
+
 		</div>
 	</div>
 	<!-- content end -->
@@ -101,7 +118,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/index']);
+	seajs.use(['/backEnd/assets/js/addUser']);
 </script>
 
 <!-- footer start -->

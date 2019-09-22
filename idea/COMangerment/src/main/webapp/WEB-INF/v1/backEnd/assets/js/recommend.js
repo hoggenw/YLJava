@@ -74,7 +74,7 @@ seajs.use(['base', 'page'], function(base) {
 			getList: function(p) {
 				var _self = this;
 				_self.search_info.page_index = p;
-				axios.post('api/user/listUsers', _self.search_info,_config)
+				axios.post('api/user/listRecommend', _self.search_info,_config)
 					.then(res =>{
 						if(res.data.errno==0){
 							_self.gridData = res.data.data.accounts;
@@ -99,16 +99,16 @@ seajs.use(['base', 'page'], function(base) {
 					})
 
 			},
-			showDetail: function(item) { //查看详情
-				localStorage.setItem('userItem', JSON.stringify(item));
-				window.location.href = "/detailUser";
+			showList: function(item) { //查看详情
+				localStorage.setItem('recommendUserItem', JSON.stringify(item));
+				window.location.href = "/recommend_sUser";
 
 			},
 
 
-			update:function(item) { //查看详情
-				localStorage.setItem('userItem', JSON.stringify(item));
-				window.location.href = "/updateUser";
+			showBillList:function(item) { //查看详情
+				localStorage.setItem('recommendUserItem', JSON.stringify(item));
+				window.location.href = "/billList";
 
 			},
 

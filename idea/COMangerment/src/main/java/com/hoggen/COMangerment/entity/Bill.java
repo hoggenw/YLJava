@@ -28,6 +28,30 @@ public class Bill {
 
 
 
+    // 用户电话
+    private String mobile;
+
+    // 真实姓名
+    private String realName;
+
+
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
+
     public Long getBillsId() {
         return billsId;
     }

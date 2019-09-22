@@ -22,6 +22,25 @@ public class UserServiceImpl  implements UserService {
 
 
     @Override
+    public UserExecution queryRecommendUserList(User userCondition, int pageIndex, int pageSize) {
+        if (pageSize <= 0) {
+            pageSize = 20;
+        }
+        int rowIndex = PageCalculatorUtil.calculatorRowIndex(pageIndex, pageSize);
+        List<User> userList = rUserDao.queryRecommendUserList(userCondition, rowIndex, pageSize);
+        int count = rUserDao.queryRecommendUserCount(userCondition);
+        UserExecution pe = new UserExecution(UserStateEnum.SUCCESS);
+        pe.setCount(count);
+        pe.setUserList(userList);
+        return pe;
+    }
+
+    @Override
+    public int queryRecommendUserCount(User userCondition) {
+        return 0;
+    }
+
+    @Override
     public UserExecution getUserList(User userCondition, int pageIndex, int pageSize) {
         if (pageSize <= 0) {
             pageSize = 20;

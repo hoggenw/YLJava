@@ -20,6 +20,9 @@ public class User {
 	// 用户状态(0女性，1男性)
 	private Integer sex;
 
+	// 是否推荐过用户(0没有，1推荐过)
+	private Integer recommend;
+
 	//积分
 	private Integer  integral;
 	// 创建时间
@@ -30,8 +33,18 @@ public class User {
 	private String address;
 	//生日
 	private String birthday;
+
+
+	//销售员
+	private String salesperson;
+	// 用户状态(1.国历，2农历)
+	private Integer birthdayType;
+
 	//被谁创建
 	private Long createBy;
+
+
+
 //	// 修改时间
 //	private Date updateTime;
 //	//被谁修改
@@ -45,7 +58,30 @@ public class User {
 //	//
 //	private String randomString;
 
+	public String getSalesperson() {
+		return salesperson;
+	}
 
+	public void setSalesperson(String salesperson) {
+		this.salesperson = salesperson;
+	}
+
+	public Integer getBirthdayType() {
+		return birthdayType;
+	}
+
+	public void setBirthdayType(Integer birthdayType) {
+		this.birthdayType = birthdayType;
+	}
+
+
+	public Integer getRecommend() {
+		return recommend;
+	}
+
+	public void setRecommend(Integer recommend) {
+		this.recommend = recommend;
+	}
 	public String getMobile() {
 		return mobile;
 	}

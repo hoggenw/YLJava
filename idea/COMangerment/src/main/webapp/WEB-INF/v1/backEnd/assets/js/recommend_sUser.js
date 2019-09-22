@@ -2,6 +2,7 @@ seajs.use(['base', 'page'], function(base) {
 
 	base.headMobile(); //解决手机端input获取焦点时候 头部固定偏移问题
 	var clientEndInfo = JSON.parse( localStorage.getItem('userInfo') )
+	var recommendUserItem = JSON.parse( localStorage.getItem('recommendUserItem') )
 	var _config = {
 		baseURL: app_config.API_URL ,
 		timeout: 1000,
@@ -31,9 +32,9 @@ seajs.use(['base', 'page'], function(base) {
 					value: 1
 				},
 			],
-			account: '',
+			account: recommendUserItem.realName,
 			gridData: [], //返回的数据
-			phone:'',
+			phone:recommendUserItem.mobile,
 			curPage: 0, //当前页
 			showPages: 0, //显示多少页
 			totalPages: 0, //总页数
@@ -44,7 +45,8 @@ seajs.use(['base', 'page'], function(base) {
 				status:'',
 				phone:'',
 				page_size:20,
-				page_index:1
+				page_index:1,
+				pId:recommendUserItem.userId
 			}
 
 		},
@@ -74,7 +76,11 @@ seajs.use(['base', 'page'], function(base) {
 			getList: function(p) {
 				var _self = this;
 				_self.search_info.page_index = p;
-				axios.post('api/user/listRecommend', _self.search_info,_config)
+				if (_self.search_info.pId <= 0){
+					return;
+				}
+
+				axios.post('api/user/listUsers', _self.search_info,_config)
 					.then(res =>{
 						if(res.data.errno==0){
 							_self.gridData = res.data.data.accounts;
@@ -100,8 +106,8 @@ seajs.use(['base', 'page'], function(base) {
 
 			},
 			showDetail: function(item) { //查看详情
-				localStorage.setItem('userItem', JSON.stringify(item));
-				window.location.href = "/detailUser";
+				localStorage.setItem('personUserItem', JSON.stringify(item));
+				window.location.href = "/tradeList";
 
 			},
 
@@ -109,11 +115,14 @@ seajs.use(['base', 'page'], function(base) {
 			update:function(item) { //查看详情
 				localStorage.setItem('userItem', JSON.stringify(item));
 				window.location.href = "/updateUser";
-
 			},
 
 			addAcount: function() { //新增账号
 				window.location.href = "/adduser";
+			},
+
+			back: function() { //新增账号
+				window.location.href = "/recommend";
 			},
 
 			statusAccount: function(id, type) { //type 1:冻结账号 0:解冻

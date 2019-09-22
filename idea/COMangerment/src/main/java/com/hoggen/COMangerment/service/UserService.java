@@ -9,6 +9,24 @@ import java.util.List;
 
 public interface UserService {
 
+	/**
+	 * 查询用户列表并分页，可输入的条件有：
+	 *
+	 * @param userCondition
+	 * @param
+	 * @param pageSize
+	 * @return
+	 */
+	UserExecution queryRecommendUserList(User userCondition, int pageIndex, int pageSize);
+
+
+	/**
+	 * 查询对应的用户总数
+	 *
+	 * @param
+	 * @return
+	 */
+	int queryRecommendUserCount(@Param("userCondition") User userCondition);
 
 
 	/**

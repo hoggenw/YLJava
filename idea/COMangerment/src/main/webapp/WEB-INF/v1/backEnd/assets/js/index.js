@@ -54,6 +54,8 @@ seajs.use(['base', 'page'], function(base) {
 			base.userInfo();
 
 			_self.getList(1);
+
+			localStorage.setItem('userItem', '');
 		},
 		components: {
 			// 引用组件
@@ -62,6 +64,10 @@ seajs.use(['base', 'page'], function(base) {
 		filters: {
 			capitalize: function(value) {
 				return value == '0' ? '正常' : '冻结';
+			},
+
+			sexFilter: function(value) {
+				return value == '0' ? '女士' : '男士';
 			}
 		},
 		methods: {
@@ -71,8 +77,8 @@ seajs.use(['base', 'page'], function(base) {
 				axios.post('api/user/listUsers', _self.search_info,_config)
 					.then(res =>{
 						if(res.data.errno==0){
-							_self.gridData = res.data.accounts;
-							let d = res.data;
+							_self.gridData = res.data.data.accounts;
+							let d = res.data.data;
 
 							let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
 
@@ -92,43 +98,24 @@ seajs.use(['base', 'page'], function(base) {
 						}
 					})
 
-				// base.Ajax({
-				// 	onSite: 1, //标识站内还是站外 1：站外
-				// 	type: 'post',
-				// 	url: app_config.API_URL + 'api/user/listUsers',
-				// 	headers: {'token':clientEndInfo.token },
-				// 	data: {
-				// 		realName: _self.account, //搜索账号名称
-				// 		status: _self.status, //账号状态
-				// 		page_index: p,
-				// 		page_size: _self.pageSize
-				// 	},
-				// }, function(data) {
-				// 	if (data.errno == 0) {
-				// 		_self.gridData = data.data.accounts;
-				// 		let d = data.data;
-				//
-				// 		let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
-				//
-				// 		_self.curPage = p; //当前页
-				// 		_self.totalPages = lastPage; //总页数
-				// 		_self.showPages = d.count == 0 ? 0 : lastPage < 5 ? lastPage : 5; //可以点击的页数
-				//
-				// 		if (d.count == 0) {
-				// 			_self.isPage = false;
-				// 		}
-				// 	} else {
-				// 		layer.msg(data.errmsg);
-				// 	}
-				// })
+			},
+			showDetail: function(item) { //查看详情
+				localStorage.setItem('userItem', JSON.stringify(item));
+				window.location.href = "/detailUser";
 
 			},
+
+
+			update:function(item) { //查看详情
+				localStorage.setItem('userItem', JSON.stringify(item));
+				window.location.href = "/updateUser";
+
+			},
+
 			addAcount: function() { //新增账号
-				this.layerOpen(1);
+				window.location.href = "/adduser";
 			},
-			editorPwd: function(item) { //修改密码
-				this.layerOpen(2, item);
-			},
+
 			statusAccount: function(id, type) { //type 1:冻结账号 0:解冻
 				let _self = this;
 				let title = '';
@@ -138,6 +125,31 @@ seajs.use(['base', 'page'], function(base) {
 					title = '是否需要解冻该账号？';
 				}
 				layer.confirm(title,{icon: 3, title:'提示'},function(index){
+					// axios.post('api/user/listUsers', _self.search_info,_config)
+					// 	.then(res =>{
+					// 		if(res.data.errno==0){
+					// 			_self.gridData = res.data.data.accounts;
+					// 			let d = res.data.data;
+					//
+					// 			let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
+					//
+					// 			_self.curPage = p; //当前页
+					// 			_self.totalPages = lastPage; //总页数
+					// 			_self.showPages = d.count == 0 ? 0 : lastPage < 5 ? lastPage : 5; //可以点击的页数
+					//
+					// 			if (d.count == 0) {
+					// 				_self.isPage = false;
+					// 			}
+					// 		}
+					// 		else if(res.data.errno=='-10001'){
+					// 			window.location.href = "/login"
+					// 		}
+					// 		else{
+					// 			layer.msg(res.data.errmsg)
+					// 		}
+					// 	})
+
+
 					 base.Ajax({
 					 	type: 'POST', //HTTP请求类型
 					 	url: app_config.API_URL + 'admin/user/modifyFreezeOrNot',

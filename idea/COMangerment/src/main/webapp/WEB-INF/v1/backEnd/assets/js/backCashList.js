@@ -2,7 +2,7 @@ seajs.use(['base', 'page'], function(base) {
 
 	base.headMobile(); //解决手机端input获取焦点时候 头部固定偏移问题
 	var clientEndInfo = JSON.parse( localStorage.getItem('userInfo') )
-	var recommendUserItem = JSON.parse( localStorage.getItem('recommendUserItem') )
+	var backCashUserItem = JSON.parse( localStorage.getItem('backCashUserItem') )
 	var _config = {
 		baseURL: app_config.API_URL ,
 		timeout: 1000,
@@ -32,9 +32,9 @@ seajs.use(['base', 'page'], function(base) {
 					value: 1
 				},
 			],
-			account: recommendUserItem.realName,
+			account: backCashUserItem.realName,
 			gridData: [], //返回的数据
-			phone:recommendUserItem.mobile,
+			phone:backCashUserItem.mobile,
 			curPage: 0, //当前页
 			showPages: 0, //显示多少页
 			totalPages: 0, //总页数
@@ -46,7 +46,7 @@ seajs.use(['base', 'page'], function(base) {
 				phone:'',
 				page_size:20,
 				page_index:1,
-				pId:recommendUserItem.userId
+				pId:backCashUserItem.userId
 			}
 
 		},
@@ -65,11 +65,21 @@ seajs.use(['base', 'page'], function(base) {
 		},
 		filters: {
 			capitalize: function(value) {
-				return value == '0' ? '正常' : '冻结';
+				return value == '0' ? '未返现' : '已返现';
 			},
 
 			sexFilter: function(value) {
 				return value == '0' ? '女士' : '男士';
+			},
+			timeForMart: function(v) {
+				let date = new Date(v);
+				let Y = date.getFullYear() + '-';
+				let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				let D = date.getDate() + '  ';
+				let h = date.getHours() < 10?'0' + date.getHours() + ':': date.getHours() + ':';
+				let m = date.getMinutes() < 10?'0' + date.getMinutes() + ':': date.getMinutes() + ':';
+				let s = date.getSeconds() < 10?'0' + date.getSeconds(): date.getSeconds();
+				return Y + M + D + h + m + s;
 			}
 		},
 		methods: {
@@ -80,10 +90,10 @@ seajs.use(['base', 'page'], function(base) {
 					return;
 				}
 
-				axios.post('api/user/listUsers', _self.search_info,_config)
+				axios.post('api/user/listBack', _self.search_info,_config)
 					.then(res =>{
 						if(res.data.errno==0){
-							_self.gridData = res.data.data.accounts;
+							_self.gridData = res.data.data.backlist;
 							let d = res.data.data;
 
 							let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
@@ -123,69 +133,36 @@ seajs.use(['base', 'page'], function(base) {
 			},
 
 			back: function() { //新增账号
-				window.location.href = "/recommend";
+				window.location.href = "/backCash";
 			},
 
-			statusAccount: function(id, type) { //type 1:冻结账号 0:解冻
+			statusAccount: function(id, type) { //
 				let _self = this;
 				let title = '';
 				if(type == 1){
-					title = '是否需要冻结该账号？';
-				}else{
-					title = '是否需要解冻该账号？';
+					title = '是否确认该返现已经完成？';
 				}
 				layer.confirm(title,{icon: 3, title:'提示'},function(index){
-					// axios.post('api/user/listUsers', _self.search_info,_config)
-					// 	.then(res =>{
-					// 		if(res.data.errno==0){
-					// 			_self.gridData = res.data.data.accounts;
-					// 			let d = res.data.data;
-					//
-					// 			let lastPage = Math.ceil(d.count / _self.pageSize); //总页数（向上取整,有小数就整数部分加1）
-					//
-					// 			_self.curPage = p; //当前页
-					// 			_self.totalPages = lastPage; //总页数
-					// 			_self.showPages = d.count == 0 ? 0 : lastPage < 5 ? lastPage : 5; //可以点击的页数
-					//
-					// 			if (d.count == 0) {
-					// 				_self.isPage = false;
-					// 			}
-					// 		}
-					// 		else if(res.data.errno=='-10001'){
-					// 			window.location.href = "/login"
-					// 		}
-					// 		else{
-					// 			layer.msg(res.data.errmsg)
-					// 		}
-					// 	})
+					axios.post('api/user/backFinish', {
+						back_id:id,
+						suceess:type,
+					},_config)
+						.then(res =>{
+							if(res.data.errno==0){
+								layer.close(index);
+								layer.msg('操作成功成功', {
+									icon: 1
+								});
+								_self.getList(_self.curPage);
+							}
+							else if(res.data.errno=='-10001'){
+								window.location.href = "/login"
+							}
+							else{
+								layer.msg(res.data.errmsg)
+							}
+						})
 
-
-					 base.Ajax({
-					 	type: 'POST', //HTTP请求类型
-					 	url: app_config.API_URL + 'admin/user/modifyFreezeOrNot',
-					 	data: {
-					 		user_id: id,
-					 		type: type,
-					 	},
-					 }, function(data) {
-					 	if (data.ErrorCode == 0) {
-					 		layer.close(index);
-					 		if (type == 1) {
-					 			layer.msg('账号冻结成功', {
-					 				icon: 1
-					 			});
-					 			_self.getList(_self.curPage);
-					 		} else {
-					 			layer.msg('账号解冻成功', {
-					 				icon: 1
-					 			});
-					 			_self.getList(_self.curPage);
-					 		}
-					 	} else {
-					 		layer.msg(data.Message);
-					 	}
-					 })
-					 
 				})
 				
 			},

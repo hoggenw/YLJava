@@ -2,7 +2,7 @@ seajs.use(['base', 'page'], function(base) {
 
 	base.headMobile(); //解决手机端input获取焦点时候 头部固定偏移问题
 	var clientEndInfo = JSON.parse( localStorage.getItem('userInfo') )
-	var recommendUserItem = JSON.parse( localStorage.getItem('recommendUserItem') )
+	var recommendUserItem = JSON.parse( localStorage.getItem('personUserItem') )
 	var _config = {
 		baseURL: app_config.API_URL ,
 		timeout: 1000,
@@ -42,7 +42,7 @@ seajs.use(['base', 'page'], function(base) {
 			pageSize: 15, //每页显示多少条
 			search_info:{
 				realName:'',
-				pId:recommendUserItem.userId,
+				userId:recommendUserItem.userId,
 				phone:'',
 				page_size:20,
 				page_index:1

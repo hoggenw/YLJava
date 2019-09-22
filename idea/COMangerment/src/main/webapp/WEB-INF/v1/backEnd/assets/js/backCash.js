@@ -100,8 +100,8 @@ seajs.use(['base', 'page'], function(base) {
 
 			},
 			showList: function(item) { //查看详情
-				localStorage.setItem('recommendUserItem', JSON.stringify(item));
-				window.location.href = "/recommend_sUser";
+				localStorage.setItem('backCashUserItem', JSON.stringify(item));
+				window.location.href = "/backCashList";
 
 			},
 

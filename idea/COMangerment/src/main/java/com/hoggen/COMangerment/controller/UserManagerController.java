@@ -44,6 +44,8 @@ public class UserManagerController {
 
             String phone = HttpServletRequestUtil.getString(request, "phone");
             String realName = HttpServletRequestUtil.getString(request, "realName");
+            String pId = HttpServletRequestUtil.getString(request, "pId");
+
 
 
             User userCondition = new User();
@@ -56,7 +58,9 @@ public class UserManagerController {
             if (phone != null) {
                 userCondition.setMobile(phone);
             }
-
+            if (pId != null && Long.valueOf(pId) > 0){
+                userCondition.setpId(Long.valueOf(pId));
+            }
 
             UserExecution pe = userService.getUserList(userCondition, pageIndex, pageSize);
 
@@ -97,6 +101,10 @@ public class UserManagerController {
 
         String address = HttpServletRequestUtil.getString(request, "address");
 
+        String salesperson = HttpServletRequestUtil.getString(request, "salesperson");
+
+        Integer  birthdayType = HttpServletRequestUtil.getInt(request,"birthdayType");
+
         Integer  integral = HttpServletRequestUtil.getInt(request,"integral");
         if (integral < 0){
             integral =  0;
@@ -109,16 +117,21 @@ public class UserManagerController {
 //        int birthdayLen = StringUtil.getStringLen(birthday);
 //        int addressLen = StringUtil.getStringLen(address);
 
-        if (nameLen < 2 || nameLen > 60) {
+        if (realName==null|| nameLen < 2 || nameLen > 60) {
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.NAMEOFFLINE.getState(),UserStateEnum.NAMEOFFLINE.getStateInfo(),modelMapData);
         }
 
-        if (mobileLen < 3 ) {
+        if (mobile == null || mobileLen < 3 ) {
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.MOBILEOFFLINE.getState(),UserStateEnum.MOBILEOFFLINE.getStateInfo(),modelMapData);
 
         }
         if (sex < 0){
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.SEXEMPTY.getState(),UserStateEnum.SEXEMPTY.getStateInfo(),modelMapData);
+
+        }
+
+        if ( !(birthdayType == 1 || birthdayType == 2)){
+            return RetrunDataStructModelUtil.returnCode(UserStateEnum.TIMEBIRTHDAYTYPEERROR.getState(),UserStateEnum.TIMEBIRTHDAYTYPEERROR.getStateInfo(),modelMapData);
 
         }
 
@@ -145,12 +158,23 @@ public class UserManagerController {
         user.setBirthday(birthday);
         user.setCreateBy(createBy);
         user.setStatus(0);
+        user.setBirthdayType(birthdayType);
+        user.setSalesperson(salesperson);
 
         int effect = userService.insertUser(user);
 
         if (effect < 0){
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMapData);
         }
+
+        if (pid > 0){
+            User pUser = new User();
+            pUser.setUserId(pid);
+            pUser.setRecommend(1);
+            userService.updateUser(pUser);
+        }
+
+
         return RetrunDataStructModelUtil.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMapData);
 
     }
@@ -233,6 +257,13 @@ public class UserManagerController {
         if (integral >= 0){
            user.setIntegral(integral);
         }
+
+        Integer  birthdayType = HttpServletRequestUtil.getInt(request,"birthdayType");
+
+        if (birthdayType > 0){
+            user.setBirthdayType(birthdayType);
+        }
+
         int effect = userService.updateUser(user);
         if (effect < 0){
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMapData);
@@ -274,6 +305,32 @@ public class UserManagerController {
         if (effect < 0){
             return RetrunDataStructModelUtil.returnCode(UserStateEnum.INNER_ERROR.getState(),UserStateEnum.INNER_ERROR.getStateInfo(),modelMapData);
         }
+        return RetrunDataStructModelUtil.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMapData);
+
+    }
+
+    @RequestMapping(value = "/api/user/get", method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String, Object> getUser(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        Map<String, Object> modelMapData = new HashMap<String, Object>();
+
+        String token = request.getHeader("token");
+
+        Long userId = HttpServletRequestUtil.getLong(request, "userId");
+
+        if (userId < 0){
+            return RetrunDataStructModelUtil.returnCode(UserStateEnum.INPUT_ERROR.getState(),UserStateEnum.INPUT_ERROR.getStateInfo(),modelMapData);
+
+        }
+
+        User judge = userService.queryByUserId(userId);
+        if (judge == null){
+            return RetrunDataStructModelUtil.returnCode(UserStateEnum.EMPTY.getState(),UserStateEnum.EMPTY.getStateInfo(),modelMapData);
+
+        }
+        modelMapData.put("user",judge);
+
         return RetrunDataStructModelUtil.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMapData);
 
     }

@@ -12,10 +12,10 @@
 	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
 		<div class="am-offcanvas-bar admin-offcanvas-bar">
 			<ul class="am-list admin-sidebar-list">
-				<li class="" style="background-color: #f3f3f3"><a href="/">用户管理</a></li>
-				<li class=""><a href="/manager/chart">订单管理</a></li>
-				<li class=""><a href="/manager/config">推荐管理</a></li>
-				<li class=""><a href="/manager/log">积分管理</a></li>
+				<li class="" ><a href="/">用户管理</a></li>
+				<li class=""><a href="/bill">订单管理</a></li>
+				<li class="" style="background-color: #f3f3f3"><a href="/recommend">推荐管理</a></li>
+				<li class=""><a href="/backCash">返现管理</a></li>
 			</ul>
 		</div>
 	</div>
@@ -27,7 +27,7 @@
 		<div class="admin-content-body am-u-lg-12">
 			
 			<div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">账号管理</strong></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg ">推荐人管理</strong></div>
       </div>
 			
 			<div class="am-g am-form">
@@ -41,17 +41,16 @@
 						<input type="text" v-model="search_info.phone" class="am-input-sm" placeholder="电话号码查询">
 					</div>
 				</div>
-				<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">
-					<div class="am-form-group">
-						<select class="am-input-sm" v-model="search_info.status">
-							<option v-for="item in options" :value="item.value">
-									{{item.name}}
-							</option>
-						</select>
-					</div>
-				</div>
+				<%--<div class="am-u-sm-12 am-u-md-6 am-u-lg-2">--%>
+					<%--<div class="am-form-group">--%>
+						<%--<select class="am-input-sm" v-model="search_info.status">--%>
+							<%--<option v-for="item in options" :value="item.value">--%>
+									<%--{{item.name}}--%>
+							<%--</option>--%>
+						<%--</select>--%>
+					<%--</div>--%>
+				<%--</div>--%>
 				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
-					<button class="am-btn am-btn-primary am-btn-sm am-fr" @click="addAcount()" type="button">新增账号</button>
 					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
 				</div>
 			</div>
@@ -75,8 +74,8 @@
 									<td>{{item.sex | sexFilter}}</td>
 									<td>{{item.mobile}}</td>
 									<td class="am-cf">
-										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看详情</button>
-										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="update(item)">修改信息</button>
+										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showList(item)">查看其推荐客户</button>
+										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="showBillList(item)">查看其推荐产生订单</button>
 										<%--<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>--%>
 										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" v-show="item.status==1" @click="statusAccount(item.userId,0)">解冻账号</button>--%>
 									</td>
@@ -101,7 +100,7 @@
 <%@ include file="tplate/footerScript.php" %>
 
 <script type="text/javascript">
-	seajs.use(['/backEnd/assets/js/index']);
+	seajs.use(['/backEnd/assets/js/recommend']);
 </script>
 
 <!-- footer start -->
