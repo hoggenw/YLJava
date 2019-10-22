@@ -36,11 +36,11 @@ public class DataSourceConfiguration {
 		dataSource.setJdbcUrl(jdbcUrl);
 		dataSource.setUser(DESUtils.getDecryptString(jdbcUsername));
 		dataSource.setPassword(DESUtils.getDecryptString(jdbcPassword));
-		dataSource.setMaxPoolSize(30);
-		dataSource.setMinPoolSize(10);
-		dataSource.setAutoCommitOnClose(false);
-		dataSource.setCheckoutTimeout(10000);
-		dataSource.setAcquireRetryAttempts(2);
+//		dataSource.setMaxPoolSize(30);
+//		dataSource.setMinPoolSize(10);
+//		dataSource.setAutoCommitOnClose(false);
+//		dataSource.setCheckoutTimeout(10000);
+//		dataSource.setAcquireRetryAttempts(2);
 		return dataSource;
 	}
 }

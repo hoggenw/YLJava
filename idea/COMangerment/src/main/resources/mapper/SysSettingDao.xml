@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hoggen.COMangerment.dao.SysSettingDao">
+
+    <select id="find" resultType="HashMap">
+		select
+		 id,
+        first_time_limit,
+        second_time_limit,
+        third_time_limit,
+        first_percent,
+        second_percent,
+        third_percent
+		from `tb_sys_configs`
+		where  id = #{id}
+	</select>
+
+    <update id="updateById">
+        update `tb_sys_configs` set `updated_at` = now()
+        <if test='first_time_limit != null'>,`first_time_limit` = #{first_time_limit}</if>
+        <if test='second_time_limit != null'>,`second_time_limit` = #{second_time_limit}</if>
+        <if test='third_time_limit != null'>,`third_time_limit` = #{third_time_limit}</if>
+        <if test='first_percent != null'>,`first_percent` = #{first_percent}</if>
+        <if test='second_percent != null'>,`second_percent` = #{second_percent}</if>
+        <if test='third_percent != null'>,`third_percent` = #{third_percent}</if>
+        where `id` = #{id}
+    </update>
+
+</mapper>

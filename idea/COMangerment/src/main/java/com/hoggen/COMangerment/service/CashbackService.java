@@ -3,6 +3,7 @@ package com.hoggen.COMangerment.service;
 import com.hoggen.COMangerment.entity.Cashback;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ public interface CashbackService {
     int insertCashback(Cashback cashback);
 
 
-    Map<String, Object> queryBackList( Cashback backCondition,  int pageIndex, int pageSize);
+    Map<String, Object> queryBackList(Cashback backCondition, int pageIndex, int pageSize, Date endTime);
 
 
 

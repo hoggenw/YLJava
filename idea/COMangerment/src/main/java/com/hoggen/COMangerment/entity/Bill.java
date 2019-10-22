@@ -35,6 +35,35 @@ public class Bill {
     private String realName;
 
 
+    //0 正常订单 ， 1作废订单
+    private Integer operation;
+
+
+    private long backId;
+
+    public Integer getOperation() {
+        return operation;
+    }
+
+    public void setOperation(Integer operation) {
+        this.operation = operation;
+    }
+
+
+    public long getBackId() {
+        return backId;
+    }
+
+    public void setBackId(long backId) {
+        this.backId = backId;
+    }
+
+
+
+
+
+
+
 
     public String getMobile() {
         return mobile;

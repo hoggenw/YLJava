@@ -14,8 +14,10 @@
 			<ul class="am-list admin-sidebar-list">
 				<li class="" style="background-color: #f3f3f3"><a href="/">用户管理</a></li>
 				<li class=""><a href="/bill">订单管理</a></li>
+				<li class=""><a href="/billListReally">订单列表</a></li>
 				<li class=""><a href="/recommend">推荐管理</a></li>
 				<li class=""><a href="/backCash">返现管理</a></li>
+				<li class="" ><a href="/setting">系统参数配置</a></li>
 			</ul>
 		</div>
 	</div>
@@ -61,23 +63,23 @@
 						<table class="am-table am-table-striped am-text-nowrap am-table-hover">
 							<thead>
 								<tr>
-									<th width="15%">姓名</th>
-									<th width="10%">状态</th>
+									<th width="10%">姓名</th>
 									<th width="10%">性别</th>
 									<th width="15%">积分</th>
 									<th width="15%">电话</th>
 									<th width="10%">登记人</th>
+									<th width="15%">创建时间</th>
 									<th width="25%">操作</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr v-for="item in gridData">
 									<td>{{item.realName}}</td>
-									<td>{{item.status | capitalize}}</td>
 									<td>{{item.sex | sexFilter}}</td>
 									<td>{{item.integral}}</td>
 									<td>{{item.mobile}}</td>
 									<td>{{item.salesperson}}</td>
+									<td>{{item.createTime | timeForMart}}</td>
 									<td class="am-cf">
 										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看详情</button>
 										<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="update(item)">修改信息</button>

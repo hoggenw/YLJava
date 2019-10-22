@@ -6,7 +6,8 @@ public enum UserStateEnum {
 	INPUT_ERROR(-1007, "输入有误"),INTEGRAL_NULL(-1008, "积分输入错误")
 	,USER_INTEGRAL_UPDATE_ERROR(-1009, "用户更新积分错误")
 	,USER_BACK_UPDATE_ERROR(-1010, "返现记录生成错误")
-	,INFOILLEGAl(-10011, "参数错误"),TIMEBIRTHDAYTYPEERROR(-10012, "生日选择日期类型错误");
+	,INFOILLEGAl(-10011, "参数错误"),TIMEBIRTHDAYTYPEERROR(-10012, "生日选择日期类型错误"),
+	DATA_DOES_NOT_EXIST(3001, "数据不存在");
 
 	private int state;
 

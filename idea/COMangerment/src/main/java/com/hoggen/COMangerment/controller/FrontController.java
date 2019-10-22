@@ -86,6 +86,18 @@ public class FrontController {
 		return "backEnd/tradeList";
 	}
 
+	@RequestMapping(value = "billListReally", method = RequestMethod.GET)
+	public String billListReally() {
+
+		return "backEnd/billListReally";
+	}
+
+	@RequestMapping(value = "setting", method = RequestMethod.GET)
+	public String setting() {
+
+		return "backEnd/setting";
+	}
+
 
 
 

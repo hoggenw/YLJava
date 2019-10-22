@@ -4,6 +4,7 @@ import com.hoggen.COMangerment.entity.Bill;
 import com.hoggen.COMangerment.entity.User;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface BillDao {
@@ -19,8 +20,14 @@ public interface BillDao {
      * @return
      */
     List<Bill> queryBillList(@Param("billCondition") Bill billCondition, @Param("rowIndex") int rowIndex,
-                             @Param("pageSize") int pageSize);
+                             @Param("pageSize") int pageSize,@Param("endTime") Date endTime);
 
+
+
+    int updateBill(Bill billCondition);
+
+
+    Bill queryBill(Long billsId);
 
 
     /**
@@ -29,7 +36,7 @@ public interface BillDao {
      * @param
      * @return
      */
-    int queryBillCount(@Param("billCondition") Bill billCondition);
+    int queryBillCount(@Param("billCondition") Bill billCondition,@Param("endTime") Date endTime);
 
 
 }

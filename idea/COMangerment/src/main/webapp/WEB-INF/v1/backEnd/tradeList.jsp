@@ -21,6 +21,23 @@
 				<div class="am-fl am-cf am-fr"><strong class="am-text-primary am-text-lg "> 电话: {{phone}}</strong> </div>
 			</div>
 
+
+			<div class="am-g am-form">
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+					<div class="am-form-group">
+						<input type="text" id="startTime" class="am-input-sm" placeholder="请选择开始时间">
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+					<div class="am-form-group">
+						<input type="text" id="endTime" class="am-input-sm" placeholder="请选择结束时间">
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-6 am-u-lg-4 am-fr">
+					<button class="am-btn am-btn-primary am-btn-sm am-fr am-margin-right-sm" @click="getList(1)" type="button">搜索</button>
+				</div>
+			</div>
+
 			<div class="am-g">
 				<div class="am-u-sm-12">
 					<div class="am-scrollable-horizontal">
@@ -31,6 +48,7 @@
 									<th width="15%">电话</th>
 									<th width="15%">消费金额</th>
 									<th width="15%">消费时间</th>
+									<th width="10%">订单状态</th>
 									<%--<th width="20%"></th>--%>
 									<%--<th width="30%">操作</th>--%>
 								</tr>
@@ -41,6 +59,7 @@
 									<td>{{item.mobile}}</td>
 									<td>{{item.integral}}</td>
 									<td>{{item.createTime | timeForMart}}</td>
+									<td>{{item.operation | capitalize}}</td>
 									<%--<td class="am-cf">--%>
 										<%--<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="addBill(item)">添加交易信息</button>--%>
 										<%--<button class="am-btn am-btn-success am-btn-xs am-fl am-margin-right-sm" @click="addBill(item)">查看交易记录</button>--%>

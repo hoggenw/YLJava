@@ -9,4 +9,5 @@ public class GlobalUserUtil {
     //保存全局的  连接上服务器的客户
     public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor
             .INSTANCE);
+
 }

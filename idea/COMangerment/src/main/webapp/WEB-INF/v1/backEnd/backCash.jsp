@@ -14,8 +14,10 @@
 			<ul class="am-list admin-sidebar-list">
 				<li class="" ><a href="/">用户管理</a></li>
 				<li class=""><a href="/bill">订单管理</a></li>
+				<li class=""><a href="/billListReally">订单列表</a></li>
 				<li class="" ><a href="/recommend">推荐管理</a></li>
 				<li class="" style="background-color: #f3f3f3"><a href="/backCash">返现管理</a></li>
+				<li class="" ><a href="/setting">系统参数配置</a></li>
 			</ul>
 		</div>
 	</div>

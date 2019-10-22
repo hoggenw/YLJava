@@ -22,6 +22,16 @@ public class Cashback {
     // ID
     private Long billId;
 
+    public Integer getPercent() {
+        return percent;
+    }
+
+    public void setPercent(Integer percent) {
+        this.percent = percent;
+    }
+
+    private Integer percent;
+
 
     public int getSuccess() {
         return success;

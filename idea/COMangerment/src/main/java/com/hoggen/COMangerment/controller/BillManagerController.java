@@ -6,6 +6,7 @@ import com.hoggen.COMangerment.dto.UserExecution;
 import com.hoggen.COMangerment.entity.Bill;
 import com.hoggen.COMangerment.entity.Cashback;
 import com.hoggen.COMangerment.entity.User;
+import com.hoggen.COMangerment.enums.OperatingTypeEnum;
 import com.hoggen.COMangerment.enums.UserStateEnum;
 import com.hoggen.COMangerment.service.BillService;
 import com.hoggen.COMangerment.service.CashbackService;
@@ -99,6 +100,34 @@ public class BillManagerController {
 
     }
 
+    @RequestMapping(value = "/api/bill/discard", method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String, Object> discardBill(HttpServletRequest request) {
+
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        Map<String, Object> modelMapData = new HashMap<String, Object>();
+        long billId = HttpServletRequestUtil.getLong(request,"billId");
+        if (billId < 0){
+            return RetrunDataStructModelUtil.returnCode(UserStateEnum.INPUT_ERROR.getState(),UserStateEnum.INPUT_ERROR.getStateInfo(),modelMapData);
+
+        }
+
+        int result = billService.updateBill(billId);
+        if (result < 0){
+            if (result == -10001){
+                return RetrunDataStructModelUtil.returnCode(OperatingTypeEnum.SUCE_OR.getState(),OperatingTypeEnum.SUCE_OR.getStateInfo(),modelMapData);
+
+            }
+            else{
+                return RetrunDataStructModelUtil.returnCode(OperatingTypeEnum.OPERATION_ERROR.getState(),OperatingTypeEnum.OPERATION_ERROR.getStateInfo(),modelMapData);
+
+            }
+
+        }
+        return RetrunDataStructModelUtil.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),modelMapData);
+
+    }
+
 
 
 
@@ -119,7 +148,12 @@ public class BillManagerController {
             String phone = HttpServletRequestUtil.getString(request, "phone");
             String realName = HttpServletRequestUtil.getString(request, "realName");
             String pId = HttpServletRequestUtil.getString(request, "pId");
-
+            String beginTimeString = HttpServletRequestUtil.getString(request, "begin_time");
+            String endTimeString = HttpServletRequestUtil.getString(request, "over_time");
+            Date endTime = null;
+            if (endTimeString != null) {
+                endTime = StringUtil.strToDateLong(endTimeString);
+            }
 
 
             Bill billCondition = new Bill();
@@ -136,7 +170,11 @@ public class BillManagerController {
                 billCondition.setpId(Long.valueOf(pId));
             }
 
-            BillExecution pe = billService.queryBillList(billCondition, pageIndex, pageSize);
+            if (beginTimeString != null) {
+                billCondition.setCreateTime(StringUtil.strToDateLong(beginTimeString));
+            }
+
+            BillExecution pe = billService.queryBillList(billCondition, pageIndex, pageSize,endTime);
 
             modelMap.put("errno", pe.getState());
             modelMap.put("errmsg", pe.getStateInfo());

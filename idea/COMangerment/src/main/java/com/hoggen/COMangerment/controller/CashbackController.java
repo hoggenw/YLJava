@@ -9,6 +9,7 @@ import com.hoggen.COMangerment.service.BillService;
 import com.hoggen.COMangerment.service.CashbackService;
 import com.hoggen.COMangerment.util.HttpServletRequestUtil;
 import com.hoggen.COMangerment.util.RetrunDataStructModelUtil;
+import com.hoggen.COMangerment.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,6 +45,12 @@ public class CashbackController {
             Long userId = HttpServletRequestUtil.getLong(request, "userId");
             String pId = HttpServletRequestUtil.getString(request, "pId");
 
+            String beginTimeString = HttpServletRequestUtil.getString(request, "begin_time");
+            String endTimeString = HttpServletRequestUtil.getString(request, "over_time");
+            Date endTime = null;
+            if (endTimeString != null) {
+                endTime = StringUtil.strToDateLong(endTimeString);
+            }
 
 
             Cashback cashback = new Cashback();
@@ -59,7 +67,12 @@ public class CashbackController {
                 return modelMap;
             }
 
-            modelMapData = cashbackService.queryBackList(cashback, pageIndex, pageSize);
+
+            if (beginTimeString != null) {
+                cashback.setCreateTime(StringUtil.strToDateLong(beginTimeString));
+            }
+
+            modelMapData = cashbackService.queryBackList(cashback, pageIndex, pageSize,endTime);
 
             modelMap.put("errno", UserStateEnum.SUCCESS.getState());
             modelMap.put("errmsg", UserStateEnum.SUCCESS.getStateInfo());
@@ -99,6 +112,7 @@ public class CashbackController {
         // System.out.println("password:" + password);
         Cashback temp = new Cashback();
         temp.setSuccess(suceess);
+        temp.setType(suceess);
         temp.setBackId(back_id);
         int effect = cashbackService.updateCashback(temp);
 

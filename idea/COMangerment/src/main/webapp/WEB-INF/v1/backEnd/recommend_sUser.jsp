@@ -54,10 +54,11 @@
 							<thead>
 								<tr>
 									<th width="20%">被推荐人姓名</th>
-									<th width="15%">状态</th>
+									<th width="10%">状态</th>
 									<th width="15%">性别</th>
 									<th width="20%">电话</th>
-									<th width="30%">操作</th>
+									<th width="20%">创建时间</th>
+									<th width="20%">操作</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -66,6 +67,7 @@
 									<td>{{item.status | capitalize}}</td>
 									<td>{{item.sex | sexFilter}}</td>
 									<td>{{item.mobile}}</td>
+									<td>{{item.createTime | timeForMart}}</td>
 									<td class="am-cf">
 										<button class="am-btn am-btn-primary am-btn-xs am-fl am-margin-right-sm" @click="showDetail(item)">查看消费记录</button>
 										<%--<button class="am-btn am-btn-warning am-btn-xs am-fl am-margin-right-sm" v-show="item.status==0" @click="statusAccount(item.userId,1)">冻结账号</button>--%>

@@ -5,6 +5,7 @@ import com.hoggen.COMangerment.entity.Cashback;
 import com.hoggen.COMangerment.entity.User;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface CashbackDao {
@@ -12,7 +13,7 @@ public interface CashbackDao {
     int insertCashback(Cashback cashback);
 
     List<?>  queryBackList(@Param("backCondition") Cashback backCondition, @Param("rowIndex") int rowIndex,
-                             @Param("pageSize") int pageSize);
+                             @Param("pageSize") int pageSize,@Param("endTime") Date endTime);
 
 
 
@@ -22,7 +23,7 @@ public interface CashbackDao {
      * @param
      * @return
      */
-    int queryBackCount(@Param("backCondition") Cashback backCondition);
+    int queryBackCount(@Param("backCondition") Cashback backCondition,@Param("endTime") Date endTime);
 
 
     /**

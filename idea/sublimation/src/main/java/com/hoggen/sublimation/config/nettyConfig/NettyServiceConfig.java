@@ -1,6 +1,7 @@
 package com.hoggen.sublimation.config.nettyConfig;
 
 
+import com.hoggen.sublimation.proto.UserMsg;
 import com.hoggen.sublimation.util.NettyHandler.CustomTextFrameHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -10,6 +11,11 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
+import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
+import io.netty.handler.codec.protobuf.ProtobufDecoder;
+import io.netty.handler.codec.protobuf.ProtobufEncoder;
+import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
+import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
@@ -44,6 +50,8 @@ public class NettyServiceConfig {
 
     private EventLoopGroup boss = new NioEventLoopGroup();
     private EventLoopGroup work = new NioEventLoopGroup();
+    //业务线程池
+    private EventLoopGroup busyGroup = new NioEventLoopGroup();
 
 
     private  void  startServer(){
@@ -72,8 +80,20 @@ public class NettyServiceConfig {
 //                    2）writerIdleTime：为写超时时间（即多长时间没有向客户端发送数据）
 //                    3）allIdleTime：所有类型的超时时间
                     socketChannel.pipeline().addLast(new IdleStateHandler(60,30,60*2, TimeUnit.SECONDS));
+                    //传输的协议 Protobuf
+                    //解码用 解决分包及粘包问题
+                    socketChannel.pipeline().addLast("frameDecoder", new ProtobufVarint32FrameDecoder());
+                    //构造函数传递要解码成的类型
+                   // socketChannel.pipeline().addLast("protobufDecoder", new ProtobufDecoder(UserMsg.YLmessageModel.getDefaultInstance()));
+                    //编码用
+                    socketChannel.pipeline().addLast("frameEncoder", new ProtobufVarint32LengthFieldPrepender());
+                    //socketChannel.pipeline().addLast(new ProtobufEncoder());
+                    //可以修改请求数据大小限制
+                    //socketChannel.pipeline().addLast(new WebSocketServerProtocolHandler("/hoggen",null,false,1048576*2));
                     // 配置通道处理  来进行业务处理
-                    socketChannel.pipeline().addLast(new CustomTextFrameHandler());
+                    socketChannel.pipeline().addLast(busyGroup,new CustomTextFrameHandler());
+                    //System.out.println("======线程44====" + Thread.currentThread().getName());
+
                 }
             });
             //设置参数，TCP参数

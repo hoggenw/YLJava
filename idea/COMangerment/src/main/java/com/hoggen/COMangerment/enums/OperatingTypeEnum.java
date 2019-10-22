@@ -2,7 +2,8 @@ package com.hoggen.COMangerment.enums;
 
 public enum OperatingTypeEnum {
 	// (1登录，2上传头围检测、3上传腹围检测、4上传股骨检测、5上传头臀径检测）
-	LOGIN(1, "登录"), T_UOLOAD(2, "上传头围检测"), F_UOLOAD(3, "上传腹围检测"), G_UOLOAD(4, "上传股骨检测"), TT_UOLOAD(5, "上传头臀径检测");
+	LOGIN(1, "登录"), SUCE_OR(-1000002, "该订单已经返现成功，不能作废"),
+	OPERATION_ERROR(-1000002, "修改数据失败");
 
 	private int state;
 

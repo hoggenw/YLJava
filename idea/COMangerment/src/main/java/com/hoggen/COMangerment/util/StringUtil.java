@@ -2,6 +2,7 @@ package com.hoggen.COMangerment.util;
 
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
@@ -106,4 +107,23 @@ public class StringUtil {
 		String dateString = formatter.format(dateDate);
 		return dateString;
 	}
+
+
+
+
+	public static Date getDay(Date date, Integer mount) {
+		Calendar ca = Calendar.getInstance();// 得到一个Calendar的实例
+		ca.setTime(date);
+		;// 月份是从0开始的，
+		ca.add(Calendar.DAY_OF_YEAR, mount); // 日期减1
+		Date lastDay = ca.getTime(); // 结果
+		//System.out.println("时间：  " + dateToStrLong(lastDay));
+		return lastDay;
+	}
+
+	public static void main(String[] args) {
+		getDay(new  Date(),365);
+
+	}
+
 }

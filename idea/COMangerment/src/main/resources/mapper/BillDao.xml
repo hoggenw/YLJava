@@ -12,6 +12,7 @@
 		<result column="integral" property="integral" />
 		<result column="mobile" property="mobile" />
 		<result column="create_time" property="createTime" />
+		<result column="operation" property="operation" />
 		<result column="remark" property="remark" />
 	</resultMap>
 
@@ -24,11 +25,43 @@
 		INSERT INTO
 		tb_bills(type,user_id,p_id,
 		integral,
-		create_time,remark,mobile,real_name)
+		create_time,remark,mobile,real_name,operation)
 		VALUES
 		(#{type},#{userId},#{pId},
-		#{integral},#{createTime},#{remark},#{mobile},#{realName})
+		#{integral},#{createTime},#{remark},#{mobile},#{realName},#{operation})
 	</insert>
+
+
+
+	<update id="updateBill" parameterType="com.hoggen.COMangerment.entity.Bill"
+			keyProperty="billsId" keyColumn="bills_id" useGeneratedKeys="true">
+		UPDATE tb_bills
+		<set>
+			<if test="operation != null">operation=#{operation},</if>
+			<if test="backId != null">back_id=#{backId},</if>
+			<if test="type != null">type=#{type},</if>
+		</set>
+		WHERE bills_id = #{billsId}
+	</update>
+
+	<select id="queryBill" resultMap="billMap" parameterType="Long">
+		SELECT
+		bills_id,
+		user_id,
+		type,
+		real_name,
+		p_id,
+		integral,
+		mobile,
+		create_time,
+		remark,
+		operation,
+		back_id
+		FROM
+		tb_bills
+		where
+		bills_id =#{billsId}
+	</select>
 
 
 
@@ -42,10 +75,21 @@
 		integral,
 		mobile,
 		create_time,
-		remark
+		remark,
+		operation
 		FROM
 		tb_bills
 		<where>
+			<if
+					test="billCondition!=null
+				 and billCondition.createTime!=null">
+				and  <![CDATA[ create_time >= #{billCondition.createTime}  ]]>
+			</if>
+			<if
+					test="endTime!=null">
+				and <![CDATA[ create_time <= #{endTime}  ]]>
+			</if>
+
 			<if
 					test="billCondition!=null
 				 and billCondition.realName!=null">
@@ -70,6 +114,8 @@
 				#{billCondition.pId}
 			</if>
 		</where>
+        ORDER BY
+        bills_id DESC
 		LIMIT #{rowIndex},#{pageSize};
 	</select>
 
@@ -81,6 +127,15 @@
 		FROM
 		tb_bills
 		<where>
+			<if
+					test="billCondition!=null
+				 and billCondition.createTime!=null">
+				and  <![CDATA[ create_time >= #{billCondition.createTime}  ]]>
+			</if>
+			<if
+					test="endTime!=null">
+				and <![CDATA[ create_time <= #{endTime}  ]]>
+			</if>
 			<if
 					test="billCondition!=null
 				 and billCondition.realName!=null">

@@ -46,10 +46,25 @@ seajs.use(['base', 'page'], function(base) {
 				phone:'',
 				page_size:20,
 				page_index:1,
-				pId:backCashUserItem.userId
+				pId:backCashUserItem.userId,
+				begin_time: null, //开始时间
+				over_time: null, //结束时间
 			}
 
 		},
+
+		mounted: function() {
+			laydate.render({
+				elem: '#startTime', //指定元素
+				type:'datetime',
+			});
+
+			laydate.render({
+				elem: '#endTime', //指定元素
+				type:'datetime',
+			});
+		},
+
 		created: function() {
 			var _self = this;
 			//判断用户是否登录
@@ -65,7 +80,16 @@ seajs.use(['base', 'page'], function(base) {
 		},
 		filters: {
 			capitalize: function(value) {
-				return value == '0' ? '未返现' : '已返现';
+				var returnString = '未返现';
+				switch (value) {
+					case 0: returnString = '未返现'; break         // "
+					case 1: returnString = '已返现'; break         // '
+					case 2: returnString = '已超过过返现期'; break // `
+					case 3: returnString = '已作废'; break                 // (
+					case 4: returnString = '其他未知'; break                 // )
+
+				}
+				return returnString;
 			},
 
 			sexFilter: function(value) {
@@ -83,12 +107,38 @@ seajs.use(['base', 'page'], function(base) {
 			}
 		},
 		methods: {
+
+
+			/**
+			 * 时间大小比较
+			 */
+			MyData:function(starttime,endtime){
+				var start = new Date(starttime.replace("-", "/").replace("-", "/"));
+				var end = new Date(endtime.replace("-", "/").replace("-", "/"));
+				if(end < start){
+					return false;
+				}
+				return true;
+			},
+
 			getList: function(p) {
 				var _self = this;
 				_self.search_info.page_index = p;
 				if (_self.search_info.pId <= 0){
 					return;
 				}
+				var begin_time = $.trim($('#startTime').val());
+				var over_time = $.trim($('#endTime').val());
+
+				if(begin_time && over_time){
+					console.log(_self.MyData(begin_time,over_time));
+					if(!_self.MyData(begin_time,over_time)){
+						layer.msg('开始时间必须大于结束时间');
+						return false;
+					}
+				}
+				_self.search_info.begin_time=begin_time, //开始时
+				_self.search_info.over_time=over_time, //结束时间
 
 				axios.post('api/user/listBack', _self.search_info,_config)
 					.then(res =>{

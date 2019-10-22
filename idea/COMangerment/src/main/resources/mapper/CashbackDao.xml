@@ -6,12 +6,16 @@
 
     <insert id="insertCashback" parameterType="com.hoggen.COMangerment.entity.Cashback"
             useGeneratedKeys="true" keyProperty="backId" keyColumn="back_id">
+		<selectKey keyProperty="backId" order="AFTER" resultType="java.lang.Long">
+			<!-- SELECT LAST_INSERT_ID()：得到刚insert到数据表中的记录的主键值，只适用于自增主键 -->
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 		INSERT INTO
 		tb_cashback(type,user_id,p_id,
-		create_time,remark,bill_id)
+		create_time,remark,bill_id,percent)
 		VALUES
 		(#{type},#{userId},#{pId},
-		#{createTime},#{remark},#{billId})
+		#{createTime},#{remark},#{billId},#{percent})
 	</insert>
 
 	<select id="queryByCashbackId" resultType="com.hoggen.COMangerment.entity.Cashback" parameterType="Long">
@@ -29,13 +33,15 @@
 		UPDATE tb_cashback
 		<set>
 			<if test="success != null">success=#{success},</if>
+			<if test="type != null">type=#{type},</if>
 		</set>
 		WHERE back_id = #{backId}
 	</update>
 
 	<select id="queryBackList" resultType="HashMap">
 		SELECT
-		a.`back_id`,a.`success`,a.`create_time`,b.`real_name`
+		a.`back_id`,a.`success`,a.`create_time`,a.`percent`,a.`type`,
+		b.`real_name`
 		,b.`mobile`,b.`integral`,b.`type`
 		FROM
 		`tb_cashback` as a
@@ -44,11 +50,22 @@
 		<where>
 			<if
 					test="backCondition!=null
+				 and backCondition.createTime!=null">
+				and  <![CDATA[ a.create_time >= #{backCondition.createTime}  ]]>
+			</if>
+			<if
+					test="endTime!=null">
+				and <![CDATA[ a.create_time <= #{endTime}  ]]>
+			</if>
+			<if
+					test="backCondition!=null
 				 and backCondition.pId!=null">
 				and   a.`p_id` =
 				#{backCondition.pId}
 			</if>
 		</where>
+		ORDER by
+		a.back_id DESC
 		LIMIT #{rowIndex},#{pageSize};
 	</select>
 
@@ -60,6 +77,15 @@
 		FROM
 		tb_cashback
 		<where>
+			<if
+					test="backCondition!=null
+				 and backCondition.createTime!=null">
+				and  <![CDATA[ create_time >= #{backCondition.createTime}  ]]>
+			</if>
+			<if
+					test="endTime!=null">
+				and <![CDATA[ create_time <= #{endTime}  ]]>
+			</if>
 			<if
 					test="backCondition!=null
 				 and backCondition.pId!=null">
