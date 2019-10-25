@@ -263,10 +263,10 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 BaseMsg.YLBaseMessageModel baseModel = BaseMsg.YLBaseMessageModel.parseFrom(req);
                 System.out.println("  包头  " + baseModel.getTitle() + "  模块  " + baseModel.getModule() + "  命令  " + baseModel.getCommand());
                 Invoker invoker = InvokerHoler.getInvoker((short) baseModel.getModule(), (short) baseModel.getCommand());
-                ByteBuf buf2 = (ByteBuf) invoker.invoke(baseModel.getData());
-                ctx.channel().writeAndFlush(new BinaryWebSocketFrame(buf2));
-
-
+                if (invoker != null) {
+                    ByteBuf buf2 = (ByteBuf) invoker.invoke(baseModel.getData());
+                    ctx.channel().writeAndFlush(new BinaryWebSocketFrame(buf2));
+                }
 
             }
 
