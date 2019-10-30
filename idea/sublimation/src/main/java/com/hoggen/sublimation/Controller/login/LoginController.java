@@ -1,13 +1,11 @@
-package com.fulang.knight.controller;
+package com.hoggen.sublimation.Controller.login;
 
-import com.fulang.knight.KnightApplication;
-import com.fulang.knight.entity.*;
-import com.fulang.knight.enums.DriverStatusEnum;
-import com.fulang.knight.enums.LoginStateEnum;
-import com.fulang.knight.service.BaseService;
-import com.fulang.knight.service.LoginService;
-import com.fulang.knight.service.UserService;
-import com.fulang.knight.util.JwtUtil;
+
+import com.hoggen.sublimation.dto.UserExecution;
+import com.hoggen.sublimation.entity.User;
+import com.hoggen.sublimation.service.httpsevice.LoginService;
+import com.hoggen.sublimation.service.httpsevice.UserService;
+import com.hoggen.sublimation.util.ResponedUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
+@RequestMapping(value="/api/login")
 public class LoginController {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
@@ -30,7 +30,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/api/login/user", method = RequestMethod.POST)
+    @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> userLogin(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<String, Object>();
@@ -41,12 +41,32 @@ public class LoginController {
     }
 
 
-    @RequestMapping(value = "/api/user/info", method = RequestMethod.GET)
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
     private Map<String, Object> userInfo(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         modelMap = identifyService.userInfo(request);
         return modelMap;
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> register(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        User user = new User();
+        UserExecution effect = userService.insertUser(user);
+
+        return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),effect.getUser());
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> update(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        User user = new User();
+        UserExecution effect = userService.modifyUser(user);
+
+        return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),effect.getUser());
     }
 
 }

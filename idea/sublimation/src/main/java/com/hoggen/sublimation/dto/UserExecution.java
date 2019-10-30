@@ -1,10 +1,8 @@
 package com.hoggen.sublimation.dto;
 
-import com.fulang.knight.entity.ListUserModel;
-import com.fulang.knight.entity.User;
-import com.fulang.knight.enums.UserStateEnum;
 
-import java.util.List;
+import com.hoggen.sublimation.entity.User;
+import com.hoggen.sublimation.enums.UserStateEnum;
 
 public class UserExecution {
 
@@ -40,14 +38,6 @@ public class UserExecution {
         this.user = user;
     }
 
-    public List<ListUserModel> getUserList() {
-        return UserList;
-    }
-
-    public void setUserList(List<ListUserModel> userList) {
-        UserList = userList;
-    }
-
     // 结果状态
     private int state;
 
@@ -60,8 +50,6 @@ public class UserExecution {
     // 操作的User
     private User user;
 
-    // 获取的User列表
-    private List<ListUserModel> UserList;
 
     public UserExecution() {
     }
@@ -79,10 +67,5 @@ public class UserExecution {
         this.user = user;
     }
 
-    // 成功的构造器
-    public UserExecution(UserStateEnum stateEnum, List<ListUserModel> UserList) {
-        this.state = stateEnum.getState();
-        this.stateInfo = stateEnum.getStateInfo();
-        this.UserList = UserList;
-    }
+
 }

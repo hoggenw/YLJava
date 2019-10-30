@@ -23,13 +23,13 @@ public class JwtUtil {
 	 * 
 	 * token 私钥
 	 */
-	private static final String TOKEN_SECRET = "df43r345yy6hfdklajs9089364783sas";
+	private static final String TOKEN_SECRET = "df43r345yy6hfdklajs90893ss64783sas";
 
 	/**
 	 * 
 	 * 生成 token
 	 */
-	public static String sign(String username, String userId, String loginType) {
+	public static String sign(String username, String userId, String mobile) {
 		try {
 			// 过期时间
 			Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
@@ -40,7 +40,7 @@ public class JwtUtil {
 			header.put("typ", "JWT");
 			header.put("alg", "HS256");
 			String token = JWT.create().withHeader(header).withClaim("loginName", username).withClaim("userId", userId)
-					.withClaim("type", loginType).withExpiresAt(date).sign(algorithm);
+					.withClaim("mobile", mobile).withExpiresAt(date).sign(algorithm);
 			System.out.println(token);
 
 			return token;
@@ -66,10 +66,10 @@ public class JwtUtil {
 	/**
 	 * 获取loginType
 	 */
-	public static String getLoginType(String token) {
+	public static String getLoginMobile(String token) {
 		try {
 			DecodedJWT jwt = JWT.decode(token);
-			return jwt.getClaim("type").asString();
+			return jwt.getClaim("mobile").asString();
 		} catch (Exception e) {
 			return null;
 			// TODO: handle exception

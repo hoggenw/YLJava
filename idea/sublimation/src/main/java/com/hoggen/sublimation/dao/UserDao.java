@@ -1,10 +1,6 @@
 package com.hoggen.sublimation.dao;
 
-import com.fulang.knight.entity.ListUserModel;
-import com.fulang.knight.entity.User;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
+import com.hoggen.sublimation.entity.User;
 
 public interface UserDao {
 
@@ -16,16 +12,16 @@ public interface UserDao {
      * @param pageSize
      * @return
      */
-    List<ListUserModel> queryUserList(@Param("userCondition") User userCondition, @Param("rowIndex") int rowIndex,
-                                      @Param("pageSize") int pageSize);
+//    List<ListUserModel> queryUserList(@Param("userCondition") User userCondition, @Param("rowIndex") int rowIndex,
+//                                      @Param("pageSize") int pageSize);
 
-    /**
-     * 查询对应的用户总数
-     *
-     * @param
-     * @return
-     */
-    int queryUserCount(@Param("userCondition") User userCondition);
+//    /**
+//     * 查询对应的用户总数
+//     *
+//     * @param
+//     * @return
+//     */
+//    int queryUserCount(@Param("userCondition") User userCondition);
 
     /**
      * 通过用户名称 查询用户
@@ -33,7 +29,7 @@ public interface UserDao {
      * @param String name
      * @return User
      */
-    User queryByUserName(String name);
+    User queryByUserName(String mobile);
 
     /**
      * 通过用户id 查询用户
@@ -50,20 +46,20 @@ public interface UserDao {
     int insertUser(User user);
 
 
-    /**
-     * 刷新用户
-     *
-     */
-    int updateUserToken(User user);
+//    /**
+//     * 刷新用户
+//     *
+//     */
+//    int updateLastLoginTime(User user);
 
 
-    /**
-     * 通过用户id 查询用户
-     *
-     * @param String name
-     * @return User
-     */
-    User queryTokenUserId(Long userId);
+//    /**
+//     * 通过用户id 查询用户
+//     *
+//     * @param String name
+//     * @return User
+//     */
+//    User queryTokenUserId(Long userId);
 
 
 
@@ -72,11 +68,11 @@ public interface UserDao {
      *
      */
     int updateUser(User user);
-
-    /**
-     * 更新用户
-     *
-     */
-    int deleteUserId(Long userId);
+//
+//    /**
+//     * 更新用户
+//     *
+//     */
+//    int deleteUserId(Long userId);
 
 }

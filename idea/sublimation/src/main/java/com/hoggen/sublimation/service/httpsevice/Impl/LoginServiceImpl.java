@@ -1,15 +1,15 @@
 package com.hoggen.sublimation.service.httpsevice.Impl;
 
 
-import com.fulang.knight.dao.RubbishCarDao;
-import com.fulang.knight.dao.RubbishCompanyDao;
-import com.fulang.knight.dao.UserDao;
-import com.fulang.knight.entity.*;
-import com.fulang.knight.enums.LoginStateEnum;
-import com.fulang.knight.service.*;
-import com.fulang.knight.util.HttpServletRequestUtil;
-import com.fulang.knight.util.JwtUtil;
-import com.fulang.knight.util.MD5Util;
+import com.hoggen.sublimation.dao.UserDao;
+import com.hoggen.sublimation.entity.User;
+import com.hoggen.sublimation.enums.LoginStateEnum;
+import com.hoggen.sublimation.service.httpsevice.LoginService;
+import com.hoggen.sublimation.service.httpsevice.UserService;
+import com.hoggen.sublimation.util.HttpServletRequestUtil;
+import com.hoggen.sublimation.util.JwtUtil;
+import com.hoggen.sublimation.util.MD5Util;
+import com.hoggen.sublimation.util.ResponedUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -28,15 +29,6 @@ public class LoginServiceImpl implements LoginService {
 
     @Autowired
     private UserDao userDao;
-
-    @Autowired
-    private RubbishCarDao rubbishCarDao;
-
-    @Autowired
-    private RubbishCompanyDao rubbishCompanyDao;
-
-    @Autowired
-    private SysAreaService sysAreaService;
 
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
@@ -70,10 +62,10 @@ public class LoginServiceImpl implements LoginService {
                 modelMapData.put("userId",user.getUserId());
 
                 modelMap.put("data",modelMapData);
-                user.setToken(token);
-                user.setLastLoginTime(new Date());
-                user.setTokenTime(new Date());
-                userDao.updateUserToken(user);
+//                user.setToken(token);
+//                user.setLastLoginTime(new Date());
+//                user.setTokenTime(new Date());
+//                userDao.updateUserToken(user);
 
             } else {
 
@@ -85,7 +77,7 @@ public class LoginServiceImpl implements LoginService {
         } else {
             modelMap.put("errno", LoginStateEnum.EMPTY.getState());
             modelMap.put("errmsg", LoginStateEnum.EMPTY.getStateInfo());
-            modelMap.put("date", modelMapData);
+            modelMap.put("data", modelMapData);
 
         }
 
@@ -103,40 +95,13 @@ public class LoginServiceImpl implements LoginService {
         // 根据账号  查找运输人id
         User user = userService.queryByUserId(Long.valueOf(JwtUtil.getLoginUserID(token)));
         if(user != null ){
-            if( user.getDriverId() != null){
-                // 返回运输人信息
-                //车
-                Map<String, Object> carParameterMap = new HashMap<String, Object>();
-                carParameterMap.put("fields", "*");
-                carParameterMap.put("driverId", user.getDriverId());
-                carParameterMap.put("sortord", "id asc");
-                carParameterMap.put("firstIndex", 0);
-                carParameterMap.put("limit", 0);
-                List<RubbishCar> rubbishCars = rubbishCarDao.getList(carParameterMap);
-                modelMapData.put("rubbishCars",rubbishCars);
-
-                //公司
-                List<RubbishCompany> rubbishCompanies = rubbishCompanyDao.getCompaniesByDriverId(user.getDriverId());
-                for (RubbishCompany rubbishCompany2 : rubbishCompanies) {
-                    List<SysArea> areas = sysAreaService.getAreasByCode(rubbishCompany2.getAreaId(), 0, new ArrayList<SysArea>());
-
-                    String area = areas.get(0).getName() +" "
-                            + areas.get(1).getName() +" "
-                            + areas.get(2).getName();
-                    String address = rubbishCompany2.getAddress();
-                    rubbishCompany2.setAddress(area  + " " + address);
-                }
-                modelMapData.put("rubbishCompanies",rubbishCompanies);
-                modelMapData.put("name", user.getUserName());
-                modelMapData.put("phone",user.getMobile());
-            }
 
             modelMapData.put("roleType",user.getRoleType());
             modelMapData.put("userId",user.getUserId());
             modelMapData.put("token",token);
 
         }else {
-            return BaseService.returnCode(LoginStateEnum.EMPTY.getState(), LoginStateEnum.EMPTY.getStateInfo(), new HashMap<>());
+            return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(), LoginStateEnum.EMPTY.getStateInfo(), new HashMap<>());
         }
 
 

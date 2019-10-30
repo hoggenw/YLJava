@@ -1,4 +1,4 @@
-package com.fulang.knight.util;
+package com.hoggen.sublimation.util;
 
 import java.security.MessageDigest;
 

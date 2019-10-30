@@ -1,21 +1,22 @@
 package com.hoggen.sublimation.service.httpsevice;
 
-import com.fulang.knight.dto.UserExecution;
-import com.fulang.knight.entity.User;
+
+import com.hoggen.sublimation.dto.UserExecution;
+import com.hoggen.sublimation.entity.User;
 
 public interface UserService {
     /**
      * 通过用户名称 查询用户
      *
-     * @param String name
+     * @param
      * @return User
      */
-    User queryByUserName(String name);
+    User queryByUserName(String mobile);
 
     /**
      * 通过用户id 查询用户
      *
-     * @param String name
+     * @param
      * @return User
      */
     User queryByUserId(Long userId);
@@ -31,17 +32,7 @@ public interface UserService {
     /**
      * 修改用户信息 type 1 password 2.冻结 解冻
      */
-    UserExecution modifyUser(User user, int type);
+    UserExecution modifyUser(User user);
 
 
-    /**
-     * 删除用户
-     */
-    UserExecution deleteUser(Long userId);
-
-
-    /**
-     * @注释 分页
-     */
-    UserExecution getUserList(User userCondition, int pageIndex, int pageSize);
 }
