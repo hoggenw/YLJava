@@ -1,17 +1,16 @@
 package com.hoggen.sublimation.config.dao;
 
-import java.beans.PropertyVetoException;
-
+import com.fulang.medical_ai.util.DESUtils;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fulang.medical_ai.util.DESUtils;
-import com.mchange.v2.c3p0.ComboPooledDataSource;
+import java.beans.PropertyVetoException;
 
 @Configuration
-@MapperScan("com.fulang.medical_ai.dao")
+@MapperScan("com.hoggen.sublimation.dao")
 public class DataSourceConfiguration {
 	@Value("${jdbc.driver}")
 	private String jdbcDriver;

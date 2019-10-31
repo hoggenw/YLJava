@@ -2,10 +2,7 @@ package com.hoggen.sublimation.util.NettyHandler;
 
 import com.hoggen.sublimation.Scanner.Invoker;
 import com.hoggen.sublimation.Scanner.InvokerHoler;
-import com.hoggen.sublimation.enums.CmdEnum;
-import com.hoggen.sublimation.enums.ModuleEnum;
 import com.hoggen.sublimation.proto.BaseMsg;
-import com.hoggen.sublimation.proto.UserMsg;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -22,11 +19,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import static com.hoggen.sublimation.util.NettyHandler.GlobalUserUtil.channels;
 
@@ -167,16 +161,27 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
 
     // 处理HTTP的代码
     private void handleHttpRequest(ChannelHandlerContext ctx, FullHttpRequest req) throws UnsupportedEncodingException {
-        System.out.println("httprequest get");
+        System.out.println("httprequest get" + req);
         System.out.println("handleHttpRequest method==========" + req.method());
         System.out.println("handleHttpRequest uri==========" + req.uri());
         // 如果HTTP解码失败，返回HHTP异常
         Map<String, String> parmMap = new HashMap<>();
         if (req instanceof HttpRequest) {
             HttpMethod method = req.method();
-            System.out.println("this is httpconnect");
+            System.out.println("this is httpconnect" + req.content());
             // 如果是websocket请求就握手升级
-            if (wsUri.equalsIgnoreCase(req.uri())) {
+            String[] splitStrings =  req.uri().split("&");
+            String uri;
+            String token;
+            if (splitStrings.length ==2){
+                uri = splitStrings[0];
+                token = splitStrings[1];
+                System.out.println("this is token" + token + "  uri " + uri);
+
+            }else {
+                return;
+            }
+            if (wsUri.equalsIgnoreCase(uri)) {
                 System.out.println("websocket 请求接入");
                 WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(
                         "http://localhost:8880/index.html#/", null, false);
