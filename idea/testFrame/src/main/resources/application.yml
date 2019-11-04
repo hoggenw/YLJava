@@ -1,0 +1,17 @@
+server:
+  port: 8100
+
+logging:
+  config: classpath:logback.xml
+
+jdbc:
+  driver: com.mysql.cj.jdbc.Driver
+  url : jdbc:mysql://127.0.0.1:3306/ai?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+  username: WnplV/ietfQ=
+  password: d0iM1qq5PF4fJAfVsP+M2w==
+#是否允许跨越
+custom:
+  flag: true
+mybatis_config_file: mybatis-config.xml
+mapper_path: /mapper/**.xml
+type_alias_package: com.hoggen.testFrame.entity

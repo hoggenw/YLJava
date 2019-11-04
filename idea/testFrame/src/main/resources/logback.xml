@@ -133,12 +133,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
-    <!--additivity="true" 基于log.level在控制台输入 ，而不是root的输出基本-->
-<!--    <logger name="com.hoggen.sublimation" level = "${log.level}" additivity="true">-->
-<!--        <appender-ref ref="debugAppender"/>-->
-<!--        <appender-ref ref="infoAppender"/>-->
-<!--        <appender-ref ref="errorAppender"/>-->
-<!--    </logger>-->
+
 
     <root level="INFO">
         <appender-ref ref="consoleAppender" />

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import java.beans.PropertyVetoException;
 
 @Configuration
-@MapperScan("com.hoggen.sublimation.dao")
+@MapperScan("com.hoggen.testFrame.dao")
 public class DataSourceConfiguration {
 	@Value("${jdbc.driver}")
 	private String jdbcDriver;

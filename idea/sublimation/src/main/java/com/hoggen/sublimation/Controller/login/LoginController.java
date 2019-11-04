@@ -6,12 +6,15 @@ import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
 import com.hoggen.sublimation.service.httpsevice.UserService;
 import com.hoggen.sublimation.util.ResponedUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,9 +23,10 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value="/api/login")
+@Api(tags = "用户管理模块")
+@Slf4j
 public class LoginController {
 
-    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private LoginService identifyService;
@@ -32,10 +36,12 @@ public class LoginController {
 
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     @ResponseBody
-    private Map<String, Object> userLogin(HttpServletRequest request) {
+    @ApiOperation(value = "用户登录")
+    private Map<String, Object> userLogin(@RequestParam(value = "phone", required=true) @ApiParam(value = "订单抬头id", required = true) String phone,
+                                          @RequestParam(value = "passworld", required=true) @ApiParam(value = "页码", required = true )String passworld) {
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        modelMap = identifyService.userLoginJudge(request);
-        logger.info("用户登录");
+
+        log.info("用户登录");
 
         return modelMap;
     }

@@ -1,11 +1,10 @@
-package com.fulang.medical_ai.util;
-
-import java.security.Key;
-import java.security.SecureRandom;
-import java.util.Base64;
+package com.hoggen.testFrame.Util;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
+import java.security.Key;
+import java.security.SecureRandom;
+import java.util.Base64;
 
 public class DESUtils {
 	private static Key key;

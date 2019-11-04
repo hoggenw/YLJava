@@ -1,9 +1,5 @@
 package com.hoggen.sublimation.config.controller;
 
-import com.fulang.knight.controller.Finance.Interceptor.AccountCategoryInterceptor;
-import com.fulang.knight.controller.Finance.Interceptor.CashierInterceptor;
-import com.fulang.knight.controller.Finance.Interceptor.FinancialInterceptor;
-import com.fulang.knight.controller.Finance.Interceptor.SuperAdminInterceptor;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -25,22 +21,6 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
     @Autowired
     private RoleInterceptor roleInterceptor;
 
-//	@Autowired
-//	private DownLoadInterceptor downLoadInterceptor;
-
-//	@Autowired
-//	private PageInterceptor pageInterceptor;
-//
-//	@Autowired
-//	private AdminPageInterceptor adminPageInterceptor;
-    @Autowired
-    private FinancialInterceptor financialInterceptor;
-    @Autowired
-    private CashierInterceptor cashierInterceptor;
-    @Autowired
-    private SuperAdminInterceptor superAdminInterceptor;
-    @Autowired
-    private AccountCategoryInterceptor accountCategoryInterceptor;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -54,6 +34,11 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**").addResourceLocations("/WEB-INF/v1/");
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
@@ -73,32 +58,24 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截
         //
-        registry.addInterceptor(tokenInterceptor).addPathPatterns("/api/**")
-                .excludePathPatterns("/api/login/**")
-                .excludePathPatterns("/api/stock/temp_insert")
-                .excludePathPatterns("/api/operation/temp_insert")
-                .excludePathPatterns("/api/sampler/addTemSample")
-                .excludePathPatterns("/api/sampler/addTemSepSample")
-                .excludePathPatterns("/api/admin/rubbish_company/records")
-                .excludePathPatterns("/api/config");
+//        registry.addInterceptor(tokenInterceptor).addPathPatterns("/api/**")
+//                .excludePathPatterns("/api/login/**")
+//                .excludePathPatterns("/api/stock/temp_insert")
+//                .excludePathPatterns("/api/operation/temp_insert")
+//                .excludePathPatterns("/api/sampler/addTemSample")
+//                .excludePathPatterns("/api/sampler/addTemSepSample")
+//                .excludePathPatterns("/api/admin/rubbish_company/records")
+//                .excludePathPatterns("/api/config");
+//
+//        registry.addInterceptor(roleInterceptor).addPathPatterns("/api/**")
+//                .excludePathPatterns("/api/login/**")
+//                .excludePathPatterns("/api/stock/temp_insert")
+//                .excludePathPatterns("/api/operation/temp_insert")
+//                .excludePathPatterns("/api/sampler/addTemSample")
+//                .excludePathPatterns("/api/sampler/addTemSepSample")
+//                .excludePathPatterns("/api/admin/rubbish_company/records")
+//                .excludePathPatterns("/api/config");
 
-        registry.addInterceptor(roleInterceptor).addPathPatterns("/api/**")
-                .excludePathPatterns("/api/login/**")
-                .excludePathPatterns("/api/stock/temp_insert")
-                .excludePathPatterns("/api/operation/temp_insert")
-                .excludePathPatterns("/api/sampler/addTemSample")
-                .excludePathPatterns("/api/sampler/addTemSepSample")
-                .excludePathPatterns("/api/admin/rubbish_company/records")
-                .excludePathPatterns("/api/config");
-
-		//财务权限拦截
-        registry.addInterceptor(financialInterceptor).addPathPatterns("/api/fi/**");
-        //出纳权限拦截
-        registry.addInterceptor(cashierInterceptor).addPathPatterns("/api/ca/**");
-        //超级管理员权限拦截
-        registry.addInterceptor(superAdminInterceptor).addPathPatterns("/api/sa/**");
-        //账目权限拦截
-        registry.addInterceptor(accountCategoryInterceptor).addPathPatterns("/api/ac/**");
 
         WebMvcConfigurer.super.addInterceptors(registry);
     }

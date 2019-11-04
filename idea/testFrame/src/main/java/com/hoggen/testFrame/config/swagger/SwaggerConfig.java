@@ -37,7 +37,7 @@ public class SwaggerConfig {
                 "7聊api",
                 "7聊api",
                 "v1.0.0",
-                "http://localhost:8099",
+                "http://localhost:8100",
                 contact,
                 "",
                 "",
