@@ -1,4 +1,4 @@
-package com.kykj.internethospital.express.web.rest.errors;
+package com.hoggen.testFrame.errors;
 
 /**
  * @author baogang

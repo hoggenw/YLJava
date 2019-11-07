@@ -1,10 +1,11 @@
-package com.kykj.internethospital.express.mapper;
+package com.hoggen.testFrame.mapper;
 
 
-import com.kykj.internethospital.express.domain.CarriageEntity;
-import com.kykj.internethospital.express.web.rest.dto.CarriageReadDTO;
-import com.kykj.internethospital.express.web.rest.dto.CarriageRuleCreateDTO;
-import com.kykj.internethospital.express.web.rest.dto.CarriageRuleUpdateDTO;
+
+import com.hoggen.testFrame.domain.CarriageEntity;
+import com.hoggen.testFrame.dto.CarriageReadDTO;
+import com.hoggen.testFrame.dto.CarriageRuleCreateDTO;
+import com.hoggen.testFrame.dto.CarriageRuleUpdateDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.NullValueCheckStrategy;

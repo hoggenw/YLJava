@@ -1,4 +1,4 @@
 /**
  * Spring Framework configuration files.
  */
-package com.kykj.internethospital.express.config;
+package com.hoggen.testFrame.config;

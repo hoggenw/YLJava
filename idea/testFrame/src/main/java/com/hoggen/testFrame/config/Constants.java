@@ -1,4 +1,4 @@
-package com.kykj.internethospital.express.config;
+package com.hoggen.testFrame.config;
 
 /**
  * Application constants.

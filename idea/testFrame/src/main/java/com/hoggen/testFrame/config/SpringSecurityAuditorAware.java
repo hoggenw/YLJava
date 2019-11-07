@@ -1,4 +1,4 @@
-package com.kykj.internethospital.express.config;
+package com.hoggen.testFrame.config;
 
 
 import org.springframework.data.domain.AuditorAware;

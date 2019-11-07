@@ -1,4 +1,4 @@
-package com.kykj.internethospital.express.config;
+package com.hoggen.testFrame.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
