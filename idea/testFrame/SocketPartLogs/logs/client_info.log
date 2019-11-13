@@ -1,0 +1,68 @@
+2019-11-13 13:46:01.104[main] INFO  com.hoggen.testFrame.TestFrameApplication - Starting TestFrameApplication on wangliugendeMacBook-Pro.local with PID 8528 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/testFrame/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/testFrame)
+2019-11-13 13:46:01.107[main] INFO  com.hoggen.testFrame.TestFrameApplication - No active profile set, falling back to default profiles: default
+2019-11-13 13:46:01.877[main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-13 13:46:01.962[main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72ms. Found 1 repository interfaces.
+2019-11-13 13:46:02.453[main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfiguration' of type [com.hoggen.testFrame.config.AsyncConfiguration$$EnhancerBySpringCGLIB$$d5e07772] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-13 13:46:02.527[main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db4c0d2b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-13 13:46:02.842[main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8100 (http)
+2019-11-13 13:46:02.861[main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8100"]
+2019-11-13 13:46:02.871[main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-13 13:46:02.871[main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-13 13:46:03.002[main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-13 13:46:03.002[main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1846 ms
+2019-11-13 13:46:03.145[main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2019-11-13 13:46:03.163[main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-13 13:49:01.117[main] INFO  com.hoggen.testFrame.TestFrameApplication - Starting TestFrameApplication on wangliugendeMacBook-Pro.local with PID 8558 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/testFrame/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/testFrame)
+2019-11-13 13:49:01.120[main] INFO  com.hoggen.testFrame.TestFrameApplication - No active profile set, falling back to default profiles: default
+2019-11-13 13:49:01.809[main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-13 13:49:01.864[main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45ms. Found 1 repository interfaces.
+2019-11-13 13:49:02.259[main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfiguration' of type [com.hoggen.testFrame.config.AsyncConfiguration$$EnhancerBySpringCGLIB$$1c6f3cde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-13 13:49:02.326[main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$21dad297] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-13 13:49:02.611[main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8100 (http)
+2019-11-13 13:49:02.624[main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8100"]
+2019-11-13 13:49:02.632[main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-13 13:49:02.633[main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-11-13 13:49:02.727[main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-13 13:49:02.728[main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1564 ms
+2019-11-13 13:49:02.832[main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2019-11-13 13:49:02.843[main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-13 14:03:18.408[main] INFO  com.hoggen.testFrame.TestFrameApplication - Starting TestFrameApplication on wangliugendeMacBook-Pro.local with PID 8661 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/testFrame/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/testFrame)
+2019-11-13 14:03:18.412[main] INFO  com.hoggen.testFrame.TestFrameApplication - No active profile set, falling back to default profiles: default
+2019-11-13 14:03:19.210[main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-13 14:03:19.302[main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80ms. Found 1 repository interfaces.
+2019-11-13 14:03:19.771[main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfiguration' of type [com.hoggen.testFrame.config.AsyncConfiguration$$EnhancerBySpringCGLIB$$871bd32c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-13 14:03:19.845[main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8c8768e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-13 14:03:20.149[main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8100 (http)
+2019-11-13 14:03:20.182[main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8100"]
+2019-11-13 14:03:20.191[main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-13 14:03:20.191[main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-13 14:03:20.308[main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-13 14:03:20.308[main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1830 ms
+2019-11-13 14:03:20.513[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-11-13 14:03:20.712[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-11-13 14:03:20.768[main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-13 14:03:20.852[main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.4.4.Final}
+2019-11-13 14:03:21.032[main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-13 14:03:21.197[main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-13 14:03:22.045[main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-13 14:03:22.048[main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-13 14:03:22.787[main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2019-11-13 14:03:22.835[main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-13 14:03:22.841[main] INFO  com.hoggen.testFrame.config.swagger.SwaggerConfig - Starting Swagger
+2019-11-13 14:03:22.848[main] INFO  com.hoggen.testFrame.config.swagger.SwaggerConfig - Started Swagger in 7 ms
+2019-11-13 14:03:23.216[main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-11-13 14:03:23.267[main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-13 14:03:23.290[main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-13 14:03:23.328[main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-13 14:03:23.759[main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8100"]
+2019-11-13 14:03:23.792[main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8100 (http) with context path ''
+2019-11-13 14:03:23.795[main] INFO  com.hoggen.testFrame.TestFrameApplication - Started TestFrameApplication in 5.939 seconds (JVM running for 7.526)
+2019-11-13 14:04:54.917[Thread-16] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-11-13 14:04:54.919[Thread-16] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2019-11-13 14:04:54.920[Thread-16] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-13 14:04:54.922[Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-11-13 14:04:54.927[Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class CarriageRuleResource {
+
     private final CarriageRuleService service;
 
 
