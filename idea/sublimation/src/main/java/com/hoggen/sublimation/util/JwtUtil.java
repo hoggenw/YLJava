@@ -23,7 +23,7 @@ public class JwtUtil {
 	 * 
 	 * token 私钥
 	 */
-	private static final String TOKEN_SECRET = "df43r345yy6hfdklajs90893ss64783sas";
+	private static final String TOKEN_SECRET = "df43r345yyW6hfdklajs90893ss64783sas";
 
 	/**
 	 * 
@@ -41,7 +41,7 @@ public class JwtUtil {
 			header.put("alg", "HS256");
 			String token = JWT.create().withHeader(header).withClaim("loginName", username).withClaim("userId", userId)
 					.withClaim("mobile", mobile).withExpiresAt(date).sign(algorithm);
-			System.out.println(token);
+			//System.out.println(token);
 
 			return token;
 
@@ -80,5 +80,13 @@ public class JwtUtil {
 //		// 秘钥及加密算法
 //		Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
 //	}
+
+	public static void main(String[] args) {
+		System.out.println("输出1：  " + sign("hoggen","1233","1873"));
+		System.out.println("输出2：  " + sign("sdsad","123322","18733456789"));
+		System.out.println("输出3：  " + sign("dsadas","123333","18731235672"));
+		System.out.println("输出4：  " + sign("cdfef","1244233","18730987654"));
+
+	}
 
 }

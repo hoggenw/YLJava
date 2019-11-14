@@ -29,7 +29,7 @@ public interface UserDao {
      * @param String name
      * @return User
      */
-    User queryByUserName(String mobile);
+    User queryByUserPhone(String mobile);
 
     /**
      * 通过用户id 查询用户

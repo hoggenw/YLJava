@@ -37,13 +37,11 @@ public class LoginController {
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "用户登录")
-    private Map<String, Object> userLogin(@RequestParam(value = "phone", required=true) @ApiParam(value = "订单抬头id", required = true) String phone,
-                                          @RequestParam(value = "passworld", required=true) @ApiParam(value = "页码", required = true )String passworld) {
-        Map<String, Object> modelMap = new HashMap<String, Object>();
+    private Map<String, Object> userLogin(@RequestParam(value = "phone", required=true) @ApiParam(value = "手机号码", required = true) String phone,
+                                          @RequestParam(value = "passworld", required=true) @ApiParam(value = "密码", required = true )String passworld) {
 
-        log.info("用户登录");
 
-        return modelMap;
+        return identifyService.userLoginJudge(phone,passworld);
     }
 
 

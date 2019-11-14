@@ -6,10 +6,7 @@ import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
 import com.hoggen.sublimation.service.httpsevice.UserService;
-import com.hoggen.sublimation.util.HttpServletRequestUtil;
-import com.hoggen.sublimation.util.JwtUtil;
-import com.hoggen.sublimation.util.MD5Util;
-import com.hoggen.sublimation.util.ResponedUtils;
+import com.hoggen.sublimation.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,58 +27,50 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private UserDao userDao;
 
+    /**
+     * 封装的工具类：默认 127.0.0.1
+     */
+    @Autowired
+    RedisUtil redisUtil;
+
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
 
     @Override
-    public Map<String, Object> userLoginJudge(HttpServletRequest request) {
+    public Map<String, Object> userLoginJudge(String phone,String password) {
         logger.info("userLoginJudge");
         // TODO Auto-generated method stub
-        String name = HttpServletRequestUtil.getString(request, "user_name");
-        // System.out.println("user_name:" + name);
-        String password = HttpServletRequestUtil.getString(request, "password");
-        // System.out.println("password:" + password);
-        User user = userService.queryByUserName(name);
+        User user = userService.queryByUserName(phone);
         Map<String, Object> modelMap = new HashMap<String, Object>();
         Map<String, Object> modelMapData = new HashMap<String, Object>();
         if (user != null && user.getStatus() == 1) {
-            modelMap.put("errno", LoginStateEnum.EMPTY.getState());
-            modelMap.put("errmsg", LoginStateEnum.EMPTY.getStateInfo());
-            modelMap.put("date", modelMapData);
-            return modelMap;
+            return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMapData);
         }
         if (user != null && user.getPassword() != null) {
             if ((MD5Util.MD5Encode(password + user.getRandomString())).equals(user.getPassword())) {
 
                 modelMap.put("errno", LoginStateEnum.SUCCESS.getState());
                 modelMap.put("errmsg", LoginStateEnum.SUCCESS.getStateInfo());
+                String token = JwtUtil.sign(phone, String.valueOf(user.getUserId()),String.valueOf(user.getRoleType()));
 
-                String token = JwtUtil.sign(name, String.valueOf(user.getUserId()),String.valueOf(user.getRoleType()));
-                modelMapData.put("token",token);
+                String returnToken = redisUtil.saveLoginStatus(user.getUserId().toString(),token,1);
+                modelMapData.put("token",returnToken);
                 modelMapData.put("roleType",user.getRoleType());
                 modelMapData.put("userId",user.getUserId());
 
-                modelMap.put("data",modelMapData);
-//                user.setToken(token);
-//                user.setLastLoginTime(new Date());
-//                user.setTokenTime(new Date());
-//                userDao.updateUserToken(user);
+                return ResponedUtils.returnCode(LoginStateEnum.SUCCESS.getState(),LoginStateEnum.SUCCESS.getStateInfo(),modelMapData);
+
 
             } else {
 
-                modelMap.put("errno", LoginStateEnum.USERNONE.getState());
-                modelMap.put("errmsg", LoginStateEnum.USERNONE.getStateInfo());
-                modelMap.put("data", modelMapData);
+                return ResponedUtils.returnCode(LoginStateEnum.USERNONE.getState(),LoginStateEnum.USERNONE.getStateInfo(),modelMapData);
             }
 
         } else {
-            modelMap.put("errno", LoginStateEnum.EMPTY.getState());
-            modelMap.put("errmsg", LoginStateEnum.EMPTY.getStateInfo());
-            modelMap.put("data", modelMapData);
+            return ResponedUtils.returnCode(LoginStateEnum.EMPTY.getState(),LoginStateEnum.EMPTY.getStateInfo(),modelMapData);
 
         }
 
-        return modelMap;
     }
 
 

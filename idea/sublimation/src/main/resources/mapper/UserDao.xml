@@ -14,7 +14,7 @@
 <!--    </resultMap>-->
 
 
-    <select id="queryByUserName" resultType="com.hoggen.sublimation.entity.User" parameterType="String">
+    <select id="queryByUserPhone" resultType="com.hoggen.sublimation.entity.User" parameterType="String">
         SELECT
         user_id,
         user_name,
