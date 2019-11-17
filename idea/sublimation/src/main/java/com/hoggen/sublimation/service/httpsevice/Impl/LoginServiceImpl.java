@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,11 +28,8 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private UserDao userDao;
 
-    /**
-     * 封装的工具类：默认 127.0.0.1
-     */
-    @Autowired
-    RedisUtil redisUtil;
+
+    private RedisUtil redisUtil = new RedisUtil();
 
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
@@ -57,6 +55,11 @@ public class LoginServiceImpl implements LoginService {
                 modelMapData.put("token",returnToken);
                 modelMapData.put("roleType",user.getRoleType());
                 modelMapData.put("userId",user.getUserId());
+
+                User user1 = new User();
+                user1.setLastLoginTime(new Date());
+
+                userService.updateUser(user);
 
                 return ResponedUtils.returnCode(LoginStateEnum.SUCCESS.getState(),LoginStateEnum.SUCCESS.getStateInfo(),modelMapData);
 

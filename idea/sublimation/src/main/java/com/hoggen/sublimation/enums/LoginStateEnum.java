@@ -1,8 +1,14 @@
 package com.hoggen.sublimation.enums;
 
 public enum LoginStateEnum {
-    USERNONE(11000, "用户名或者密码错误"), SUCCESS(0, "操作成功"), OVERTIME(11001, "登录已过期"), NOTLOGIN(11002, "请登录"),
-    NOPERMISSION(11003, "没有权限"), EMPTY(11004, "用户不存在或者被冻结"), FREEZE(11005, "用户被冻结");
+    USERNONE(11000, "用户名或者密码错误"),
+    SUCCESS(0, "操作成功"),
+    OVERTIME(11001, "登录已过期"),
+    NOTLOGIN(11002, "请登录"),
+    NOPERMISSION(11003, "没有权限"),
+    EMPTY(11004, "用户不存在或者被冻结"),
+    FREEZE(11005, "用户被冻结"),
+    CODEERROR(11006, "验证码错误");
 
     private int state;
 

@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User queryByUserName(String mobile) {
         User user = null;
-        user = rUserDao.queryByUserName(mobile);
+        user = rUserDao.queryByUserPhone(mobile);
         return user;
     }
 
@@ -98,6 +98,11 @@ public class UserServiceImpl implements UserService {
         }
 
 
+    }
+
+    @Override
+    public int updateUser(User user) {
+        return rUserDao.updateUser(user);
     }
 
 

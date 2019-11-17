@@ -2,10 +2,13 @@ package com.hoggen.sublimation.config.controller;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -39,6 +42,7 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
 
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
@@ -66,15 +70,7 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
 //                .excludePathPatterns("/api/sampler/addTemSepSample")
 //                .excludePathPatterns("/api/admin/rubbish_company/records")
 //                .excludePathPatterns("/api/config");
-//
-//        registry.addInterceptor(roleInterceptor).addPathPatterns("/api/**")
-//                .excludePathPatterns("/api/login/**")
-//                .excludePathPatterns("/api/stock/temp_insert")
-//                .excludePathPatterns("/api/operation/temp_insert")
-//                .excludePathPatterns("/api/sampler/addTemSample")
-//                .excludePathPatterns("/api/sampler/addTemSepSample")
-//                .excludePathPatterns("/api/admin/rubbish_company/records")
-//                .excludePathPatterns("/api/config");
+//registry.addInterceptor(kaptchaIntercepyor).addPathPatterns("/api/login/register");
 
 
         WebMvcConfigurer.super.addInterceptors(registry);
@@ -111,6 +107,26 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
 //        viewResolver.setMaxUploadSize(20971520);
 //        viewResolver.setMaxInMemorySize(20971520);
 //        return viewResolver;
+//    }
+
+//    /**
+//     * @注释 验证码配置
+//     */
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBean() {
+//        ServletRegistrationBean serBean = new ServletRegistrationBean(new KaptchaServlet(), "/Kaptcha");
+//        serBean.addInitParameter("kaptcha.border", border);
+//        serBean.addInitParameter("kaptcha.textproducer.font.color", fcolor);
+//        serBean.addInitParameter("kaptcha.textproducer.font.size", fsize);
+//        serBean.addInitParameter("kaptcha.textproducer.font.names", fnames);
+//        serBean.addInitParameter("kaptcha.image.width", width);
+//        serBean.addInitParameter("kaptcha.textproducer.char.string", cString);
+//
+//        serBean.addInitParameter("kaptcha.image.height", height);
+//        serBean.addInitParameter("kaptcha.noise.color", nColor);
+//        serBean.addInitParameter("kaptcha.textproducer.char.length", clength);
+//        return serBean;
+//
 //    }
 
 }

@@ -52,7 +52,7 @@ public class RedisConfig extends CachingConfigurerSupport {
      */
     @Bean
 //    @ConfigurationProperties(prefix = "spring.redis")
-    public RedisStandaloneConfiguration redisConfig(@Value("${spring.redis.host}") String host, @Value("${spring.redis.port}") int port
+    public RedisStandaloneConfiguration redisConfig1(@Value("${spring.redis.host}") String host, @Value("${spring.redis.port}") int port
             , @Value("${spring.redis.database}") int db, @Value("${spring.redis.password}") String password) {
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(host, port);
         redisStandaloneConfiguration.setDatabase(db);
@@ -67,8 +67,12 @@ public class RedisConfig extends CachingConfigurerSupport {
      */
     @Bean
     @ConfigurationProperties(prefix = "spring.redis2")
-    public RedisStandaloneConfiguration redisConfig2() {
-        return new RedisStandaloneConfiguration();
+    public RedisStandaloneConfiguration redisConfig2(@Value("${spring.redis2.host}") String host, @Value("${spring.redis2.port}") int port
+            , @Value("${spring.redis2.database}") int db, @Value("${spring.redis2.password}") String password) {
+        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(host, port);
+        redisStandaloneConfiguration.setDatabase(db);
+        redisStandaloneConfiguration.setPassword(RedisPassword.of(password));
+        return redisStandaloneConfiguration;
     }
 
     /**
@@ -81,9 +85,9 @@ public class RedisConfig extends CachingConfigurerSupport {
      */
     @Bean("factory")
     @Primary
-    public LettuceConnectionFactory factory(GenericObjectPoolConfig config, RedisStandaloneConfiguration redisConfig) {
+    public LettuceConnectionFactory factory(GenericObjectPoolConfig config, RedisStandaloneConfiguration redisConfig1) {
         LettuceClientConfiguration clientConfiguration = LettucePoolingClientConfiguration.builder().poolConfig(config).build();
-        return new LettuceConnectionFactory(redisConfig, clientConfiguration);
+        return new LettuceConnectionFactory(redisConfig1, clientConfiguration);
     }
 
     @Bean("factory2")

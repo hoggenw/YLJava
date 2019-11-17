@@ -35,4 +35,11 @@ public interface UserService {
     UserExecution modifyUser(User user);
 
 
+    /**
+     * 更新用户
+     *
+     */
+    int updateUser(User user);
+
+
 }

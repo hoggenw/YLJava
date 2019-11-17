@@ -46,6 +46,21 @@
 
 		<!--token -->
 
+
+		<!--    验证码-->
+		<!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha -->
+		<!--<dependency>-->
+			<!--<groupId>com.github.penggle</groupId>-->
+			<!--<artifactId>kaptcha</artifactId>-->
+			<!--<version>2.3.2</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>com.jhlabs</groupId>
+			<artifactId>filters</artifactId>
+			<version>2.0.235</version>
+		</dependency>
+		<!--    验证码-->
+
 		<!--引入swagger，自动文档生成-->
 		<dependency>
 			<groupId>io.springfox</groupId>
