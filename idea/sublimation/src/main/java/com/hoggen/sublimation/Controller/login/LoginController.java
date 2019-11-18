@@ -7,11 +7,10 @@ import com.hoggen.sublimation.dto.ReturnUserDTO;
 import com.hoggen.sublimation.dto.UserExecution;
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
+import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
 import com.hoggen.sublimation.service.httpsevice.UserService;
-import com.hoggen.sublimation.util.CodeJudgeUtil;
-import com.hoggen.sublimation.util.ResponedUtils;
-import com.hoggen.sublimation.util.StringUtil;
+import com.hoggen.sublimation.util.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -53,13 +52,18 @@ public class LoginController {
     @Autowired
     private Producer captchaProducer;
 
+    @Autowired
+    private RedisService redisService;
+
+    private  static final String  header = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
+
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
-    @ResponseBody
     @ApiOperation(value = "用户登录")
+    @ResponseBody
     private Map<String, Object> userLogin(@Validated @RequestBody LoginDTO loginDTO ) {
 
 
-        return identifyService.userLoginJudge(loginDTO.getPhone(),loginDTO.getPassword());
+        return identifyService.userLogin(loginDTO.getPhone(),loginDTO.getPassword());
     }
 
 
@@ -67,14 +71,35 @@ public class LoginController {
     @ResponseBody
 
     private Map<String, Object> userInfo(HttpServletRequest request) {
+        String userId = "13";
+        String token  = "lIjkAMPLpwobbKUYaCkkp2S9uKywC1eLQ4kuhPeLAlo";
+        String returnString = null;
+        String lastString = (String)redisService.get(userId);
+        if (lastString == null){
+
+        }
+        String middleString =  (String)redisService.get(lastString);
+        if (middleString == null){
+
+        }
+
+        String signToken = header+"."+middleString+"."+lastString;
+        String signUserId = JwtUtil.getLoginUserID(signToken);
+
+//        RedisUtil.ifLogin(userId,token);
+        if (signUserId.equals(userId)){
+
+        }
+
+
         Map<String, Object> modelMap = new HashMap<String, Object>();
         modelMap = identifyService.userInfo(request);
         return modelMap;
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    @ResponseBody
     @ApiOperation(value = "用户注册")
+    @ResponseBody
     private Map<String, Object> register(HttpServletRequest request,@Validated @RequestBody RegisterDTO registerDTO)  {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         if (!CodeJudgeUtil.codeJudge(request,registerDTO.getCode())){
@@ -84,10 +109,10 @@ public class LoginController {
         user.setPassword(registerDTO.getPassword());
         user.setMobile(registerDTO.getPhone());
         user.setUserName(registerDTO.getName());
-        user.setRandomString(StringUtil.getRandomString(8));
-        user.setCreateTime( new Date());
-        user.setUpdateTime(new Date());
         UserExecution effect = userService.insertUser(user);
+        if (effect.getState() != 0){
+            return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),modelMap);
+        }
 
         return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),new ReturnUserDTO(effect.getUser()));
     }

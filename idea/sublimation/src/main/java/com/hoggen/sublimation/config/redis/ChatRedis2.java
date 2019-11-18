@@ -5,7 +5,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 
-@Component
+//@Component
 public class ChatRedis2 {
     @Autowired
     private RedisTemplate<String, String> redisTemplate2;

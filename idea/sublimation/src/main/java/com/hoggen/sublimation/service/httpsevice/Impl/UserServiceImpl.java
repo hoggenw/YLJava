@@ -43,8 +43,14 @@ public class UserServiceImpl implements UserService {
     public UserExecution insertUser(User user) {
 
         if (user != null && user.getUserName() != null && user.getPassword() != null) {
+            User tempUser = rUserDao.queryByUserPhone(user.getMobile());
+            if (tempUser != null){
+                return new UserExecution(UserStateEnum.ALREADY);
+            }
+
             user.setCreateTime(new Date());
             user.setStatus(0);
+            user.setRoleType(0);
             String randomString = StringUtil.getRandomString(8);
             String storePassString = MD5Util.MD5Encode(user.getPassword() + randomString);
             user.setPassword(storePassString);

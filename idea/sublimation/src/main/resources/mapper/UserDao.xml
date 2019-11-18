@@ -61,7 +61,7 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
 		INSERT INTO
-		tb_user(user_id,
+		tb_user(
         user_name,
         password,
         mobile,

@@ -28,14 +28,16 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private UserDao userDao;
 
+     @Autowired
+    private RedisService redisService;
 
-    private RedisUtil redisUtil = new RedisUtil();
+
 
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
 
     @Override
-    public Map<String, Object> userLoginJudge(String phone,String password) {
+    public Map<String, Object> userLogin(String phone,String password) {
         logger.info("userLoginJudge");
         // TODO Auto-generated method stub
         User user = userService.queryByUserName(phone);
@@ -51,10 +53,17 @@ public class LoginServiceImpl implements LoginService {
                 modelMap.put("errmsg", LoginStateEnum.SUCCESS.getStateInfo());
                 String token = JwtUtil.sign(phone, String.valueOf(user.getUserId()),String.valueOf(user.getRoleType()));
 
-                String returnToken = redisUtil.saveLoginStatus(user.getUserId().toString(),token,1);
+                String returnToken = null;
+                String[] result = token.split("\\.");
+                returnToken = result[2];
+                String midString =  result[1];
+                if (redisService.set(returnToken,midString )){
+                    if (redisService.set(String.valueOf(user.getUserId()),returnToken )){
+
+                    }
+                }
                 modelMapData.put("token",returnToken);
-                modelMapData.put("roleType",user.getRoleType());
-                modelMapData.put("userId",user.getUserId());
+                modelMapData.put("user",user);
 
                 User user1 = new User();
                 user1.setLastLoginTime(new Date());

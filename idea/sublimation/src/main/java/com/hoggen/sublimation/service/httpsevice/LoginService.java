@@ -8,7 +8,7 @@ public interface LoginService {
     /**
      * 判定登录是否成功
      */
-    Map<String, Object> userLoginJudge(String phone,String password);
+    Map<String, Object> userLogin(String phone,String password);
 
     /**
      * 用户信息
