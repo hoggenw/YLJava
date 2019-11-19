@@ -1,7 +1,6 @@
 package com.hoggen.sublimation.config.nettyConfig;
 
 
-import com.hoggen.sublimation.proto.UserMsg;
 import com.hoggen.sublimation.util.NettyHandler.CustomTextFrameHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

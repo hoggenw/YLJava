@@ -1,4 +1,4 @@
-package com.hoggen.sublimation.service;
+package com.hoggen.sublimation.service.socketService;
 
 import com.hoggen.sublimation.annotion.SocketCmd;
 import com.hoggen.sublimation.annotion.SocketModule;

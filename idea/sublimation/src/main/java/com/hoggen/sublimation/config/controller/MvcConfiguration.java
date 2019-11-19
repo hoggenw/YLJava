@@ -21,8 +21,6 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
     @Autowired
     private TokenInterceptor tokenInterceptor;
 
-    @Autowired
-    private RoleInterceptor roleInterceptor;
 
 
     @Override

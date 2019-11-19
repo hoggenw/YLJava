@@ -1,11 +1,11 @@
-package com.hoggen.sublimation.service.Impl;
+package com.hoggen.sublimation.service.socketService.Impl;
 
 import com.hoggen.sublimation.enums.CmdEnum;
 import com.hoggen.sublimation.enums.ModuleEnum;
 import com.hoggen.sublimation.enums.SocketTitle;
 import com.hoggen.sublimation.proto.BaseMessageModel;
 import com.hoggen.sublimation.proto.MessageModel;
-import com.hoggen.sublimation.service.MessageService;
+import com.hoggen.sublimation.service.socketService.MessageService;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.springframework.stereotype.Component;
