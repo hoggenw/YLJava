@@ -1,6 +1,7 @@
 package com.hoggen.sublimation.service.httpsevice.Impl;
 
 import com.hoggen.sublimation.util.JsonUtil;
+import com.hoggen.sublimation.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,6 +20,55 @@ public class RedisService {
      */
     private static final long FOREVER = 1000 * 24 * 60 * 60;
 
+    private  static final String  header = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
+
+    /**
+     * 登录成功缓存信息
+     * @Param userId
+     * @Param token
+     * @Author:hoggen
+     * @Date:09:09 2019-11-19
+     */
+    public  String saveLoginStatus(String userId ,String token ){
+
+        String returnString = null;
+        String[] result = token.split("\\.");
+        returnString = String.valueOf(result[2]);
+        String midString =  String.valueOf(result[1]);
+        if (set(userId,midString )){
+            return  returnString;
+        }
+        return  returnString;
+
+    }
+    /**
+     * 判断是否已经登录
+     * @Param userId
+     * @Param token
+     * @Author:hoggen
+     * @Date:09:09 2019-11-19
+     */
+    public  Boolean ifLogin(String userId,String token ){
+
+        if (exists(userId)){
+            String middleString =  String.valueOf(get(userId));
+            if (middleString.length() <= 0){
+                return  false;
+            }
+
+            String signToken = header+"."+middleString+"."+token;
+            String signUserId = JwtUtil.getLoginUserID(signToken);
+
+            return  signUserId.equals(userId);
+        }else  {
+            return  false;
+        }
+
+
+
+
+
+    }
 
     /**
      * 将 key，value 存放到redis数据库中，默认设置过期时间为1000天

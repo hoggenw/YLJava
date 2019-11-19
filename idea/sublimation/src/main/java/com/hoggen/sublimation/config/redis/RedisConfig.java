@@ -29,7 +29,7 @@ public class RedisConfig {
     private Logger logger= LoggerFactory.getLogger(RedisConfig.class);
     private Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
     //过期时间1天
-    private Duration timeToLive = Duration.ofDays(1);
+    private Duration timeToLive = Duration.ofDays(1000);
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
 

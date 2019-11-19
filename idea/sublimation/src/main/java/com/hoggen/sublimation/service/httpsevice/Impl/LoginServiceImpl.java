@@ -53,15 +53,8 @@ public class LoginServiceImpl implements LoginService {
                 modelMap.put("errmsg", LoginStateEnum.SUCCESS.getStateInfo());
                 String token = JwtUtil.sign(phone, String.valueOf(user.getUserId()),String.valueOf(user.getRoleType()));
 
-                String returnToken = null;
-                String[] result = token.split("\\.");
-                returnToken = result[2];
-                String midString =  result[1];
-                if (redisService.set(returnToken,midString )){
-                    if (redisService.set(String.valueOf(user.getUserId()),returnToken )){
+                String returnToken =  redisService.saveLoginStatus( String.valueOf(user.getUserId()),token);
 
-                    }
-                }
                 modelMapData.put("token",returnToken);
                 modelMapData.put("user",user);
 

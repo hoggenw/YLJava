@@ -2,7 +2,8 @@ package com.hoggen.sublimation.util.NettyHandler;
 
 import com.hoggen.sublimation.Scanner.Invoker;
 import com.hoggen.sublimation.Scanner.InvokerHoler;
-import com.hoggen.sublimation.proto.BaseMsg;
+import com.hoggen.sublimation.proto.BaseMessageModel;
+import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -17,7 +18,10 @@ import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,16 +36,27 @@ import static com.hoggen.sublimation.util.NettyHandler.GlobalUserUtil.channels;
 所以在这里，个人推荐服务端继承ChannelInboundHandlerAdapter，手动进行释放，防止数据未处理完就自动释放了。而且服务端可能有多个客户端进行连接，并且每一个客户端请求的数据格式都不一致，这时便可以进行相应的处理。
 客户端根据情况可以继承SimpleChannelInboundHandler类。好处是直接指定好传输的数据格式，就不需要再进行格式的转换了。
 * **/
+@Component
 public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
 
     private static final Logger logger = LoggerFactory.getLogger(CustomTextFrameHandler.class);
     private WebSocketServerHandshaker handshaker;
     private final String wsUri = "/hoggen";
 
+    @Autowired
+    RedisService redisService;
 
-    /**
-     * //根据cpu的核心线程取 业务线程池 (netty4 可以是设置中配置)
-     * */
+    private static CustomTextFrameHandler customTextFrameHandler;
+    @PostConstruct//在初始化的时候初始化静态对象和它的静态成员变量bean对象，静态存储下来，防止被释放
+    public void init() {
+        customTextFrameHandler = this;
+        customTextFrameHandler.redisService = this.redisService;
+
+    }
+
+        /**
+         * //根据cpu的核心线程取 业务线程池 (netty4 可以是设置中配置)
+         * */
    // public  static ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
     /**
      * 连接上服务器
@@ -173,12 +188,21 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
             String[] splitStrings =  req.uri().split("&");
             String uri;
             String token;
-            if (splitStrings.length ==2){
+            String userId;
+            if (splitStrings.length == 3){
                 uri = splitStrings[0];
                 token = splitStrings[1];
-                System.out.println("this is token" + token + "  uri " + uri);
+                userId = splitStrings[2];
+                if (customTextFrameHandler.redisService.ifLogin(userId,token)){
+                    System.out.println("this is token" + token + "  uri " + uri + "  " + userId);
+                }else  {
+                    ctx.channel().close();
+                    return;
+                }
+
 
             }else {
+                ctx.channel().close();
                 return;
             }
             if (wsUri.equalsIgnoreCase(uri)) {
@@ -265,7 +289,7 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 buf.readBytes(req);
 
 
-                BaseMsg.YLBaseMessageModel baseModel = BaseMsg.YLBaseMessageModel.parseFrom(req);
+                BaseMessageModel.YLBaseMessageModel baseModel = BaseMessageModel.YLBaseMessageModel.parseFrom(req);
                 System.out.println("  包头  " + baseModel.getTitle() + "  模块  " + baseModel.getModule() + "  命令  " + baseModel.getCommand());
                 Invoker invoker = InvokerHoler.getInvoker((short) baseModel.getModule(), (short) baseModel.getCommand());
                 if (invoker != null) {

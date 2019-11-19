@@ -55,7 +55,6 @@ public class LoginController {
     @Autowired
     private RedisService redisService;
 
-    private  static final String  header = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
 
     @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     @ApiOperation(value = "用户登录")
@@ -72,28 +71,11 @@ public class LoginController {
 
     private Map<String, Object> userInfo(HttpServletRequest request) {
         String userId = "13";
-        String token  = "lIjkAMPLpwobbKUYaCkkp2S9uKywC1eLQ4kuhPeLAlo";
-        String returnString = null;
-        String lastString = (String)redisService.get(userId);
-        if (lastString == null){
-
-        }
-        String middleString =  (String)redisService.get(lastString);
-        if (middleString == null){
-
-        }
-
-        String signToken = header+"."+middleString+"."+lastString;
-        String signUserId = JwtUtil.getLoginUserID(signToken);
-
-//        RedisUtil.ifLogin(userId,token);
-        if (signUserId.equals(userId)){
-
-        }
-
-
+        String token  = "xSjvV-wJ6EnyV-pulWRTitshQAxo0OHJqQxGs3PnvWE";
+        redisService.ifLogin(userId,token);
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        modelMap = identifyService.userInfo(request);
+        //modelMap = identifyService.userInfo(request);
+        modelMap.put("value",redisService.ifLogin(userId,token));
         return modelMap;
     }
 
