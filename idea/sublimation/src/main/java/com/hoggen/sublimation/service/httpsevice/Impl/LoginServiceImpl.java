@@ -2,6 +2,7 @@ package com.hoggen.sublimation.service.httpsevice.Impl;
 
 
 import com.hoggen.sublimation.dao.UserDao;
+import com.hoggen.sublimation.dto.QuitDTO;
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
@@ -105,6 +106,15 @@ public class LoginServiceImpl implements LoginService {
         return modelMap;
     }
 
+    @Override
+    public Map<String, Object> quit(QuitDTO quitDTO) {
+
+        if (redisService.quitLogin(quitDTO.getUserId())){
+            return ResponedUtils.returnCode(LoginStateEnum.SUCCESS.getState(), LoginStateEnum.SUCCESS.getStateInfo(), new HashMap<>());
+        }
+        return ResponedUtils.returnCode(LoginStateEnum.QUITERROR.getState(), LoginStateEnum.QUITERROR.getStateInfo(), new HashMap<>());
+
+    }
 
 
 }

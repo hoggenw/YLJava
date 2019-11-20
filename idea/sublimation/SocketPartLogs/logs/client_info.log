@@ -1,0 +1,82 @@
+2019-11-20 17:52:36.978[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 29557 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-20 17:52:36.981[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-20 17:52:37.036[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-20 17:52:37.036[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-20 17:52:38.131[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 17:52:38.134[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 17:52:38.200[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 repository interfaces.
+2019-11-20 17:52:38.520[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$7b26ee6b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 17:52:38.540[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-20 17:52:38.557[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-20 17:52:38.697[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 17:52:38.699[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$e1aa4064] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 17:52:38.701[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9aae6c63] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 17:52:39.029[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-20 17:52:39.046[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-20 17:52:39.056[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-20 17:52:39.056[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-20 17:52:39.239[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-20 17:52:39.240[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2204 ms
+2019-11-20 17:52:39.813[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-11-20 17:52:39.877[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3] REGISTERED
+2019-11-20 17:52:39.878[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3] BIND: 0.0.0.0/0.0.0.0:6969
+2019-11-20 17:52:39.883[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-11-20 17:52:40.125[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-20 17:52:40.128[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-11-20 17:52:40.136[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 7 ms
+2019-11-20 17:52:40.256[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-11-20 17:52:40.656[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-20 17:52:40.679[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-20 17:52:40.718[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-20 17:52:40.879[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-11-20 17:52:40.893[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-11-20 17:52:40.897[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.337 seconds (JVM running for 5.359)
+2019-11-20 17:53:12.803[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x76835cfe, L:/192.168.0.167:6969 - R:/192.168.2.6:61038]
+2019-11-20 17:53:12.805[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-11-20 17:53:12.849[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>76835cfe
+2019-11-20 17:53:12.850[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
+2019-11-20 17:53:12.851[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0x76835cfe, L:/192.168.0.167:6969 - R:/192.168.2.6:61038]
+2019-11-20 17:53:13.003[nioEventLoopGroup-6-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-20 17:53:13.004[nioEventLoopGroup-6-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-20 17:53:23.013[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0x76835cfe, L:/192.168.0.167:6969 ! R:/192.168.2.6:61038]
+2019-11-20 17:53:23.014[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>76835cfe
+2019-11-20 17:53:23.014[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
+2019-11-20 18:02:15.343[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x09326ec0, L:/192.168.0.167:6969 - R:/192.168.2.6:61139]
+2019-11-20 18:02:15.345[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-11-20 18:02:15.360[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>09326ec0
+2019-11-20 18:02:15.360[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
+2019-11-20 18:02:15.361[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0x09326ec0, L:/192.168.0.167:6969 - R:/192.168.2.6:61139]
+2019-11-20 18:02:22.496[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-20 18:02:22.496[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-11-20 18:02:22.505[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2019-11-20 18:02:42.435[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:03:09.408[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:03:36.431[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:04:03.431[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:04:30.430[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:04:57.431[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:05:24.409[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:05:51.429[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:06:18.430[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:06:45.429[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:07:12.431[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:07:19.858[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0x09326ec0, L:/192.168.0.167:6969 ! R:/192.168.2.6:61139]
+2019-11-20 18:07:19.859[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>09326ec0
+2019-11-20 18:07:19.859[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
+2019-11-20 18:07:36.614[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x06ce1d1e, L:/192.168.0.167:6969 - R:/192.168.2.6:61227]
+2019-11-20 18:07:36.614[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-11-20 18:07:36.631[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>06ce1d1e
+2019-11-20 18:07:36.631[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
+2019-11-20 18:07:36.631[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0x06ce1d1e, L:/192.168.0.167:6969 - R:/192.168.2.6:61227]
+2019-11-20 18:07:46.064[http-nio-8099-exec-3] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta611sqsuw255v8w|4c4bcc4e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta611sqsuw255v8w|4c4bcc4e, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-11-20 18:08:03.687[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:08:30.689[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:08:57.865[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:09:24.711[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:09:51.710[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:10:18.709[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:10:45.710[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-20 18:10:46.435[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0x06ce1d1e, L:/192.168.0.167:6969 ! R:/192.168.2.6:61227]
+2019-11-20 18:10:46.435[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>06ce1d1e
+2019-11-20 18:10:46.435[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
+2019-11-20 18:11:16.151[http-nio-8099-exec-5] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge

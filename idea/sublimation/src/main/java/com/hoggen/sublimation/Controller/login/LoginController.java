@@ -1,10 +1,7 @@
 package com.hoggen.sublimation.Controller.login;
 
 
-import com.hoggen.sublimation.dto.LoginDTO;
-import com.hoggen.sublimation.dto.RegisterDTO;
-import com.hoggen.sublimation.dto.ReturnUserDTO;
-import com.hoggen.sublimation.dto.UserExecution;
+import com.hoggen.sublimation.dto.*;
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
@@ -85,7 +82,7 @@ public class LoginController {
     private Map<String, Object> register(HttpServletRequest request,@Validated @RequestBody RegisterDTO registerDTO)  {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         if (!CodeJudgeUtil.codeJudge(request,registerDTO.getCode())){
-           return ResponedUtils.returnCode(LoginStateEnum.CODEERROR.getState(),LoginStateEnum.CODEERROR.getStateInfo(),modelMap);
+            return ResponedUtils.returnCode(LoginStateEnum.CODEERROR.getState(),LoginStateEnum.CODEERROR.getStateInfo(),modelMap);
         }
         User user = new User();
         user.setPassword(registerDTO.getPassword());
@@ -97,6 +94,15 @@ public class LoginController {
         }
 
         return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),new ReturnUserDTO(effect.getUser()));
+    }
+
+    @RequestMapping(value = "/quit", method = RequestMethod.POST)
+    @ApiOperation(value = "用户退出登录")
+    @ResponseBody
+    private Map<String, Object> quit(@Validated @RequestBody QuitDTO quitDTO)  {
+
+
+        return identifyService.quit(quitDTO);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)

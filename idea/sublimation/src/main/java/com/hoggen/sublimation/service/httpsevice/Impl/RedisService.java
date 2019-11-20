@@ -41,6 +41,13 @@ public class RedisService {
         return  returnString;
 
     }
+
+    public  boolean quitLogin(String userId ){
+
+        return  delete(userId);
+
+    }
+
     /**
      * 判断是否已经登录
      * @Param userId
