@@ -42,10 +42,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserExecution insertUser(User user) {
 
-        if (user != null && user.getUserName() != null && user.getPassword() != null) {
+        if (user != null && user.getUserName() != null && user.getPassword() != null && user.getCodeName() != null) {
             User tempUser = rUserDao.queryByUserPhone(user.getMobile());
             if (tempUser != null){
-                return new UserExecution(UserStateEnum.ALREADY);
+                return new UserExecution(UserStateEnum.ALREADYPHONE);
+            }
+
+            User tempUser2 = rUserDao.queryByUserCodeName(user.getCodeName());
+            if (tempUser2 != null){
+                return new UserExecution(UserStateEnum.ALREADYCODENAME);
             }
 
             user.setCreateTime(new Date());

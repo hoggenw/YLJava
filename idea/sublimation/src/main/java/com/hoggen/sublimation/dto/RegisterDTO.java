@@ -30,5 +30,11 @@ public class RegisterDTO   implements Serializable {
     @NotBlank
     private String code;
 
+    @ApiModelProperty(value = "7聊号")
+    @NotBlank
+    private String codeName;
+
+
+
 
 }

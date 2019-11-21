@@ -26,10 +26,18 @@ public interface UserDao {
     /**
      * 通过用户名称 查询用户
      *
-     * @param String name
+     * @param String mobile
      * @return User
      */
     User queryByUserPhone(String mobile);
+
+    /**
+     * 通过用户名称 查询用户
+     *
+     * @param String codeName
+     * @return User
+     */
+    User queryByUserCodeName(String codeName);
 
     /**
      * 通过用户id 查询用户

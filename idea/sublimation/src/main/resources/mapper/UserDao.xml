@@ -26,11 +26,33 @@
         create_time,
         last_login_time,
         update_time,
+        code_name,
         role_type
         FROM
         tb_user
         WHERE
 		mobile = #{mobile}
+    </select>
+
+
+    <select id="queryByUserCodeName" resultType="com.hoggen.sublimation.entity.User" parameterType="String">
+        SELECT
+        user_id,
+        user_name,
+        password,
+        mobile,
+        avatar,
+        random_string,
+        status,
+        create_time,
+        last_login_time,
+        update_time,
+        code_name,
+        role_type
+        FROM
+        tb_user
+        WHERE
+		code_name = #{codeName}
     </select>
 
 
@@ -46,6 +68,7 @@
         create_time,
         last_login_time,
         update_time,
+        code_name,
         role_type
         FROM
         tb_user
@@ -71,11 +94,12 @@
         create_time,
         last_login_time,
         update_time,
+        code_name,
         role_type)
 		VALUES
 		(#{userName},#{password},#{mobile},
 		#{avatar},#{randomString},#{status},#{createTime},
-		#{lastLoginTime},#{updateTime},#{roleType})
+		#{lastLoginTime},#{updateTime},#{codeName},#{roleType})
 	</insert>
 
 

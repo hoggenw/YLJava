@@ -88,6 +88,7 @@ public class LoginController {
         user.setPassword(registerDTO.getPassword());
         user.setMobile(registerDTO.getPhone());
         user.setUserName(registerDTO.getName());
+        user.setCodeName(registerDTO.getCodeName());
         UserExecution effect = userService.insertUser(user);
         if (effect.getState() != 0){
             return ResponedUtils.returnCode(effect.getState(),effect.getStateInfo(),modelMap);

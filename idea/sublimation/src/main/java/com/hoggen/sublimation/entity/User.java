@@ -37,7 +37,7 @@ public class User {
 //    private String remark;
 
     private Integer roleType;
-
-
+   //7聊号
+    private String codeName;
 
 }
