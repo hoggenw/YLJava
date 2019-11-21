@@ -14,7 +14,9 @@ public enum UserStateEnum {
     REALNAMEEMPTY(10008, "真是姓名为空"),
     ROLEIILLEGAl(10009, "用户角色非法"),
     OPEILLEGAl(10010, "不能操作自己"),
-    INFOILLEGAl(10011, "参数错误");
+    INFOILLEGAl(10011, "参数错误"),
+    NAMESensitive(10012, "名称含有敏感词汇"),
+    CODENAMESensitive(10013, "7聊号含有敏感词汇");
 
     private int state;
 

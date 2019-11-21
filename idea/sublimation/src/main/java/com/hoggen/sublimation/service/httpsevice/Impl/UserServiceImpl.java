@@ -7,6 +7,7 @@ import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.UserStateEnum;
 import com.hoggen.sublimation.service.httpsevice.UserService;
 import com.hoggen.sublimation.util.MD5Util;
+import com.hoggen.sublimation.util.SensitiveFilter.WordFilter;
 import com.hoggen.sublimation.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,12 @@ public class UserServiceImpl implements UserService {
     public UserExecution insertUser(User user) {
 
         if (user != null && user.getUserName() != null && user.getPassword() != null && user.getCodeName() != null) {
+            if (WordFilter.containRubbish(user.getUserName())){
+                return new UserExecution(UserStateEnum.NAMESensitive);
+            }
+            if (WordFilter.containRubbish(user.getCodeName())){
+                return new UserExecution(UserStateEnum.CODENAMESensitive);
+            }
             User tempUser = rUserDao.queryByUserPhone(user.getMobile());
             if (tempUser != null){
                 return new UserExecution(UserStateEnum.ALREADYPHONE);
