@@ -45,7 +45,7 @@ public interface UserDao {
      * @param String name
      * @return User
      */
-    User queryByUserId(Long userId);
+    User queryByUserId(String userId);
 
     /**
      * 插入用户

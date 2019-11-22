@@ -10,7 +10,7 @@ import java.util.Date;
 public class User {
 
     // ID
-    private Long userId;
+    private String userId;
     //头像
     private String avatar;
 

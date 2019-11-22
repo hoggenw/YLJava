@@ -19,7 +19,7 @@ public class ReturnUserDTO implements Serializable {
     // ID
     @ApiModelProperty(value = "userId")
     @NotBlank
-    private Long userId;
+    private String userId;
     //头像
     @ApiModelProperty(value = "头像连接")
     private String avatar;

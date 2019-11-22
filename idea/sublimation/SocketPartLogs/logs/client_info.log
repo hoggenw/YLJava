@@ -1,548 +1,236 @@
-2019-11-21 08:59:55.791[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 08:59:55.799[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2e2899e3, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 08:59:55.942[lettuce-eventExecutorLoop-1-3] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /127.0.0.1:6379
-2019-11-21 08:59:58.018[Thread-20] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 10:10:15.138[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 3337 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 10:10:15.141[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 10:10:15.196[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 10:10:15.197[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 10:10:16.267[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 10:10:16.271[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 10:10:16.329[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39ms. Found 0 repository interfaces.
-2019-11-21 10:10:16.660[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$942d8e0b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:10:16.680[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 10:10:16.700[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 10:10:16.841[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:10:16.843[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$fab0e004] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:10:16.845[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b3b50c03] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:10:17.184[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 10:10:17.200[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 10:10:17.208[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 10:10:17.209[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 10:10:17.309[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 10:10:17.310[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2113 ms
-2019-11-21 10:10:17.995[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 10:10:18.063[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c] REGISTERED
-2019-11-21 10:10:18.065[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 10:10:18.071[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 10:10:18.322[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 10:10:18.325[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 10:10:18.332[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 7 ms
-2019-11-21 10:10:18.447[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 10:10:18.828[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 10:10:18.851[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 10:10:18.888[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 10:10:19.043[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 10:10:19.060[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 10:10:19.064[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.318 seconds (JVM running for 6.374)
-2019-11-21 10:11:20.762[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 10:11:20.762[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 10:11:20.772[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2019-11-21 10:12:07.382[http-nio-8099-exec-3] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta612ro1rr19clg4h|19bf226e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta612ro1rr19clg4h|19bf226e, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
-2019-11-21 10:12:14.011[http-nio-8099-exec-4] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
-2019-11-21 10:12:14.147[http-nio-8099-exec-4] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
-2019-11-21 10:12:14.148[http-nio-8099-exec-4] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
-2019-11-21 10:14:34.170[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0xe2f0ab49, L:/192.168.0.167:6969 - R:/192.168.2.6:62201]
-2019-11-21 10:14:34.172[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
-2019-11-21 10:14:34.396[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>e2f0ab49
-2019-11-21 10:14:34.397[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
-2019-11-21 10:14:34.397[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0xe2f0ab49, L:/192.168.0.167:6969 - R:/192.168.2.6:62201]
-2019-11-21 10:14:34.434[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0xe2f0ab49, L:/192.168.0.167:6969 ! R:/192.168.2.6:62201]
-2019-11-21 10:14:34.435[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>e2f0ab49
-2019-11-21 10:14:34.435[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
-2019-11-21 10:14:34.553[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x44f00183, L:/192.168.0.167:6969 - R:/192.168.2.6:62202]
-2019-11-21 10:14:34.553[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
-2019-11-21 10:14:34.554[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>44f00183
-2019-11-21 10:14:34.555[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
-2019-11-21 10:14:34.555[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0x44f00183, L:/192.168.0.167:6969 - R:/192.168.2.6:62202]
-2019-11-21 10:14:34.557[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0x44f00183, L:/192.168.0.167:6969 ! R:/192.168.2.6:62202]
-2019-11-21 10:14:34.558[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>44f00183
-2019-11-21 10:14:34.558[nioEventLoopGroup-6-2] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
-2019-11-21 10:14:36.862[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0xd5c4f244, L:/192.168.0.167:6969 - R:/192.168.2.6:62203]
-2019-11-21 10:14:36.863[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
-2019-11-21 10:14:36.865[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>d5c4f244
-2019-11-21 10:14:36.865[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
-2019-11-21 10:14:36.865[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0xd5c4f244, L:/192.168.0.167:6969 - R:/192.168.2.6:62203]
-2019-11-21 10:14:36.868[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0xd5c4f244, L:/192.168.0.167:6969 ! R:/192.168.2.6:62203]
-2019-11-21 10:14:36.868[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>d5c4f244
-2019-11-21 10:14:36.868[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
-2019-11-21 10:14:41.346[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x24cda3a2, L:/192.168.0.167:6969 - R:/192.168.2.6:62204]
-2019-11-21 10:14:41.347[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
-2019-11-21 10:14:41.349[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>24cda3a2
-2019-11-21 10:14:41.349[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
-2019-11-21 10:14:41.349[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0x24cda3a2, L:/192.168.0.167:6969 - R:/192.168.2.6:62204]
-2019-11-21 10:14:41.352[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0x24cda3a2, L:/192.168.0.167:6969 ! R:/192.168.2.6:62204]
-2019-11-21 10:14:41.353[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>24cda3a2
-2019-11-21 10:14:41.353[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0
-2019-11-21 10:14:53.243[http-nio-8099-exec-8] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
-2019-11-21 10:15:40.322[http-nio-8099-exec-1] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
-2019-11-21 10:26:00.759[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 10:26:00.760[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xf3bbd91c, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 10:26:02.976[Thread-19] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 10:26:08.450[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 3455 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 10:26:08.453[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 10:26:08.491[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 10:26:08.492[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 10:26:09.380[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 10:26:09.382[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 10:26:09.433[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
-2019-11-21 10:26:09.715[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$a0e7ed59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:26:09.731[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 10:26:09.745[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 10:26:09.869[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:26:09.870[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$76b3f52] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:26:09.872[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c06f6b51] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 10:26:10.158[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 10:26:10.172[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 10:26:10.181[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 10:26:10.181[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 10:26:10.342[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 10:26:10.342[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1850 ms
-2019-11-21 10:26:10.908[Thread-11] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 10:26:10.983[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xc4460794] REGISTERED
-2019-11-21 10:26:10.984[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xc4460794] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 10:26:10.991[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xc4460794, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 10:26:11.277[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 10:26:11.281[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 10:26:11.287[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 6 ms
-2019-11-21 10:26:11.398[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 10:26:11.755[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 10:26:11.771[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 10:26:11.801[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 10:26:11.932[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 10:26:11.944[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 10:26:11.948[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.812 seconds (JVM running for 4.64)
-2019-11-21 10:26:32.709[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 10:26:32.709[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 10:26:32.717[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
-2019-11-21 10:26:32.866[http-nio-8099-exec-1] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta612s8h5akv5f57|3ec4b224, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta612s8h5akv5f57|3ec4b224, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
-2019-11-21 10:27:18.450[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xc4460794, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 10:27:18.475[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xc4460794, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 10:27:20.703[Thread-18] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:37:28.370[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5233 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:37:28.374[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:37:28.430[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 11:37:28.431[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 11:37:29.417[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:37:29.419[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:37:29.474[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
-2019-11-21 11:37:29.792[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$ad78529a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:37:29.810[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 11:37:29.827[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 11:37:29.963[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:37:29.965[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$13fba493] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:37:29.967[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ccffd092] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:37:30.272[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:37:30.286[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:37:30.296[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:37:30.296[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:37:30.458[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:37:30.458[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2027 ms
-2019-11-21 11:37:30.963[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:37:31.024[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xece94dfb] REGISTERED
-2019-11-21 11:37:31.025[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xece94dfb] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:37:31.031[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xece94dfb, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:37:31.259[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:37:31.262[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:37:31.267[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 5 ms
-2019-11-21 11:37:31.372[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:37:31.728[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:37:31.744[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:37:31.777[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:37:31.913[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:37:31.928[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:37:31.933[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.943 seconds (JVM running for 4.803)
-2019-11-21 11:38:36.637[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 11:38:36.639[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 11:38:36.646[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2019-11-21 11:39:18.308[http-nio-8099-exec-3] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta612us7oe1x38dmj|2160def2, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta612us7oe1x38dmj|2160def2, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
-2019-11-21 11:43:06.365[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xece94dfb, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 11:43:06.382[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xece94dfb, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 11:43:08.610[Thread-19] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:43:14.016[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5268 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:43:14.019[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:43:14.059[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 11:43:14.059[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 11:43:15.001[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:43:15.004[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:43:15.068[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49ms. Found 0 repository interfaces.
-2019-11-21 11:43:15.416[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$43a8d569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:43:15.434[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 11:43:15.450[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 11:43:15.596[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:43:15.598[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$aa2c2762] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:43:15.600[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$63305361] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:43:15.898[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:43:15.912[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:43:15.921[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:43:15.921[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:43:16.081[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:43:16.081[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2021 ms
-2019-11-21 11:43:16.568[Thread-11] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:43:16.633[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74114bde] REGISTERED
-2019-11-21 11:43:16.634[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74114bde] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:43:16.639[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74114bde, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:43:16.862[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:43:16.865[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:43:16.870[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 5 ms
-2019-11-21 11:43:16.977[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:43:17.348[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:43:17.364[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:43:17.395[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:43:17.538[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:43:17.552[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:43:17.557[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.845 seconds (JVM running for 4.59)
-2019-11-21 11:43:59.236[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 11:43:59.237[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 11:43:59.244[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2019-11-21 11:43:59.400[http-nio-8099-exec-1] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta612uzmd214dk3sh|7561cf5b, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta612uzmd214dk3sh|7561cf5b, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
-2019-11-21 11:44:52.379[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74114bde, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 11:44:52.379[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74114bde, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 11:44:54.674[Thread-13] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:44:54.901[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5268 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:44:54.901[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:44:55.277[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:44:55.277[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:44:55.297[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
-2019-11-21 11:44:55.363[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$43a8d569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:44:55.376[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:44:55.376[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$aa2c2762] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:44:55.377[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$63305361] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:44:55.447[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:44:55.448[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:44:55.448[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:44:55.449[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:44:55.458[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:44:55.458[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 555 ms
-2019-11-21 11:44:55.579[Thread-30] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:44:55.581[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x43569166] REGISTERED
-2019-11-21 11:44:55.581[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x43569166] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:44:55.581[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x43569166, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:44:55.697[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:44:55.700[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:44:55.701[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 1 ms
-2019-11-21 11:44:55.735[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:44:55.860[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:44:55.861[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:44:55.867[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:44:55.897[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:44:55.900[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:44:55.901[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 1.035 seconds (JVM running for 102.938)
-2019-11-21 11:44:55.904[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 11:44:57.274[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x43569166, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 11:44:57.275[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x43569166, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 11:44:59.489[Thread-27] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:44:59.726[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5268 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:44:59.726[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:45:00.072[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:45:00.072[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:45:00.088[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
-2019-11-21 11:45:00.138[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$43a8d569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:45:00.148[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:45:00.149[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$aa2c2762] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:45:00.150[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$63305361] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:45:00.207[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:45:00.208[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:45:00.208[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:45:00.209[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:45:00.216[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:45:00.216[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 487 ms
-2019-11-21 11:45:00.307[Thread-37] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:45:00.309[nioEventLoopGroup-14-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74d1ae75] REGISTERED
-2019-11-21 11:45:00.310[nioEventLoopGroup-14-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74d1ae75] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:45:00.310[nioEventLoopGroup-14-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74d1ae75, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:45:00.415[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:45:00.418[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:45:00.419[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 0 ms
-2019-11-21 11:45:00.452[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:45:00.577[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:45:00.579[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:45:00.585[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:45:00.611[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:45:00.613[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:45:00.613[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 0.919 seconds (JVM running for 107.651)
-2019-11-21 11:45:00.616[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 11:46:42.724[nioEventLoopGroup-14-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74d1ae75, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 11:46:42.725[nioEventLoopGroup-14-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x74d1ae75, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 11:46:44.940[Thread-34] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:46:45.197[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5268 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:46:45.198[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:46:45.637[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:46:45.637[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:46:45.656[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
-2019-11-21 11:46:45.713[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$43a8d569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:46:45.727[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:46:45.728[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$aa2c2762] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:46:45.728[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$63305361] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:46:45.872[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:46:45.874[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:46:45.874[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:46:45.874[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:46:45.889[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:46:45.889[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 687 ms
-2019-11-21 11:46:46.075[Thread-44] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:46:46.099[nioEventLoopGroup-19-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xac6d7d3b] REGISTERED
-2019-11-21 11:46:46.101[nioEventLoopGroup-19-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xac6d7d3b] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:46:46.101[nioEventLoopGroup-19-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xac6d7d3b, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:46:46.310[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:46:46.314[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:46:46.315[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 0 ms
-2019-11-21 11:46:46.369[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:46:46.768[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:46:46.770[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:46:46.778[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:46:46.818[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:46:46.822[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:46:46.823[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 1.661 seconds (JVM running for 213.873)
-2019-11-21 11:46:46.828[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 11:48:02.768[nioEventLoopGroup-19-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xac6d7d3b, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 11:48:02.768[nioEventLoopGroup-19-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xac6d7d3b, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 11:48:04.986[Thread-41] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:48:05.280[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5268 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:48:05.280[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:48:05.703[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:48:05.703[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:48:05.719[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
-2019-11-21 11:48:05.773[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$43a8d569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:48:05.786[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:48:05.786[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$aa2c2762] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:48:05.787[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$63305361] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:48:05.858[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:48:05.860[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:48:05.860[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:48:05.861[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:48:05.876[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:48:05.876[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 591 ms
-2019-11-21 11:48:06.013[Thread-51] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:48:06.015[nioEventLoopGroup-24-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x394c0e44] REGISTERED
-2019-11-21 11:48:06.016[nioEventLoopGroup-24-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x394c0e44] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:48:06.016[nioEventLoopGroup-24-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x394c0e44, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:48:06.119[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:48:06.122[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:48:06.123[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 0 ms
-2019-11-21 11:48:06.167[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:48:06.284[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:48:06.285[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:48:06.291[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:48:06.314[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:48:06.317[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:48:06.317[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 1.092 seconds (JVM running for 293.37)
-2019-11-21 11:48:06.319[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 11:48:59.606[nioEventLoopGroup-24-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x394c0e44, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 11:48:59.606[nioEventLoopGroup-24-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x394c0e44, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 11:49:01.820[Thread-48] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 11:49:02.099[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 5268 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 11:49:02.099[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 11:49:02.536[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 11:49:02.537[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 11:49:02.560[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
-2019-11-21 11:49:02.631[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$43a8d569] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:49:02.648[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:49:02.649[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$aa2c2762] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:49:02.649[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$63305361] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 11:49:02.721[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 11:49:02.723[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:49:02.724[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 11:49:02.724[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 11:49:02.734[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 11:49:02.734[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 632 ms
-2019-11-21 11:49:02.860[Thread-58] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 11:49:02.863[nioEventLoopGroup-29-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8226d2ff] REGISTERED
-2019-11-21 11:49:02.863[nioEventLoopGroup-29-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8226d2ff] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 11:49:02.864[nioEventLoopGroup-29-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8226d2ff, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 11:49:02.988[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 11:49:02.994[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 11:49:02.996[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 1 ms
-2019-11-21 11:49:03.044[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 11:49:03.229[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 11:49:03.230[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 11:49:03.236[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 11:49:03.258[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 11:49:03.260[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 11:49:03.260[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 1.192 seconds (JVM running for 350.316)
-2019-11-21 11:49:03.263[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 13:27:29.652[nioEventLoopGroup-29-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8226d2ff, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 13:27:29.654[nioEventLoopGroup-29-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8226d2ff, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 13:27:31.874[Thread-61] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 14:10:55.054[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 1064 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 14:10:55.057[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 14:10:55.107[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 14:10:55.107[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 14:10:56.417[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 14:10:56.420[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 14:10:56.481[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41ms. Found 0 repository interfaces.
-2019-11-21 14:10:56.832[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$940c133e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:10:56.854[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 14:10:56.874[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 14:10:57.015[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:10:57.017[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$fa8f6537] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:10:57.019[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b3939136] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:10:57.355[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 14:10:57.373[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:10:57.383[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 14:10:57.383[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 14:10:57.567[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 14:10:57.568[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2461 ms
-2019-11-21 14:10:58.205[Thread-14] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 14:10:58.273[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x4a03c829] REGISTERED
-2019-11-21 14:10:58.275[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x4a03c829] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 14:10:58.280[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x4a03c829, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 14:10:58.531[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 14:10:58.534[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 14:10:58.541[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 7 ms
-2019-11-21 14:10:58.659[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 14:10:59.068[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 14:10:59.088[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 14:10:59.124[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 14:10:59.270[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:10:59.285[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 14:10:59.289[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.654 seconds (JVM running for 6.807)
-2019-11-21 14:11:17.780[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x4a03c829, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 14:11:17.780[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x4a03c829, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 14:11:19.994[Thread-16] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 14:11:20.255[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 1064 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 14:11:20.255[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 14:11:20.664[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 14:11:20.664[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 14:11:20.715[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50ms. Found 0 repository interfaces.
-2019-11-21 14:11:20.820[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$940c133e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:20.855[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:20.856[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$fa8f6537] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:20.857[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b3939136] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:20.989[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 14:11:20.990[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:11:20.991[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 14:11:20.992[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 14:11:21.019[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 14:11:21.019[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 761 ms
-2019-11-21 14:11:21.215[Thread-29] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 14:11:21.219[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5f3a32af] REGISTERED
-2019-11-21 14:11:21.220[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5f3a32af] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 14:11:21.220[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5f3a32af, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 14:11:21.388[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 14:11:21.390[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 14:11:21.391[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 0 ms
-2019-11-21 14:11:21.421[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 14:11:21.536[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 14:11:21.537[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 14:11:21.545[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 14:11:21.576[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:11:21.578[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 14:11:21.579[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 1.358 seconds (JVM running for 29.098)
-2019-11-21 14:11:21.582[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 14:11:24.154[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5f3a32af, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 14:11:24.154[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5f3a32af, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 14:11:26.367[Thread-32] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 14:11:31.748[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 1075 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 14:11:31.753[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 14:11:31.805[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 14:11:31.806[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 14:11:32.782[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 14:11:32.784[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 14:11:32.840[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39ms. Found 0 repository interfaces.
-2019-11-21 14:11:33.131[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$d668e77] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:33.148[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 14:11:33.163[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 14:11:33.290[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:33.292[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$73e9e070] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:33.294[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2cee0c6f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:11:33.572[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 14:11:33.587[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:11:33.596[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 14:11:33.596[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 14:11:33.759[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 14:11:33.760[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1954 ms
-2019-11-21 14:11:34.237[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 14:11:34.295[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x052fafc7] REGISTERED
-2019-11-21 14:11:34.297[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x052fafc7] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 14:11:34.302[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x052fafc7, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 14:11:34.534[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 14:11:34.537[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 14:11:34.544[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 6 ms
-2019-11-21 14:11:34.652[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 14:11:35.025[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 14:11:35.040[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 14:11:35.073[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 14:11:35.212[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:11:35.227[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 14:11:35.231[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.961 seconds (JVM running for 5.052)
-2019-11-21 14:17:46.107[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 14:17:46.108[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 14:17:46.116[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
-2019-11-21 14:18:17.717[http-nio-8099-exec-2] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta6130abvr173da5c|7c449015, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta6130abvr173da5c|7c449015, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
-2019-11-21 14:18:56.057[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x052fafc7, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 14:18:56.057[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x052fafc7, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 14:18:58.270[Thread-14] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 14:19:03.609[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 3775 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 14:19:03.611[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 14:19:03.650[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-21 14:19:03.650[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-21 14:19:04.621[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 14:19:04.623[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 14:19:04.674[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38ms. Found 0 repository interfaces.
-2019-11-21 14:19:05.005[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$d1d62484] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:19:05.023[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
-2019-11-21 14:19:05.040[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
-2019-11-21 14:19:05.179[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:19:05.181[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$3859767d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:19:05.183[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f15da27c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:19:05.488[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 14:19:05.502[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:19:05.512[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 14:19:05.512[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 14:19:05.682[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 14:19:05.682[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2032 ms
-2019-11-21 14:19:06.157[Thread-11] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 14:19:06.216[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x129dc6f7] REGISTERED
-2019-11-21 14:19:06.218[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x129dc6f7] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 14:19:06.224[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x129dc6f7, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 14:19:06.436[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 14:19:06.439[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 14:19:06.444[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 5 ms
-2019-11-21 14:19:06.543[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 14:19:06.864[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 14:19:06.880[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 14:19:06.912[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 14:19:07.052[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:19:07.066[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 14:19:07.071[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.764 seconds (JVM running for 4.613)
-2019-11-21 14:19:34.179[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 14:19:34.180[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 14:19:34.186[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
-2019-11-21 14:19:34.326[http-nio-8099-exec-1] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge10na6130k0jwf6nptq|72d82226, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge10na6130k0jwf6nptq|72d82226, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
-2019-11-21 14:34:39.986[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x129dc6f7, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
-2019-11-21 14:34:39.987[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x129dc6f7, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
-2019-11-21 14:34:42.203[Thread-13] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
-2019-11-21 14:34:42.654[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 3775 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
-2019-11-21 14:34:42.654[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
-2019-11-21 14:34:43.028[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-11-21 14:34:43.028[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-11-21 14:34:43.045[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
-2019-11-21 14:34:43.094[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$d1d62484] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:34:43.106[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:34:43.106[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$3859767d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:34:43.107[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f15da27c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-11-21 14:34:43.168[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
-2019-11-21 14:34:43.168[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:34:43.169[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-11-21 14:34:43.169[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
-2019-11-21 14:34:43.180[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-11-21 14:34:43.180[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 524 ms
-2019-11-21 14:34:43.283[Thread-30] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
-2019-11-21 14:34:43.285[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xe2018428] REGISTERED
-2019-11-21 14:34:43.285[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xe2018428] BIND: 0.0.0.0/0.0.0.0:6969
-2019-11-21 14:34:43.285[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xe2018428, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
-2019-11-21 14:34:43.415[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2019-11-21 14:34:43.419[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
-2019-11-21 14:34:43.420[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 0 ms
-2019-11-21 14:34:43.461[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-11-21 14:34:43.609[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
-2019-11-21 14:34:43.610[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
-2019-11-21 14:34:43.616[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
-2019-11-21 14:34:43.642[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
-2019-11-21 14:34:43.644[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
-2019-11-21 14:34:43.645[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 1.233 seconds (JVM running for 941.24)
-2019-11-21 14:34:43.648[restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2019-11-21 16:09:44.322[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-21 16:09:44.324[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-11-21 16:09:44.334[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2019-11-22 13:47:30.311[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xe2018428, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-11-22 13:47:30.318[nioEventLoopGroup-9-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xe2018428, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-11-22 13:47:32.531[Thread-33] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-11-22 16:58:38.658[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 14951 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-22 16:58:38.661[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-22 16:58:38.713[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 16:58:38.713[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 16:58:39.791[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 16:58:39.794[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 16:58:39.852[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40ms. Found 0 repository interfaces.
+2019-11-22 16:58:40.192[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$2b5c45c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 16:58:40.213[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-22 16:58:40.233[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-22 16:58:40.377[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 16:58:40.379[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$91df97ba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 16:58:40.381[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4ae3c3b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 16:58:40.716[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-22 16:58:40.733[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-22 16:58:40.743[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-22 16:58:40.743[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-22 16:58:40.922[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-22 16:58:40.922[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2208 ms
+2019-11-22 16:58:41.203[restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2019-11-22 16:58:41.219[restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-22 17:00:34.695[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 14960 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-22 17:00:34.698[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-22 17:00:34.734[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 17:00:34.735[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 17:00:35.653[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 17:00:35.656[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 17:00:35.725[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54ms. Found 0 repository interfaces.
+2019-11-22 17:00:36.040[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$94c37e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:00:36.057[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-22 17:00:36.072[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-22 17:00:36.202[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:00:36.204[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$6fcf89d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:00:36.206[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28d3b5d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:00:36.505[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-22 17:00:36.518[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:00:36.527[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-22 17:00:36.527[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-22 17:00:36.687[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-22 17:00:36.687[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1952 ms
+2019-11-22 17:00:36.921[restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2019-11-22 17:00:36.934[restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-22 17:01:17.862[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 14964 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-22 17:01:17.865[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-22 17:01:17.907[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 17:01:17.908[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 17:01:18.939[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 17:01:18.942[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 17:01:18.997[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-11-22 17:01:19.360[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$8abc2960] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:01:19.376[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-22 17:01:19.392[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-22 17:01:19.522[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:01:19.524[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$f13f7b59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:01:19.526[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$aa43a758] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:01:19.819[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-22 17:01:19.834[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:01:19.843[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-22 17:01:19.844[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-22 17:01:20.004[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-22 17:01:20.004[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2096 ms
+2019-11-22 17:01:20.589[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-11-22 17:01:20.678[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1f37cc92] REGISTERED
+2019-11-22 17:01:20.679[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1f37cc92] BIND: 0.0.0.0/0.0.0.0:6969
+2019-11-22 17:01:20.684[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1f37cc92, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-11-22 17:01:20.926[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-22 17:01:20.929[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-11-22 17:01:20.936[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 7 ms
+2019-11-22 17:01:21.054[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-11-22 17:01:21.445[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-22 17:01:21.465[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-22 17:01:21.503[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-22 17:01:21.657[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:01:21.675[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-11-22 17:01:21.679[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.105 seconds (JVM running for 4.919)
+2019-11-22 17:03:29.168[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 17:03:29.169[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-11-22 17:03:29.180[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2019-11-22 17:04:10.819[http-nio-8099-exec-3] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta614lsiak1bw70a7|662182a, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta614lsiak1bw70a7|662182a, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-11-22 17:07:34.243[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1f37cc92, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-11-22 17:07:34.244[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1f37cc92, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-11-22 17:07:36.464[Thread-19] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-11-22 17:07:40.245[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 15019 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-22 17:07:40.249[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-22 17:07:40.305[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 17:07:40.305[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 17:07:41.340[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 17:07:41.346[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 17:07:41.387[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-11-22 17:07:41.715[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$f11a713] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:07:41.733[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-22 17:07:41.749[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-22 17:07:41.889[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:07:41.891[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$7594f90c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:07:41.893[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2e99250b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:07:42.196[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-22 17:07:42.211[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:07:42.219[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-22 17:07:42.219[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-22 17:07:42.377[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-22 17:07:42.377[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2072 ms
+2019-11-22 17:07:42.863[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-11-22 17:07:42.921[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5bc0c01a] REGISTERED
+2019-11-22 17:07:42.923[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5bc0c01a] BIND: 0.0.0.0/0.0.0.0:6969
+2019-11-22 17:07:42.928[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5bc0c01a, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-11-22 17:07:43.148[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-22 17:07:43.151[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-11-22 17:07:43.157[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 6 ms
+2019-11-22 17:07:43.258[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-11-22 17:07:43.604[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-22 17:07:43.619[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-22 17:07:43.653[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-22 17:07:43.784[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:07:43.797[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-11-22 17:07:43.801[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.893 seconds (JVM running for 4.654)
+2019-11-22 17:07:46.389[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 17:07:46.390[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-11-22 17:07:46.397[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2019-11-22 17:07:46.545[http-nio-8099-exec-1] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge10na614m0pbl19zjspn|71939758, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge10na614m0pbl19zjspn|71939758, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-11-22 17:10:05.677[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5bc0c01a, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-11-22 17:10:05.678[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x5bc0c01a, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-11-22 17:10:07.897[Thread-18] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-11-22 17:10:12.536[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 15035 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-22 17:10:12.538[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-22 17:10:12.575[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 17:10:12.576[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 17:10:13.452[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 17:10:13.455[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 17:10:13.511[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43ms. Found 0 repository interfaces.
+2019-11-22 17:10:13.876[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$66a1330a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:10:13.895[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-22 17:10:13.913[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-22 17:10:14.075[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:10:14.078[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$cd248503] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:10:14.082[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8628b102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:10:14.407[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-22 17:10:14.422[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:10:14.432[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-22 17:10:14.433[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-22 17:10:14.602[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-22 17:10:14.602[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2026 ms
+2019-11-22 17:10:15.126[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-11-22 17:10:15.188[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x82e5cb15] REGISTERED
+2019-11-22 17:10:15.189[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x82e5cb15] BIND: 0.0.0.0/0.0.0.0:6969
+2019-11-22 17:10:15.194[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x82e5cb15, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-11-22 17:10:15.434[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-22 17:10:15.437[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-11-22 17:10:15.443[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 5 ms
+2019-11-22 17:10:15.565[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-11-22 17:10:15.960[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-22 17:10:15.976[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-22 17:10:16.013[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-22 17:10:16.164[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:10:16.183[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-11-22 17:10:16.188[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 3.933 seconds (JVM running for 4.814)
+2019-11-22 17:10:39.892[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 17:10:39.893[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-11-22 17:10:39.900[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2019-11-22 17:10:40.056[http-nio-8099-exec-1] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta614m3yqc1jcz5ef|267ad6be, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta614m3yqc1jcz5ef|267ad6be, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-11-22 17:10:54.101[http-nio-8099-exec-2] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
+2019-11-22 17:10:54.248[http-nio-8099-exec-2] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 17:10:54.249[http-nio-8099-exec-2] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 17:12:50.603[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x82e5cb15, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-11-22 17:12:50.605[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x82e5cb15, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-11-22 17:12:52.820[Thread-19] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-11-22 17:12:56.977[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 15043 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-11-22 17:12:56.981[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-11-22 17:12:57.039[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 17:12:57.040[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 17:12:58.148[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-22 17:12:58.163[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-22 17:12:58.211[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2019-11-22 17:12:58.539[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$4b914da1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:12:58.560[restartedMain] INFO  com.mchange.v2.log.MLog - MLog clients using java 1.4+ standard logging.
+2019-11-22 17:12:58.579[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-11-22 17:12:58.728[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:12:58.730[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$b2149f9a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:12:58.732[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6b18cb99] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-22 17:12:59.045[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-11-22 17:12:59.059[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:12:59.084[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-22 17:12:59.085[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-11-22 17:12:59.233[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-22 17:12:59.233[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2193 ms
+2019-11-22 17:12:59.741[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-11-22 17:12:59.802[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2fb39071] REGISTERED
+2019-11-22 17:12:59.803[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2fb39071] BIND: 0.0.0.0/0.0.0.0:6969
+2019-11-22 17:12:59.808[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2fb39071, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-11-22 17:13:00.023[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-11-22 17:13:00.026[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-11-22 17:13:00.032[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 6 ms
+2019-11-22 17:13:00.136[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-11-22 17:13:00.497[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-11-22 17:13:00.513[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-11-22 17:13:00.546[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-11-22 17:13:00.681[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-11-22 17:13:00.695[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-11-22 17:13:00.699[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.115 seconds (JVM running for 5.011)
+2019-11-22 17:13:12.474[http-nio-8099-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 17:13:12.475[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-11-22 17:13:12.482[http-nio-8099-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2019-11-22 17:13:47.249[http-nio-8099-exec-3] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta614m7hsf1lcj2mk|3592a2e0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta614m7hsf1lcj2mk|3592a2e0, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-11-22 17:15:06.981[http-nio-8099-exec-5] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
+2019-11-22 17:15:07.305[http-nio-8099-exec-5] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-11-22 17:15:07.306[http-nio-8099-exec-5] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-11-22 17:32:19.500[http-nio-8099-exec-9] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
+2019-11-22 17:32:19.726[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2fb39071, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x9ef578fd, L:/192.168.0.167:6969 - R:/192.168.2.6:51200]
+2019-11-22 17:32:19.727[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x2fb39071, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-11-22 17:32:19.773[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerAdded】====>9ef578fd
+2019-11-22 17:32:19.774[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：1
+2019-11-22 17:32:19.774[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelActive】=====>[id: 0x9ef578fd, L:/192.168.0.167:6969 - R:/192.168.2.6:51200]
+2019-11-22 17:32:46.879[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:33:13.876[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:33:40.912[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:34:07.877[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:34:34.899[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:35:01.875[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:35:28.851[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:35:55.893[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:36:22.874[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:36:49.874[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:37:16.873[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:37:43.885[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:38:10.873[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:38:37.924[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:39:04.874[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:39:31.872[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:39:58.951[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:40:25.887[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】

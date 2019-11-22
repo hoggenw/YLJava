@@ -88,7 +88,7 @@ public class LoginServiceImpl implements LoginService {
         Map<String, Object> modelMapData = new HashMap<String, Object>();
         String token = request.getHeader("token");
         // 根据账号  查找运输人id
-        User user = userService.queryByUserId(Long.valueOf(JwtUtil.getLoginUserID(token)));
+        User user = userService.queryByUserId(JwtUtil.getLoginUserID(token));
         if(user != null ){
 
             modelMapData.put("roleType",user.getRoleType());

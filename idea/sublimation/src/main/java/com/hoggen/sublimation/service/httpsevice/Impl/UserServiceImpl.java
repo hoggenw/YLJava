@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User queryByUserId(Long userId) {
+    public User queryByUserId(String userId) {
         User user = null;
         user = rUserDao.queryByUserId(userId);
         return user;
@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
             return new UserExecution(UserStateEnum.EMPTY);
         }
 
-        if (user != null && user.getUserId() > 0  ) {
+        if (user != null && user.getUserId()  != null  ) {
             try {
                 if(user.getPassword() != null){
                     String randomString = StringUtil.getRandomString(8);
