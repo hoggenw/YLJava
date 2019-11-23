@@ -234,3 +234,8 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2019-11-22 17:39:31.872[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
 2019-11-22 17:39:58.951[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
 2019-11-22 17:40:25.887[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:40:52.859[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:41:19.871[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-11-22 17:41:24.547[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【channelInactive】=====>[id: 0x9ef578fd, L:/192.168.0.167:6969 ! R:/192.168.2.6:51200]
+2019-11-22 17:41:24.548[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【handlerRemoved】====>9ef578fd
+2019-11-22 17:41:24.548[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端：0

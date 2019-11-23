@@ -1,0 +1,19 @@
+2019-11-23 12:59:56.462[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 18160 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
+2019-11-23 12:59:56.464[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
+2019-11-23 12:59:59.809[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 4.068 seconds (JVM running for 5.174)
+2019-11-23 13:05:34.854[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 18202 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
+2019-11-23 13:05:34.858[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
+2019-11-23 13:05:38.246[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 3.883 seconds (JVM running for 4.484)
+2019-11-23 13:05:49.979[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 18210 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
+2019-11-23 13:05:49.982[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
+2019-11-23 13:05:52.559[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 2.939 seconds (JVM running for 3.59)
+2019-11-23 13:06:29.763[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 18226 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
+2019-11-23 13:06:29.766[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
+2019-11-23 13:06:32.339[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 2.93 seconds (JVM running for 3.551)
+2019-11-23 13:07:57.416[http-nio-8888-exec-7] INFO  c.h.COMangerment.service.impl.IdentifyServiceImpl - adminLoginJudge
+2019-11-23 13:07:57.498[http-nio-8888-exec-7] INFO  c.h.COMangerment.service.impl.AdminServiceImpl - queryAdminByName
+2019-11-23 13:08:48.121[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 18264 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
+2019-11-23 13:08:48.124[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
+2019-11-23 13:08:50.835[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 3.085 seconds (JVM running for 3.713)
+2019-11-23 13:09:04.411[http-nio-8888-exec-3] INFO  c.h.COMangerment.service.impl.IdentifyServiceImpl - adminLoginJudge
+2019-11-23 13:09:04.466[http-nio-8888-exec-3] INFO  c.h.COMangerment.service.impl.AdminServiceImpl - queryAdminByName
