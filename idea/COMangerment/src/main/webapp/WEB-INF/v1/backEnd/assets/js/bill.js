@@ -188,7 +188,7 @@ seajs.use(['base', 'page'], function(base) {
 
 
 			tradeBill:function(item) { //查看详情
-				localStorage.setItem('recommendUserItem', JSON.stringify(item));
+				localStorage.setItem('personUserItem', JSON.stringify(item));
 				window.location.href = "/tradeList";
 
 			},
