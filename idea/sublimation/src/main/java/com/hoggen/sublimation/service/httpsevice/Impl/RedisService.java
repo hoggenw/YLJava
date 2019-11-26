@@ -86,6 +86,7 @@ public class RedisService {
     public boolean set(String key, Object value) {
         try {
             redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), FOREVER, TimeUnit.SECONDS);
+
             return true;
         } catch (Exception e) {
             e.printStackTrace();

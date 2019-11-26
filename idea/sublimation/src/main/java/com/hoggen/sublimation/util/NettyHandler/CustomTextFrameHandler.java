@@ -2,6 +2,7 @@ package com.hoggen.sublimation.util.NettyHandler;
 
 import com.hoggen.sublimation.Scanner.Invoker;
 import com.hoggen.sublimation.Scanner.InvokerHoler;
+import com.hoggen.sublimation.dto.Session;
 import com.hoggen.sublimation.proto.BaseMessageModel;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import io.netty.buffer.ByteBuf;
@@ -195,6 +196,8 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 userId = splitStrings[2];
                 if (customTextFrameHandler.redisService.ifLogin(userId,token)){
                     System.out.println("this is token" + token + "  uri " + uri + "  " + userId);
+                    //这里添加到redis里面
+                    customTextFrameHandler.redisService.set(userId + "hoggen",ctx.channel());
                 }else  {
                     ctx.channel().close();
                     return;
@@ -292,9 +295,10 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 BaseMessageModel.YLBaseMessageModel baseModel = BaseMessageModel.YLBaseMessageModel.parseFrom(req);
                 System.out.println("  包头  " + baseModel.getTitle() + "  模块  " + baseModel.getModule() + "  命令  " + baseModel.getCommand());
                 Invoker invoker = InvokerHoler.getInvoker((short) baseModel.getModule(), (short) baseModel.getCommand());
+
                 if (invoker != null) {
-                    ByteBuf buf2 = (ByteBuf) invoker.invoke(baseModel.getData());
-                    ctx.channel().writeAndFlush(new BinaryWebSocketFrame(buf2));
+                    invoker.invoke(baseModel.getData());
+                  //  ctx.channel().writeAndFlush(new BinaryWebSocketFrame(buf2));
                 }
 
             }

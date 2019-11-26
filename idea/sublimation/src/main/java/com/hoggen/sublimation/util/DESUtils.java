@@ -1,4 +1,4 @@
-package com.fulang.medical_ai.util;
+package com.hoggen.sublimation.util;
 
 import java.security.Key;
 import java.security.SecureRandom;

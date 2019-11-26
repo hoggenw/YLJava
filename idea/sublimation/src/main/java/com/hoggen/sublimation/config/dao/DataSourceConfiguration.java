@@ -1,6 +1,6 @@
 package com.hoggen.sublimation.config.dao;
 
-import com.fulang.medical_ai.util.DESUtils;
+import com.hoggen.sublimation.util.DESUtils;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;

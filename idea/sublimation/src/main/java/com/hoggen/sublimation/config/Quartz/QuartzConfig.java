@@ -45,7 +45,7 @@ public class QuartzConfig {
         tigger.setJobDetail(jobDetail.getObject());
 
         //0 59 2 ? * SAT    每周6凌晨2点59分触发；
-        String timeString =  "*/5 * * * * ?";//"0 35 12 1/1 * ? *";;
+        String timeString =  "0 59 2 ? * SAT";//"*/5 * * * * ?";//
 
 
         log.info("开始一一一一"+ timeString);
