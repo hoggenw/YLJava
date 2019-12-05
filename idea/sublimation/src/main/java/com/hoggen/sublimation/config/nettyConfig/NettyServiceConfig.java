@@ -78,7 +78,7 @@ public class NettyServiceConfig {
 //                    1）readerIdleTime：为读超时时间（即多长时间没有接受到客户端发送数据）
 //                    2）writerIdleTime：为写超时时间（即多长时间没有向客户端发送数据）
 //                    3）allIdleTime：所有类型的超时时间
-                    socketChannel.pipeline().addLast(new IdleStateHandler(60,30,60*2, TimeUnit.SECONDS));
+                    socketChannel.pipeline().addLast(new IdleStateHandler(30,20,80, TimeUnit.SECONDS));
                     //传输的协议 Protobuf
                     //解码用 解决分包及粘包问题
                     socketChannel.pipeline().addLast("frameDecoder", new ProtobufVarint32FrameDecoder());

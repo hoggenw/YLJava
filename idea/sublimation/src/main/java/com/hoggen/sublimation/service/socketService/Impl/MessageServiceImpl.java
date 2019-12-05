@@ -11,11 +11,15 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import static com.hoggen.sublimation.util.NettyHandler.GlobalUserUtil.channelMap;
+
 
 @Component
+@Slf4j
 public class MessageServiceImpl implements MessageService {
 
     @Autowired
@@ -23,7 +27,7 @@ public class MessageServiceImpl implements MessageService {
 
 
     @Override
-    public Object messageSendToPerson(com.google.protobuf.ByteString bytes, String userId) {
+    public void messageSendToPerson(com.google.protobuf.ByteString bytes, String userId) {
         System.out.println("person to person");
         //System.out.println("======线程22====" + Thread.currentThread().getName());
 
@@ -41,13 +45,18 @@ public class MessageServiceImpl implements MessageService {
 
 
             ByteBuf buf2 = Unpooled.wrappedBuffer(baseBuilder.build().toByteArray());
-            Channel channal = (Channel)redisService.get(userId);
-            channal.writeAndFlush(new BinaryWebSocketFrame(buf2));
-            return buf2;
+            //判断是否在线，在线则发送，不在线存储及推送；
+
+            Channel channal = (Channel)channelMap.get(userId);
+            if (channal != null){
+                channal.writeAndFlush(new BinaryWebSocketFrame(buf2));
+
+            }else {
+                log.info("该账户不在线");
+            }
 
         }catch (Exception e){
             e.printStackTrace();
-            return  null;
         }
 
 

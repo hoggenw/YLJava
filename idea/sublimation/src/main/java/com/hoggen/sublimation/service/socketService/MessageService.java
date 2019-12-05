@@ -12,7 +12,7 @@ public interface MessageService {
      *  单对单发送消息
      */
     @SocketCmd(cmd = CmdEnum.PERSON_TO_PERSON)
-    public  Object messageSendToPerson( com.google.protobuf.ByteString bytes, String userId);
+    public  void messageSendToPerson( com.google.protobuf.ByteString bytes, String userId);
 
 
 }

@@ -58,7 +58,6 @@ public class LoginController {
     @ResponseBody
     private Map<String, Object> userLogin(@Validated @RequestBody LoginDTO loginDTO ) {
 
-
         return identifyService.userLogin(loginDTO.getPhone(),loginDTO.getPassword());
     }
 

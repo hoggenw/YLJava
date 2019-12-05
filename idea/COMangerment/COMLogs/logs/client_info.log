@@ -30,3 +30,12 @@
 2019-11-25 09:17:41.710[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 19870 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
 2019-11-25 09:17:41.714[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
 2019-11-25 09:17:44.364[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 3.096 seconds (JVM running for 3.756)
+2019-11-30 16:45:42.407[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Starting CoMangermentApplication on wangliugendeMacBook-Pro.local with PID 28362 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/COMangerment)
+2019-11-30 16:45:42.412[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - No active profile set, falling back to default profiles: default
+2019-11-30 16:45:45.090[restartedMain] INFO  com.hoggen.COMangerment.CoMangermentApplication - Started CoMangermentApplication in 3.091 seconds (JVM running for 4.102)
+2019-11-30 16:47:12.714[http-nio-8080-exec-9] INFO  c.h.COMangerment.service.impl.IdentifyServiceImpl - adminLoginJudge
+2019-11-30 16:47:12.765[http-nio-8080-exec-9] INFO  c.h.COMangerment.service.impl.AdminServiceImpl - queryAdminByName
+2019-11-30 16:47:18.005[http-nio-8080-exec-10] INFO  c.h.COMangerment.service.impl.IdentifyServiceImpl - adminLoginJudge
+2019-11-30 16:47:18.008[http-nio-8080-exec-10] INFO  c.h.COMangerment.service.impl.AdminServiceImpl - queryAdminByName
+2019-11-30 16:50:19.935[http-nio-8080-exec-8] INFO  c.h.COMangerment.service.impl.IdentifyServiceImpl - adminLoginJudge
+2019-11-30 16:50:19.938[http-nio-8080-exec-8] INFO  c.h.COMangerment.service.impl.AdminServiceImpl - queryAdminByName

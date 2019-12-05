@@ -2,15 +2,12 @@ package com.hoggen.sublimation.util.NettyHandler;
 
 import com.hoggen.sublimation.Scanner.Invoker;
 import com.hoggen.sublimation.Scanner.InvokerHoler;
-import com.hoggen.sublimation.dto.Session;
+import com.hoggen.sublimation.entity.ChannelSession;
 import com.hoggen.sublimation.proto.BaseMessageModel;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.*;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.multipart.HttpPostRequestDecoder;
 import io.netty.handler.codec.http.websocketx.*;
@@ -27,7 +24,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.hoggen.sublimation.util.NettyHandler.GlobalUserUtil.channels;
+import static com.hoggen.sublimation.util.NettyHandler.GlobalUserUtil.channelMap;
 
 
 /*
@@ -67,9 +64,9 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         logger.info("【handlerAdded】====>"+ctx.channel().id());
-        channels.add(ctx.channel());
+//        channels.add(ctx.channel());
         super.handlerAdded(ctx);
-        logger.info("剩余客户端：{}", channels.size());
+       // logger.info("剩余客户端：{}", channelMap.size());
     }
 
     /**
@@ -80,8 +77,8 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         logger.info("【handlerRemoved】====>"+ctx.channel().id());
-        channels.remove(ctx);
-        logger.info("剩余客户端：{}", channels.size());
+       // channels.remove(ctx);
+       // logger.info("剩余客户端：{}", channelMap.size());
     }
 
     /**
@@ -123,7 +120,12 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+
         logger.info("【channelInactive】=====>"+ctx.channel());
+        String userId = (String) customTextFrameHandler.redisService.get(ctx.channel().id().toString());
+        channelMap.remove(userId);
+        customTextFrameHandler.redisService.delete(ctx.channel().id().toString());
+        logger.info("剩余客户端-：{}", channelMap.size());
     }
 
     /**
@@ -196,8 +198,12 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 userId = splitStrings[2];
                 if (customTextFrameHandler.redisService.ifLogin(userId,token)){
                     System.out.println("this is token" + token + "  uri " + uri + "  " + userId);
-                    //这里添加到redis里面
-                    customTextFrameHandler.redisService.set(userId + "hoggen",ctx.channel());
+                    //这里添加到redis里面ChannelSession
+                    Channel saveChannel =  ctx.channel();
+                    channelMap.put(userId,saveChannel);
+                    logger.info("剩余客户端+：{}", channelMap.size());
+                    customTextFrameHandler.redisService.set(ctx.channel().id().toString(),userId);
+
                 }else  {
                     ctx.channel().close();
                     return;
@@ -241,7 +247,7 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                  * TextWebSocketFrame("服务端数据"+body));
                  */
                 // 将数据写入通道
-                channels.writeAndFlush(new TextWebSocketFrame(body));
+                ctx.channel().writeAndFlush(new TextWebSocketFrame(body));
             }
         }
     }

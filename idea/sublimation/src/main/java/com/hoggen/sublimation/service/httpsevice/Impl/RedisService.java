@@ -1,5 +1,6 @@
 package com.hoggen.sublimation.service.httpsevice.Impl;
 
+import com.alibaba.fastjson.JSON;
 import com.hoggen.sublimation.util.JsonUtil;
 import com.hoggen.sublimation.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,6 +96,19 @@ public class RedisService {
 
     }
 
+    public boolean setJson(String key, Object value) {
+        try {
+            redisTemplate.opsForValue().set(key, JSON.toJSONString(value), FOREVER, TimeUnit.SECONDS);
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+
     /**
      * 将 key，value 存放到redis数据库中，设置过期时间单位是秒
      *
@@ -160,6 +174,12 @@ public class RedisService {
      */
     public Object get(String key) {
         return redisTemplate.opsForValue().get(key);
+    }
+
+    public Object get(String key,Class clazz) {
+
+        String value = (String) redisTemplate.opsForValue().get(key);
+        return  JSON.parseObject(value,clazz);
     }
 
     /**
