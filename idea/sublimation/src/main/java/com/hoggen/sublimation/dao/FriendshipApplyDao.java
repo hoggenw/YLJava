@@ -18,11 +18,20 @@ public interface FriendshipApplyDao {
 
 
     /**
+     * 添加朋友关系
      * @Param null
      * @Author:hoggen
-     * @Date:11:18 2019-11-25
+     * @Date:11:16 2019-11-25
      */
-    int deleteFriendship(String userId, String friendId);
+    int updateFriendship(FriendshipApply friendship);
+
+
+//    /**
+//     * @Param null
+//     * @Author:hoggens
+//     * @Date:11:18 2019-11-25
+//     */
+//    int deleteFriendship(String userId, String friendId);
 
 
     /**

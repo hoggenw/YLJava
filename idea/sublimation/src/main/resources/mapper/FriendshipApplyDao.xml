@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hoggen.sublimation.dao.FriendshipApplyDao">
+    <insert id="insertFriendship" parameterType="com.hoggen.sublimation.entity.FriendshipApply"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+
+        <selectKey  keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid()
+        </selectKey>
+        <!--<selectKey keyProperty="userId" order="AFTER" resultType="java.lang.String">-->
+        <!--&lt;!&ndash; SELECT LAST_INSERT_ID()：得到刚insert到数据表中的记录的主键值，只适用于自增主键 &ndash;&gt;-->
+        <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        INSERT INTO
+        tb_friendship_apply(
+        id,
+        user_id,
+        friend_id,
+        status,
+        create_time)
+        VALUES
+        (#{userId},#{friendId},#{status},#{createTime})
+    </insert>
+
+
+    <update id="updateFriendship" parameterType="com.hoggen.sublimation.entity.FriendshipApply"
+            keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        UPDATE tb_friendship_apply
+        <set>
+            <if test="status != null">status=#{status},</if>
+            <if test="delete != null">delete=#{delete},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+
+</mapper>

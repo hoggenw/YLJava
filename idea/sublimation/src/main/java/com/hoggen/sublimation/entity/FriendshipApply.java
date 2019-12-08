@@ -26,4 +26,8 @@ public class FriendshipApply {
 
     // 创建时间
     private Date createTime;
+
+    //是否已经删除
+    private Integer delete;
+
 }
