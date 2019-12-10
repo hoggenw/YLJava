@@ -40,6 +40,7 @@ public class HandlerScanner implements BeanPostProcessor {
                         final short cmd = socketCommand.cmd();
 
                         if(InvokerHoler.getInvoker(module, cmd) == null){
+                            System.out.println("命令:"+"module:"+module +" "+"cmd：" + cmd);
                             InvokerHoler.addInvoker(module, cmd, Invoker.valueOf(method, bean));
                         }else{
                             System.out.println("重复命令:"+"module:"+module +" "+"cmd：" + cmd);

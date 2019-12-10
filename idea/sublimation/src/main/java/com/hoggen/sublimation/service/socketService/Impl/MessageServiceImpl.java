@@ -27,7 +27,7 @@ public class MessageServiceImpl implements MessageService {
 
 
     @Override
-    public void messageSendToPerson(com.google.protobuf.ByteString bytes, String userId) {
+    public void messageSendToPerson(com.google.protobuf.ByteString bytes) {
         System.out.println("person to person");
         //System.out.println("======线程22====" + Thread.currentThread().getName());
 
@@ -47,7 +47,7 @@ public class MessageServiceImpl implements MessageService {
             ByteBuf buf2 = Unpooled.wrappedBuffer(baseBuilder.build().toByteArray());
             //判断是否在线，在线则发送，不在线存储及推送；
 
-            Channel channal = (Channel)channelMap.get(userId);
+            Channel channal = (Channel)channelMap.get(model.getToUser().getUserId());
             if (channal != null){
                 channal.writeAndFlush(new BinaryWebSocketFrame(buf2));
 
