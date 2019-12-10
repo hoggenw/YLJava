@@ -43,6 +43,18 @@ public class RedisService {
 
     }
 
+    public  String getTokenStringForJudge(String userId ,String token ){
+
+        String midString =  (String)get(userId);
+        if (midString.length() <= 0 || midString == null){
+            return "";
+        }
+
+        String returnString = header + "." + midString + "." + token;
+        return  returnString;
+
+    }
+
     public  boolean quitLogin(String userId ){
 
         return  delete(userId);
@@ -86,7 +98,7 @@ public class RedisService {
      */
     public boolean set(String key, Object value) {
         try {
-            redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), FOREVER, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(key, JSON.toJSONString(value), FOREVER, TimeUnit.SECONDS);
 
             return true;
         } catch (Exception e) {
@@ -118,7 +130,7 @@ public class RedisService {
      */
     public boolean set(String key, Object value, long expireTime) {
         try {
-            redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), expireTime, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(key, JSON.toJSONString(value), expireTime, TimeUnit.SECONDS);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

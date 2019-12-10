@@ -60,17 +60,10 @@ public class MvcConfiguration implements ApplicationContextAware, WebMvcConfigur
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截
         //
-//        registry.addInterceptor(tokenInterceptor).addPathPatterns("/api/**")
-//                .excludePathPatterns("/api/login/**")
-//                .excludePathPatterns("/api/stock/temp_insert")
-//                .excludePathPatterns("/api/operation/temp_insert")
-//                .excludePathPatterns("/api/sampler/addTemSample")
-//                .excludePathPatterns("/api/sampler/addTemSepSample")
-//                .excludePathPatterns("/api/admin/rubbish_company/records")
-//                .excludePathPatterns("/api/config");
+        registry.addInterceptor(tokenInterceptor).addPathPatterns("/api/**")
+                .excludePathPatterns("/api/login/userLogin")
+                .excludePathPatterns("/api/login/register");
 //registry.addInterceptor(kaptchaIntercepyor).addPathPatterns("/api/login/register");
-
-
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 

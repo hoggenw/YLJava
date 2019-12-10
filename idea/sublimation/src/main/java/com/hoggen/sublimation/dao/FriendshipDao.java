@@ -1,5 +1,6 @@
 package com.hoggen.sublimation.dao;
 
+import com.hoggen.sublimation.dto.FriendshipDTO;
 import com.hoggen.sublimation.dto.ReturnUserDTO;
 import com.hoggen.sublimation.entity.Friendship;
 
@@ -31,7 +32,7 @@ public interface FriendshipDao {
      * @Author:hoggen
      * @Date:11:22 2019-11-25
      */
-    public List<Map<String, Object>>  queryUserList(String userId);
+    public FriendshipDTO queryUserList(String userId);
 
 
 

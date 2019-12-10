@@ -80,9 +80,9 @@ public class LoginController {
     @ResponseBody
     private Map<String, Object> register(HttpServletRequest request,@Validated @RequestBody RegisterDTO registerDTO)  {
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        if (!CodeJudgeUtil.codeJudge(request,registerDTO.getCode())){
-            return ResponedUtils.returnCode(LoginStateEnum.CODEERROR.getState(),LoginStateEnum.CODEERROR.getStateInfo(),modelMap);
-        }
+//        if (!CodeJudgeUtil.codeJudge(request,registerDTO.getCode())){
+//            return ResponedUtils.returnCode(LoginStateEnum.CODEERROR.getState(),LoginStateEnum.CODEERROR.getStateInfo(),modelMap);
+//        }
         User user = new User();
         user.setPassword(registerDTO.getPassword());
         user.setMobile(registerDTO.getPhone());
@@ -145,17 +145,6 @@ public class LoginController {
 
         return ResponedUtils.returnCode(LoginStateEnum.SUCCESS.getState(),LoginStateEnum.SUCCESS.getStateInfo(),modelMap);
 
-//
-//        // 定义response输出类型为image/jpeg类型，使用response输出流输出图片的byte数组
-//        captchaChallengeAsJpeg = jpegOutputStream.toByteArray();
-//        response.setHeader("Cache-Control", "no-store");
-//        response.setHeader("Pragma", "no-cache");
-//        response.setDateHeader("Expires", 0);
-//        response.setContentType("image/png");
-//        ServletOutputStream responseOutputStream = response.getOutputStream();
-//        responseOutputStream.write(captchaChallengeAsJpeg);
-//        responseOutputStream.flush();
-//        responseOutputStream.close();
 
 
     }

@@ -5,6 +5,7 @@ import com.hoggen.sublimation.Scanner.InvokerHoler;
 import com.hoggen.sublimation.entity.ChannelSession;
 import com.hoggen.sublimation.proto.BaseMessageModel;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
+import com.hoggen.sublimation.util.SocketResponseUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -63,7 +64,7 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
-        logger.info("【handlerAdded】====>"+ctx.channel().id());
+        logger.info("1.【handlerAdded】====>"+ctx.channel().id());
 //        channels.add(ctx.channel());
         super.handlerAdded(ctx);
        // logger.info("剩余客户端：{}", channelMap.size());
@@ -76,9 +77,10 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        logger.info("【handlerRemoved】====>"+ctx.channel().id());
+        logger.info("2.【handlerRemoved】====>"+ctx.channel().id());
        // channels.remove(ctx);
        // logger.info("剩余客户端：{}", channelMap.size());
+
     }
 
     /**
@@ -101,7 +103,7 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        logger.info("【channelActive】=====>"+ctx.channel());
+        logger.info("3.【channelActive】=====>"+ctx.channel().id());
         // TODO Auto-generated method stub
 
         System.out.println(ctx.channel().remoteAddress()+"   ----Acrive");
@@ -121,9 +123,9 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 
-        logger.info("【channelInactive】=====>"+ctx.channel());
-        String userId = (String) customTextFrameHandler.redisService.get(ctx.channel().id().toString());
-        channelMap.remove(userId);
+        logger.info("4.【channelInactive】=====>"+ctx.channel().id());
+        String userId = String.valueOf(customTextFrameHandler.redisService.get(ctx.channel().id().toString())) ;
+        channelMap.remove(userId,ctx.channel());
         customTextFrameHandler.redisService.delete(ctx.channel().id().toString());
         logger.info("剩余客户端-：{}", channelMap.size());
     }
@@ -197,20 +199,18 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 token = splitStrings[1];
                 userId = splitStrings[2];
                 if (customTextFrameHandler.redisService.ifLogin(userId,token)){
-                    System.out.println("this is token" + token + "  uri " + uri + "  " + userId);
+                    System.out.println("this is token" + token + "  uri " + uri + "  " + userId +  "5. ctx.channel().id " + ctx.channel().id());
                     //这里添加到redis里面ChannelSession
                     Channel saveChannel =  ctx.channel();
                     channelMap.put(userId,saveChannel);
                     logger.info("剩余客户端+：{}", channelMap.size());
                     customTextFrameHandler.redisService.set(ctx.channel().id().toString(),userId);
 
-                }else  {
-                    ctx.channel().close();
-                    return;
                 }
 
 
             }else {
+                ctx.close();
                 ctx.channel().close();
                 return;
             }
@@ -232,22 +232,31 @@ public class CustomTextFrameHandler extends ChannelInboundHandlerAdapter {
                 System.out.println(decoder.getBodyHttpDatas());
             }
             if (HttpMethod.GET == method) {
-                // 是GET请求
-                System.out.println(req.content());
-                // 编码解码
-                ByteBuf in = (ByteBuf) req.content();
-                byte[] byt = new byte[in.readableBytes()];
-                in.readBytes(byt);
-                String body = new String(byt, "UTF-8");
-                System.out.println("server channelRead...; received收到客户端消息:" + body);
-                QueryStringDecoder decoder = new QueryStringDecoder(req.uri());
+//                // 是GET请求
+//                System.out.println(req.content());
+//                // 编码解码
+//                ByteBuf in = (ByteBuf) req.content();
+//                byte[] byt = new byte[in.readableBytes()];
+//                in.readBytes(byt);
+//                String body = new String(byt, "UTF-8");
+//                System.out.println("server channelRead...; received收到客户端消息:" + body);
+//                QueryStringDecoder decoder = new QueryStringDecoder(req.uri());
                 //System.out.println(decoder.toString());
                 /*
                  * ctx.channel().writeAndFlush(new
                  * TextWebSocketFrame("服务端数据"+body));
                  */
+                if (!customTextFrameHandler.redisService.ifLogin(userId,token)){
+                    ByteBuf byteBuf  =SocketResponseUtil.creatOotLoginResponse(userId);
+                    ctx.channel().writeAndFlush(new BinaryWebSocketFrame(byteBuf));
+                    ctx.close();
+                    ctx.channel().close();
+                }
+
+
+                //  ctx.channel().close();
                 // 将数据写入通道
-                ctx.channel().writeAndFlush(new TextWebSocketFrame(body));
+//                ctx.channel().writeAndFlush(new TextWebSocketFrame(body));
             }
         }
     }
