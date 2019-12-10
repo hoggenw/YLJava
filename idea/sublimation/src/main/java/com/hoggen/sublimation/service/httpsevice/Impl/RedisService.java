@@ -96,9 +96,9 @@ public class RedisService {
      * @param key
      * @param value
      */
-    public boolean set(String key, Object value) {
+    public boolean set(String key, String value) {
         try {
-            redisTemplate.opsForValue().set(key, JSON.toJSONString(value), FOREVER, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(key, value, FOREVER, TimeUnit.SECONDS);
 
             return true;
         } catch (Exception e) {
@@ -130,7 +130,7 @@ public class RedisService {
      */
     public boolean set(String key, Object value, long expireTime) {
         try {
-            redisTemplate.opsForValue().set(key, JSON.toJSONString(value), expireTime, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(key, String.valueOf(value) , expireTime, TimeUnit.SECONDS);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -185,7 +185,7 @@ public class RedisService {
      * @return
      */
     public Object get(String key) {
-        return redisTemplate.opsForValue().get(key);
+        return  redisTemplate.opsForValue().get(key);
     }
 
     public Object get(String key,Class clazz) {

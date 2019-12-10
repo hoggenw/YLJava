@@ -625,3 +625,238 @@
 2019-12-10 11:01:01.067[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 4.【channelInactive】=====>1ad158cf
 2019-12-10 11:01:01.069[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端-：1
 2019-12-10 11:01:01.069[nioEventLoopGroup-6-3] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 2.【handlerRemoved】====>1ad158cf
+2019-12-10 11:07:09.973[http-nio-8099-exec-5] INFO  c.h.s.service.httpsevice.Impl.LoginServiceImpl - userLoginJudge
+2019-12-10 11:07:10.214[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8fde8a48, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x41c06732, L:/192.168.0.167:6969 - R:/192.168.2.6:51554]
+2019-12-10 11:07:10.214[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8fde8a48, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-12-10 11:07:10.219[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 1.【handlerAdded】====>41c06732
+2019-12-10 11:07:10.219[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 3.【channelActive】=====>41c06732
+2019-12-10 11:07:10.222[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端+：2
+2019-12-10 11:07:15.525[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 4.【channelInactive】=====>41c06732
+2019-12-10 11:07:48.899[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端-：2
+2019-12-10 11:07:48.900[nioEventLoopGroup-6-4] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 2.【handlerRemoved】====>41c06732
+2019-12-10 11:09:37.134[Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED paused.
+2019-12-10 11:09:37.135[Thread-25] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-10 11:09:37.136[Thread-25] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2019-12-10 11:09:37.136[Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2019-12-10 11:09:37.136[Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED paused.
+2019-12-10 11:09:37.137[Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2019-12-10 11:09:37.138[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8fde8a48, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-12-10 11:09:37.138[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x8fde8a48, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-12-10 11:09:39.353[Thread-25] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-12-10 11:09:50.382[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 30604 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-12-10 11:09:50.385[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-12-10 11:09:50.423[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-10 11:09:50.423[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-10 11:09:51.320[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-10 11:09:51.322[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 11:09:51.365[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-12-10 11:09:51.672[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$6453e5ca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:09:51.687[MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+2019-12-10 11:09:51.704[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-12-10 11:09:51.839[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:09:51.843[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$cad737c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:09:51.845[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$83db63c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:09:52.201[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-12-10 11:09:52.218[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-12-10 11:09:52.230[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-10 11:09:52.230[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-12-10 11:09:52.425[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-10 11:09:52.425[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2001 ms
+2019-12-10 11:09:52.994[Thread-11] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-12-10 11:09:53.055[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92] REGISTERED
+2019-12-10 11:09:53.056[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92] BIND: 0.0.0.0/0.0.0.0:6969
+2019-12-10 11:09:53.061[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-12-10 11:09:53.315[restartedMain] INFO  com.hoggen.sublimation.config.Quartz.QuartzConfig - 开始一一一一0 59 2 ? * SAT
+2019-12-10 11:09:53.351[restartedMain] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta61tz5uxg15cnka6|16224403, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta61tz5uxg15cnka6|16224403, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-12-10 11:09:53.489[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2019-12-10 11:09:53.499[restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-12-10 11:09:53.499[restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+2019-12-10 11:09:53.500[restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2019-12-10 11:09:53.501[restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-12-10 11:09:53.501[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2019-12-10 11:09:53.501[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+2019-12-10 11:09:53.502[restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@7a6f05cd
+2019-12-10 11:09:53.521[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-12-10 11:09:53.523[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-12-10 11:09:53.530[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 7 ms
+2019-12-10 11:09:53.641[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-12-10 11:09:53.924[restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-12-10 11:09:53.997[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-12-10 11:09:54.014[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-12-10 11:09:54.045[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-12-10 11:09:54.173[restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [scheduler] in 1 seconds
+2019-12-10 11:09:54.186[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-12-10 11:09:54.199[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-12-10 11:09:54.202[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.117 seconds (JVM running for 4.851)
+2019-12-10 11:09:55.178[Quartz Scheduler [scheduler]] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2019-12-10 11:09:55.178[Quartz Scheduler [scheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED started.
+2019-12-10 11:10:17.044[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0x127ab8ff, L:/192.168.0.167:6969 - R:/192.168.2.6:51651]
+2019-12-10 11:10:17.045[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-12-10 11:10:17.082[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 1.【handlerAdded】====>127ab8ff
+2019-12-10 11:10:17.082[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 3.【channelActive】=====>127ab8ff
+2019-12-10 11:10:17.203[nioEventLoopGroup-6-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-10 11:10:17.204[nioEventLoopGroup-6-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-10 11:10:17.359[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端+：1
+2019-12-10 11:10:19.420[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 4.【channelInactive】=====>127ab8ff
+2019-12-10 11:10:34.303[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端-：1
+2019-12-10 11:10:34.304[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 2.【handlerRemoved】====>127ab8ff
+2019-12-10 11:11:48.194[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED paused.
+2019-12-10 11:11:48.195[Thread-24] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-10 11:11:48.197[Thread-24] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2019-12-10 11:11:48.197[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2019-12-10 11:11:48.197[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED paused.
+2019-12-10 11:11:48.197[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2019-12-10 11:11:48.198[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-12-10 11:11:48.199[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x41d2df92, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-12-10 11:11:50.415[Thread-24] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-12-10 11:11:58.119[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 30614 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-12-10 11:11:58.123[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-12-10 11:11:58.177[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-10 11:11:58.177[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-10 11:11:59.377[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-10 11:11:59.380[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 11:11:59.422[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-12-10 11:11:59.745[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$7674d9c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:11:59.761[MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+2019-12-10 11:11:59.780[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-12-10 11:11:59.918[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:11:59.922[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$dcf82bbd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:11:59.924[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$95fc57bc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:12:00.250[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-12-10 11:12:00.263[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-12-10 11:12:00.272[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-10 11:12:00.272[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-12-10 11:12:00.417[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-10 11:12:00.417[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2240 ms
+2019-12-10 11:12:00.924[Thread-12] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-12-10 11:12:00.982[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a] REGISTERED
+2019-12-10 11:12:00.984[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a] BIND: 0.0.0.0/0.0.0.0:6969
+2019-12-10 11:12:00.988[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-12-10 11:12:01.244[restartedMain] INFO  com.hoggen.sublimation.config.Quartz.QuartzConfig - 开始一一一一0 59 2 ? * SAT
+2019-12-10 11:12:01.280[restartedMain] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta61tz8lr41p9l8z4|18eb4cee, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta61tz8lr41p9l8z4|18eb4cee, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-12-10 11:12:01.412[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2019-12-10 11:12:01.421[restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-12-10 11:12:01.421[restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+2019-12-10 11:12:01.422[restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2019-12-10 11:12:01.422[restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-12-10 11:12:01.422[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2019-12-10 11:12:01.422[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+2019-12-10 11:12:01.424[restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3d405c9d
+2019-12-10 11:12:01.442[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-12-10 11:12:01.444[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-12-10 11:12:01.453[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 7 ms
+2019-12-10 11:12:01.565[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-12-10 11:12:01.828[restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-12-10 11:12:01.897[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-12-10 11:12:01.911[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-12-10 11:12:01.939[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-12-10 11:12:02.060[restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [scheduler] in 1 seconds
+2019-12-10 11:12:02.070[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-12-10 11:12:02.084[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-12-10 11:12:02.088[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.354 seconds (JVM running for 5.171)
+2019-12-10 11:12:03.062[Quartz Scheduler [scheduler]] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2019-12-10 11:12:03.063[Quartz Scheduler [scheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED started.
+2019-12-10 11:13:33.489[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0xa6db0898, L:/192.168.0.167:6969 - R:/192.168.2.6:51862]
+2019-12-10 11:13:33.493[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-12-10 11:13:33.526[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 1.【handlerAdded】====>a6db0898
+2019-12-10 11:13:33.526[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 3.【channelActive】=====>a6db0898
+2019-12-10 11:13:33.638[nioEventLoopGroup-6-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-10 11:13:33.640[nioEventLoopGroup-6-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-10 11:13:33.723[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端+：1
+2019-12-10 11:13:53.748[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【/192.168.2.6:51862】写空闲（客户端）
+2019-12-10 11:14:01.030[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-12-10 11:14:21.037[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【/192.168.2.6:51862】写空闲（客户端）
+2019-12-10 11:14:28.028[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-12-10 11:14:48.030[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【/192.168.2.6:51862】写空闲（客户端）
+2019-12-10 11:14:55.027[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【ping】
+2019-12-10 11:14:55.301[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED paused.
+2019-12-10 11:14:55.303[Thread-24] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-10 11:14:55.304[Thread-24] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2019-12-10 11:14:55.304[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2019-12-10 11:14:55.304[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED paused.
+2019-12-10 11:14:55.305[Thread-24] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2019-12-10 11:14:55.309[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a, L:/0:0:0:0:0:0:0:0:6969] INACTIVE
+2019-12-10 11:14:55.309[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0x1ea0135a, L:/0:0:0:0:0:0:0:0:6969] UNREGISTERED
+2019-12-10 11:14:55.310[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 4.【channelInactive】=====>a6db0898
+2019-12-10 11:14:55.315[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端-：0
+2019-12-10 11:14:55.315[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 2.【handlerRemoved】====>a6db0898
+2019-12-10 11:14:57.526[Thread-24] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 关闭Netty
+2019-12-10 11:15:13.056[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Starting SublimationApplication on wangliugendeMacBook-Pro.local with PID 31370 (/Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation/target/classes started by hoggen in /Users/hoggen/Desktop/SelfProject/YLJava/idea/sublimation)
+2019-12-10 11:15:13.060[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - No active profile set, falling back to default profiles: default
+2019-12-10 11:15:13.110[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-10 11:15:13.110[restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-10 11:15:14.096[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-12-10 11:15:14.098[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 11:15:14.139[restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-12-10 11:15:14.450[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSourceConfiguration' of type [com.hoggen.sublimation.config.dao.DataSourceConfiguration$$EnhancerBySpringCGLIB$$dd47b632] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:15:14.464[MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+2019-12-10 11:15:14.482[restartedMain] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2019-12-10 11:15:14.614[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.mchange.v2.c3p0.ComboPooledDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:15:14.618[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'transactionManagerConfiguration' of type [com.hoggen.sublimation.config.service.TransactionManagerConfiguration$$EnhancerBySpringCGLIB$$43cb082b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:15:14.620[restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fccf342a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 11:15:14.903[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8099 (http)
+2019-12-10 11:15:14.918[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8099"]
+2019-12-10 11:15:14.926[restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-10 11:15:14.927[restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-12-10 11:15:15.076[restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-10 11:15:15.077[restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1966 ms
+2019-12-10 11:15:15.562[Thread-11] INFO  c.h.s.config.nettyConfig.NettyServiceConfig - 【服务器启动成功========端口：6969】
+2019-12-10 11:15:15.621[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xacba4d99] REGISTERED
+2019-12-10 11:15:15.623[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xacba4d99] BIND: 0.0.0.0/0.0.0.0:6969
+2019-12-10 11:15:15.627[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xacba4d99, L:/0:0:0:0:0:0:0:0:6969] ACTIVE
+2019-12-10 11:15:15.853[restartedMain] INFO  com.hoggen.sublimation.config.Quartz.QuartzConfig - 开始一一一一0 59 2 ? * SAT
+2019-12-10 11:15:15.891[restartedMain] INFO  c.m.v2.c3p0.impl.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> z8kflta61tzcrzify0026|1ab1e5f6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> z8kflta61tzcrzify0026|1ab1e5f6, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/7chat?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2019-12-10 11:15:16.026[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2019-12-10 11:15:16.036[restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-12-10 11:15:16.036[restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+2019-12-10 11:15:16.037[restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2019-12-10 11:15:16.037[restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-12-10 11:15:16.038[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2019-12-10 11:15:16.038[restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+2019-12-10 11:15:16.039[restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3f5a1a23
+2019-12-10 11:15:16.061[restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-12-10 11:15:16.064[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Starting Swagger
+2019-12-10 11:15:16.070[restartedMain] INFO  c.h.sublimation.config.SwaggerConfig.SwaggerConfig - Started Swagger in 6 ms
+2019-12-10 11:15:16.195[restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-12-10 11:15:16.518[restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2019-12-10 11:15:16.595[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2019-12-10 11:15:16.611[restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2019-12-10 11:15:16.667[restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2019-12-10 11:15:16.792[restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [scheduler] in 1 seconds
+2019-12-10 11:15:16.802[restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8099"]
+2019-12-10 11:15:16.815[restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8099 (http) with context path ''
+2019-12-10 11:15:16.819[restartedMain] INFO  com.hoggen.sublimation.SublimationApplication - Started SublimationApplication in 4.209 seconds (JVM running for 4.946)
+2019-12-10 11:15:17.795[Quartz Scheduler [scheduler]] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2019-12-10 11:15:17.795[Quartz Scheduler [scheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler scheduler_$_NON_CLUSTERED started.
+2019-12-10 11:15:30.655[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xacba4d99, L:/0:0:0:0:0:0:0:0:6969] READ: [id: 0xe3708ffd, L:/192.168.0.167:6969 - R:/192.168.2.6:51865]
+2019-12-10 11:15:30.656[nioEventLoopGroup-4-1] INFO  io.netty.handler.logging.LoggingHandler - [id: 0xacba4d99, L:/0:0:0:0:0:0:0:0:6969] READ COMPLETE
+2019-12-10 11:15:30.689[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 1.【handlerAdded】====>e3708ffd
+2019-12-10 11:15:30.689[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 3.【channelActive】=====>e3708ffd
+2019-12-10 11:15:30.803[nioEventLoopGroup-6-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2019-12-10 11:15:30.805[nioEventLoopGroup-6-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2019-12-10 11:15:30.890[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端+：1
+2019-12-10 11:15:50.913[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 【/192.168.2.6:51865】写空闲（客户端）
+2019-12-10 11:15:54.782[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 4.【channelInactive】=====>e3708ffd
+2019-12-10 11:16:07.681[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 剩余客户端-：0
+2019-12-10 11:16:07.682[nioEventLoopGroup-6-1] INFO  c.h.s.util.NettyHandler.CustomTextFrameHandler - 2.【handlerRemoved】====>e3708ffd
