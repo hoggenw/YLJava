@@ -4,6 +4,7 @@ package com.hoggen.sublimation.Controller.login;
 import com.hoggen.sublimation.dto.*;
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
+import com.hoggen.sublimation.enums.UserStateEnum;
 import com.hoggen.sublimation.service.httpsevice.Impl.RedisService;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
 import com.hoggen.sublimation.service.httpsevice.UserService;
@@ -64,15 +65,16 @@ public class LoginController {
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
-
+    @ApiOperation(value = "用户信息获取")
     private Map<String, Object> userInfo(HttpServletRequest request) {
-        String userId = "13";
-        String token  = "xSjvV-wJ6EnyV-pulWRTitshQAxo0OHJqQxGs3PnvWE";
-        redisService.ifLogin(userId,token);
+        String token = request.getHeader("token");
+        String userId = request.getHeader("userId");
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        //modelMap = identifyService.userInfo(request);
-        modelMap.put("value",redisService.ifLogin(userId,token));
-        return modelMap;
+        User user = userService.queryByUserId(userId);
+        if (user == null) {
+            return ResponedUtils.returnCode(UserStateEnum.EMPTY.getState(),UserStateEnum.EMPTY.getStateInfo(),"");
+        }
+        return ResponedUtils.returnCode(UserStateEnum.SUCCESS.getState(),UserStateEnum.SUCCESS.getStateInfo(),new ReturnUserDTO(user));
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -128,8 +130,6 @@ public class LoginController {
     public Map<String, Object>  getKaptchaImage(HttpServletRequest request,
                                 HttpServletResponse response) throws Exception {
 
-
-
         byte[] captchaChallengeAsJpeg = null;
         ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
         // 生产验证码字符串并保存到session中
@@ -144,8 +144,6 @@ public class LoginController {
         modelMap.put("img", encoder.encode(jpegOutputStream.toByteArray()));
 
         return ResponedUtils.returnCode(LoginStateEnum.SUCCESS.getState(),LoginStateEnum.SUCCESS.getStateInfo(),modelMap);
-
-
 
     }
 

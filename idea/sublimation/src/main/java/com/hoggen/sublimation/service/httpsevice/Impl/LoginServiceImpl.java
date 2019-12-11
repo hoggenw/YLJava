@@ -3,6 +3,7 @@ package com.hoggen.sublimation.service.httpsevice.Impl;
 
 import com.hoggen.sublimation.dao.UserDao;
 import com.hoggen.sublimation.dto.QuitDTO;
+import com.hoggen.sublimation.dto.ReturnUserDTO;
 import com.hoggen.sublimation.entity.User;
 import com.hoggen.sublimation.enums.LoginStateEnum;
 import com.hoggen.sublimation.service.httpsevice.LoginService;
@@ -57,7 +58,7 @@ public class LoginServiceImpl implements LoginService {
                 String returnToken =  redisService.saveLoginStatus( String.valueOf(user.getUserId()),token);
 
                 modelMapData.put("token",returnToken);
-                modelMapData.put("user",user);
+                modelMapData.put("user",new ReturnUserDTO(user));
 
                 User user1 = new User();
                 user1.setLastLoginTime(new Date());

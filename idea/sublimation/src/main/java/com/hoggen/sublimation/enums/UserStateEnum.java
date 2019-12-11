@@ -16,7 +16,10 @@ public enum UserStateEnum {
     OPEILLEGAl(10010, "不能操作自己"),
     INFOILLEGAl(10011, "参数错误"),
     NAMESensitive(10012, "名称含有敏感词汇"),
-    CODENAMESensitive(10013, "7聊号含有敏感词汇");
+    CODENAMESensitive(10013, "7聊号含有敏感词汇"),
+    APPLYFRIENDFAILED(10014, "申请朋友操作失败"),
+    APPLYALREADY(10015, "你已经申请，请耐心等待对方同意"),
+    AGREEALREADY(10016, "该好友已经添加");
 
     private int state;
 

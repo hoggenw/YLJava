@@ -3,4 +3,25 @@
 
 <mapper namespace="com.hoggen.sublimation.dao.FriendshipDao">
 
+    <insert id="insertFriendship" parameterType="com.hoggen.sublimation.entity.Friendship"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+
+        <selectKey  keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select uuid()
+        </selectKey>
+        <!--<selectKey keyProperty="userId" order="AFTER" resultType="java.lang.String">-->
+        <!--&lt;!&ndash; SELECT LAST_INSERT_ID()：得到刚insert到数据表中的记录的主键值，只适用于自增主键 &ndash;&gt;-->
+        <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        INSERT INTO
+        tb_friendship(
+        id,
+        user_id,
+        friend_id,
+        create_time)
+        VALUES
+        (#{id},#{userId},#{friendId},#{createTime})
+    </insert>
+
+
 </mapper>

@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
             }
 
             user.setCreateTime(new Date());
-            user.setStatus(0);
+            user.setStatus(1);
             user.setRoleType(0);
             String randomString = StringUtil.getRandomString(8);
             String storePassString = MD5Util.MD5Encode(user.getPassword() + randomString);

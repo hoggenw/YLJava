@@ -25,7 +25,7 @@ public class ReturnUserDTO implements Serializable {
     private String avatar;
 
     // 名称
-    @ApiModelProperty(value = "名称")
+    @ApiModelProperty(value = "昵称")
     @NotBlank
     private String userName;
 
@@ -42,6 +42,10 @@ public class ReturnUserDTO implements Serializable {
     @ApiModelProperty(value = "roleType")
     private Integer roleType;
 
+    @ApiModelProperty(value = "7聊号")
+    //
+    private String codeName;
+
 
     public ReturnUserDTO(User user) {
         this.userId = user.getUserId();
@@ -50,6 +54,7 @@ public class ReturnUserDTO implements Serializable {
         this.mobile = user.getMobile();
         this.status = user.getStatus();
         this.roleType = user.getRoleType();
+        this.codeName = user.getCodeName();
 
     }
 
