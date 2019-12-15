@@ -55,7 +55,7 @@
         UPDATE tb_friendship_apply as p
         <set>
             <if test="status!=0 and status!=null ">status=#{status},</if>
-            <if test="delete!=0 and delete!=null ">p.delete=#{delete},</if>
+            <if test="deleteStatus!=0 and deleteStatus!=null ">p.delete_status=#{deleteStatus},</if>
         </set>
         WHERE id = #{id}
     </update>
@@ -75,17 +75,12 @@
         FROM
         tb_friendship_apply as p
         LEFT JOIN tb_user as p1 ON
-        <choose>
-            <when test="p.user_id!= userId ">
-                p1.user_id = p.user_id,
-            </when>
-            <otherwise>
-                p1.user_id = p.friend_id,
-            </otherwise>
-        </choose>
+        (p1.user_id = p.user_id or p1.user_id = p.friend_id)
         WHERE 1=1
         AND
-        p.delete=0
+        p.delete_status=0
+        AND
+        p.status=0
         AND (p.user_id =
         #{userId}
         or p.friend_id =
@@ -101,16 +96,37 @@
             friend_id,
             status
             FROM
-            tb_friendship_apply as p
+            tb_friendship_apply
+
             WHERE 1=1
         AND
-        p.delete=0
+        delete_status=0
+
         and
         (user_id =
         #{userId}
         or friend_id =
         #{userId} )
-        </select>
+    </select>
+
+
+    <select id="queryFriendshipApply" resultMap="FriendshipApplyMap">
+            SELECT
+            id,
+            user_id,
+            friend_id,
+            status
+            FROM
+            tb_friendship_apply
+
+            WHERE 1=1
+        AND
+        id=#{applyId}
+        AND
+        delete_status=0
+    </select>
+
+
 
 
 </mapper>

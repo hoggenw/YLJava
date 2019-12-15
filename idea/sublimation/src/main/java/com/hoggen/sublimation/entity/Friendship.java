@@ -7,6 +7,12 @@ import lombok.experimental.Accessors;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
+
+/**
+ * 黑名单
+ * @Author:hoggen
+ * @Date:14:33 2019-12-11
+ */
 @Data
 @Accessors(chain = true)
 public class Friendship {
@@ -28,8 +34,10 @@ public class Friendship {
     // 创建时间
     private Date createTime;
 
+    private String applyId;
+
     //是否已经删除
     @ApiModelProperty(value = "是否删除")
-    private Integer delete;
+    private Integer deleteStatus;
 
 }

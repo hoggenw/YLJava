@@ -39,4 +39,12 @@ public interface FriendshipApplyService {
      * @Date:11:22 2019-11-25
      */
     public List<FriendshipApply> queryApplyList(String userId);
+
+    /**
+     * 获取朋友
+     * @Param null
+     * @Author:hoggen
+     * @Date:11:22 2019-11-25
+     */
+    public FriendshipApply  queryFriendshipApply(String applyId);
 }

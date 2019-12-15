@@ -3,6 +3,17 @@
 
 <mapper namespace="com.hoggen.sublimation.dao.FriendshipDao">
 
+
+
+    <resultMap type="com.hoggen.sublimation.entity.Friendship" id="FriendshipMap">
+        <id property="id" column="id" />
+        <result property="userId" column="user_id" />
+        <result property="friendId" column="friend_id" />
+        <result property="applyId" column="apply_id" />
+    </resultMap>
+
+
+
     <insert id="insertFriendship" parameterType="com.hoggen.sublimation.entity.Friendship"
             useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 
@@ -14,7 +25,7 @@
         <!--SELECT LAST_INSERT_ID()-->
         <!--</selectKey>-->
         INSERT INTO
-        tb_friendship(
+        tb_black_friendship(
         id,
         user_id,
         friend_id,
@@ -22,6 +33,24 @@
         VALUES
         (#{id},#{userId},#{friendId},#{createTime})
     </insert>
+
+
+    <select id="queryFriendShipList" resultMap="FriendshipMap">
+            SELECT
+            id,
+            user_id,
+            friend_id
+            FROM
+            tb_black_friendship
+            WHERE 1=1
+        AND
+        delete_status=0
+        and
+        user_id =
+        #{userId}
+
+    </select>
+
 
 
 </mapper>

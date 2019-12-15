@@ -19,7 +19,11 @@ public enum UserStateEnum {
     CODENAMESensitive(10013, "7聊号含有敏感词汇"),
     APPLYFRIENDFAILED(10014, "申请朋友操作失败"),
     APPLYALREADY(10015, "你已经申请，请耐心等待对方同意"),
-    AGREEALREADY(10016, "该好友已经添加");
+    AGREEALREADY(10016, "该好友已经添加"),
+    FRIENDSHIPEMPTY(10017, "该好友关系不存在,或者被删除"),
+    FRIENDSHIPILLEGAL(10018, "用户角色非法"),
+    FRIENDSHIPBLACKALLREADY(10019, "该用户已经在您的黑名单中,或者你已经在对方黑名单中");
+
 
     private int state;
 

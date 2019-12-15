@@ -1,19 +1,17 @@
-package com.hoggen.sublimation.dao;
+package com.hoggen.sublimation.service.httpsevice;
 
 import com.hoggen.sublimation.dto.FriendshipDTO;
-import com.hoggen.sublimation.dto.ReturnUserDTO;
 import com.hoggen.sublimation.entity.Friendship;
-import com.hoggen.sublimation.entity.FriendshipApply;
 
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * 黑名单
  * @Author:hoggen
  * @Date:14:33 2019-12-11
  */
-public interface FriendshipDao {
+public interface FriendshipService {
 
     /**
      * 添加朋友关系
@@ -50,15 +48,8 @@ public interface FriendshipDao {
      */
     public List<Friendship> queryFriendShipList(String userId);
 
-//
-//    /**
-//     * 获取朋友
-//     * @Param null
-//     * @Author:hoggen
-//     * @Date:11:22 2019-11-25
-//     */
-//    public Friendship  queryFriendship(String userId,String friendId);
 
 
-    
+
+
 }

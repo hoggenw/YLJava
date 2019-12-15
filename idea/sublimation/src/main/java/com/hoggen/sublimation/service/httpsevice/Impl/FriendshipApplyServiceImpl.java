@@ -21,39 +21,32 @@ public class FriendshipApplyServiceImpl implements FriendshipApplyService {
     @Autowired
     private FriendshipApplyDao applyDao;
 
-    @Autowired
-    private FriendshipDao friendDao;
 
     @Override
     public int insertFriendship(FriendshipApply friendship) {
         friendship.setStatus(0);
-        friendship.setDelete(0);
+        friendship.setDeleteStatus(0);
         friendship.setCreateTime(new Date());
         return applyDao.insertFriendship(friendship);
     }
 
     @Override
     public int updateFriendship(FriendshipApply friendship) {
-        if (friendship.getStatus() == 1){
-            Friendship friend = new Friendship();
-            friend.setUserId(friendship.getUserId());
-            friend.setCreateTime(new Date());
-            friend.setFriendId(friendship.getFriendId());
-            int effect = friendDao.insertFriendship(friend);
-            if (effect < 0){
-                return  effect;
-            }
-        }
         return applyDao.updateFriendship(friendship);
     }
 
     @Override
     public FriendshipDTO queryUserList(String userId) {
-        return null;
+        return applyDao.queryUserList(userId);
     }
 
     @Override
     public List<FriendshipApply> queryApplyList(String userId) {
         return applyDao.queryApplyList(userId);
+    }
+
+    @Override
+    public FriendshipApply queryFriendshipApply(String applyId) {
+        return applyDao.queryFriendshipApply(applyId);
     }
 }

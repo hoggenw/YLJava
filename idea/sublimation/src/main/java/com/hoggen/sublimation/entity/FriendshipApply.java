@@ -21,6 +21,7 @@ public class FriendshipApply {
     // ID
     // 名称
     @ApiModelProperty(value = "申请人id")
+    @NotBlank
     private String userId;
 
     // ID
@@ -32,11 +33,15 @@ public class FriendshipApply {
     private Integer status;
 
 
+//    private String fuId;
+//
+//    private String ufId;
+
     // 创建时间
     private Date createTime;
 
     //是否已经删除
     @ApiModelProperty(value = "是否删除")
-    private Integer delete;
+    private Integer deleteStatus;
 
 }
